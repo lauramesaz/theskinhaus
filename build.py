@@ -38,16 +38,15 @@ def cabecera(activo):
 def pie():
     est = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in ESTETICA[:6])
     vas = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in VASCULAR)
-    hor = "".join("<li>%s<br>%s</li>" % h for h in HORARIO)
     return '''<footer class="pie-web"><div class="caja">
 <div class="pie-grid">
   <div>%s<p class="frase-marca" style="margin-top:36px;max-width:15em">Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal.</p></div>
   <div><h4>Medicina estética</h4><ul>%s<li><a href="medicina-estetica">Ver todos</a></li></ul></div>
   <div><h4>Medicina vascular</h4><ul>%s</ul></div>
-  <div><h4>Visítanos</h4><ul><li>%s</li>%s<li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="%s" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  <div><h4>Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · %s · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span></div>
-</div></footer>''' % (logo("completo", True), est, vas, DIRECCION, hor, wa(), TELEFONO_VISIBLE, INSTAGRAM, CIUDAD)
+</div></footer>''' % (logo("completo", True), est, vas, DIRECCION, wa(), TELEFONO_VISIBLE, CIUDAD)
 
 
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
@@ -320,7 +319,6 @@ def nosotros():
 # ---------------------------------------------------------------- valoración
 def valoracion():
     opciones = "".join("<option>%s</option>" % t["nombre"] for t in TODOS)
-    hor = "".join("<p>%s · %s</p>" % h for h in HORARIO)
     cuerpo = '''
 <section class="bloque" style="padding-top:clamp(150px,16vw,210px);overflow:hidden"><div class="aura a1"></div><div class="caja contacto sobre">
   <div>
@@ -329,7 +327,6 @@ def valoracion():
     <div class="info-contacto rev">
       <div><p class="ceja">WhatsApp</p><p><a class="enlace" style="letter-spacing:.08em" href="%s" target="_blank" rel="noopener">%s %s</a></p></div>
       <div><p class="ceja">Dónde estamos</p><p>%s</p></div>
-      <div><p class="ceja">Horario</p>%s</div>
     </div>
   </div>
   <form class="form isla rev" id="form-valoracion" data-wa="%s" style="margin:0">
@@ -340,7 +337,7 @@ def valoracion():
     <p class="aviso" style="margin-top:0">Tus datos solo se usan para responderte. Se abrirá WhatsApp con tu mensaje listo.</p>
   </form>
 </div></section>
-%s''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, hor, WHATSAPP, opciones, FL, camino())
+%s''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, camino())
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, clínica de medicina estética y vascular en Pereira.",
            cuerpo, activo="valoracion", jsonld=CLINICA_LD, imagen="cabina")
 

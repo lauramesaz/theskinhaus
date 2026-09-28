@@ -4,9 +4,9 @@
 MARCA = "The Skin Haus"
 CIUDAD = "Pereira"
 DOMINIO = "https://theskinhaus.com.co"          # comprado en GoDaddy 28-sep-2026 (principal SIN www)
-WHATSAPP = "573000000000"                        # PENDIENTE: número real (formato 57 + celular)
-TELEFONO_VISIBLE = "+57 300 000 0000"            # PENDIENTE
-DIRECCION = "Pereira, Risaralda"                 # PENDIENTE: dirección exacta
+WHATSAPP = "573174412203"
+TELEFONO_VISIBLE = "+57 317 441 2203"
+DIRECCION = "Torre Médica Oval · Pereira"
 HORARIO = [("Lunes a viernes", "8:00 a. m. – 6:00 p. m."), ("Sábados", "9:00 a. m. – 1:00 p. m.")]  # PENDIENTE
 INSTAGRAM = "https://www.instagram.com/"         # PENDIENTE: usuario real
 CORREO = "hola@theskinhaus.com.co"                 # PENDIENTE
@@ -130,5 +130,4 @@ PREGUNTAS_GENERALES = [
     ("¿La valoración tiene costo?", "Te lo confirmamos al agendar. En la valoración médica revisamos tu caso y definimos un plan, sin compromiso de hacerte ningún tratamiento."),
     ("¿Quién me atiende?", "Siempre un médico. Los procedimientos los realiza o supervisa directamente el equipo médico de la clínica."),
     ("¿Puedo hacerme un tratamiento el mismo día de la valoración?", "En muchos casos sí, si el médico lo considera adecuado y tú te sientes lista o listo para decidir."),
-    ("¿Qué formas de pago reciben?", "Efectivo, transferencia y tarjetas. Pregúntanos por las opciones al agendar."),
 ]
