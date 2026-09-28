@@ -3,13 +3,13 @@
 
 MARCA = "The Skin Haus"
 CIUDAD = "Pereira"
-DOMINIO = "https://www.theskinhaus.co"          # PENDIENTE: confirmar dominio real
+DOMINIO = "https://theskinhaus.com.co"          # comprado en GoDaddy 28-sep-2026 (principal SIN www)
 WHATSAPP = "573000000000"                        # PENDIENTE: número real (formato 57 + celular)
 TELEFONO_VISIBLE = "+57 300 000 0000"            # PENDIENTE
 DIRECCION = "Pereira, Risaralda"                 # PENDIENTE: dirección exacta
 HORARIO = [("Lunes a viernes", "8:00 a. m. – 6:00 p. m."), ("Sábados", "9:00 a. m. – 1:00 p. m.")]  # PENDIENTE
 INSTAGRAM = "https://www.instagram.com/"         # PENDIENTE: usuario real
-CORREO = "hola@theskinhaus.co"                   # PENDIENTE
+CORREO = "hola@theskinhaus.com.co"                 # PENDIENTE
 
 # ------------------------------------------------------------------ tratamientos
 # linea: frase corta · intro: 1 párrafo · para: a quién · como: (duración, sesiones, recuperación)
