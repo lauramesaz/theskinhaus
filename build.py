@@ -64,7 +64,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <link rel="canonical" href="%s">
 <meta property="og:type" content="website"><meta property="og:title" content="%s"><meta property="og:description" content="%s">
 <meta property="og:url" content="%s"><meta property="og:image" content="%s/%s"><meta property="og:locale" content="es_CO">
-<meta name="theme-color" content="#EEE7DE">
+<meta name="theme-color" content="#FAF8F3">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -363,7 +363,7 @@ def extras():
     with open(os.path.join(AQUI, "robots.txt"), "w") as f:
         f.write("User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % DOMINIO)
     with open(os.path.join(AQUI, "assets", "favicon.svg"), "w") as f:
-        f.write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#EEE7DE"/><text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#111">SH</text></svg>')
+        f.write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#FAF8F3"/><text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#111">SH</text></svg>')
 
 
 if __name__ == "__main__":
