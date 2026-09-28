@@ -342,3 +342,13 @@ main{overflow-x:clip}
 .pie-web{padding-top:clamp(100px,11vw,160px)}
 .pie-grid{gap:56px}
 @media (max-width:860px){.bloque{padding:clamp(90px,22vw,130px) 0}.hero{padding-bottom:70px}}
+
+/* tamaños más contenidos: nada de texto que invada la pantalla (pedido de Laura) */
+h1{font-size:clamp(42px,5.6vw,86px)}
+h2{font-size:clamp(30px,3.6vw,50px)}
+.manif{font-size:clamp(22px,2.3vw,32px);line-height:1.45;max-width:24em;margin-top:26px}
+.manif span{opacity:.22}
+.manifiesto{padding:clamp(80px,9vw,130px) 0 !important}
+.organico .tarjeta h2{font-size:clamp(28px,3vw,42px) !important}
+.frase-marca{font-size:clamp(19px,1.7vw,24px)}
+@media (max-width:860px){.manif{font-size:clamp(20px,5.6vw,26px)}}
