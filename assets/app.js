@@ -73,6 +73,22 @@
   window.addEventListener('resize', pedir);
   cuadro();
 
+  // pestañas de tratamientos
+  document.querySelectorAll('.pestanas').forEach(function (grupo) {
+    var botones = grupo.querySelectorAll('button');
+    botones.forEach(function (b) {
+      b.addEventListener('click', function () {
+        botones.forEach(function (x) {
+          var on = x === b;
+          x.setAttribute('aria-selected', on);
+          var pan = document.getElementById(x.dataset.pan);
+          pan.hidden = !on;
+          if (on) pan.querySelectorAll('.rev').forEach(function (r) { r.classList.add('ve'); });
+        });
+      });
+    });
+  });
+
   var form = document.querySelector('#form-valoracion');
   if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();

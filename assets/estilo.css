@@ -352,3 +352,33 @@ h2{font-size:clamp(30px,3.6vw,50px)}
 .organico .tarjeta h2{font-size:clamp(28px,3vw,42px) !important}
 .frase-marca{font-size:clamp(19px,1.7vw,24px)}
 @media (max-width:860px){.manif{font-size:clamp(20px,5.6vw,26px)}}
+
+/* ===== tratamientos para escanear: pestañas + tarjetas con ícono ===== */
+.pestanas{display:flex;justify-content:center;gap:6px;margin:clamp(36px,4vw,56px) auto 0;padding:6px;border-radius:999px;background:var(--marfil) var(--tex-marfil) 0 0/640px;width:max-content;max-width:100%}
+.pestanas button{border:0;background:transparent;cursor:pointer;font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:15px 24px;border-radius:999px;color:var(--negro);transition:background .35s,color .35s}
+.pestanas button[aria-selected="true"]{background:var(--negro);color:var(--blanco)}
+.panel{margin-top:clamp(36px,4vw,56px)}
+.panel[hidden]{display:none}
+.rejilla-trat{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(40px,5vw,60px)}
+.panel .rejilla-trat{margin-top:0}
+.ttrat{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:28px 26px 26px;border-radius:28px;background:var(--blanco) var(--tex-blanca) 0 0/640px;border:1px solid rgba(17,17,17,.07);box-shadow:0 18px 40px -32px rgba(90,70,50,.45);transition:transform .5s var(--suave),box-shadow .5s}
+.ttrat:hover{transform:translateY(-4px);box-shadow:0 28px 50px -30px rgba(90,70,50,.5)}
+.ttrat .ico{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#EFE4D6;margin-bottom:8px}
+.ttrat .ico svg{width:26px;height:26px;fill:none;stroke:var(--negro);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.ttrat .que{font:700 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#8a6f58}
+.ttrat h3{font-size:clamp(22px,1.9vw,26px);line-height:1.15}
+.ttrat p{font-size:15px;line-height:1.5;opacity:.8}
+.datos-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.datos-mini span{font:400 13px/1 var(--sans);padding:9px 13px;border-radius:999px;background:var(--marfil)}
+.ver{margin-top:auto;padding-top:14px;font:700 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;display:inline-flex;gap:8px;align-items:center}
+.ttrat:hover .ver{text-decoration:underline;text-underline-offset:5px}
+.nota-lista{margin-top:40px}
+.isla .ttrat{background:var(--blanco) var(--tex-blanca) 0 0/640px}
+@media (max-width:560px){.pestanas button{padding:14px 16px;letter-spacing:.1em;font-size:11.5px}.ttrat{padding:24px 22px}}
+/* celular: tarjetas en carrusel deslizable */
+@media (max-width:700px){
+  .rejilla-trat{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:calc(-1 * var(--lado));margin-right:calc(-1 * var(--lado));padding:6px var(--lado) 26px;scrollbar-width:none}
+  .rejilla-trat::-webkit-scrollbar{display:none}
+  .ttrat{flex:0 0 80%;scroll-snap-align:center}
+  .panel::after{content:"Desliza para ver más →";display:block;text-align:center;font:400 13px/1 var(--sans);opacity:.6;margin-top:4px}
+}

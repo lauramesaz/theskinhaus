@@ -131,3 +131,20 @@ PREGUNTAS_GENERALES = [
     ("¿Quién me atiende?", "Siempre un médico. Los procedimientos los realiza o supervisa directamente el equipo médico de la clínica."),
     ("¿Puedo hacerme un tratamiento el mismo día de la valoración?", "En muchos casos sí, si el médico lo considera adecuado y tú te sientes lista o listo para decidir."),
 ]
+
+# ------------------------------------------------------------------ para escanear rápido
+# 2 datos clave por tratamiento (tarjetas) + frase corta de para qué sirve
+CLAVE = {
+    "toxina-botulinica": ("Líneas de expresión", "20–30 min", "Sin incapacidad"),
+    "acido-hialuronico": ("Volumen y contorno", "30–45 min", "Dura 9–18 meses"),
+    "bioestimuladores": ("Firmeza y colágeno", "1–3 sesiones", "Cambio progresivo"),
+    "skinboosters": ("Hidratación y luz", "3 sesiones", "Sin incapacidad"),
+    "peelings-medicos": ("Manchas y textura", "30 min", "Serie de 3–6"),
+    "microagujas": ("Cicatrices y poros", "45–60 min", "Rubor 24–48 h"),
+    "manchas-y-melasma": ("Tono uniforme", "Plan por etapas", "Con seguimiento"),
+    "limpieza-facial-medica": ("Piel limpia y sana", "60 min", "Sin incapacidad"),
+    "aranitas-vasculares": ("Piernas más limpias", "30–45 min", "Caminas de inmediato"),
+    "varices": ("Venas y pesadez", "Ambulatorio", "Sin cirugía abierta"),
+    "eco-doppler-venoso": ("Diagnóstico preciso", "30–40 min", "Sin preparación"),
+    "cuperosis-y-rojeces": ("Rojeces del rostro", "20–30 min", "2–4 sesiones"),
+}

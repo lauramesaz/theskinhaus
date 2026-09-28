@@ -105,6 +105,34 @@ def palabras(html):
     return " ".join(out)
 
 
+# íconos de línea por tratamiento (trazo fino, se ven en la tarjeta)
+ICONOS = {
+    "toxina-botulinica": '<path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M8.5 10.5c1-.8 2-.8 3 0M12.5 10.5c1-.8 2-.8 3 0M9 15c1.8 1.3 4.2 1.3 6 0"/><path d="M9 3.5h6"/>',
+    "acido-hialuronico": '<path d="M12 3s6 6.8 6 11a6 6 0 0 1-12 0c0-4.2 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/>',
+    "bioestimuladores": '<path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M12 12m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0"/><path d="M12 12m-8.5 0a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0-17 0" stroke-dasharray="2 3"/>',
+    "skinboosters": '<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="M12 8.5l1.2 2.3 2.3 1.2-2.3 1.2L12 15.5l-1.2-2.3L8.5 12l2.3-1.2z"/>',
+    "peelings-medicos": '<path d="M4 8l8-4 8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 16l8 4 8-4"/>',
+    "microagujas": '<path d="M6 6h.01M10 6h.01M14 6h.01M18 6h.01M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M10 14h.01M14 14h.01M18 14h.01M6 18h.01M10 18h.01M14 18h.01M18 18h.01" stroke-width="2.4"/>',
+    "manchas-y-melasma": '<path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/>',
+    "limpieza-facial-medica": '<path d="M8 15m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0"/><path d="M16.5 8.5m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0"/><path d="M17 17m-1.8 0a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0-3.6 0"/>',
+    "aranitas-vasculares": '<path d="M12 21V12M12 12l-5-5M12 12l5-5M7 7l-3 1M7 7l-1-3M17 7l3 1M17 7l1-3M12 16l-3 2M12 16l3 2"/>',
+    "varices": '<path d="M10 3c0 4-3 5-3 9s3 5 3 9"/><path d="M15 3c0 3 2 4 2 7s-3 3-3 6 1 3 1 5"/>',
+    "eco-doppler-venoso": '<path d="M3 12h3l2-5 3 10 3-8 2 3h5"/>',
+    "cuperosis-y-rojeces": '<path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M8 13.5h.01M9.5 15h.01M14.5 15h.01M16 13.5h.01" stroke-width="2.4"/><path d="M10 10h.01M14 10h.01" stroke-width="2"/>',
+}
+
+
+def icono(slug):
+    return '<span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg></span>' % ICONOS.get(slug, ICONOS["skinboosters"])
+
+
+def tarjeta_trat(t):
+    que, d1, d2 = CLAVE[t["slug"]]
+    return ('<a class="ttrat rev" href="%s">%s<span class="que">%s</span><h3>%s</h3><p>%s</p>'
+            '<span class="datos-mini"><span>%s</span><span>%s</span></span><span class="ver">Ver tratamiento %s</span></a>') % (
+        t["slug"], icono(t["slug"]), que, t["nombre"], t["linea"], d1, d2, FL)
+
+
 def hero(ceja, titulo, sub, foto_arco, foto_circ, acciones="", corto=False, alt=""):
     return '''<section class="hero%s">
   <div class="aura a1"></div>
@@ -116,11 +144,6 @@ def hero(ceja, titulo, sub, foto_arco, foto_circ, acciones="", corto=False, alt=
 def cinta(frases):
     s = "".join("<span>%s</span>" % f for f in frases)
     return '<div class="cinta" aria-hidden="true"><div class="pista">%s%s</div></div>' % (s, s)
-
-
-def lista(items):
-    return '<ul class="lista-trat">%s</ul>' % "".join(
-        '<li><a href="%s"><span>%s</span><i>%s</i></a></li>' % (t["slug"], t["nombre"], FL) for t in items)
 
 
 def faq(pares):
@@ -189,10 +212,12 @@ def inicio():
 
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Tratamientos</p><h2 class="rev" style="margin-top:22px">Lo que podemos <em>cuidar juntos.</em></h2></div>
-  <div class="listas">
-    <div class="rev"><p class="ceja">Medicina estética</p>%s</div>
-    <div class="rev"><p class="ceja">Medicina vascular</p>%s<p class="nota-lista">Todo empieza con una valoración médica.</p></div>
+  <div class="pestanas rev" role="tablist">
+    <button role="tab" aria-selected="true" data-pan="p-est">Medicina estética</button><button role="tab" aria-selected="false" data-pan="p-vas">Medicina vascular</button>
   </div>
+  <div class="panel" id="p-est">%s</div>
+  <div class="panel" id="p-vas" hidden>%s</div>
+  <p class="nota-lista centro">Todo empieza con una valoración médica.</p>
 </div></section>
 
 <section class="bloque"><div class="caja organico">
@@ -212,7 +237,7 @@ def inicio():
 
 %s
 
-%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, lista(ESTETICA), lista(VASCULAR), foto("consulta"),
+%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), tarjetas(VASCULAR), foto("consulta"),
          camino(en_isla=False), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre())
     pagina("index", "The Skin Haus · Medicina estética y vascular en Pereira",
            "Clínica de medicina estética y vascular en Pereira. Toxina botulínica, ácido hialurónico, bioestimuladores, manchas, arañitas y várices. Agenda tu valoración médica.",
@@ -220,10 +245,8 @@ def inicio():
 
 
 # ---------------------------------------------------------------- páginas de especialidad
-def tarjetas(lista, etiqueta):
-    return '<div class="tarjetas">%s</div>' % "".join(
-        '<a class="rev" href="%s"><span class="chip" style="align-self:flex-start">%s</span><h3>%s</h3><p>%s</p>%s</a>' % (
-            t["slug"], etiqueta, t["nombre"], t["linea"], CIRC) for t in lista)
+def tarjetas(lista, etiqueta=""):
+    return '<div class="rejilla-trat">%s</div>' % "".join(tarjeta_trat(t) for t in lista)
 
 
 def especialidad(archivo, ceja, titulo, sub, img, img2, lista, etiqueta, intro_h, intro_p, titulo_seo, desc_seo, extra=""):
