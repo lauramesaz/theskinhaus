@@ -118,9 +118,9 @@ def cinta(frases):
     return '<div class="cinta" aria-hidden="true"><div class="pista">%s%s</div></div>' % (s, s)
 
 
-def nube(lista):
-    partes = ['<a href="%s">%s</a>' % (t["slug"], t["nombre"]) for t in lista]
-    return '<p class="nube rev">%s</p>' % '<span class="pto"></span>'.join(partes)
+def lista(items):
+    return '<ul class="lista-trat">%s</ul>' % "".join(
+        '<li><a href="%s"><span>%s</span><i>%s</i></a></li>' % (t["slug"], t["nombre"], FL) for t in items)
 
 
 def faq(pares):
@@ -174,7 +174,7 @@ def inicio():
 
     cuerpo = hero("Medicina estética y vascular · %s" % CIUDAD, "Tu piel también <em>tiene planes.</em>",
                   "Una clínica que combina criterio médico, acompañamiento cercano y resultados armónicos. Sofisticación sin distancia.",
-                  "retrato", "manos", acciones, alt="Mujer con piel natural y luz suave") + cinta(FRASES) + '''
+                  "retrato", "manos", acciones, alt="Mujer con piel natural y luz suave") + '''
 
 <section class="bloque" id="especialidades"><div class="caja">
   <div class="centro"><p class="ceja rev">Dos especialidades, una mirada</p><h2 class="rev" style="margin-top:22px">Piel y circulación, <em>cuidadas juntas.</em></h2>
@@ -187,10 +187,13 @@ def inicio():
   </div>
 </div></section>
 
-<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(80px,10vw,140px) 0"><div class="caja">
-  <div class="nube-grupo"><p class="ceja rev">Medicina estética</p>%s</div>
-  <div class="nube-grupo"><p class="ceja rev">Medicina vascular</p>%s</div>
-</div></div></section>
+<section class="bloque" style="padding-top:0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Tratamientos</p><h2 class="rev" style="margin-top:22px">Lo que podemos <em>cuidar juntos.</em></h2></div>
+  <div class="listas">
+    <div class="rev"><p class="ceja">Medicina estética</p>%s</div>
+    <div class="rev"><p class="ceja">Medicina vascular</p>%s<p class="nota-lista">Todo empieza con una valoración médica.</p></div>
+  </div>
+</div></section>
 
 <section class="bloque"><div class="caja organico">
   <div class="gota rev"><img src="%s" alt="Conversación entre médica y paciente" loading="lazy"></div>
@@ -209,13 +212,8 @@ def inicio():
 
 %s
 
-<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(80px,10vw,140px) 0"><div class="caja">
-  <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de elegir, <em>entiende.</em></h2></div>
-  %s
-</div></div></section>
-
-%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, nube(ESTETICA), nube(VASCULAR), foto("consulta"),
-         camino(en_isla=False), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), faq(PREGUNTAS_GENERALES), cierre())
+%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, lista(ESTETICA), lista(VASCULAR), foto("consulta"),
+         camino(en_isla=False), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre())
     pagina("index", "The Skin Haus · Medicina estética y vascular en Pereira",
            "Clínica de medicina estética y vascular en Pereira. Toxina botulínica, ácido hialurónico, bioestimuladores, manchas, arañitas y várices. Agenda tu valoración médica.",
            cuerpo, jsonld=CLINICA_LD)
@@ -281,8 +279,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta):
   <div class="chips grandes rev" style="justify-content:center;margin-top:44px">%s</div>
   <p class="frase-marca rev" style="margin-top:44px">Evaluamos antes de recomendar.</p>
 </div></section>
-%s
-<section class="bloque"><div class="caja">
+<section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Lo que suelen <em>preguntarnos.</em></h2></div>
   %s
 </div></section>
@@ -290,7 +287,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta):
   <div class="centro"><p class="ceja rev">También te puede interesar</p></div>%s
 </div></div></section>
 %s''' % (t["intro"], dur, ses, rec, "".join('<span class="chip">%s</span>' % p for p in t["para"]),
-         camino(), faq(t["faq"]), tarjetas(rel, etiqueta), cierre("Conversemos sobre lo que <em>quieres cuidar.</em>"))
+         faq(t["faq"]), tarjetas(rel, etiqueta), cierre("Conversemos sobre lo que <em>quieres cuidar.</em>"))
     ld = [CLINICA_LD, {"@context": "https://schema.org", "@type": "MedicalProcedure", "name": t["nombre"], "description": t["intro"]},
           {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
               {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}]
@@ -309,7 +306,7 @@ def nosotros():
     evitamos = ["Excesos", "Promesas mágicas", "Presión comercial", "Resultados genéricos"]
     cuerpo = hero("Qué es The Skin Haus", "Piel real. <em>Cuidado real.</em>",
                   "Una clínica de medicina estética y vascular en Pereira que combina criterio médico, acompañamiento cercano y resultados armónicos.",
-                  "recepcion", "manos", corto=True, alt="Recepción de The Skin Haus") + cinta(FRASES) + '''
+                  "recepcion", "manos", corto=True, alt="Recepción de The Skin Haus") + '''
 <section class="bloque" style="padding-top:clamp(40px,5vw,70px)"><div class="isla" style="padding:clamp(80px,10vw,140px) 0"><div class="caja">
   <div class="centro"><p class="ceja rev">La marca en cuatro ideas</p><h2 class="rev" style="margin-top:22px">Lo que <em>nos mueve.</em></h2>
   <p class="frase-marca rev" style="margin-top:24px">Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal.</p></div>
