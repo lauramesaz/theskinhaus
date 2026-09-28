@@ -49,6 +49,30 @@
     document.querySelectorAll('.camino .pasos').forEach(function (p) { ro.observe(p); });
   } else { window.addEventListener('resize', curvas); }
 
+  // movimiento suave al bajar + manifiesto palabra a palabra
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vels = [].slice.call(document.querySelectorAll('[data-vel]'));
+  var manifs = [].slice.call(document.querySelectorAll('.manif'));
+  var pend = false;
+  function cuadro() {
+    pend = false;
+    var vh = window.innerHeight;
+    if (!quieto && window.innerWidth > 860) vels.forEach(function (el) {
+      var r = el.getBoundingClientRect(), c = r.top + r.height / 2 - vh / 2;
+      el.style.setProperty('--py', (c * parseFloat(el.dataset.vel)).toFixed(1) + 'px');
+    });
+    manifs.forEach(function (m) {
+      var r = m.getBoundingClientRect(), sp = m.children;
+      var avance = (vh * 0.85 - r.top) / (r.height + vh * 0.35);
+      var n = Math.round(Math.max(0, Math.min(1, avance)) * sp.length);
+      for (var i = 0; i < sp.length; i++) sp[i].classList.toggle('on', quieto || i < n);
+    });
+  }
+  function pedir() { if (!pend) { pend = true; requestAnimationFrame(cuadro); } }
+  window.addEventListener('scroll', pedir, { passive: true });
+  window.addEventListener('resize', pedir);
+  cuadro();
+
   var form = document.querySelector('#form-valoracion');
   if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();

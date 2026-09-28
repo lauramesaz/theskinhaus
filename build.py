@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # The Skin Haus · genera todas las páginas a partir de datos.py.   Uso:  python3 build.py
 # v3 "fluida": arcos, círculos, gotas, islas marfil, cinta de frases y camino con curva.
-import os, time, json
+import os, time, json, re
 from urllib.parse import quote
 from datos import *
 
@@ -90,12 +90,27 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
         f.write(html)
 
 
+def palabras(html):
+    """Envuelve cada palabra del titular para animarla; mantiene la cursiva <em> por palabra."""
+    out, i = [], 0
+    for trozo in re.split(r"(<em>.*?</em>)", html):
+        if not trozo:
+            continue
+        cursiva = trozo.startswith("<em>")
+        texto = trozo[4:-5] if cursiva else trozo
+        for w in texto.split():
+            i += 1
+            w = "<em>%s</em>" % w if cursiva else w
+            out.append('<span class="w"><span style="--i:%d">%s</span></span>' % (i, w))
+    return " ".join(out)
+
+
 def hero(ceja, titulo, sub, foto_arco, foto_circ, acciones="", corto=False, alt=""):
     return '''<section class="hero%s">
   <div class="aura a1"></div>
-  <div class="texto"><p class="ceja rev">%s</p><h1 class="rev">%s</h1><p class="sub rev">%s</p>%s</div>
-  <div class="compo">%s<div class="arco"><img src="%s" alt="%s" fetchpriority="high"></div><div class="circulo rev"><img src="%s" alt=""></div></div>
-</section>''' % (" corto" if corto else "", ceja, titulo, sub, acciones, SELLO, foto(foto_arco), alt, foto(foto_circ))
+  <div class="texto"><p class="ceja rev">%s</p><h1 class="titular-vivo">%s</h1><p class="sub rev">%s</p>%s</div>
+  <div class="compo">%s<div class="arco"><img src="%s" alt="%s" fetchpriority="high"></div><div class="circulo rev" data-vel="-0.08"><img src="%s" alt=""></div></div>
+</section>''' % (" corto" if corto else "", ceja, palabras(titulo), sub, acciones, SELLO, foto(foto_arco), alt, foto(foto_circ))
 
 
 def cinta(frases):
@@ -116,10 +131,19 @@ def faq(pares):
 def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica"):
     return '''<section class="bloque"><div class="isla lino cierre" style="position:relative">
 <div class="aura a1" style="opacity:.8"></div><div class="aura a2"></div>
+<div class="flota f1" data-vel="-0.05"><div class="circulo"><img src="assets/fotos/cabina-espejo.jpg" alt="" loading="lazy"></div></div>
+<div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.jpg" alt="" loading="lazy"></div></div>
 <div class="sobre"><p class="ceja rev">%s</p><h2 class="rev">%s</h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
 <div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a></div></div>
 </div></section>''' % (ceja, titulo, wa(), CIRC)
+
+
+def manifiesto(texto, ceja="Lo que nos mueve"):
+    ws = " ".join('<span>%s</span>' % w for w in texto.split())
+    return '''<section class="bloque" style="padding-top:0"><div class="isla lino manifiesto" style="padding:clamp(90px,12vw,170px) 0"><div class="caja">
+<p class="ceja centro">%s</p><p class="manif">%s</p>
+</div></div></section>''' % (ceja, ws)
 
 
 def camino(en_isla=True):
@@ -147,9 +171,6 @@ FRASES = ["Belleza que se acompaña", "Tu piel también tiene planes", "Primero 
 # ---------------------------------------------------------------- inicio
 def inicio():
     acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="#especialidades">Conoce los tratamientos %s</a></div>' % CIRC
-    voz = [("Decimos", "Evaluamos tu piel antes de recomendar.", ""), ("Evitamos", "Este tratamiento es perfecto para ti.", " no"),
-           ("Decimos", "Resultados sutiles, decisiones informadas.", ""), ("Evitamos", "Transforma tu rostro para siempre.", " no")]
-    voz_html = "".join('<div class="par%s rev"><span class="chip">%s</span><p class="frase-marca">%s</p></div>' % (c, a, b) for a, b, c in voz)
 
     cuerpo = hero("Medicina estética y vascular · %s" % CIUDAD, "Tu piel también <em>tiene planes.</em>",
                   "Una clínica que combina criterio médico, acompañamiento cercano y resultados armónicos. Sofisticación sin distancia.",
@@ -161,7 +182,7 @@ def inicio():
   <div class="dupla">
     <a class="rev" href="medicina-estetica"><div class="arco"><img src="%s" alt="Médica evaluando la piel del rostro de una paciente" loading="lazy"></div>
       <div class="pie-arco"><div><h3>Medicina estética</h3><p>Toxina, ácido hialurónico, bioestimuladores, calidad de piel y manchas.</p></div>%s</div></a>
-    <a class="rev" href="medicina-vascular"><div class="arco"><img src="%s" alt="Eco-doppler venoso en consulta" loading="lazy"></div>
+    <a class="rev" href="medicina-vascular" data-vel="-0.06"><div class="arco"><img src="%s" alt="Eco-doppler venoso en consulta" loading="lazy"></div>
       <div class="pie-arco"><div><h3>Medicina vascular</h3><p>Arañitas, várices, eco-doppler y rojeces del rostro.</p></div>%s</div></a>
   </div>
 </div></section>
@@ -186,10 +207,7 @@ def inicio():
 
 %s
 
-<section class="bloque"><div class="caja">
-  <div class="centro"><p class="ceja rev">Cómo hablamos</p><h2 class="rev" style="margin-top:22px">Claro. Cercano. <em>Seguro.</em></h2></div>
-  <div class="cascada">%s</div>
-</div></section>
+%s
 
 <section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(80px,10vw,140px) 0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de elegir, <em>entiende.</em></h2></div>
@@ -197,7 +215,7 @@ def inicio():
 </div></div></section>
 
 %s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, nube(ESTETICA), nube(VASCULAR), foto("consulta"),
-         camino(en_isla=False), voz_html, faq(PREGUNTAS_GENERALES), cierre())
+         camino(en_isla=False), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), faq(PREGUNTAS_GENERALES), cierre())
     pagina("index", "The Skin Haus · Medicina estética y vascular en Pereira",
            "Clínica de medicina estética y vascular en Pereira. Toxina botulínica, ácido hialurónico, bioestimuladores, manchas, arañitas y várices. Agenda tu valoración médica.",
            cuerpo, jsonld=CLINICA_LD)
@@ -248,7 +266,7 @@ def paginas_especialidad():
 def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta):
     rel = [h for h in hermanos if h["slug"] != t["slug"]][:3]
     dur, ses, rec = t["como"]
-    circ_foto = "manos" if t["foto"] != "manos" else "piel"
+    circ_foto = {"facial": "piel", "retrato": "manos", "piel": "facial-detalle", "vascular": "vascular-detalle"}.get(t["foto"], "manos")
     acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Pregúntanos %s</a></div>' % (
         wa("Hola, quiero información sobre %s en The Skin Haus." % t["nombre"].lower()), CIRC)
     cuerpo = hero('<a href="%s">%s</a> · Pereira' % (esp_slug, esp_nombre), t["nombre"], t["linea"], t["foto"], circ_foto, acciones, corto=True, alt=t["nombre"]) + '''
