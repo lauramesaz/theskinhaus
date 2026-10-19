@@ -9,7 +9,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 1 | precio del bótox en Pereira | qué define el valor, qué debe incluir, alertas de lo muy barato | toxina-botulinica | publicado 2026-10-19 |
 | 2 | cuánto rinde 1 ml de ácido hialurónico | para qué zonas alcanza, por qué no se cotiza por ml a ciegas | acido-hialuronico | publicado 2026-10-19 |
 | 3 | cómo elegir médico estético en Pereira | RETHUS, INVIMA, valoración real, señales de alerta | valoracion | publicado 2026-10-19 |
-| 4 | cuánto dura el bótox | mes a mes: cuándo empieza, cuándo se ve completo, cuándo repetir | toxina-botulinica | pendiente |
+| 4 | cuánto dura el bótox | mes a mes: cuándo empieza, cuándo se ve completo, cuándo repetir | toxina-botulinica | publicado 2026-10-19 |
 | 5 | bótox o toxina botulínica: ¿es lo mismo? | marca vs. sustancia, por qué el nombre no define la calidad | toxina-botulinica | pendiente |
 | 6 | Sculptra o Radiesse | dos tipos de bioestimulador, a quién le sirve cada uno | bioestimuladores | pendiente |
 | 7 | Profhilo o skinbooster: diferencias | qué es cada uno, sesiones, cuánto dura | skinboosters | pendiente |
