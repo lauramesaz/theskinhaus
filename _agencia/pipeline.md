@@ -29,6 +29,5 @@ Reglas de la cadena:
   motivo y se toma el siguiente.
 - Cada agente deja su nota en la línea del día de `registro.md`.
 
-Fase actual: **manual** (19-oct-2026). El Publicador muestra la vista previa a Laura y espera su
-visto bueno antes de `git push`. Cuando Laura apruebe la fase automática, la rutina diaria publica
-sola con red de seguridad (se publica, se avisa y queda en el registro).
+Fase actual: **automática** (aprobada por Laura el 19-oct-2026). La rutina diaria en la nube publica
+sola con red de seguridad: se publica, se avisa a Laura y queda en el registro.

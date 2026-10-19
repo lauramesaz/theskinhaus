@@ -111,7 +111,7 @@ git add -A && git commit -m "blog: <título>"
 git pull --rebase && git push
 ```
 Luego verificar que `https://theskinhaus.com.co/blog/<slug>` responde 200 (1–3 min) y anotar en
-`registro.md`. Fase: ver `pipeline.md` (manual hasta que Laura apruebe la automática).
+`registro.md`. Fase: **automática** (aprobada por Laura el 19-oct-2026), ver `pipeline.md`.
 
 ## 7. Si algo no rinde
 
