@@ -148,3 +148,267 @@ CLAVE = {
     "eco-doppler-venoso": ("Diagnóstico preciso", "30–40 min", "Sin preparación"),
     "cuperosis-y-rojeces": ("Rojeces del rostro", "20–30 min", "2–4 sesiones"),
 }
+
+
+# ================================================================== SEO medicina estética (19-oct-2026)
+# Estrategia: _agencia/estrategia.md. Solo medicina estética en Pereira.
+ACTUALIZADO = "2026-10-19"          # fecha de la última revisión de las páginas fijas (va al sitemap)
+AREA = ["Pereira", "Dosquebradas", "Santa Rosa de Cabal", "La Virginia", "Cartago"]
+
+# Por tratamiento de estética: título y descripción para Google, h1 visible (opcional),
+# secciones largas (h2, html) y preguntas reales de Google que se suman a las de la página.
+SEO = {
+    "toxina-botulinica": dict(
+        titulo="Bótox en Pereira (toxina botulínica) · The Skin Haus",
+        desc="Bótox en Pereira con criterio médico: frente, entrecejo y patas de gallo en 20–30 minutos y sin incapacidad. Valoración en la Torre Médica Oval.",
+        h1="Toxina botulínica <em>(bótox)</em>",
+        secciones=[
+            ("¿Bótox y toxina botulínica son lo mismo?",
+             "<p>Sí, en lo esencial. Botox es el nombre comercial más conocido de la toxina botulínica tipo A, y por eso en Pereira casi todo el mundo dice “bótox”. Existen otras marcas con registro sanitario.</p>"
+             "<p>Lo que de verdad importa no es el nombre de la caja: es que el producto tenga registro INVIMA, que lo aplique un médico y que la dosis se decida después de ver cómo se mueve tu cara. En la valoración te decimos qué producto usamos y por qué.</p>"),
+            ("Cómo es tu cita de bótox en Pereira",
+             "<p>Primero conversamos y miramos tus gestos: cómo levantas las cejas, cómo frunces, cómo sonríes. Con eso decidimos dónde y cuánto. Luego limpiamos la piel y aplicamos con agujas muy finas, en pocos minutos.</p>"
+             "<p>La cita completa toma de 20 a 30 minutos y vuelves a tu día de inmediato, así que cabe a la hora del almuerzo o al salir del trabajo. El efecto empieza a notarse entre el día 3 y el 7 y a las dos semanas te vemos en control.</p>"),
+            ("Cuidados después de la aplicación",
+             "<p>Las primeras horas evita acostarte, hacer ejercicio intenso y masajear la zona tratada. Si al día siguiente no ves nada, es normal: la toxina necesita unos días para actuar. Te damos las indicaciones por escrito.</p>"),
+            ("Lo que el bótox no hace",
+             "<p>No rellena ni levanta: relaja. Las arrugas que se ven con la cara quieta, los surcos o la pérdida de volumen se trabajan mejor con <a href=\"acido-hialuronico\">ácido hialurónico</a> o <a href=\"bioestimuladores\">bioestimuladores</a>. Si es tu caso, te lo decimos en la valoración en vez de poner más toxina.</p>"),
+        ],
+        faq=[("¿Cuánto vale una sesión de bótox en Pereira?", "Depende de las zonas que tratemos y de la cantidad de producto que necesita tu musculatura. Te damos el valor exacto en la valoración, antes de empezar, para que decidas con toda la información."),
+             ("¿Cuánto dura el efecto del bótox en la cara?", "Por lo general se repite cada 4 a 6 meses. Cuánto te dura a ti depende de tu musculatura, la zona tratada y tus hábitos."),
+             ("¿Qué diferencia hay entre bótox y toxina botulínica?", "Botox es una marca de toxina botulínica tipo A. Hay otras marcas con registro sanitario; lo importante es que el producto sea legal y lo aplique un médico.")]),
+
+    "acido-hialuronico": dict(
+        titulo="Ácido hialurónico en Pereira: labios, ojeras y pómulos",
+        desc="Ácido hialurónico en Pereira para labios, ojeras, pómulos, mentón y mandíbula. Resultados que duran de 9 a 18 meses según la zona y que se pueden revertir.",
+        secciones=[
+            ("¿Para qué zonas sirve el ácido hialurónico?",
+             "<ul><li><strong><a href=\"relleno-de-labios\">Labios</a>.</strong> Definir el contorno, hidratar o dar un volumen sutil.</li>"
+             "<li><strong><a href=\"tratamiento-de-ojeras\">Ojeras</a>.</strong> Suavizar la sombra cuando la ojera es un hundimiento.</li>"
+             "<li><strong>Pómulos y sienes.</strong> Devolver soporte donde el rostro lo fue perdiendo.</li>"
+             "<li><strong>Mentón y mandíbula.</strong> Perfilar y dar proporción al tercio inferior.</li></ul>"
+             "<p>Cuando el objetivo es el rostro completo y no una zona suelta, lo planeamos como una <a href=\"armonizacion-facial\">armonización facial</a>.</p>"),
+            ("¿Cuánto ácido hialurónico voy a necesitar?",
+             "<p>Se habla mucho de “1 ml”, que es una jeringa pequeña. Cuánto hace falta depende de la zona, de cuánto soporte perdiste y del resultado que buscas. Por eso no cotizamos por mililitro a ciegas: primero miramos tu rostro en reposo y en movimiento, y luego te proponemos un plan.</p>"
+             "<p>Nuestro criterio es sencillo: menos, mejor puesto. Preferimos quedarnos cortos y completar después que pasarnos.</p>"),
+            ("Antes de un evento",
+             "<p>Puede haber inflamación leve o algún morado durante 24 a 72 horas. Si tienes un grado, un matrimonio o una foto importante, agenda con un margen de por lo menos dos semanas.</p>"
+             "<p>Y si alguna vez hiciera falta, el ácido hialurónico se puede disolver con una enzima llamada hialuronidasa. Es una de las razones por las que lo preferimos para empezar.</p>"),
+        ],
+        faq=[("¿Cuánto dura el ácido hialurónico?", "Entre 9 y 18 meses, según la zona, el producto y cómo lo procesa tu cuerpo. En las zonas con mucho movimiento, como los labios, suele durar menos."),
+             ("¿Cuánto cobran por inyectar ácido hialurónico en Pereira?", "Depende de las zonas y de la cantidad de producto que necesites. Te damos el valor exacto en la valoración, después de ver tu rostro y antes de empezar.")]),
+
+    "bioestimuladores": dict(
+        titulo="Bioestimuladores de colágeno en Pereira · The Skin Haus",
+        desc="Bioestimuladores de colágeno en Pereira (ácido poliláctico e hidroxiapatita de calcio) para flacidez y firmeza. Un cambio progresivo que dura de 12 a 24 meses.",
+        secciones=[
+            ("Sculptra, Radiesse y otros nombres que has oído",
+             "<p>Quizás los conoces por sus marcas. Sculptra es ácido poliláctico y Radiesse es hidroxiapatita de calcio: dos sustancias distintas que tienen algo en común, hacen que tu propia piel fabrique colágeno nuevo.</p>"
+             "<p>No hay uno mejor que otro en general. Cuál conviene depende de tu piel, de la zona y de si buscas sobre todo firmeza o también un poco de soporte. En la valoración te decimos cuál usaríamos en tu caso y por qué.</p>"),
+            ("¿Para quién es y para quién no?",
+             "<p>Es una buena opción si notas flacidez leve o moderada, la piel más delgada o un rostro que se sostiene menos que antes. También en cuello o en zonas del cuerpo.</p>"
+             "<p>Si la flacidez es marcada, ningún inyectable reemplaza una cirugía, y te lo vamos a decir con claridad.</p>"),
+            ("¿Cuándo se ven los resultados?",
+             "<p>El colágeno tarda en formarse. Los cambios se empiezan a notar hacia la semana 6 a 8 y siguen mejorando durante meses. Por eso se planean de 1 a 3 sesiones, separadas de 4 a 8 semanas.</p>"
+             "<p>Es un tratamiento para quien prefiere verse mejor poco a poco, sin un “cambio” de un día para otro.</p>"),
+        ],
+        faq=[("¿Qué es mejor, Sculptra o Radiesse?", "Ninguno es mejor en general. Son sustancias distintas que estimulan colágeno; cuál conviene depende de tu piel, la zona y el objetivo. Lo definimos en la valoración."),
+             ("¿Cuánto duran los bioestimuladores en la cara?", "Entre 12 y 24 meses, según el producto, tu piel y tus hábitos.")]),
+
+    "skinboosters": dict(
+        titulo="Skinbooster en Pereira: piel hidratada y luminosa",
+        desc="Skinboosters en Pereira: microinyecciones de ácido hialurónico ligero para piel opaca o deshidratada. 3 sesiones cada 3 a 4 semanas, sin cambiar volúmenes.",
+        secciones=[
+            ("¿Skinbooster o Profhilo?",
+             "<p>Profhilo es una de las marcas más conocidas de este tipo de tratamiento. Otros skinboosters combinan ácido hialurónico con vitaminas y aminoácidos. Todos buscan lo mismo: mejorar la calidad de la piel, no cambiar la forma de tu cara.</p>"
+             "<p>En la valoración miramos tu piel y te decimos qué producto conviene y cuántas sesiones necesitas.</p>"),
+            ("Si es para un evento, empieza con tiempo",
+             "<p>La serie inicial son 3 sesiones con 3 a 4 semanas entre una y otra: unos dos meses en total. Si es para un grado, un matrimonio o diciembre, lo ideal es empezar con ese margen.</p>"
+             "<p>Después, un mantenimiento cada seis meses ayuda a sostener el resultado.</p>"),
+        ],
+        faq=[("¿Cuánto tiempo dura el efecto del skinbooster?", "Con la serie inicial de 3 sesiones y un mantenimiento cada seis meses, la mejoría se sostiene. Sin mantenimiento, la piel vuelve poco a poco a su estado anterior."),
+             ("¿Cuántas sesiones de skinbooster necesito?", "Normalmente 3, cada 3 a 4 semanas, y luego mantenimiento semestral. Lo ajustamos según tu piel.")]),
+
+    "peelings-medicos": dict(
+        titulo="Peeling químico en Pereira: manchas, poros y acné",
+        desc="Peelings médicos en Pereira elegidos para tu tipo de piel: manchas, textura, poros y marcas de acné. Desde peelings suaves sin descamación hasta más profundos.",
+        secciones=[
+            ("Los tipos de peeling",
+             "<p>Los peelings se suelen dividir en superficiales, medios y profundos, según hasta qué capa de la piel actúan. A más profundidad, más descamación y más días de cuidado.</p>"
+             "<p>Elegimos el ácido y la intensidad según tu piel, tu tono y tu agenda. Si tienes una semana ocupada, hay opciones que casi no se notan.</p>"),
+            ("Peeling y sol: la regla que no se negocia",
+             "<p>Durante la serie la piel queda más sensible al sol. El protector solar todos los días, también cuando está nublado, es parte del tratamiento. En temporadas de mucho sol preferimos opciones más suaves.</p>"),
+        ],
+        faq=[("¿Cuántas sesiones de peeling necesito?", "Lo habitual es una serie de 3 a 6 sesiones, cada 2 a 4 semanas. Depende de lo que queremos mejorar."),
+             ("¿Cuáles son los tipos de peeling?", "Superficiales, medios y profundos, según hasta qué capa de la piel actúan. En la valoración elegimos el que conviene a tu piel.")]),
+
+    "microagujas": dict(
+        titulo="Microagujas (dermapen) en Pereira · The Skin Haus",
+        desc="Microagujas o dermapen en Pereira para cicatrices de acné, poros y textura. De 3 a 5 sesiones cada 4 semanas, con anestesia tópica y rubor de 24 a 48 horas.",
+        h1="Microagujas <em>(dermapen)</em>",
+        secciones=[
+            ("Microagujas, dermapen o microneedling",
+             "<p>Son nombres para lo mismo. Dermapen es una marca de dispositivo muy conocida, y “microneedling” es el término en inglés. La idea es crear microcanales controlados para que la piel active su propia reparación.</p>"),
+            ("Qué esperar, sesión a sesión",
+             "<p>La mejoría es gradual: la piel se ve más uniforme después de cada sesión y el cambio se acumula. Para <a href=\"cicatrices-de-acne\">cicatrices de acné</a> profundas lo combinamos con otros tratamientos, y te decimos desde el inicio hasta dónde se puede llegar.</p>"
+             "<p>Si tienes acné activo, primero tratamos eso. Hacer microagujas sobre un brote no es buena idea.</p>"),
+        ],
+        faq=[("¿Qué tan efectivo es el dermapen en la cara?", "Mejora textura, poros y cicatrices de forma progresiva, a lo largo de varias sesiones. No borra las cicatrices: las suaviza."),
+             ("¿Qué riesgos tiene el dermapen?", "Enrojecimiento y sensibilidad por 24 a 48 horas. Con mala técnica o poca higiene puede haber infección o manchas; por eso se hace en consultorio, con material estéril y sin acné activo.")]),
+
+    "manchas-y-melasma": dict(
+        titulo="Tratamiento de manchas y melasma en Pereira · The Skin Haus",
+        desc="Tratamiento de manchas en la cara y melasma en Pereira con un plan por etapas: diagnóstico, cuidado en casa, peelings y tecnologías según tu tipo de mancha.",
+        secciones=[
+            ("No todas las manchas son iguales",
+             "<ul><li><strong>Melasma.</strong> Manchas en frente, mejillas o bigote, muy ligadas a las hormonas y al sol.</li>"
+             "<li><strong>Manchas por sol o por la edad.</strong> Aparecen en las zonas más expuestas con los años.</li>"
+             "<li><strong>Marcas que deja el acné.</strong> Manchas oscuras o rojizas donde hubo un brote.</li></ul>"
+             "<p>Cada una se trata distinto. Usar el método equivocado puede oscurecer una mancha, por eso el diagnóstico va primero.</p>"),
+            ("¿Qué es lo más efectivo para el melasma?",
+             "<p>La constancia. Protector solar todos los días, una rutina en casa bien elegida y tratamientos en consultorio por etapas, como <a href=\"peelings-medicos\">peelings médicos</a>. El melasma se controla y mejora mucho, pero no se cura: necesita mantenimiento. Desconfía de las promesas de quitarlo para siempre.</p>"),
+            ("¿Qué médico trata las manchas de la cara?",
+             "<p>Las manchas se tratan en medicina estética y en dermatología. Si en la valoración vemos una lesión que debe revisar un dermatólogo, por ejemplo un lunar que cambió de forma o de color, te lo decimos y te orientamos.</p>"),
+        ],
+        faq=[("¿Qué especialista quita las manchas de la cara?", "Un médico con formación en piel: medicina estética o dermatología. Lo importante es que primero diagnostique qué tipo de mancha tienes."),
+             ("¿Por qué me salen manchas en la cara?", "Por el sol, por cambios hormonales, por inflamación (como el acné) o por la edad. Muchas veces se suman varias causas.")]),
+
+    "limpieza-facial-medica": dict(
+        titulo="Limpieza facial profunda en Pereira · The Skin Haus",
+        desc="Limpieza facial médica en Pereira: extracción cuidadosa, exfoliación, activos según tu piel e hidratación, en 60 minutos. Ideal cada 4 a 6 semanas.",
+        secciones=[
+            ("¿Qué incluye la limpieza facial?",
+             "<ol><li>Revisión de tu piel para elegir los productos.</li><li>Limpieza y exfoliación.</li>"
+             "<li>Extracción cuidadosa de puntos negros y poros obstruidos.</li><li>Activos según lo que tu piel necesita.</li>"
+             "<li>Hidratación para cerrar.</li></ol><p>Son unos 60 minutos y vuelves a tu día de inmediato.</p>"),
+            ("Limpieza médica o limpieza de spa",
+             "<p>Las dos pueden sentirse bien. La diferencia es el criterio: la nuestra la hace personal entrenado bajo supervisión médica, se ajusta a tu diagnóstico y, si hay acné activo, te orientamos también con el manejo médico.</p>"
+             "<p>Además es un buen punto de partida para preparar la piel antes de otros tratamientos.</p>"),
+        ],
+        faq=[("¿Cada cuánto debo hacerme una limpieza facial?", "Cada 4 a 6 semanas como mantenimiento. Si tu piel es grasa o tiene tendencia al acné, puede ser con más frecuencia; te lo decimos según tu piel."),
+             ("¿Cuánto vale una limpieza facial en Pereira?", "Te damos el valor al agendar. Incluye la revisión de tu piel y los activos que elegimos para ti.")]),
+}
+
+# Páginas nuevas por búsqueda (19-oct-2026): mismos campos que ESTETICA + "padre" (página de la que dependen).
+# Solo tratamientos que la web ya ofrecía dentro de ESTETICA.
+BUSQUEDAS = [
+    dict(slug="relleno-de-labios", nombre="Relleno de labios", foto="retrato", padre="acido-hialuronico",
+         linea="Labios definidos e hidratados, que siguen pareciendo tuyos.",
+         intro="Con ácido hialurónico podemos definir el contorno, dar un poco de volumen o simplemente hidratar en profundidad. Trabajamos en poca cantidad y respetando la proporción de tu boca con el resto de tu cara.",
+         para=["Labios finos o que perdieron volumen con los años", "Contorno poco definido o asimetrías leves", "Labios resecos que quieres hidratar sin agrandar"],
+         como=("30–45 minutos", "Una sesión", "Inflamación leve 24–72 horas"),
+         faq=[("¿Cuánto cobran por un relleno de labios en Pereira?", "Depende de la cantidad de producto y de lo que buscamos: hidratar, definir o dar volumen. Te damos el valor exacto en la valoración, antes de empezar."),
+              ("¿Cuánto dura el relleno de labios?", "Varios meses. En los labios suele durar menos que en otras zonas porque es una zona con mucho movimiento. Te damos una referencia según el producto y tu caso."),
+              ("¿Se puede revertir?", "Sí. El ácido hialurónico se puede disolver con una enzima (hialuronidasa) si alguna vez fuera necesario."),
+              ("¿Se va a notar que me hice algo?", "La idea es que se note que te ves bien, no qué te hiciste. Empezamos con poca cantidad y, si hace falta, completamos después.")],
+         titulo="Relleno de labios en Pereira con ácido hialurónico",
+         desc="Relleno de labios en Pereira con ácido hialurónico: definición, hidratación o volumen sutil en 30–45 minutos, en proporción con tu rostro. Y es reversible.",
+         secciones=[
+             ("Relleno de labios natural en Pereira",
+              "<p>Si lo que te frena es el miedo a que se note, empecemos por ahí. Un relleno de labios no tiene que ser “más boca”. Puede ser solo perfilar el borde, corregir una asimetría leve o devolver hidratación a unos labios que se ven secos.</p>"
+              "<p>Antes de poner producto miramos tu cara completa: la nariz, el mentón, cómo sonríes. La boca tiene que verse en armonía con todo lo demás.</p>"),
+             ("Definir, hidratar o dar volumen",
+              "<ul><li><strong>Definir.</strong> Marcar el contorno para que el labio se vea más nítido.</li>"
+              "<li><strong>Hidratar.</strong> Mejorar la textura y las líneas finas sin cambiar el tamaño.</li>"
+              "<li><strong>Volumen sutil.</strong> Un poco más de cuerpo, en poca cantidad.</li></ul>"
+              "<p>Muchas veces es una mezcla de las tres. Lo definimos juntos en la valoración.</p>"),
+             ("Antes de un evento",
+              "<p>Los labios se pueden inflamar durante 24 a 72 horas y a veces aparece un pequeño morado. Si tienes una fecha importante, agenda con por lo menos dos semanas de margen. Y si es tu primera vez, mejor todavía con más tiempo.</p>"),
+         ]),
+
+    dict(slug="tratamiento-de-ojeras", nombre="Tratamiento de ojeras", foto="facial", padre="acido-hialuronico",
+         linea="Una mirada descansada, sin cambiar tu expresión.",
+         intro="No todas las ojeras son iguales. Cuando la ojera es un hundimiento debajo del ojo, el ácido hialurónico puede suavizar esa sombra. Cuando es pigmento o una bolsa, la solución es otra, y te lo decimos.",
+         para=["Ojera hundida que da aspecto de cansancio", "Sombra marcada entre el párpado y la mejilla", "Quienes quieren verse descansados sin cirugía"],
+         como=("30–45 minutos", "Una sesión", "Inflamación leve 24–72 horas"),
+         faq=[("¿El ácido hialurónico quita las ojeras oscuras?", "Si lo oscuro es pigmento, no. El ácido hialurónico mejora la sombra que produce un hundimiento. Para el pigmento hay otros tratamientos, como peelings o manejo de manchas."),
+              ("¿Cuánto dura el tratamiento de ojeras?", "El ácido hialurónico dura de 9 a 18 meses según la zona y la persona. Te damos una referencia para tu caso en la valoración."),
+              ("¿Es seguro rellenar las ojeras?", "Es una zona delicada que pide experiencia, poca cantidad y buena técnica. Todo procedimiento tiene riesgos; por eso lo hace un médico después de valorarte.")],
+         titulo="Tratamiento de ojeras en Pereira · The Skin Haus",
+         desc="Tratamiento de ojeras en Pereira: si tu ojera es hundida, el ácido hialurónico suaviza la sombra en 30–45 minutos. Si es pigmento o bolsa, te decimos qué sirve.",
+         secciones=[
+             ("¿Qué tipo de ojera tienes?",
+              "<ul><li><strong>Hundida.</strong> Un surco entre el párpado y la mejilla que hace sombra. Es la que mejor responde al ácido hialurónico.</li>"
+              "<li><strong>Pigmentada.</strong> La piel es más oscura en esa zona. Se trabaja como una mancha, con <a href=\"manchas-y-melasma\">manejo de manchas</a>.</li>"
+              "<li><strong>Bolsa.</strong> Un abultamiento debajo del ojo. Rellenar puede empeorarla; a veces la respuesta es una cirugía de párpados y te orientamos.</li></ul>"
+              "<p>Muchas personas tienen una mezcla. Por eso la valoración pesa tanto aquí.</p>"),
+             ("Por qué preferimos poca cantidad",
+              "<p>La piel debajo del ojo es fina y cualquier exceso se nota. Trabajamos con poco producto, en el plano correcto, y preferimos completar después que pasarnos. El objetivo es que te veas descansada o descansado, no distinta o distinto.</p>"),
+         ]),
+
+    dict(slug="armonizacion-facial", nombre="Armonización facial", foto="retrato", padre="acido-hialuronico",
+         linea="Proporción, no volumen. Que tu rostro se vea en equilibrio.",
+         intro="Armonizar es mirar el rostro completo antes de tocar una sola zona. A veces es un poco de soporte en el pómulo, otras definir el mentón o relajar una línea de expresión. El plan se arma por etapas y con poca cantidad.",
+         para=["Quienes sienten su rostro cansado o desproporcionado", "Perfil con mentón o mandíbula poco definidos", "Quienes quieren un plan completo, no un tratamiento suelto"],
+         como=("Plan por etapas", "Sesiones según el plan", "Según los tratamientos elegidos"),
+         faq=[("¿Cuánto cuesta una armonización facial en Pereira?", "Depende del plan: qué zonas, qué tratamientos y cuánto producto. Te damos el valor en la valoración, por etapas, para que decidas con calma."),
+              ("¿Se hace todo en una sola cita?", "No necesariamente. Muchas veces conviene hacerlo por etapas: así el cambio es gradual y podemos ajustar en el control."),
+              ("¿Se ve natural?", "Ese es el objetivo. No buscamos cambiar quién eres, sino que tu rostro se vea en proporción y descansado.")],
+         titulo="Armonización facial en Pereira · The Skin Haus",
+         desc="Armonización facial en Pereira: un plan por etapas con ácido hialurónico, bótox o bioestimuladores, pensado para tu proporción y no para cambiar quién eres.",
+         secciones=[
+             ("Qué puede incluir una armonización facial",
+              "<ul><li><strong><a href=\"acido-hialuronico\">Ácido hialurónico</a></strong> para pómulos, mentón, mandíbula o <a href=\"relleno-de-labios\">labios</a>.</li>"
+              "<li><strong><a href=\"toxina-botulinica\">Bótox</a></strong> para relajar líneas de expresión.</li>"
+              "<li><strong><a href=\"bioestimuladores\">Bioestimuladores</a></strong> para firmeza y calidad de piel.</li>"
+              "<li><strong><a href=\"skinboosters\">Skinboosters</a></strong> para hidratación y luz.</li></ul>"
+              "<p>No siempre hacen falta todos. Muchas veces dos cosas bien elegidas hacen más que cinco.</p>"),
+             ("Lo que no hacemos",
+              "<p>No copiamos rostros de redes sociales ni ponemos producto para “llenar”. Evitamos los excesos y los resultados genéricos. Si algo no te va a favorecer, te lo decimos aunque lo traigas en la lista.</p>"),
+             ("Cómo empieza una armonización facial en Pereira",
+              "<p>Con una valoración presencial: miramos tu rostro de frente, de perfil y en movimiento, conversamos sobre lo que quieres cuidar y lo que no quieres cambiar, y te proponemos un plan por etapas con tiempos y costos claros.</p>"),
+         ]),
+
+    dict(slug="hiperhidrosis", nombre="Hiperhidrosis", foto="manos", padre="toxina-botulinica",
+         linea="Bótox para el sudor excesivo de axilas y manos.",
+         intro="Cuando el sudor de axilas o manos no depende del calor ni del ejercicio y te cambia la forma de vestirte o de saludar, la toxina botulínica puede reducirlo de forma temporal, actuando sobre la señal que activa las glándulas del sudor.",
+         para=["Sudor excesivo en axilas que mancha la ropa", "Manos que sudan aunque no haga calor", "Quienes ya probaron antitranspirantes sin resultado"],
+         como=("Una cita corta", "Una sesión; el efecto dura meses", "Vuelves a tu día de inmediato"),
+         faq=[("¿El bótox para el sudor duele?", "Son punciones muy finas y superficiales. En las manos la zona es más sensible; te explicamos antes cómo manejamos la molestia."),
+              ("¿Cuánto dura el efecto del bótox en las axilas?", "Varios meses. Cuando el sudor vuelve a aumentar, se repite. Te damos una referencia según la zona en la valoración."),
+              ("¿Dejo de sudar en todo el cuerpo?", "No. Solo disminuye el sudor en la zona tratada; el resto del cuerpo sigue regulando la temperatura normalmente.")],
+         titulo="Bótox para hiperhidrosis en Pereira · The Skin Haus",
+         desc="Bótox para la hiperhidrosis en Pereira: la toxina botulínica reduce el sudor excesivo de axilas y manos de forma temporal, en una cita corta y sin incapacidad.",
+         secciones=[
+             ("Cómo funciona",
+              "<p>La <a href=\"toxina-botulinica\">toxina botulínica</a> se aplica con agujas muy finas en la piel de la zona que suda. Actúa sobre la señal nerviosa que activa las glándulas del sudor, y la sudoración en esa zona baja durante meses.</p>"
+              "<p>No es permanente: cuando el efecto pasa, se repite.</p>"),
+             ("Cuándo conviene revisar otra causa primero",
+              "<p>Si el sudor empezó de repente, es en todo el cuerpo, aparece de noche o viene con otros síntomas como fiebre o pérdida de peso, puede tener otra causa y hay que revisarla antes. En la valoración te lo preguntamos y, si hace falta, te orientamos con el especialista adecuado.</p>"),
+         ]),
+
+    dict(slug="cicatrices-de-acne", nombre="Cicatrices de acné", foto="piel", padre="microagujas",
+         linea="Mejorar la textura que dejó el acné, paso a paso.",
+         intro="Las marcas del acné no son todas iguales: hay hundimientos, textura irregular y manchas oscuras o rojizas. Por eso las tratamos combinando microagujas, peelings y manejo de manchas, en un plan por etapas y con metas realistas.",
+         para=["Cicatrices hundidas o textura irregular", "Marcas oscuras o rojizas que dejó el acné", "Poros dilatados después de años de acné"],
+         como=("45–60 minutos por sesión", "3 a 5 sesiones, cada 4 semanas", "Rubor tipo sol 24–48 horas"),
+         faq=[("¿Se pueden quitar del todo las cicatrices de acné?", "Casi nunca del todo. Lo que sí se logra es suavizarlas de forma visible y mejorar la textura. Te decimos desde el inicio qué esperar en tu caso."),
+              ("¿Cuántas sesiones necesito?", "Con microagujas, normalmente de 3 a 5 sesiones cada 4 semanas, a veces combinadas con peelings. Depende del tipo y la profundidad de las cicatrices."),
+              ("¿Sirve si tengo la piel morena?", "Sí, eligiendo bien la técnica y preparando la piel. Por eso valoramos antes de empezar.")],
+         titulo="Tratamiento de cicatrices de acné en Pereira · The Skin Haus",
+         desc="Tratamiento de cicatrices de acné en Pereira con microagujas, peelings y manejo de manchas: un plan por etapas de 3 a 5 sesiones, con metas realistas.",
+         secciones=[
+             ("¿Cicatriz o mancha?",
+              "<p>Una cicatriz cambia la textura: se siente o se ve como un hundimiento. Una mancha cambia el color: la piel está lisa, pero más oscura o rojiza. Las cicatrices se trabajan con <a href=\"microagujas\">microagujas</a>; las manchas, con <a href=\"peelings-medicos\">peelings</a> y <a href=\"manchas-y-melasma\">manejo de manchas</a>. Casi siempre hay de las dos.</p>"),
+             ("Primero, el acné activo",
+              "<p>Si todavía tienes brotes, empezamos por controlarlos. Tratar cicatrices sobre un acné activo no funciona bien y puede irritar la piel.</p>"),
+             ("Qué se puede esperar",
+              "<p>La mejoría es progresiva y se acumula sesión a sesión. No borramos cicatrices: las suavizamos para que la piel se vea más uniforme. Con esa meta clara, el tratamiento se disfruta más y se abandona menos.</p>"),
+         ]),
+]
+
+CLAVE.update({
+    "relleno-de-labios": ("Definición e hidratación", "30–45 min", "Reversible"),
+    "tratamiento-de-ojeras": ("Mirada descansada", "30–45 min", "Según tu ojera"),
+    "armonizacion-facial": ("Proporción y equilibrio", "Plan por etapas", "Resultado natural"),
+    "hiperhidrosis": ("Sudor excesivo", "Cita corta", "Sin incapacidad"),
+    "cicatrices-de-acne": ("Textura y marcas", "3–5 sesiones", "Plan por etapas"),
+})
+
+# preguntas de la página /medicina-estetica
+PREGUNTAS_ESTETICA = [
+    ("¿Qué es la medicina estética?", "Es la rama de la medicina que trata la calidad de la piel, las arrugas, la pérdida de volumen y las manchas con procedimientos mínimamente invasivos, como la toxina botulínica, el ácido hialurónico o los peelings, siempre después de una valoración médica."),
+    ("¿Quién me atiende en The Skin Haus?", "Siempre un médico. Los procedimientos los realiza o supervisa directamente el equipo médico de la clínica, en la Torre Médica Oval de Pereira."),
+    ("¿Atienden pacientes de Dosquebradas y Santa Rosa de Cabal?", "Sí. Estamos en la Torre Médica Oval, en Pereira, y atendemos a pacientes de toda el área: Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
+    ("¿Puedo hacerme el tratamiento el mismo día de la valoración?", "En muchos casos sí, si el médico lo considera adecuado y tú te sientes lista o listo para decidir."),
+]
