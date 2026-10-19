@@ -13,6 +13,16 @@ Repositorio `lauramesaz/theskinhaus`, rama `main`.
 2b. Limpieza: el policía humaniza el primer artículo `[pendiente]` de `humanizados.md`, el
    verificador confirma que el fondo quedó idéntico, se cambia solo `actualizado` y se marca
    `[humanizado AAAA-MM-DD · nota]`. Va en el mismo commit.
+2c. **Evidencia obligatoria (sin esto NO se publica).** Cada agente es un paso separado:
+   - Investigación real con WebSearch antes de escribir (mínimo 3 búsquedas: preguntas reales, qué
+     responden las 5 primeras páginas, fuente oficial). Anota en el registro qué encontraste.
+   - El Policía (agente 2) y el Verificador (agente 3) se lanzan como **subagentes con la herramienta
+     Agent**, cada uno con su archivo de `agentes/` y la ruta del artículo. El redactor NO se
+     autoevalúa. El Policía entrega la nota de la prueba de 10 puntos ANTES → DESPUÉS con los números
+     de los puntos que fallaban; el Verificador entrega APROBADO/BLOQUEADO con la lista de datos y su
+     línea de `hechos.md`.
+   - La línea de `registro.md` lleva esas tres evidencias. Si falta alguna, el artículo queda en
+     `"estado": "borrador"` y se explica en el mensaje final.
 3. Lunes: además corre el agente 6 (analista) con los datos de `search-console.md`.
 4. Publica: `python3 build.py`, commit "blog: <título>", `git pull --rebase`, `git push`.
 5. Verifica 200 en `https://theskinhaus.com.co/blog/<slug>` y registra.
