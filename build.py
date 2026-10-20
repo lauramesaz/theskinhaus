@@ -466,9 +466,22 @@ def valoracion():
     <p class="aviso" style="margin-top:0">Tus datos solo se usan para responderte. Se abrirá WhatsApp con tu mensaje listo.</p>
   </form>
 </div></section>
-%s''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, camino())
+<section class="bloque" style="padding-top:0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Tu primera cita</p><h2 class="rev" style="margin-top:22px">Qué pasa en <em>tu valoración.</em></h2></div>
+  <div class="camino"><svg class="curva" aria-hidden="true"><path d=""/></svg><div class="pasos">%s</div></div>
+</div></section>
+<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja centro">
+  <p class="ceja rev">Para que aprovechemos el tiempo</p><h2 class="rev" style="margin-top:22px">Qué <em>traer.</em></h2>
+  <div class="chips grandes rev" style="justify-content:center;margin-top:44px">%s</div>
+</div></div></section>
+<section class="bloque" style="padding-top:0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar.</em></h2></div>
+  %s
+</div></section>''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL,
+         "".join('<div class="paso rev"><p class="num">%d</p><p class="ceja">%s</p><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(VALORACION_PASOS, 1)),
+         "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), faq(VALORACION_FAQ))
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",
-           cuerpo, activo="valoracion", jsonld=CLINICA_LD, imagen="cabina", precarga=False)
+           cuerpo, activo="valoracion", jsonld=[CLINICA_LD, faq_ld(VALORACION_FAQ), migas_ld([("Inicio", ""), ("Agenda tu valoración", "valoracion")])], imagen="cabina", precarga=False)
 
 
 def extras():

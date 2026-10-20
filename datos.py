@@ -420,3 +420,59 @@ MEDICO_VASCULAR = dict(
     perfil="https://www.clinicaseravena.com/dr-jose-david-puerta-rojas",
     doctoralia="https://www.doctoralia.co/perfil/jose-david-puerta-rojas",
 )
+
+# ---------------------------------------------------------------- ampliación de páginas cortas (19-oct-2026)
+SEO["skinboosters"]["secciones"] += [
+    ("Qué se siente y qué cuidar después",
+     "<p>Son microinyecciones superficiales repartidas en la zona. Se sienten como pinchazos pequeños y rápidos. Después pueden quedar unas pápulas, como granitos de agua, que desaparecen en 24 a 48 horas.</p>"
+     "<p>Ese día evita el maquillaje por 12 horas y el sol directo por unos días. Te damos las indicaciones por escrito para que no tengas que acordarte de memoria.</p>"),
+    ("Para quién no es",
+     "<p>Si lo que buscas es levantar o rellenar, el skinbooster se queda corto: no aporta volumen. Para eso existen el <a href=\"acido-hialuronico\">ácido hialurónico</a> o los <a href=\"bioestimuladores\">bioestimuladores</a>, y muchas veces se combinan. En la valoración te decimos qué tiene sentido para tu piel.</p>"),
+]
+SEO["skinboosters"]["faq"] += [
+    ("¿Duele el skinbooster?", "Son pinchazos pequeños y rápidos. La mayoría lo tolera bien; si tu piel es sensible, te explicamos antes cómo manejamos la molestia."),
+]
+
+SEO["peelings-medicos"]["secciones"] += [
+    ("Antes y después de tu peeling",
+     "<p>Antes, a veces preparamos la piel unas semanas con productos en casa, sobre todo si hay manchas o si tu piel es morena. Después, la regla es simple: hidratar, no arrancar la piel que se descama y usar protector solar todos los días.</p>"
+     "<p>Según la profundidad, puedes no notar descamación o tener alrededor de una semana de piel pelándose. Te decimos qué esperar antes de empezar, para que lo planees con tu agenda.</p>"),
+    ("¿Peeling o microagujas?",
+     "<p>El peeling trabaja mejor el color y la superficie: manchas, tono apagado, poros. Las <a href=\"microagujas\">microagujas</a> trabajan mejor la textura: cicatrices y firmeza. Para <a href=\"cicatrices-de-acne\">cicatrices de acné</a> muchas veces se combinan en un mismo plan.</p>"),
+]
+SEO["peelings-medicos"]["faq"] += [
+    ("¿Puedo hacerme un peeling si tengo melasma?", "Sí, con el ácido y la intensidad correctos y con protección solar estricta. El melasma se trata con cuidado porque un método equivocado puede oscurecerlo; por eso valoramos primero."),
+]
+
+SEO["limpieza-facial-medica"]["secciones"] += [
+    ("Si tienes acné",
+     "<p>Una limpieza ayuda a destapar los poros, pero no reemplaza el manejo médico del acné. Si hay brotes activos, adaptamos la extracción para no irritar la piel y te orientamos con el tratamiento que necesitas.</p>"),
+    ("Una buena forma de empezar",
+     "<p>Si nunca te has hecho un tratamiento en la cara, la limpieza médica es un primer paso tranquilo: conoces la clínica, revisamos tu piel y sales con una idea clara de lo que le conviene, sin compromiso de hacerte nada más.</p>"),
+]
+
+SEO["microagujas"]["secciones"] += [
+    ("Cuidados después de la sesión",
+     "<p>La piel queda roja, como después de un día de sol, por 24 a 48 horas. Puedes maquillarte después de 24 horas con productos limpios. Evita el sol, el ejercicio intenso y las piscinas los primeros días, y usa protector solar todos los días.</p>"),
+]
+SEO["microagujas"]["faq"] += [
+    ("¿Cuántas sesiones de dermapen necesito?", "Normalmente de 3 a 5 sesiones, separadas 4 semanas. Depende de lo que queremos mejorar: no es lo mismo afinar poros que suavizar cicatrices profundas."),
+]
+
+# página de valoración
+VALORACION_PASOS = [
+    ("Conversamos", "Qué te gustaría mejorar, qué no quieres cambiar y qué te has hecho antes."),
+    ("Te examinamos", "Miramos tu piel y tu rostro en reposo y en movimiento, o tus piernas si es vascular."),
+    ("Te explicamos", "Las opciones que tienen sentido para ti, con tiempos, cuidados y costos claros."),
+    ("Decides con calma", "Sin presión. En muchos casos puedes hacerte el tratamiento ese mismo día, si el médico lo considera adecuado."),
+]
+VALORACION_TRAER = [
+    "Los medicamentos que tomas y si tienes alguna enfermedad o alergia",
+    "Qué tratamientos te has hecho antes y cuándo",
+    "Si estás embarazada o lactando, cuéntanoslo",
+    "Tus preguntas anotadas en el celular",
+]
+VALORACION_FAQ = PREGUNTAS_GENERALES + [
+    ("¿La valoración es presencial?", "Sí. Por WhatsApp te ayudamos a agendar y resolvemos dudas generales, pero el diagnóstico y el plan se hacen en persona, en la Torre Médica Oval de Pereira."),
+    ("¿Cuánto dura la valoración?", "Lo suficiente para escucharte y examinarte sin afán. Si decides hacerte el tratamiento el mismo día, la cita se alarga lo que dure ese tratamiento."),
+]
