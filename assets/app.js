@@ -89,9 +89,20 @@
     });
   });
 
+  // Medición: cada clic a WhatsApp cuenta como contacto (Google Analytics + Clarity)
+  function contarWhatsApp(origen) {
+    if (window.gtag) gtag('event', 'clic_whatsapp', { pagina: location.pathname, origen: origen });
+    if (window.clarity) clarity('event', 'clic_whatsapp');
+  }
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
+    if (a) contarWhatsApp(a.classList.contains('wa') ? 'boton-flotante' : 'enlace');
+  }, true);
+
   var form = document.querySelector('#form-valoracion');
   if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    contarWhatsApp('formulario');
     var d = new FormData(form);
     var txt = 'Hola, soy ' + d.get('nombre') + '. Quiero agendar una valoración en The Skin Haus.' +
       (d.get('interes') ? '\nMe interesa: ' + d.get('interes') : '') +

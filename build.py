@@ -60,9 +60,24 @@ SELLO = '''<svg class="sello" viewBox="0 0 124 124" aria-hidden="true"><defs><pa
 <text><textPath href="#rueda" textLength="286" lengthAdjust="spacing">Estética · Vascular · Pereira · The Skin Haus ·</textPath></text><circle cx="62" cy="62" r="3" fill="#C6A88F"/></svg>'''
 
 
+# Medición (aprobada por Laura 20-oct-2026): Google Analytics 4 (cuenta aparte "The Skin Haus") + Clarity (proyecto
+# "The Skin Haus", sector Salud). El clic a WhatsApp se cuenta en app.js (evento clic_whatsapp).
+GA4 = "G-79WV8JCLPD"
+CLARITY = "z0v793pqdy"
+HEAD_MEDICION = (
+    '<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA4 + '"></script>\n'
+    "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+    "gtag('js',new Date());gtag('config','" + GA4 + "');</script>\n"
+    '<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};'
+    't=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];'
+    'y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","' + CLARITY + '");</script>\n'
+)
+
+
 def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True):
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
+    ld = HEAD_MEDICION + ld
     html = '''<!doctype html>
 <html lang="es-CO">
 <head>
@@ -494,7 +509,7 @@ def valoracion():
       <div><p class="ceja">Dónde estamos</p><p>%s</p></div>
     </div>
   </div>
-  <form class="form isla rev" id="form-valoracion" data-wa="%s" style="margin:0">
+  <form class="form isla rev" id="form-valoracion" data-wa="%s" data-clarity-mask="true" style="margin:0">
     <label><span class="ceja">Tu nombre</span><input name="nombre" required autocomplete="name"></label>
     <label><span class="ceja">¿Qué te interesa?</span><select name="interes"><option value="">Aún no sé, quiero orientación</option>%s</select></label>
     <label><span class="ceja">Cuéntanos un poco (opcional)</span><textarea name="mensaje" placeholder="Lo que quieres cuidar, dudas, horarios que te sirven…"></textarea></label>
