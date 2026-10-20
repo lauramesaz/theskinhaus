@@ -9,7 +9,7 @@ BLOQUEA si encuentra:
   web dice que se repite cada 4–6 meses).
 - Precios de The Skin Haus o rangos de precios del mercado; promesas de resultado; "sin riesgo",
   "sin dolor", "garantizado", "permanente", "rejuvenece 10 años".
-- Antes y después, casos o testimonios; frases atribuidas a médicos; nombres de médicos.
+- Antes y después, casos o testimonios; frases atribuidas a médicos; nombres de médicos distintos de la Dra. Valeria Enciso (médica estética) o títulos/años/registros inventados para ella.
 - Afirmar que la clínica usa una marca comercial concreta (Botox, Sculptra, Radiesse, Profhilo, Dermapen).
 - Diagnóstico o indicación a distancia ("por WhatsApp te decimos qué necesitas").
 - Menciones de otras clínicas o médicos, o ataques a otros profesionales.

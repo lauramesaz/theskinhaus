@@ -439,3 +439,14 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 .lectura p.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:uppercase}
 .art-cab h1.ceja{font-size:12px;line-height:1.45;margin:0}
 .subrayado{border-bottom:1px solid var(--nude);transition:border-color .3s}.subrayado:hover{border-color:var(--negro)}
+/* equipo médico (19-oct-2026) */
+.organico .cargo{margin-top:14px;font:700 11.5px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#8a6f58}
+.equipo{display:grid;grid-template-columns:repeat(2,minmax(0,380px));justify-content:center;gap:clamp(26px,5vw,80px);margin-top:clamp(50px,6vw,80px)}
+.medico{display:flex;flex-direction:column;gap:12px}
+.medico .arco{aspect-ratio:4/5;margin-bottom:14px}
+.medico .arco.ini{display:grid;place-items:center;background:var(--marfil) var(--tex-marfil) 0 0/640px}
+.medico .arco.ini span{font-family:var(--serif);font-size:clamp(56px,7vw,96px);letter-spacing:.06em;opacity:.55}
+.medico h3{font-size:clamp(26px,2.4vw,32px)}
+.medico p:not(.ceja){font-size:15.5px;line-height:1.6;opacity:.85}
+.medico .enlace{margin-top:6px}
+@media (max-width:700px){.equipo{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}

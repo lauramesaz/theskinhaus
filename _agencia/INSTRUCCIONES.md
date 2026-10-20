@@ -28,8 +28,10 @@ cuánto vale, cuánto dura, si se va a notar, si duele y en quién confiar.
 - Hablar con la persona, nunca con su inseguridad: nada de "arregla tus defectos", "luce 10 años
   menor", "cara perfecta".
 - CTA de la marca: "Agenda tu valoración". El WhatsApp y el cierre los pone la plantilla.
-- Firma: "Equipo médico The Skin Haus". **No hay nombres de médicos confirmados**: no inventar
-  nombres, títulos, años de experiencia ni registros.
+- Firma: "Equipo médico The Skin Haus". Médica estética confirmada: **Dra. Valeria Enciso** (se puede
+  nombrar como "nuestra médica estética, la Dra. Valeria Enciso" y enlazar a `nosotros`). Nunca inventarle
+  títulos, años de experiencia, registros ni frases entre comillas: no decir que ella "dice", "recomienda"
+  u "opina" algo que no esté escrito y aprobado. No nombrar a ningún otro médico.
 
 ## 2. Reglas de oro médicas y legales (contenido de salud, YMYL)
 

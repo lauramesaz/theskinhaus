@@ -212,6 +212,31 @@ CLINICA_LD = {
 }
 
 
+def medica_ld():
+    return {"@context": "https://schema.org", "@type": "Physician", "@id": DOMINIO + "/nosotros#valeria-enciso",
+            "name": MEDICA_ESTETICA["nombre"], "description": MEDICA_ESTETICA["titulo"], "jobTitle": MEDICA_ESTETICA["titulo"],
+            "image": DOMINIO + "/" + MEDICA_ESTETICA["foto"] + ".jpg", "url": DOMINIO + "/nosotros#valeria-enciso",
+            "worksFor": {"@id": DOMINIO + "/#clinica"}}
+
+
+def vascular_ld():
+    return {"@context": "https://schema.org", "@type": "Physician", "name": MEDICO_VASCULAR["nombre"],
+            "description": MEDICO_VASCULAR["titulo"], "medicalSpecialty": "Cardiovascular",
+            "url": MEDICO_VASCULAR["perfil"], "sameAs": [MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["doctoralia"]],
+            "worksFor": {"@id": DOMINIO + "/#clinica"}}
+
+
+def tu_medica():
+    """Bloque 'Tu médica' (Dra. Valeria Enciso) para medicina estética."""
+    return '''<section class="bloque"><div class="caja organico">
+  <div class="gota rev"><img src="%s.webp" alt="%s, médica estética de The Skin Haus en Pereira" loading="lazy"></div>
+  <div class="tarjeta rev"><p class="ceja">Tu médica</p><h2 style="margin-top:22px;font-size:clamp(34px,4vw,56px)">Dra. Valeria <em>Enciso.</em></h2>
+  <p class="cargo">%s · The Skin Haus</p>
+  <p class="sub" style="margin-top:22px">Te escucha, te valora y te acompaña en tus tratamientos de medicina estética, con el criterio de la casa: menos, mejor puesto, y resultados que respetan quién eres.</p>
+  <div class="acciones" style="margin-top:30px"><a class="btn lleno" href="valoracion">Agenda tu valoración</a></div></div>
+</div></section>''' % (MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"])
+
+
 def migas_ld(pasos):
     """pasos = [(nombre, ruta), ...] desde el inicio."""
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -319,11 +344,12 @@ def paginas_especialidad():
                  "Lo que podemos <em>cuidar juntos.</em>", "Cada tratamiento empieza con una valoración: miramos tu piel en reposo y en movimiento, tus hábitos y lo que quieres lograr.",
                  "Tratamientos de medicina estética en Pereira · The Skin Haus",
                  "Medicina estética en Pereira: bótox, ácido hialurónico, relleno de labios, bioestimuladores, skinboosters, peelings, microagujas y manchas, con criterio médico.",
-                 ld_extra=[faq_ld(PREGUNTAS_ESTETICA)],
+                 ld_extra=[faq_ld(PREGUNTAS_ESTETICA), medica_ld()],
                  extra='''<section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">También tratamos</p><h2 class="rev" style="margin-top:22px">Lo que más se busca <em>en Pereira.</em></h2></div>
   %s
 </div></section>
+%s
 <section class="bloque"><div class="caja organico inv"><div class="gota rev"><img src="%s" alt="Cabina de tratamiento" loading="lazy"></div>
 <div class="tarjeta rev"><p class="ceja">Nuestro criterio</p><h2 style="margin-top:22px;font-size:clamp(34px,4vw,56px)">Menos, <em>mejor puesto.</em></h2>
 <p class="sub" style="margin-top:24px">No trabajamos con paquetes genéricos ni con la promesa de un antes y un después. Trabajamos con planes por etapas, dosis precisas y controles, para que el cambio se sienta tuyo.</p></div></div></section>
@@ -331,7 +357,7 @@ def paginas_especialidad():
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>tu primera cita.</em></h2></div>
   %s
 </div></section>
-%s''' % (tarjetas(BUSQUEDAS), foto("cabina"), faq(PREGUNTAS_ESTETICA), blog.del_blog("Del blog", "Para leer <em>antes de decidir.</em>")))
+%s''' % (tarjetas(BUSQUEDAS), tu_medica(), foto("cabina"), faq(PREGUNTAS_ESTETICA), blog.del_blog("Del blog", "Para leer <em>antes de decidir.</em>")))
     senales = ["Pesadez o cansancio al final del día", "Hinchazón en tobillos", "Calambres nocturnos o ardor",
                "Venas abultadas o arañitas que aumentan", "Cambios de color en la piel", "Antecedentes familiares de várices"]
     especialidad("medicina-vascular", "Medicina vascular · Pereira", "Piernas ligeras, <em>decisiones claras.</em>",
@@ -347,10 +373,7 @@ def paginas_especialidad():
   <p class="sub rev" style="margin-top:20px">%s. Atiende medicina vascular en The Skin Haus, en Pereira, y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, en Medellín</a>.</p>
   <p class="rev" style="margin-top:30px"><a class="enlace" href="%s" target="_blank" rel="noopener">Ver su perfil completo %s</a></p>
 </div></div></section>''' % ("".join('<span class="chip">%s</span>' % s for s in senales), MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["perfil"], CIRC),
-                 ld_extra=[{"@context": "https://schema.org", "@type": "Physician", "name": MEDICO_VASCULAR["nombre"],
-                            "description": MEDICO_VASCULAR["titulo"], "medicalSpecialty": "Cardiovascular",
-                            "url": MEDICO_VASCULAR["perfil"], "sameAs": [MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["doctoralia"]],
-                            "worksFor": {"@id": DOMINIO + "/#clinica"}}])
+                 ld_extra=[vascular_ld()])
 
 
 # ---------------------------------------------------------------- tratamiento
@@ -434,15 +457,28 @@ def nosotros():
   <div class="chips rev" style="justify-content:center;margin-top:20px">%s</div>
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Quién te atiende</p><h2 class="rev" style="margin-top:22px">Médicos que <em>te explican.</em></h2></div>
+  <div class="equipo">
+    <article class="medico rev" id="valeria-enciso"><div class="arco"><img src="%s.webp" alt="%s, médica estética de The Skin Haus" loading="lazy"></div>
+      <p class="ceja">Medicina estética</p><h3>%s</h3><p>%s. Valora y acompaña tus tratamientos de medicina estética: bótox, ácido hialurónico, bioestimuladores y calidad de piel.</p>
+      <a class="enlace" href="medicina-estetica">Ver tratamientos %s</a></article>
+    <article class="medico rev"><div class="arco ini"><span>JP</span></div>
+      <p class="ceja">Medicina vascular</p><h3>%s</h3><p>%s. Atiende arañitas, várices e insuficiencia venosa en Pereira y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, Medellín</a>.</p>
+      <a class="enlace" href="medicina-vascular">Ver tratamientos %s</a></article>
+  </div>
+</div></section>
+<section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">El espacio</p><h2 class="rev" style="margin-top:22px">Un lugar para <em>bajar el ritmo.</em></h2></div>
   <div class="galeria"><div class="arco rev"><img src="%s" alt="Recepción" loading="lazy"></div>
   <div class="der"><div class="circulo rev"><img src="%s" alt="Detalle de cuidado de la piel" loading="lazy"></div><div class="gota rev"><img src="%s" alt="Cabina de tratamiento" loading="lazy"></div></div></div>
 </div></section>
 %s''' % (ideas_html, "".join('<span class="chip">%s</span>' % v for v in valoras),
          "".join('<span class="chip" style="text-decoration:line-through">%s</span>' % v for v in evitamos),
+         MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"], CIRC,
+         MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], CIRC,
          foto("recepcion"), foto("manos"), foto("cabina"), cierre())
     pagina("nosotros", "Nosotros · The Skin Haus Pereira", "The Skin Haus: medicina estética y vascular en Pereira con criterio médico, acompañamiento cercano y resultados armónicos.",
-           cuerpo, activo="nosotros", jsonld=CLINICA_LD, imagen="recepcion")
+           cuerpo, activo="nosotros", jsonld=[CLINICA_LD, medica_ld(), vascular_ld()], imagen="recepcion")
 
 
 # ---------------------------------------------------------------- valoración

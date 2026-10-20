@@ -476,3 +476,10 @@ VALORACION_FAQ = PREGUNTAS_GENERALES + [
     ("¿La valoración es presencial?", "Sí. Por WhatsApp te ayudamos a agendar y resolvemos dudas generales, pero el diagnóstico y el plan se hacen en persona, en la Torre Médica Oval de Pereira."),
     ("¿Cuánto dura la valoración?", "Lo suficiente para escucharte y examinarte sin afán. Si decides hacerte el tratamiento el mismo día, la cita se alarga lo que dure ese tratamiento."),
 ]
+
+# Médica estética (confirmado por Laura 19-oct-2026). Mismo nombre y cargo que en noon.clinic/especialistas; no inventar títulos.
+MEDICA_ESTETICA = dict(
+    nombre="Dra. Valeria Enciso",
+    titulo="Médica estética",
+    foto="assets/equipo/valeria-enciso",   # + .webp / .jpg
+)

@@ -13,7 +13,12 @@ Si no se puede confirmar, no se usa.
 - Los procedimientos los realiza o supervisa directamente el equipo médico de la clínica.
 - En muchos casos se puede hacer el tratamiento el mismo día de la valoración, si el médico lo
   considera adecuado y la persona se siente lista.
-- No hay nombres de médicos publicados todavía. No hay horario confirmado. No hay Instagram publicado.
+- Médica estética: **Dra. Valeria Enciso** (confirmado por Laura el 19-oct-2026; mismo nombre y cargo que en
+  noon.clinic/especialistas). Solo "médica estética": no inventar títulos, universidad, años ni registros.
+- Medicina vascular: **Dr. José David Puerta Rojas**, médico internista con subespecialidad en medicina vascular
+  (confirmado por Laura el 19-oct-2026; también atiende en Seravena, Medellín:
+  https://www.clinicaseravena.com/dr-jose-david-puerta-rojas). La agencia NO escribe de vascular.
+- No hay horario confirmado. No hay Instagram publicado.
 
 ## B. Tratamientos de medicina estética (fuente: `../datos.py`, lo que publica la web)
 
