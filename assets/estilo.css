@@ -438,3 +438,4 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 @media (max-width:700px){.art-foto{aspect-ratio:4/3}.rejilla-blog{grid-template-columns:1fr}}
 .lectura p.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:uppercase}
 .art-cab h1.ceja{font-size:12px;line-height:1.45;margin:0}
+.subrayado{border-bottom:1px solid var(--nude);transition:border-color .3s}.subrayado:hover{border-color:var(--negro)}

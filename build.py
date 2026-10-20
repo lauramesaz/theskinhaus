@@ -17,7 +17,11 @@ def wa(msg="Hola, quiero agendar una valoración en The Skin Haus."):
 
 
 def foto(n):
-    return "assets/fotos/%s.jpg" % n
+    return "assets/fotos/%s.webp" % n          # WebP: ~65 % más liviano (19-oct-2026)
+
+
+def foto_jpg(n):
+    return "assets/fotos/%s.jpg" % n           # para redes sociales y datos estructurados
 
 
 def logo(clase="compacto", descriptor=False):
@@ -56,7 +60,7 @@ SELLO = '''<svg class="sello" viewBox="0 0 124 124" aria-hidden="true"><defs><pa
 <text><textPath href="#rueda" textLength="286" lengthAdjust="spacing">Estética · Vascular · Pereira · The Skin Haus ·</textPath></text><circle cx="62" cy="62" r="3" fill="#C6A88F"/></svg>'''
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website"):
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True):
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
     html = '''<!doctype html>
@@ -73,7 +77,8 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <meta name="theme-color" content="#FAF8F3">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
+%s<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/estilo.css?v=%d">
 %s
 </head>
@@ -86,7 +91,8 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <a class="wa" href="%s" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">%s</a>
 <script src="assets/app.js?v=%d" defer></script>
 </body>
-</html>''' % (titulo, descripcion, url, tipo, titulo, descripcion, url, DOMINIO, foto(imagen), V, ld,
+</html>''' % (titulo, descripcion, url, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
+              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", V, ld,
               cabecera(activo), cuerpo, pie(), wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
@@ -168,8 +174,8 @@ def faq(pares):
 def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica"):
     return '''<section class="bloque"><div class="isla lino cierre" style="position:relative">
 <div class="aura a1" style="opacity:.8"></div><div class="aura a2"></div>
-<div class="flota f1" data-vel="-0.05"><div class="circulo"><img src="assets/fotos/cabina-espejo.jpg" alt="" loading="lazy"></div></div>
-<div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.jpg" alt="" loading="lazy"></div></div>
+<div class="flota f1" data-vel="-0.05"><div class="circulo"><img src="assets/fotos/cabina-espejo.webp" alt="" loading="lazy"></div></div>
+<div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.webp" alt="" loading="lazy"></div></div>
 <div class="sobre"><p class="ceja rev">%s</p><h2 class="rev">%s</h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
 <div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a></div></div>
@@ -198,7 +204,7 @@ CLINICA_LD = {
     "@context": "https://schema.org", "@type": "MedicalClinic", "@id": DOMINIO + "/#clinica", "name": MARCA,
     "alternateName": "The Skin Haus Pereira",
     "description": "Clínica de medicina estética en Pereira: toxina botulínica (bótox), ácido hialurónico, bioestimuladores, skinboosters, peelings, microagujas y manejo de manchas. También medicina vascular.",
-    "url": DOMINIO, "telephone": TELEFONO_VISIBLE, "image": DOMINIO + "/" + foto("recepcion"),
+    "url": DOMINIO, "telephone": TELEFONO_VISIBLE, "image": DOMINIO + "/" + foto_jpg("recepcion"),
     "address": {"@type": "PostalAddress", "streetAddress": "Torre Médica Oval", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"},
     "areaServed": [{"@type": "City", "name": c} for c in AREA],
     "medicalSpecialty": "Dermatology",
@@ -335,7 +341,16 @@ def paginas_especialidad():
                  "Medicina vascular en Pereira · Arañitas y várices · The Skin Haus",
                  "Tratamiento de arañitas vasculares, várices, eco-doppler venoso y cuperosis en Pereira. Técnicas mínimamente invasivas y valoración médica.",
                  extra='''<section class="bloque"><div class="caja centro"><p class="ceja rev">Señales para consultar</p><h2 class="rev" style="margin-top:22px">Tus piernas <em>te avisan.</em></h2>
-<div class="chips grandes rev" style="justify-content:center;margin-top:50px">%s</div></div></section>''' % "".join('<span class="chip">%s</span>' % s for s in senales))
+<div class="chips grandes rev" style="justify-content:center;margin-top:50px">%s</div></div></section>
+<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja centro">
+  <p class="ceja rev">Tu especialista</p><h2 class="rev" style="margin-top:22px">%s</h2>
+  <p class="sub rev" style="margin-top:20px">%s. Atiende medicina vascular en The Skin Haus, en Pereira, y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, en Medellín</a>.</p>
+  <p class="rev" style="margin-top:30px"><a class="enlace" href="%s" target="_blank" rel="noopener">Ver su perfil completo %s</a></p>
+</div></div></section>''' % ("".join('<span class="chip">%s</span>' % s for s in senales), MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["perfil"], CIRC),
+                 ld_extra=[{"@context": "https://schema.org", "@type": "Physician", "name": MEDICO_VASCULAR["nombre"],
+                            "description": MEDICO_VASCULAR["titulo"], "medicalSpecialty": "Cardiovascular",
+                            "url": MEDICO_VASCULAR["perfil"], "sameAs": [MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["doctoralia"]],
+                            "worksFor": {"@id": DOMINIO + "/#clinica"}}])
 
 
 # ---------------------------------------------------------------- tratamiento
@@ -453,7 +468,7 @@ def valoracion():
 </div></section>
 %s''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, camino())
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",
-           cuerpo, activo="valoracion", jsonld=CLINICA_LD, imagen="cabina")
+           cuerpo, activo="valoracion", jsonld=CLINICA_LD, imagen="cabina", precarga=False)
 
 
 def extras():

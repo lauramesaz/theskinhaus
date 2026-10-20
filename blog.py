@@ -140,7 +140,7 @@ def articulo(a, todos):
 %s''' % (a.get("ceja", "Blog"), a.get("ceja", "Blog"), a.get("h1", a["title"]), a.get("intro", ""), fecha(a["actualizado"]), minutos,
          B["foto"](foto_de(a)), a["title"], a["cuerpo"], faq_html, rel_html, otros_html,
          B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>"))
-    imagen = "%s/%s" % (B["DOMINIO"], B["foto"](foto_de(a)))
+    imagen = "%s/%s" % (B["DOMINIO"], B["foto_jpg"](foto_de(a)))
     ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["descripcion"],
            "datePublished": a["publicado"], "dateModified": a["actualizado"], "inLanguage": "es-CO",
            "image": imagen, "mainEntityOfPage": url, "url": url,

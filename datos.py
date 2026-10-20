@@ -412,3 +412,11 @@ PREGUNTAS_ESTETICA = [
     ("¿Atienden pacientes de Dosquebradas y Santa Rosa de Cabal?", "Sí. Estamos en la Torre Médica Oval, en Pereira, y atendemos a pacientes de toda el área: Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
     ("¿Puedo hacerme el tratamiento el mismo día de la valoración?", "En muchos casos sí, si el médico lo considera adecuado y tú te sientes lista o listo para decidir."),
 ]
+
+# Médico vascular (confirmado por Laura 19-oct-2026: es el mismo de Seravena, Medellín). Perfil completo en Seravena.
+MEDICO_VASCULAR = dict(
+    nombre="Dr. José David Puerta Rojas",
+    titulo="Médico internista · Subespecialista en medicina vascular",
+    perfil="https://www.clinicaseravena.com/dr-jose-david-puerta-rojas",
+    doctoralia="https://www.doctoralia.co/perfil/jose-david-puerta-rojas",
+)
