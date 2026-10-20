@@ -20,5 +20,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-19 · 1 Redactor · Promesa disfrazada de dato (para el Verificador también) · "Esto lo
   convierte en una opción segura y reversible." Nada es "seguro": "Todo procedimiento tiene riesgos
   y los resultados varían en cada persona."
+- 2026-10-20 · 1 Redactor · Apertura con "Una amiga te dice/te pasó…" y "Respuesta corta:", ya usadas en otros artículos (como-elegir-medico, cuanto-dura) · Abre con una situación distinta: "Tienes tres cotizaciones abiertas en el chat y cada una usa otra palabra."
+- 2026-10-20 · 1 Redactor · Frases de plantilla que suenan a traducción: "Traducido a la vida real", "Pasó lo que con tantas marcas", "Aquí no hay opinión, hay…" · Di la idea directo: "Entonces, si en un sitio te dicen 30 unidades…".
+- 2026-10-20 · 1 Redactor · Párrafos todos de 3 a 5 líneas, sin ninguno corto (artículo 5 de 5) · Parte un párrafo en dos o deja uno de una línea para respirar.
 
 ## Resueltas

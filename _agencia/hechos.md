@@ -131,6 +131,22 @@ Si no se puede confirmar, no se usa.
   cucharadita) · MedlinePlus en español, https://medlineplus.gov/spanish/ency/article/002209.htm
   · consultado 2026-10-19.
 
+- Marca vs. sustancia (investigación 2026-10-20, WebSearch; fuentes secundarias, usar solo de forma general):
+  "Botox" es una marca de toxina botulínica tipo A (onabotulinumtoxinA); "toxina botulínica" es el nombre
+  de la sustancia. Existen otras marcas de toxina tipo A (p. ej. Dysport, Xeomin) con la misma forma de
+  actuar: bloquean la señal del nervio al músculo, que se relaja. Las formulaciones comerciales difieren en
+  proteínas, dilución y potencia, y sus unidades no se convierten una a una entre marcas (refuerza la ficha
+  FDA de arriba). Fuentes: revisión "Differences in botulinum toxins: time to end the confusion"
+  (https://scholars.mssm.edu/en/publications/differences-in-botulinum-toxins-time-to-end-the-confusion-2/),
+  Stanford "Botox and Botulism: Same Toxin, Very Different Outcomes"
+  (https://thedishonscience.stanford.edu/articles/8bimkdaxnlbnotpewm17odr87u4y83), y revisión en PMC
+  (https://pmc.ncbi.nlm.nih.gov/articles/PMC5901944) · consultado 2026-10-20 (solo vía resumen de
+  búsqueda; no se pudo abrir el texto completo desde la nube). NO usar fechas de aprobación FDA, duraciones por marca ni indicaciones por marca: las fuentes se contradicen.
+- Preguntas reales que aparecen (2026-10-20): "¿bótox y toxina botulínica es lo mismo?", "¿cuáles son los
+  tipos/marcas de botox?", "¿cambia la dosis entre marcas?". Las páginas que salen explican marca vs.
+  genérico, marcas y que las unidades no se comparan; ninguna ayuda a la lectora a decidir qué preguntar
+  en la cita (hueco que cubre el artículo).
+
 ### C4. Norma colombiana sobre consentimiento
 
 - Ley 23 de 1981 (ética médica), art. 15: "El médico no expondrá a su paciente a riesgos
