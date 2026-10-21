@@ -147,6 +147,17 @@ Si no se puede confirmar, no se usa.
   genérico, marcas y que las unidades no se comparan; ninguna ayuda a la lectora a decidir qué preguntar
   en la cita (hueco que cubre el artículo).
 
+- Sculptra y Radiesse (investigación 2026-10-21, 3 WebSearch; fuentes secundarias, usar solo de forma general): Sculptra
+  es una marca de ácido poli-L-láctico (PLLA) y Radiesse una marca de hidroxiapatita de calcio (microesferas en un gel).
+  Ambos se consideran bioestimuladores (estimulan colágeno). Las páginas dicen que Radiesse da un efecto de volumen
+  inmediato y luego estimula colágeno, y que Sculptra actúa de forma gradual a lo largo de semanas o meses. Resumen de
+  búsqueda, FDA (aprobación de Radiesse, PMA P050052, para corregir arrugas y pliegues faciales moderados a severos;
+  contraindicaciones: alergias graves con anafilaxia y trastornos de sangrado): https://www.accessdata.fda.gov/cdrh_docs/pdf5/P050052S162B.pdf
+  (no se pudo abrir desde la nube; NO citar el enlace como fuente en el artículo). NO usar duraciones por marca (las
+  fuentes se contradicen, casi todas son blogs de clínicas), ni porcentajes de nódulos, ni zonas por marca, ni fechas de
+  aprobación. Preguntas reales: "¿qué es mejor, Sculptra o Radiesse?", "¿cuál dura más?", "¿cuál es más natural?".
+  Hueco que cubre el artículo: las páginas eligen ganador; ayuda a la lectora a saber qué preguntar. · consultado 2026-10-21.
+
 ### C4. Norma colombiana sobre consentimiento
 
 - Ley 23 de 1981 (ética médica), art. 15: "El médico no expondrá a su paciente a riesgos
