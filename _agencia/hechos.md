@@ -158,6 +158,8 @@ Si no se puede confirmar, no se usa.
   aprobación. Preguntas reales: "¿qué es mejor, Sculptra o Radiesse?", "¿cuál dura más?", "¿cuál es más natural?".
   Hueco que cubre el artículo: las páginas eligen ganador; ayuda a la lectora a saber qué preguntar. · consultado 2026-10-21.
 
+- Profhilo y skinboosters (investigación 2026-10-22, 3 WebSearch; fuentes secundarias de clínicas, usar solo de forma general): "Profhilo" es una marca de producto de ácido hialurónico inyectable; "skinbooster" es la categoría más amplia de inyectables para la calidad de la piel (hidratación, luminosidad, textura), y hay otros productos y marcas dentro de ella. Las páginas no coinciden en cuántas sesiones ni cuánto dura cada marca (de 2 a 3 sesiones, 6 a 12 meses, según la página): NO usar cifras por marca; para sesiones y mantenimiento usar solo datos.py (skinboosters: 3 sesiones cada 3–4 semanas, mantenimiento semestral). Ninguna fuente dice que uno sea mejor que otro; todas terminan en valoración médica. Estado FDA de Profhilo en EE. UU. contradictorio: NO mencionarlo. Preguntas reales: "¿Profhilo es un skinbooster?", "¿cuántas sesiones de Profhilo?", "¿cuánto dura?". Hueco: las páginas comparan marcas para vender; ninguna ayuda a la lectora a saber qué preguntar. Fuentes: https://www.berkshireaesthetics.com/answers/is-profhilo-a-skin-booster , https://www.dermapure.com/blog/profhilo · consultado 2026-10-22.
+
 ### C4. Norma colombiana sobre consentimiento
 
 - Ley 23 de 1981 (ética médica), art. 15: "El médico no expondrá a su paciente a riesgos

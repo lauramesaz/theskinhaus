@@ -26,5 +26,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-21 · 1 Redactor · Title, descripción y h1 que repiten la fórmula "qué cambia y qué preguntar" ya usada en botox-o-toxina-botulinica-es-lo-mismo · Cambia el ángulo en cada artículo: "cuál conviene según tu piel".
 - 2026-10-21 · 1 Redactor · Tono de informe académico en vez de voz de clínica · "En la literatura que revisamos", "Y aquí viene lo que no vamos a hacer" · Di: "Según las fuentes que consultamos…", "Hay algo que no vamos a hacer".
 - 2026-10-21 · 1 Redactor · Todos los párrafos de 2 a 3 líneas y ninguno de una línea (otra vez) · Deja uno corto para respirar: "No es la herramienta para todo."
+- 2026-10-22 · 1 Redactor · Borrador de 610 palabras, por debajo del mínimo de 800 (profhilo-o-skinbooster) · Apunta a 850-1.000: añade un apartado de criterio (cómo leer una oferta, a quién no le sirve) sin cifras nuevas.
+- 2026-10-22 · 1 Redactor · Title, descripción y apertura calcados de un artículo hermano ("una marca y una categoría" / "Uno es una marca y el otro…"; "Ves X en un reel y Y en otro", igual que sculptra-o-radiesse) · Cambia la entrada: "Una clínica te habló de Profhilo, otra de skinbooster y nadie aclaró si era lo mismo."
+- 2026-10-22 · 1 Redactor · "Aquí te contamos…" en un enlace interno (huella de §4) · Di: "Aquí está cómo verificar al profesional."
 
 ## Resueltas
