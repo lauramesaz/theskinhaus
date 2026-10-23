@@ -160,6 +160,18 @@ Si no se puede confirmar, no se usa.
 
 - Profhilo y skinboosters (investigación 2026-10-22, 3 WebSearch; fuentes secundarias de clínicas, usar solo de forma general): "Profhilo" es una marca de producto de ácido hialurónico inyectable; "skinbooster" es la categoría más amplia de inyectables para la calidad de la piel (hidratación, luminosidad, textura), y hay otros productos y marcas dentro de ella. Las páginas no coinciden en cuántas sesiones ni cuánto dura cada marca (de 2 a 3 sesiones, 6 a 12 meses, según la página): NO usar cifras por marca; para sesiones y mantenimiento usar solo datos.py (skinboosters: 3 sesiones cada 3–4 semanas, mantenimiento semestral). Ninguna fuente dice que uno sea mejor que otro; todas terminan en valoración médica. Estado FDA de Profhilo en EE. UU. contradictorio: NO mencionarlo. Preguntas reales: "¿Profhilo es un skinbooster?", "¿cuántas sesiones de Profhilo?", "¿cuánto dura?". Hueco: las páginas comparan marcas para vender; ninguna ayuda a la lectora a saber qué preguntar. Fuentes: https://www.berkshireaesthetics.com/answers/is-profhilo-a-skin-booster , https://www.dermapure.com/blog/profhilo · consultado 2026-10-22.
 
+- Melasma (investigación 2026-10-23, 3 WebSearch; fuentes secundarias, usar solo de forma general): las páginas coinciden en que el melasma
+  no tiene cura y se controla; el protector solar diario es la base (según una nota de HealthDay que cita a la American Academy of
+  Dermatology: amplio espectro, resistente al agua, FPS 30 o más, también en días nublados; la luz visible puede empeorarlo y por eso se
+  sugiere un protector con color que tenga óxidos de hierro). Un metaanálisis en red (59 ensayos, 14 terapias) concluye que las
+  combinaciones de terapias superaron a los tratamientos únicos en la mayoría de los estudios y que eficacia y seguridad deben evaluarse
+  juntas: Comparison of the Efficacy of Melasma Treatments, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8511390/ . Una revisión
+  Cochrane antigua calificó los tratamientos disponibles como poco satisfactorios (no usar la cifra ni el ranking de terapias).
+  Fuentes de páginas: https://www.healthday.com/a-to-z-health/conditions/melasma-2665323656.html . NO usar: ranking de láseres,
+  nombres de cremas ni ácidos, FPS exacto como receta, ni afirmar quién debe tratarlo (las páginas dicen "dermatólogo"; la web de la
+  clínica dice medicina estética o dermatología). Preguntas reales: "¿el melasma se cura?", "¿qué es lo más efectivo?", "¿qué médico lo trata?".
+  Hueco: las páginas listan tratamientos; ninguna explica por qué el plan es por etapas ni qué pasa cuando reaparece. · consultado 2026-10-23.
+
 ### C4. Norma colombiana sobre consentimiento
 
 - Ley 23 de 1981 (ética médica), art. 15: "El médico no expondrá a su paciente a riesgos

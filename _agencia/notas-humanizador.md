@@ -29,5 +29,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-22 · 1 Redactor · Borrador de 610 palabras, por debajo del mínimo de 800 (profhilo-o-skinbooster) · Apunta a 850-1.000: añade un apartado de criterio (cómo leer una oferta, a quién no le sirve) sin cifras nuevas.
 - 2026-10-22 · 1 Redactor · Title, descripción y apertura calcados de un artículo hermano ("una marca y una categoría" / "Uno es una marca y el otro…"; "Ves X en un reel y Y en otro", igual que sculptra-o-radiesse) · Cambia la entrada: "Una clínica te habló de Profhilo, otra de skinbooster y nadie aclaró si era lo mismo."
 - 2026-10-22 · 1 Redactor · "Aquí te contamos…" en un enlace interno (huella de §4) · Di: "Aquí está cómo verificar al profesional."
+- 2026-10-23 · 1 Redactor · Párrafos todos de 2 a 3 líneas y ninguno de una línea (cuarta vez; melasma) · Deja uno de una línea: "Menos, mejor puesto."
+- 2026-10-23 · 1 Redactor · Enlace de cierre sin relación con el tema (borrador de melasma mandaba a "serie de un skinbooster" para ilustrar un plan por etapas) · El enlace del cierre sirve al paso siguiente de la lectora: la valoración o cómo verificar al profesional.
+- 2026-10-23 · 1 Redactor · Frase confusa que suena a orden suelta: "Desconfía de quien lo haga." (sin sujeto claro) · Di quién y por qué: "Si te prometen quitarla de una vez, pregunta en qué se basan."
 
 ## Resueltas

@@ -13,7 +13,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 5 | bótox o toxina botulínica: ¿es lo mismo? | marca vs. sustancia, por qué el nombre no define la calidad | toxina-botulinica | publicado 2026-10-20 |
 | 6 | Sculptra o Radiesse | dos tipos de bioestimulador, a quién le sirve cada uno | bioestimuladores | publicado 2026-10-21 |
 | 7 | Profhilo o skinbooster: diferencias | qué es cada uno, sesiones, cuánto dura | skinboosters | publicado 2026-10-22 |
-| 8 | melasma: tratamiento más efectivo | por qué se controla y no se cura, el plan por etapas | manchas-y-melasma | pendiente |
+| 8 | melasma: tratamiento más efectivo | por qué se controla y no se cura, el plan por etapas | manchas-y-melasma | publicado 2026-10-23 |
 | 9 | cuánto dura el relleno de labios | por qué varía, cómo se ve al mes, cuándo retocar | relleno-de-labios | pendiente |
 | 10 | dermapen: cuántas sesiones para cicatrices de acné | expectativas reales, tipos de cicatriz | cicatrices-de-acne | pendiente |
 | 11 | manchas por el sol en Pereira | sol de altura en el Eje Cafetero, protector diario aunque esté nublado | manchas-y-melasma | pendiente |
