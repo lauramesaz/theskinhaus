@@ -32,5 +32,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-23 · 1 Redactor · Párrafos todos de 2 a 3 líneas y ninguno de una línea (cuarta vez; melasma) · Deja uno de una línea: "Menos, mejor puesto."
 - 2026-10-23 · 1 Redactor · Enlace de cierre sin relación con el tema (borrador de melasma mandaba a "serie de un skinbooster" para ilustrar un plan por etapas) · El enlace del cierre sirve al paso siguiente de la lectora: la valoración o cómo verificar al profesional.
 - 2026-10-23 · 1 Redactor · Frase confusa que suena a orden suelta: "Desconfía de quien lo haga." (sin sujeto claro) · Di quién y por qué: "Si te prometen quitarla de una vez, pregunta en qué se basan."
+- 2026-10-24 · 1 Redactor · Apertura, title y descripción calcados de cuanto-dura-el-botox ("Tienes un matrimonio/el matrimonio o el grado…", "¿Cuánto dura X?" + "Por qué/Qué esperar") · Cambia la entrada: "Estás a punto de agendar y te frena una sola pregunta."
+- 2026-10-24 · 1 Redactor · Sin límite dicho con claridad: el borrador nunca decía a quién no le sirve el tratamiento (cuanto-dura-el-relleno-de-labios) · Añade una frase directa: "Tampoco es un tratamiento para quien busca algo que no se mueva ni cambie."
+- 2026-10-24 · 1 Redactor · Borrador de unas 700 palabras, bajo el mínimo de 800 (segunda vez tras profhilo-o-skinbooster) · Añade un apartado de criterio sin cifras nuevas: "Cómo leer una cifra de duración".
 
 ## Resueltas

@@ -172,6 +172,8 @@ Si no se puede confirmar, no se usa.
   clínica dice medicina estética o dermatología). Preguntas reales: "¿el melasma se cura?", "¿qué es lo más efectivo?", "¿qué médico lo trata?".
   Hueco: las páginas listan tratamientos; ninguna explica por qué el plan es por etapas ni qué pasa cuando reaparece. · consultado 2026-10-23.
 
+- Duración del relleno de labios (investigación 2026-10-24, 3 WebSearch; fuentes secundarias: FAQ de sitios genéricos, Doctoralia España y blogs, usar solo de forma general): las páginas dan cifras que no coinciden (de 2–3 meses a 12–18 meses, según el producto) y atribuyen la variación al producto, a la zona (los labios se mueven mucho) y al metabolismo de cada persona. NO usar ninguna cifra de meses para labios (solo datos.py: AH 9–18 meses según la zona; en los labios suele durar menos; "varios meses"). Preguntas reales: "¿cuánto dura el relleno de labios?", "¿cuándo retocar?", "¿cómo se ve al mes?". Ninguna fuente seria confirma cómo se ve a un mes. Hueco: las páginas dan un número y no explican por qué varía ni cómo decidir cuándo volver. Fuente oficial a enlazar: FDA rellenos (C3) · consultado 2026-10-24.
+
 ### C4. Norma colombiana sobre consentimiento
 
 - Ley 23 de 1981 (ética médica), art. 15: "El médico no expondrá a su paciente a riesgos
