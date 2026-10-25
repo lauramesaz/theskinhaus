@@ -35,5 +35,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-24 · 1 Redactor · Apertura, title y descripción calcados de cuanto-dura-el-botox ("Tienes un matrimonio/el matrimonio o el grado…", "¿Cuánto dura X?" + "Por qué/Qué esperar") · Cambia la entrada: "Estás a punto de agendar y te frena una sola pregunta."
 - 2026-10-24 · 1 Redactor · Sin límite dicho con claridad: el borrador nunca decía a quién no le sirve el tratamiento (cuanto-dura-el-relleno-de-labios) · Añade una frase directa: "Tampoco es un tratamiento para quien busca algo que no se mueva ni cambie."
 - 2026-10-24 · 1 Redactor · Borrador de unas 700 palabras, bajo el mínimo de 800 (segunda vez tras profhilo-o-skinbooster) · Añade un apartado de criterio sin cifras nuevas: "Cómo leer una cifra de duración".
+- 2026-10-25 · 1 Redactor · Apertura con "Tienes…" ya usada en otros dos artículos (cotizaciones, matrimonio) · Abre de otra forma: "Seis sesiones de dermapen, dice el paquete que guardaste en el celular."
+- 2026-10-25 · 1 Redactor · Generalización sobre terceros que el Verificador bloquea · "Casi todas se copian entre sí y ninguna explica de dónde sale el número." Di solo lo que haces tú: "Nosotros trabajamos con 4 semanas."
+- 2026-10-25 · 1 Redactor · Frase de relleno que suena a orden suelta, sin criterio claro · "pregúntate cómo vas a organizar la semana… Es mejor planearlo antes que improvisar." Di qué hacer: "no pongas la sesión el día anterior a un evento."
 
 ## Resueltas
