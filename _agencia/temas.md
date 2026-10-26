@@ -16,7 +16,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 8 | melasma: tratamiento más efectivo | por qué se controla y no se cura, el plan por etapas | manchas-y-melasma | publicado 2026-10-23 |
 | 9 | cuánto dura el relleno de labios | por qué varía, cómo se ve al mes, cuándo retocar | relleno-de-labios | publicado 2026-10-24 |
 | 10 | dermapen: cuántas sesiones para cicatrices de acné | expectativas reales, tipos de cicatriz | cicatrices-de-acne | publicado 2026-10-25 |
-| 11 | manchas por el sol en Pereira | sol de altura en el Eje Cafetero, protector diario aunque esté nublado | manchas-y-melasma | pendiente |
+| 11 | manchas por el sol en Pereira | sol de altura en el Eje Cafetero, protector diario aunque esté nublado | manchas-y-melasma | publicado 2026-10-26 |
 | 12 | qué no hacer después del bótox | las primeras 24 horas y la primera semana | toxina-botulinica | pendiente |
 | 13 | limpieza facial médica o de spa | qué cambia, para quién es cada una | limpieza-facial-medica | pendiente |
 | 14 | peeling químico: cuánto se pela la piel | tipos de peeling, días de descamación, época del año | peelings-medicos | pendiente |

@@ -38,5 +38,8 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-25 · 1 Redactor · Apertura con "Tienes…" ya usada en otros dos artículos (cotizaciones, matrimonio) · Abre de otra forma: "Seis sesiones de dermapen, dice el paquete que guardaste en el celular."
 - 2026-10-25 · 1 Redactor · Generalización sobre terceros que el Verificador bloquea · "Casi todas se copian entre sí y ninguna explica de dónde sale el número." Di solo lo que haces tú: "Nosotros trabajamos con 4 semanas."
 - 2026-10-25 · 1 Redactor · Frase de relleno que suena a orden suelta, sin criterio claro · "pregúntate cómo vas a organizar la semana… Es mejor planearlo antes que improvisar." Di qué hacer: "no pongas la sesión el día anterior a un evento."
+- 2026-10-26 · 1 Redactor · Apertura calcada de melasma-tratamiento-mas-efectivo (la mancha de la mejilla/mejillas que no se va) y cierre de apertura con "esta es la respuesta corta", ya multado el 20-oct · Abre con un objeto concreto: "El frasco de protector ya va por la mitad y la mancha sigue donde estaba."
+- 2026-10-26 · 1 Redactor · Dato de clima local sin fuente en hechos.md · "En Pereira hay mañanas grises que se abren al mediodía" (el Verificador lo bloquearía) · Di solo lo verificable: "Es fácil dejarlo para 'cuando haga sol'."
+- 2026-10-26 · 1 Redactor · "Fuentes que consultamos" repetido 4 veces y frases de folleto: "Es lo que coinciden en decir…", "Una aclaración honesta:" · Cítalas una vez y sigue: "Así lo explican las fuentes que consultamos."
 
 ## Resueltas
