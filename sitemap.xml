@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://theskinhaus.com.co/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/medicina-estetica</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/medicina-vascular</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/nosotros</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/valoracion</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/toxina-botulinica</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/acido-hialuronico</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/bioestimuladores</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/skinboosters</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/peelings-medicos</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/microagujas</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/manchas-y-melasma</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/limpieza-facial-medica</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/relleno-de-labios</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/tratamiento-de-ojeras</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/armonizacion-facial</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/hiperhidrosis</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/cicatrices-de-acne</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/aranitas-vasculares</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/varices</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/eco-doppler-venoso</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://theskinhaus.com.co/cuperosis-y-rojeces</loc><lastmod>2026-10-19</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://theskinhaus.com.co/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/medicina-estetica</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/medicina-vascular</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/nosotros</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/valoracion</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/dra-valeria-enciso</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/preguntas-frecuentes</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/toxina-botulinica</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/toxina-botulinica.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/acido-hialuronico</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/acido-hialuronico.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/bioestimuladores</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/bioestimuladores.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/skinboosters</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/skinboosters.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/peelings-medicos</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/peelings-medicos.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/microagujas</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/microagujas.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/manchas-y-melasma</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/manchas-y-melasma.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/limpieza-facial-medica</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/limpieza-facial-medica.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/relleno-de-labios</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/relleno-de-labios.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/tratamiento-de-ojeras</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/tratamiento-de-ojeras.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/armonizacion-facial</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/armonizacion-facial.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/hiperhidrosis</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/hiperhidrosis.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/cicatrices-de-acne</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://theskinhaus.com.co/assets/fotos/cicatrices-de-acne.jpg</image:loc></image:image></url>
+  <url><loc>https://theskinhaus.com.co/aranitas-vasculares</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/varices</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/eco-doppler-venoso</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://theskinhaus.com.co/cuperosis-y-rojeces</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://theskinhaus.com.co/blog/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://theskinhaus.com.co/blog/limpieza-facial-medica-o-de-spa</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://theskinhaus.com.co/blog/manchas-por-el-sol-en-pereira</loc><lastmod>2026-10-26</lastmod></url>

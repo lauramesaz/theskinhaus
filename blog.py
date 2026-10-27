@@ -57,7 +57,7 @@ def foto_de(a):
     trat = {t["slug"]: t for t in B["ESTETICA"] + B["BUSQUEDAS"]}
     for s in a["tratamientos"]:
         if s in trat:
-            return trat[s]["foto"]
+            return B["foto_trat"](trat[s])       # 27-oct-2026: foto propia del tratamiento si existe
     return "piel"
 
 

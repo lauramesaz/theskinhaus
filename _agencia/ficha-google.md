@@ -53,3 +53,15 @@ Fachada de la Torre Médica Oval, recepción, consultorio, cabina, equipo médic
 ## Reseñas
 Pedir reseña a cada paciente satisfecha el mismo día (mensaje de WhatsApp con el enlace directo
 "Escribir reseña" que da Google en la ficha). Responder todas. Nunca ofrecer descuentos a cambio.
+
+## Ojo: otro negocio con nombre parecido (27-oct-2026)
+En Google Maps ya existe **"Skin Haus Consultorio Estético"** (Calle 35 #3B-07, Pereira, tel. 318 779 1267,
+categoría spa, 19 reseñas, Instagram @skin_haus). NO es The Skin Haus. Al crear la ficha:
+- Usar el nombre exacto **The Skin Haus** y la dirección de la Torre Médica Oval con el consultorio.
+- Si Google sugiere "¿es esta tu empresa?" con la ficha de la Calle 35, responder que NO y crear una nueva.
+- Pedir a las pacientes que dejen la reseña con el enlace directo (theskinhaus.com.co/resena), nunca
+  buscando "skin haus" en Maps, porque podrían dejarla en la ficha equivocada.
+
+## Kit de reseñas
+Tarjeta con QR, mensajes de WhatsApp y respuestas modelo en `kit-resenas/`. Cuando la ficha exista,
+pegar su enlace de reseñas en `datos.py` → `RESENA_URL` y publicar: el QR empieza a llevar directo a Google.

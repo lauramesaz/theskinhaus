@@ -152,7 +152,7 @@ CLAVE = {
 
 # ================================================================== SEO medicina estética (19-oct-2026)
 # Estrategia: _agencia/estrategia.md. Solo medicina estética en Pereira.
-ACTUALIZADO = "2026-10-19"          # fecha de la última revisión de las páginas fijas (va al sitemap)
+ACTUALIZADO = "2026-10-27"          # fecha de la última revisión de las páginas fijas (va al sitemap)
 AREA = ["Pereira", "Dosquebradas", "Santa Rosa de Cabal", "La Virginia", "Cartago"]
 
 # Por tratamiento de estética: título y descripción para Google, h1 visible (opcional),
@@ -482,4 +482,10 @@ MEDICA_ESTETICA = dict(
     nombre="Dra. Valeria Enciso",
     titulo="Médica estética",
     foto="assets/equipo/valeria-enciso",   # + .webp / .jpg
+    slug="dra-valeria-enciso",             # su página propia (27-oct-2026)
 )
+
+# Enlace "Escribir una reseña" de la ficha de Google Maps de The Skin Haus. PENDIENTE: la ficha aún no existe.
+# Cuando exista, pegar aquí el enlace que da Google (g.page/r/…/review) y /resena redirige solo; el QR impreso no cambia.
+RESENA_URL = ""
+

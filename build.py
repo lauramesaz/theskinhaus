@@ -4,6 +4,7 @@
 import os, time, json, re
 from urllib.parse import quote
 from datos import *
+from ampliacion import NOSOTROS_TEXTO, VALORACION_TEXTO   # 27-oct-2026: páginas más completas
 import blog
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -17,11 +18,20 @@ def wa(msg="Hola, quiero agendar una valoración en The Skin Haus."):
 
 
 def foto(n):
+    if n.startswith("assets/"):               # ruta completa sin extensión (p. ej. assets/equipo/valeria-enciso)
+        return n + ".webp"
     return "assets/fotos/%s.webp" % n          # WebP: ~65 % más liviano (19-oct-2026)
 
 
 def foto_jpg(n):
+    if n.startswith("assets/"):
+        return n + ".jpg"
     return "assets/fotos/%s.jpg" % n           # para redes sociales y datos estructurados
+
+
+def foto_trat(t):
+    """27-oct-2026: foto propia por tratamiento (Higgsfield, assets/fotos/<slug>.webp) si existe; si no, la genérica."""
+    return t["slug"] if os.path.exists(os.path.join(AQUI, "assets", "fotos", t["slug"] + ".webp")) else t["foto"]
 
 
 def logo(clase="compacto", descriptor=False):
@@ -46,7 +56,7 @@ def pie():
     return '''<footer class="pie-web"><div class="caja">
 <div class="pie-grid">
   <div>%s<p class="frase-marca" style="margin-top:36px;max-width:15em">Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal.</p></div>
-  <div><h4>Medicina estética</h4><ul>%s<li><a href="medicina-estetica">Ver todos</a></li><li><a href="blog/">Blog</a></li></ul></div>
+  <div><h4>Medicina estética</h4><ul>%s<li><a href="medicina-estetica">Ver todos</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
   <div><h4>Medicina vascular</h4><ul>%s</ul></div>
   <div><h4>Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li></ul></div>
 </div>
@@ -74,7 +84,22 @@ HEAD_MEDICION = (
 )
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True):
+_CSS = None
+
+
+def estilo_en_linea():
+    """27-oct-2026 (velocidad): el CSS va dentro de cada página en vez de un archivo aparte que bloquea el
+    primer pintado. PageSpeed móvil mostraba ~2 s de 'retraso en la renderización' de la foto principal."""
+    global _CSS
+    if _CSS is None:
+        css = open(os.path.join(AQUI, "assets", "estilo.css"), encoding="utf-8").read()
+        css = re.sub(r"url\((textura-[a-z]+\.jpg)\)", r"url(assets/\1)", css)     # rutas relativas a assets/
+        css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)                            # sin comentarios
+        _CSS = re.sub(r"\n\s*", "\n", css).strip()
+    return _CSS
+
+
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head=""):
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
     ld = HEAD_MEDICION + ld
@@ -86,7 +111,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <base href="/">
 <title>%s</title>
 <meta name="description" content="%s">
-<link rel="canonical" href="%s">
+<link rel="canonical" href="%s">%s
 <meta property="og:type" content="%s"><meta property="og:title" content="%s"><meta property="og:description" content="%s">
 <meta property="og:url" content="%s"><meta property="og:image" content="%s/%s"><meta property="og:locale" content="es_CO">
 <meta name="theme-color" content="#FAF8F3">
@@ -94,7 +119,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 %s<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="assets/estilo.css?v=%d">
+<style>%s</style>
 %s
 </head>
 <body>
@@ -106,8 +131,8 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <a class="wa" href="%s" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">%s</a>
 <script src="assets/app.js?v=%d" defer></script>
 </body>
-</html>''' % (titulo, descripcion, url, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
-              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", V, ld,
+</html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
+              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", estilo_en_linea(), ld,
               cabecera(activo), cuerpo, pie(), wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
@@ -228,9 +253,10 @@ CLINICA_LD = {
 
 
 def medica_ld():
-    return {"@context": "https://schema.org", "@type": "Physician", "@id": DOMINIO + "/nosotros#valeria-enciso",
+    return {"@context": "https://schema.org", "@type": "Physician", "@id": DOMINIO + "/" + MEDICA_ESTETICA["slug"] + "#medica",
             "name": MEDICA_ESTETICA["nombre"], "description": MEDICA_ESTETICA["titulo"], "jobTitle": MEDICA_ESTETICA["titulo"],
-            "image": DOMINIO + "/" + MEDICA_ESTETICA["foto"] + ".jpg", "url": DOMINIO + "/nosotros#valeria-enciso",
+            "image": DOMINIO + "/" + MEDICA_ESTETICA["foto"] + ".jpg", "url": DOMINIO + "/" + MEDICA_ESTETICA["slug"],
+            "medicalSpecialty": "Dermatology", "knowsAbout": [t["nombre"] for t in ESTETICA + BUSQUEDAS],
             "worksFor": {"@id": DOMINIO + "/#clinica"}}
 
 
@@ -248,8 +274,8 @@ def tu_medica():
   <div class="tarjeta rev"><p class="ceja">Tu médica</p><h2 style="margin-top:22px;font-size:clamp(34px,4vw,56px)">Dra. Valeria <em>Enciso.</em></h2>
   <p class="cargo">%s · The Skin Haus</p>
   <p class="sub" style="margin-top:22px">Te escucha, te valora y te acompaña en tus tratamientos de medicina estética, con el criterio de la casa: menos, mejor puesto, y resultados que respetan quién eres.</p>
-  <div class="acciones" style="margin-top:30px"><a class="btn lleno" href="valoracion">Agenda tu valoración</a></div></div>
-</div></section>''' % (MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"])
+  <div class="acciones" style="margin-top:30px"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s">Conoce a la Dra. Enciso %s</a></div></div>
+</div></section>''' % (MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"], MEDICA_ESTETICA["slug"], CIRC)
 
 
 def migas_ld(pasos):
@@ -331,8 +357,10 @@ def inicio():
 
 
 def busquedas_enlaces():
-    return '<p class="busquedas rev"><span>También:</span> %s</p>' % " · ".join(
-        '<a href="%s">%s</a>' % (b["slug"], b["nombre"]) for b in BUSQUEDAS)
+    # 27-oct-2026: "Lo más buscado en Pereira" con las palabras que escribe la gente (bótox, ácido hialurónico)
+    locales = [("toxina-botulinica", "Bótox en Pereira"), ("acido-hialuronico", "Ácido hialurónico")]
+    return '<p class="busquedas rev"><span>Lo más buscado en Pereira:</span> %s</p>' % " · ".join(
+        '<a href="%s">%s</a>' % par for par in locales + [(b["slug"], b["nombre"]) for b in BUSQUEDAS])
 
 
 # ---------------------------------------------------------------- páginas de especialidad
@@ -371,8 +399,9 @@ def paginas_especialidad():
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>tu primera cita.</em></h2></div>
   %s
+  <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
 </div></section>
-%s''' % (tarjetas(BUSQUEDAS), tu_medica(), foto("cabina"), faq(PREGUNTAS_ESTETICA), blog.del_blog("Del blog", "Para leer <em>antes de decidir.</em>")))
+%s''' % (tarjetas(BUSQUEDAS), tu_medica(), foto("cabina"), faq(PREGUNTAS_ESTETICA), CIRC, blog.del_blog("Del blog", "Para leer <em>antes de decidir.</em>")))
     senales = ["Pesadez o cansancio al final del día", "Hinchazón en tobillos", "Calambres nocturnos o ardor",
                "Venas abultadas o arañitas que aumentan", "Cambios de color en la piel", "Antecedentes familiares de várices"]
     especialidad("medicina-vascular", "Medicina vascular · Pereira", "Piernas ligeras, <em>decisiones claras.</em>",
@@ -405,15 +434,22 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
         ceja = '<a href="%s">%s</a> · Pereira' % (padre, p["nombre"])
         migas = [("Inicio", ""), (esp_nombre, esp_slug), (p["nombre"], padre), (t["nombre"], t["slug"])]
     else:
-        rel = [h for h in hermanos if h["slug"] != t["slug"]][:3]
+        # 27-oct-2026: primero las páginas que dependen de esta (bótox → hiperhidrosis; ácido hialurónico → labios, ojeras…)
+        hijos = [b for b in BUSQUEDAS if b.get("padre") == t["slug"]]
+        rel = (hijos + [h for h in hermanos if h["slug"] != t["slug"]])[:3]
         ceja = '<a href="%s">%s</a> · Pereira' % (esp_slug, esp_nombre)
         migas = [("Inicio", ""), (esp_nombre, esp_slug), (t["nombre"], t["slug"])]
     dur, ses, rec = t["como"]
-    circ_foto = {"facial": "piel", "retrato": "manos", "piel": "facial-detalle", "vascular": "vascular-detalle", "manos": "piel"}.get(t["foto"], "manos")
+    principal = foto_trat(t)
+    if principal != t["foto"]:
+        circ_foto = t["foto"]           # con foto propia, el círculo muestra la foto genérica de antes
+    else:
+        circ_foto = {"facial": "piel", "retrato": "manos", "piel": "facial-detalle", "vascular": "vascular-detalle", "manos": "piel"}.get(t["foto"], "manos")
     acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Pregúntanos %s</a></div>' % (
         wa("Hola, quiero información sobre %s en The Skin Haus." % t["nombre"].lower()), CIRC)
     preguntas = list(t["faq"]) + list(seo.get("faq", []) if seo is not t else [])
-    cuerpo = hero(ceja, seo.get("h1", t["nombre"]), t["linea"], t["foto"], circ_foto, acciones, corto=True, alt=t["nombre"]) + '''
+    alt = "%s en Pereira: %s" % (t["nombre"], t["linea"][0].lower() + t["linea"][1:].rstrip("."))
+    cuerpo = hero(ceja, seo.get("h1", t["nombre"]), t["linea"], principal, circ_foto, acciones, corto=True, alt=alt) + '''
 <section class="bloque" style="padding-top:clamp(40px,5vw,70px)"><div class="caja" style="max-width:1040px">
   <p class="ceja rev centro">Qué es</p>
   <p class="rev centro" style="font-family:var(--serif-texto);font-size:clamp(22px,2.4vw,32px);line-height:1.45;margin-top:26px">%s</p>
@@ -423,28 +459,32 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
 <section class="bloque" style="padding-top:0"><div class="caja centro">
   <p class="ceja rev">Para quién</p><h2 class="rev" style="margin-top:22px">¿Es <em>para ti?</em></h2>
   <div class="chips grandes rev" style="justify-content:center;margin-top:44px">%s</div>
-  <p class="frase-marca rev" style="margin-top:44px">Evaluamos antes de recomendar.</p>
+  <p class="frase-marca rev" style="margin-top:44px">Evaluamos antes de recomendar.</p>%s
 </div></section>
 %s
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Lo que suelen <em>preguntarnos.</em></h2></div>
   %s
+  <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
 </div></section>
 %s
 <section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">
   <div class="centro"><p class="ceja rev">También te puede interesar</p></div>%s
 </div></div></section>
 %s''' % (t["intro"], dur, ses, rec, "".join('<span class="chip">%s</span>' % x for x in t["para"]),
-         secciones(seo.get("secciones", [])), faq(preguntas), blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
+         ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
+             MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
+         secciones(seo.get("secciones", [])), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
          cierre("Conversemos sobre lo que <em>quieres cuidar.</em>"))
     url = DOMINIO + "/" + t["slug"]
     ld = [CLINICA_LD,
           {"@context": "https://schema.org", "@type": "MedicalProcedure", "name": t["nombre"], "url": url,
-           "description": t["intro"], "howPerformed": t["intro"], "provider": {"@id": DOMINIO + "/#clinica"}},
+           "description": t["intro"], "howPerformed": t["intro"], "provider": {"@id": DOMINIO + "/#clinica"},
+           "image": DOMINIO + "/" + foto_jpg(principal)},
           faq_ld(preguntas), migas_ld(migas)]
     titulo = seo.get("titulo", "%s en Pereira · The Skin Haus" % t["nombre"])
     desc = seo.get("desc", "%s %s" % (t["linea"], t["intro"][:110].rsplit(" ", 1)[0] + "…"))
-    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=t["foto"])
+    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=principal)
 
 
 # ---------------------------------------------------------------- nosotros
@@ -476,7 +516,7 @@ def nosotros():
   <div class="equipo">
     <article class="medico rev" id="valeria-enciso"><div class="arco"><img src="%s.webp" alt="%s, médica estética de The Skin Haus" loading="lazy"></div>
       <p class="ceja">Medicina estética</p><h3>%s</h3><p>%s. Valora y acompaña tus tratamientos de medicina estética: bótox, ácido hialurónico, bioestimuladores y calidad de piel.</p>
-      <a class="enlace" href="medicina-estetica">Ver tratamientos %s</a></article>
+      <a class="enlace" href="dra-valeria-enciso">Conoce a la Dra. Enciso %s</a></article>
     <article class="medico rev"><div class="arco ini"><span>JP</span></div>
       <p class="ceja">Medicina vascular</p><h3>%s</h3><p>%s. Atiende arañitas, várices e insuficiencia venosa en Pereira y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, Medellín</a>.</p>
       <a class="enlace" href="medicina-vascular">Ver tratamientos %s</a></article>
@@ -487,11 +527,12 @@ def nosotros():
   <div class="galeria"><div class="arco rev"><img src="%s" alt="Recepción" loading="lazy"></div>
   <div class="der"><div class="circulo rev"><img src="%s" alt="Detalle de cuidado de la piel" loading="lazy"></div><div class="gota rev"><img src="%s" alt="Cabina de tratamiento" loading="lazy"></div></div></div>
 </div></section>
+%s
 %s''' % (ideas_html, "".join('<span class="chip">%s</span>' % v for v in valoras),
          "".join('<span class="chip" style="text-decoration:line-through">%s</span>' % v for v in evitamos),
          MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"], CIRC,
          MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], CIRC,
-         foto("recepcion"), foto("manos"), foto("cabina"), cierre())
+         foto("recepcion"), foto("manos"), foto("cabina"), secciones(NOSOTROS_TEXTO, "Más sobre nosotros"), cierre())
     pagina("nosotros", "Nosotros · The Skin Haus Pereira", "The Skin Haus: medicina estética y vascular en Pereira con criterio médico, acompañamiento cercano y resultados armónicos.",
            cuerpo, activo="nosotros", jsonld=[CLINICA_LD, medica_ld(), vascular_ld()], imagen="recepcion")
 
@@ -525,32 +566,183 @@ def valoracion():
   <p class="ceja rev">Para que aprovechemos el tiempo</p><h2 class="rev" style="margin-top:22px">Qué <em>traer.</em></h2>
   <div class="chips grandes rev" style="justify-content:center;margin-top:44px">%s</div>
 </div></div></section>
+%s
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar.</em></h2></div>
   %s
+  <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
 </div></section>''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL,
          "".join('<div class="paso rev"><p class="num">%d</p><p class="ceja">%s</p><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(VALORACION_PASOS, 1)),
-         "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), faq(VALORACION_FAQ))
+         "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), secciones(VALORACION_TEXTO, "Antes de tu cita"), faq(VALORACION_FAQ), CIRC)
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",
            cuerpo, activo="valoracion", jsonld=[CLINICA_LD, faq_ld(VALORACION_FAQ), migas_ld([("Inicio", ""), ("Agenda tu valoración", "valoracion")])], imagen="cabina", precarga=False)
 
+# ---------------------------------------------------------------- página de la médica estética (27-oct-2026)
+def medica():
+    m = MEDICA_ESTETICA
+    acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a></div>' % (
+        wa("Hola, quiero agendar una valoración con la Dra. Valeria Enciso en The Skin Haus."), CIRC)
+    lista = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in ESTETICA + BUSQUEDAS)
+    traer = "".join("<li>%s.</li>" % x for x in VALORACION_TRAER)
+    texto = [
+        ("Tu médica estética en Pereira",
+         "<p>La Dra. Valeria Enciso es la médica estética de The Skin Haus, en la Torre Médica Oval de Pereira. Te escucha, te valora y te acompaña en tus tratamientos de medicina estética: <a href=\"toxina-botulinica\">bótox</a>, <a href=\"acido-hialuronico\">ácido hialurónico</a>, <a href=\"bioestimuladores\">bioestimuladores</a> y calidad de piel.</p>"
+         "<p>Atiende a pacientes de Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago. La primera cita siempre es una <a href=\"valoracion\">valoración presencial</a>: por WhatsApp agendamos y resolvemos dudas generales, pero el plan se decide en persona.</p>"),
+        ("Cómo trabaja",
+         "<p>Con el criterio de la casa: menos, mejor puesto. Antes de recomendar nada, mira tu rostro en reposo y en movimiento, conversa contigo sobre lo que quieres cuidar y lo que no quieres cambiar, y te explica las opciones con tiempos, cuidados y costos claros.</p>"
+         "<p>Los planes se arman por etapas y con controles. Si hace falta, es preferible quedarse corto y completar en el control que pasarse. Y si algo no te va a favorecer, te lo dice aunque lo traigas en la lista.</p>"),
+        ("Tratamientos que valora y acompaña", "<ul>%s</ul>" % lista),
+        ("Antes de tu cita con ella",
+         "<p>Para aprovechar el tiempo de la valoración, ten a mano:</p><ul>%s</ul>"
+         "<p>En muchos casos puedes hacerte el tratamiento ese mismo día, si la médica lo considera adecuado y tú te sientes lista o listo para decidir.</p>" % traer),
+        ("Cómo verificar a cualquier médico",
+         "<p>En Colombia puedes consultar si un profesional de la salud está autorizado para ejercer en el <a href=\"https://web.sispro.gov.co/THS/Cliente/ConsultasPublicas/ConsultaPublicaDeTHxIdentificacion.aspx\" target=\"_blank\" rel=\"noopener\">RETHUS</a>, el registro del Ministerio de Salud. Se busca con el número de documento o con el nombre y el primer apellido, y muestra la profesión y el estado de autorización.</p>"
+         "<p>Y el producto también se verifica: pregunta su nombre y búscalo en la <a href=\"https://www.invima.gov.co/consulta-registros-sanitarios\" target=\"_blank\" rel=\"noopener\">consulta de registros sanitarios del INVIMA</a>. Si quieres más criterios, lee <a href=\"blog/como-elegir-medico-estetico-en-pereira\">cómo elegir médico estético en Pereira</a>.</p>"),
+    ]
+    preguntas = [
+        ("¿Dónde atiende la Dra. Valeria Enciso?", "En The Skin Haus, en la Torre Médica Oval de Pereira. Atiende pacientes de Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
+        ("¿Cómo agendo una valoración con ella?", "Escríbenos por WhatsApp al %s o deja tus datos en la página de valoración y te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),
+        ("¿La valoración es presencial?", "Sí. Por WhatsApp agendamos y resolvemos dudas generales, pero el diagnóstico y el plan se hacen en persona."),
+        ("¿Puedo hacerme el tratamiento el mismo día de la valoración?", "En muchos casos sí, si la médica lo considera adecuado y tú te sientes lista o listo para decidir."),
+        ("¿Cómo verifico que un médico está autorizado para ejercer?", "En el RETHUS, el registro del Ministerio de Salud. Se consulta con el número de documento o con el nombre y el primer apellido del profesional, y muestra su profesión y su estado de autorización."),
+    ]
+    rel = [x for x in ESTETICA if x["slug"] in ("toxina-botulinica", "acido-hialuronico")] + [x for x in BUSQUEDAS if x["slug"] == "relleno-de-labios"]
+    cuerpo = (hero("Médica estética · Pereira", "Dra. Valeria <em>Enciso.</em>",
+                   "Médica estética de The Skin Haus, en la Torre Médica Oval de Pereira. Primero te escucha; luego recomienda.",
+                   m["foto"], "piel", acciones, corto=True, alt="%s, médica estética de The Skin Haus en Pereira" % m["nombre"])
+              + secciones(texto, "Quién te atiende")
+              + '<section class="bloque" style="padding-top:0"><div class="caja">'
+              + '<div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar con ella.</em></h2></div>'
+              + faq(preguntas) + '</div></section>'
+              + '<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">'
+              + '<div class="centro"><p class="ceja rev">Lo que más le consultan</p></div>' + tarjetas(rel) + '</div></div></section>'
+              + cierre("Agenda con la <em>Dra. Enciso.</em>"))
+    pagina(m["slug"], "Dra. Valeria Enciso · Médica estética en Pereira",
+           "Dra. Valeria Enciso, médica estética de The Skin Haus en la Torre Médica Oval de Pereira: valoración presencial, bótox, ácido hialurónico, bioestimuladores y calidad de piel.",
+           cuerpo, activo="nosotros", imagen=m["foto"], tipo="profile",
+           jsonld=[CLINICA_LD, medica_ld(), {"@context": "https://schema.org", "@type": "ProfilePage", "url": DOMINIO + "/" + m["slug"],
+                                              "mainEntity": {"@id": DOMINIO + "/" + m["slug"] + "#medica"}},
+                   faq_ld(preguntas), migas_ld([("Inicio", ""), ("Nosotros", "nosotros"), (m["nombre"], m["slug"])])])
+
+
+# ---------------------------------------------------------------- preguntas frecuentes (27-oct-2026)
+PREGUNTAS_LOCALES = [
+    ("¿Dónde queda The Skin Haus?", "En la Torre Médica Oval de Pereira. Atendemos pacientes de toda el área: Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
+    ("¿Cómo agendo una cita?", "Por WhatsApp al %s o dejando tus datos en la página de valoración. Te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),
+    ("¿Cuánto cuestan los tratamientos?", "Depende de la zona, del producto y de la cantidad que necesites. Te damos el valor exacto en la valoración, antes de empezar, para que decidas con toda la información."),
+]
+PREGUNTAS_SEGURIDAD = [
+    ("¿Cómo sé que mi médico está autorizado para ejercer?", "Puedes consultarlo en el RETHUS, el registro del Ministerio de Salud, con el número de documento o con el nombre y el primer apellido del profesional. Muestra su profesión y su estado de autorización."),
+    ("¿Cómo sé si el producto es legal?", "Pregunta el nombre del producto y búscalo en la consulta de registros sanitarios del INVIMA, la entidad que los emite en Colombia."),
+    ("¿Los resultados son iguales para todas las personas?", "No. Los resultados varían en cada persona y todo procedimiento tiene riesgos. Por eso la indicación siempre sale de una valoración médica."),
+]
+
+
+def preguntas_frecuentes():
+    generales = PREGUNTAS_LOCALES + PREGUNTAS_GENERALES + VALORACION_FAQ[len(PREGUNTAS_GENERALES):] + PREGUNTAS_ESTETICA[2:3]
+    vistos, grupos = set(q for q, _ in generales), []
+    for t in ESTETICA + BUSQUEDAS:
+        seo = SEO.get(t["slug"], t)
+        extra = list(seo.get("faq", [])) if seo is not t else []
+        todas = [q for q in extra if "Pereira" in q[0]] + list(t["faq"]) + [q for q in extra if "Pereira" not in q[0]]
+        elegidas = []
+        for q in todas:
+            if q[0] not in vistos and len(elegidas) < 4:
+                vistos.add(q[0])
+                elegidas.append(q)
+        grupos.append((t, elegidas))
+    indice = " · ".join('<a href="preguntas-frecuentes#%s">%s</a>' % (t["slug"], t["nombre"]) for t, _ in grupos)
+    bloques = "".join(
+        '<section class="bloque" style="padding-top:0" id="%s"><div class="caja">'
+        '<div class="centro"><p class="ceja rev">%s</p><h2 class="rev" style="margin-top:22px">Preguntas sobre <em>%s.</em></h2></div>'
+        '%s<p class="centro rev" style="margin-top:28px"><a class="enlace" href="%s">Todo sobre %s en Pereira %s</a></p>'
+        '</div></section>\n' % (t["slug"], t["nombre"], t["nombre"].lower(), faq(qs), t["slug"], t["nombre"].lower(), CIRC)
+        for t, qs in grupos)
+    cuerpo = (hero("Preguntas frecuentes sobre medicina estética en Pereira", "Lo que suelen <em>preguntarnos.</em>",
+                   "Respuestas claras sobre la valoración, los tratamientos, los tiempos y la seguridad. Lo que aplica a tu caso lo definimos en persona.",
+                   "consulta", "manos", '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a></div>',
+                   corto=True, h1_ceja=True, alt="Conversación entre médica y paciente")
+              + '<section class="bloque" style="padding-top:clamp(40px,5vw,70px)"><div class="caja">'
+              + '<div class="centro"><p class="ceja rev">Antes de tu primera cita</p><h2 class="rev" style="margin-top:22px">La valoración y <em>cómo agendar.</em></h2></div>'
+              + faq(generales) + '<p class="busquedas rev"><span>Por tratamiento:</span> %s</p></div></section>\n' % indice
+              + '<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">'
+              + '<div class="centro"><p class="ceja rev">Seguridad</p><h2 class="rev" style="margin-top:22px">Cómo decidir <em>con tranquilidad.</em></h2></div>'
+              + faq(PREGUNTAS_SEGURIDAD) + '</div></div></section>\n'
+              + bloques + cierre())
+    pagina("preguntas-frecuentes", "Preguntas frecuentes de medicina estética en Pereira",
+           "Respuestas sobre bótox, ácido hialurónico, relleno de labios, bioestimuladores, manchas y la valoración en The Skin Haus, Torre Médica Oval de Pereira.",
+           cuerpo, activo="medicina-estetica", imagen="consulta",
+           jsonld=[CLINICA_LD, faq_ld(generales + PREGUNTAS_SEGURIDAD), migas_ld([("Inicio", ""), ("Preguntas frecuentes", "preguntas-frecuentes")])])
+
+
+# ---------------------------------------------------------------- 404 y reseñas (27-oct-2026)
+def pagina_404():
+    cuerpo = (hero("Error 404", "Esta página <em>no existe.</em>",
+                   "Puede que la dirección haya cambiado o tenga un error. Aquí tienes lo que más buscan nuestras pacientes en Pereira.",
+                   "piel", "manos", '<div class="acciones rev"><a class="btn lleno" href="./">Ir al inicio</a><a class="enlace" href="preguntas-frecuentes">Preguntas frecuentes %s</a></div>' % CIRC,
+                   corto=True, alt="Piel cuidada")
+              + '<section class="bloque" style="padding-top:clamp(40px,5vw,70px)"><div class="caja">'
+              + '<div class="centro"><p class="ceja rev">Tratamientos</p><h2 class="rev" style="margin-top:22px">Lo más <em>buscado.</em></h2></div>'
+              + tarjetas(ESTETICA[:3] + BUSQUEDAS[:3]) + busquedas_enlaces() + '</div></section>\n'
+              + cierre())
+    pagina("404", "Página no encontrada · The Skin Haus", "La página que buscas no existe. Mira los tratamientos de medicina estética de The Skin Haus en Pereira.",
+           cuerpo, robots="noindex", imagen="piel", precarga=False)
+
+
+def resena():
+    """/resena: a donde lleva el QR del consultorio. Con RESENA_URL (datos.py) redirige a la ficha de Google."""
+    if RESENA_URL:
+        boton = '<a class="btn lleno" href="%s" rel="noopener">Escribir mi reseña en Google</a>' % RESENA_URL
+        refresco = '\n<meta http-equiv="refresh" content="0;url=%s">' % RESENA_URL
+    else:
+        boton = '<a class="btn lleno" href="%s" target="_blank" rel="noopener">Cuéntanos por WhatsApp</a>' % wa("Hola, quiero contarles cómo me fue en The Skin Haus.")
+        refresco = ""
+    cuerpo = hero("Gracias por venir", "¿Cómo te <em>fue?</em>",
+                  "Tu opinión ayuda a otras personas de Pereira a decidir con tranquilidad. Te toma un minuto.",
+                  "manos", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Manos cuidadas")
+    pagina("resena", "Cuéntanos cómo te fue · The Skin Haus", "Deja tu reseña de The Skin Haus, medicina estética en Pereira.",
+           cuerpo, robots="noindex", imagen="manos", precarga=False, extra_head=refresco)
+
+
 
 def extras():
-    fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion"] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
+    fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion", MEDICA_ESTETICA["slug"], "preguntas-frecuentes"] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
     filas = [(u, ACTUALIZADO) for u in fijas] + blog.para_sitemap()
     with open(os.path.join(AQUI, "sitemap.xml"), "w") as f:
-        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % "".join(
-            "  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (DOMINIO, u, d) for u, d in filas))
+        # 27-oct-2026: cada tratamiento declara su foto propia (para salir en Google Imágenes)
+        imgs = {t["slug"]: foto_jpg(foto_trat(t)) for t in ESTETICA + BUSQUEDAS + VASCULAR if foto_trat(t) == t["slug"]}
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n%s</urlset>\n' % "".join(
+            "  <url><loc>%s/%s</loc><lastmod>%s</lastmod>%s</url>\n" % (
+                DOMINIO, u, d, "<image:image><image:loc>%s/%s</image:loc></image:image>" % (DOMINIO, imgs[u]) if u in imgs else "")
+            for u, d in filas))
     with open(os.path.join(AQUI, "robots.txt"), "w") as f:
         f.write("User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % DOMINIO)
-    # llms.txt: resumen para buscadores con IA (ChatGPT, Perplexity, Gemini)
+    # llms.txt: resumen para buscadores con IA (ChatGPT, Perplexity, Gemini). 27-oct-2026: equipo, cómo agendar,
+    # zona que atendemos y preguntas frecuentes en texto plano, para que la IA pueda recomendar con datos correctos.
+    def plano(s):
+        return re.sub("<[^>]+>", "", s)
     lin = ["# %s" % MARCA, "",
-           "> Clínica de medicina estética en la Torre Médica Oval, Pereira (Risaralda, Colombia). Valoración médica presencial. "
-           "WhatsApp %s. También atiende medicina vascular." % TELEFONO_VISIBLE, "",
+           "> Clínica de medicina estética en la Torre Médica Oval de Pereira (Risaralda, Colombia). Atiende pacientes de "
+           "%s. Valoración médica presencial; se agenda por WhatsApp %s. También atiende medicina vascular." % (", ".join(AREA[:-1]) + " y " + AREA[-1], TELEFONO_VISIBLE), "",
+           "## Datos clave",
+           "- Nombre: The Skin Haus (no confundir con negocios de nombre parecido). Web oficial: %s" % DOMINIO,
+           "- Dónde: Torre Médica Oval, Pereira, Risaralda, Colombia.",
+           "- Cómo agendar: WhatsApp %s o %s/valoracion" % (TELEFONO_VISIBLE, DOMINIO),
+           "- Primera cita: valoración médica presencial, sin compromiso de hacerse ningún tratamiento. El valor de cada tratamiento se da en la valoración.",
+           "- Criterio: menos, mejor puesto; planes por etapas, dosis precisas y controles; resultados naturales.", "",
+           "## Equipo médico",
+           "- [%s](%s/%s): %s de The Skin Haus. Valora y acompaña los tratamientos de medicina estética." % (MEDICA_ESTETICA["nombre"], DOMINIO, MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["titulo"].lower().capitalize()),
+           "- %s: %s. Atiende medicina vascular en The Skin Haus." % (MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"]), "",
            "## Medicina estética"]
     lin += ["- [%s](%s/%s): %s" % (t["nombre"], DOMINIO, t["slug"], t["linea"]) for t in ESTETICA + BUSQUEDAS]
-    lin += ["", "## Blog"] + ["- [%s](%s/blog/%s): %s" % (a["title"], DOMINIO, a["slug"], a["descripcion"]) for a in blog.cargar()]
-    lin += ["", "## La clínica", "- [Nosotros](%s/nosotros)" % DOMINIO, "- [Agenda tu valoración](%s/valoracion)" % DOMINIO]
+    lin += ["", "## Medicina vascular"] + ["- [%s](%s/%s): %s" % (t["nombre"], DOMINIO, t["slug"], t["linea"]) for t in VASCULAR]
+    lin += ["", "## Preguntas frecuentes", "Todas en %s/preguntas-frecuentes" % DOMINIO, ""]
+    for q, a in PREGUNTAS_LOCALES + PREGUNTAS_GENERALES[1:] + PREGUNTAS_SEGURIDAD[:2]:
+        lin += ["### %s" % q, plano(a), ""]
+    lin += ["## Blog"] + ["- [%s](%s/blog/%s): %s" % (a["title"], DOMINIO, a["slug"], a["descripcion"]) for a in blog.cargar()]
+    lin += ["", "## La clínica", "- [Nosotros](%s/nosotros)" % DOMINIO, "- [Agenda tu valoración](%s/valoracion)" % DOMINIO,
+            "- [Preguntas frecuentes](%s/preguntas-frecuentes)" % DOMINIO]
     with open(os.path.join(AQUI, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(lin) + "\n")
     with open(os.path.join(AQUI, "assets", "favicon.svg"), "w") as f:
@@ -570,6 +762,10 @@ if __name__ == "__main__":
         tratamiento(t, VASCULAR, "medicina-vascular", "Medicina vascular", "Vascular")
     nosotros()
     valoracion()
+    medica()
+    preguntas_frecuentes()
+    pagina_404()
+    resena()
     n_blog = blog.generar()
     extras()
-    print("listo:", 5 + len(TODOS) + len(BUSQUEDAS), "páginas +", n_blog, "artículos del blog")
+    print("listo:", 7 + len(TODOS) + len(BUSQUEDAS), "páginas (+ 404 y reseña) +", n_blog, "artículos del blog")
