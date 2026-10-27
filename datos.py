@@ -170,11 +170,12 @@ SEO = {
              "<p>Primero conversamos y miramos tus gestos: cómo levantas las cejas, cómo frunces, cómo sonríes. Con eso decidimos dónde y cuánto. Luego limpiamos la piel y aplicamos con agujas muy finas, en pocos minutos.</p>"
              "<p>La cita completa toma de 20 a 30 minutos y vuelves a tu día de inmediato, así que cabe a la hora del almuerzo o al salir del trabajo. El efecto empieza a notarse entre el día 3 y el 7 y a las dos semanas te vemos en control.</p>"),
             ("Cuidados después de la aplicación",
-             "<p>Las primeras horas evita acostarte, hacer ejercicio intenso y masajear la zona tratada. Si al día siguiente no ves nada, es normal: la toxina necesita unos días para actuar. Te damos las indicaciones por escrito.</p>"),
+             "<p>Las primeras horas evita acostarte, hacer ejercicio intenso y masajear la zona tratada. Si al día siguiente no ves nada, es normal: la toxina necesita unos días para actuar. Te damos las indicaciones por escrito.</p>"
+             "<p>Si quieres el detalle, lee <a href=\"blog/que-no-hacer-despues-del-botox\">qué no hacer después del bótox</a> y <a href=\"blog/cuanto-dura-el-botox\">cuánto dura el bótox</a>, mes a mes.</p>"),
             ("Lo que el bótox no hace",
              "<p>No rellena ni levanta: relaja. Las arrugas que se ven con la cara quieta, los surcos o la pérdida de volumen se trabajan mejor con <a href=\"acido-hialuronico\">ácido hialurónico</a> o <a href=\"bioestimuladores\">bioestimuladores</a>. Si es tu caso, te lo decimos en la valoración en vez de poner más toxina.</p>"),
         ],
-        faq=[("¿Cuánto vale una sesión de bótox en Pereira?", "Depende de las zonas que tratemos y de la cantidad de producto que necesita tu musculatura. Te damos el valor exacto en la valoración, antes de empezar, para que decidas con toda la información."),
+        faq=[("¿Cuánto vale una sesión de bótox en Pereira?", "Depende de las zonas que tratemos y de la cantidad de producto que necesita tu musculatura. Te damos el valor exacto en la valoración, antes de empezar, para que decidas con toda la información. Si estás comparando, lee <a href=\"blog/precio-del-botox-en-pereira\">cómo comparar el precio del bótox en Pereira</a>."),
              ("¿Cuánto dura el efecto del bótox en la cara?", "Por lo general se repite cada 4 a 6 meses. Cuánto te dura a ti depende de tu musculatura, la zona tratada y tus hábitos."),
              ("¿Qué diferencia hay entre bótox y toxina botulínica?", "Botox es una marca de toxina botulínica tipo A. Hay otras marcas con registro sanitario; lo importante es que el producto sea legal y lo aplique un médico.")]),
 
