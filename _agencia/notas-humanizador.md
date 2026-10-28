@@ -30,6 +30,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-27 · 1 Redactor (actualización) · Title y descripción con fórmulas de hermanos · "qué incluye y cuándo desconfiar" (como "y cuándo consultar") y "5 preguntas antes de pagar" (familia de "qué preguntar antes de…") → "Precio del bótox en Pereira: lo que debe venir incluido".
 - 2026-10-27 · 1 Redactor (actualización) · Estructura de folleto y párrafos de la clínica en tono publicitario · "Puede sonar a evasiva. No lo es:", "el cuidado sigue después de la cita, con controles y seguimiento" → "Por chat no te vamos a dar una cifra, y no es por esconderla."
 - 2026-10-27 · 4 Juez SEO · Enlaces con palabra local pegados con la misma muletilla · "nuestra página de ácido hialurónico en Pereira. Para labios, en la página de relleno de labios en Pereira…" → une las frases: "…ácido hialurónico en Pereira; para labios, en la de relleno de labios en Pereira…"
+- 2026-10-28 · 1 Redactor · Apertura, intro y h2 otra vez con la foto de matrimonio/grado (ya en cuanto-dura-el-botox y multada el 24-oct) y un párrafo de una línea que solo remite a un enlace · "…una foto de matrimonio o de grado que quisieras ver distinta" → abre con un objeto del calendario: "La novena de aguinaldos ya aparece en el calendario de la oficina y tu lista sigue sin fecha."
+- 2026-10-28 · 1 Redactor · Ningún h2 llevaba la keyword y el enlace a un hermano iba en un párrafo suelto · "Cuenta las semanas antes de elegir" → "Tratamientos estéticos antes de diciembre en Pereira: cuenta las semanas"; el enlace va dentro del punto de la lista.
+- 2026-10-28 · 1 Redactor · Afirmaciones sin respaldo en datos.py y promesa blanda: "la serie completa no cabe en cinco semanas" (3 peelings cada 2 semanas sí caben), "cuatro tratamientos que se estorban entre sí", "un rostro que se sostiene mejor en enero" → "puede quedar corta", "sin margen para ver cómo responde tu piel", "trabajar a mediano plazo".
 
 ## Resueltas
 
