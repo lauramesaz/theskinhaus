@@ -20,7 +20,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 12 | qué no hacer después del bótox | las primeras 24 horas y la primera semana | toxina-botulinica | publicado 2026-10-27 |
 | 13 | limpieza facial médica o de spa | qué cambia, para quién es cada una | limpieza-facial-medica | publicado 2026-10-27 |
 | 14 | tratamientos estéticos antes de diciembre | cuánto margen pide cada tratamiento para un matrimonio, un grado o las fiestas (bótox, ácido hialurónico, bioestimuladores, skinbooster, limpieza); quién todavía llega y quién ya no | valoracion | publicado 2026-10-28 |
-| 15 | ¿duele el bótox? | qué se siente, cuánto dura la cita (20–30 min) y qué hacer si le tienes miedo a las agujas; sin prometer ausencia de dolor | toxina-botulinica | pendiente |
+| 15 | ¿duele el bótox? | qué se siente, cuánto dura la cita (20–30 min) y qué hacer si le tienes miedo a las agujas; sin prometer ausencia de dolor | toxina-botulinica | publicado 2026-10-29 |
 | 16 | morados e inflamación después del ácido hialurónico | qué es normal (inflamación de 24 a 72 horas, algún morado), cuánto tarda en bajar y qué señales piden consultar el mismo día | acido-hialuronico | pendiente |
 | 17 | cómo comparar cotizaciones de tratamientos estéticos | qué debería incluir el valor (valoración, producto que puedas verificar, cantidad, control) y por qué dos cotizaciones parecidas no son lo mismo; sin cifras | valoracion | pendiente |
 | 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | pendiente |
