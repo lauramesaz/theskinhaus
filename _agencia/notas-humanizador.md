@@ -35,6 +35,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-28 · 1 Redactor · Afirmaciones sin respaldo en datos.py y promesa blanda: "la serie completa no cabe en cinco semanas" (3 peelings cada 2 semanas sí caben), "cuatro tratamientos que se estorban entre sí", "un rostro que se sostiene mejor en enero" → "puede quedar corta", "sin margen para ver cómo responde tu piel", "trabajar a mediano plazo".- 2026-10-29 · 1 Redactor · Apertura que afirma lo que "más se hace" (no verificable) y cierre de apertura con "La respuesta corta:", calcado de cuanto-dura-el-botox · "La pregunta que más se hace antes de agendar… La respuesta corta:" → abre con una escena: "Tienes la cita a un clic de confirmarse y lo único en que piensas es la aguja."
 - 2026-10-29 · 1 Redactor · Frase suelta ya multada el 23-oct ("Desconfía de quien lo haga.") vuelve a aparecer · "Nadie puede prometerte que no vas a sentir nada, y desconfía de quien lo haga." → "Si alguien lo hace, pregunta en qué se basa."
 - 2026-10-29 · 1 Redactor · Generalización sobre terceros sin respaldo en hechos.md · "otras personas dicen lo contrario", "comparaciones con cosas que ni siquiera conoces" → di solo lo que sabes: "Alguna fuente cuenta… No es una regla." / "relatos dramáticos".
+- 2026-10-30 · 1 Redactor · Lo mismo repetido en tres secciones ("hinchado el primer día no es el resultado final" en la lista, en el apartado de por qué y en el de disolver) · Dilo una vez, donde pesa: "El resultado termina de asentarse en las semanas siguientes."
+- 2026-10-30 · 1 Redactor · Remate suelto que suena a orden: "Pregunta en tu cita qué hacer en tu caso, y hazlo." · Di qué preguntar y para: "Pregunta en tu cita qué te conviene a ti."
+- 2026-10-30 · 1 Redactor · Descripción con la fórmula "qué es normal… y cuándo consultar" de que-no-hacer-despues-del-botox · Cambia el ángulo: "qué esperar… y qué señales no se dejan pasar ni un día."
 
 ## Resueltas
 
