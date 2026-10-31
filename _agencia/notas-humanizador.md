@@ -38,6 +38,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-30 · 1 Redactor · Lo mismo repetido en tres secciones ("hinchado el primer día no es el resultado final" en la lista, en el apartado de por qué y en el de disolver) · Dilo una vez, donde pesa: "El resultado termina de asentarse en las semanas siguientes."
 - 2026-10-30 · 1 Redactor · Remate suelto que suena a orden: "Pregunta en tu cita qué hacer en tu caso, y hazlo." · Di qué preguntar y para: "Pregunta en tu cita qué te conviene a ti."
 - 2026-10-30 · 1 Redactor · Descripción con la fórmula "qué es normal… y cuándo consultar" de que-no-hacer-despues-del-botox · Cambia el ángulo: "qué esperar… y qué señales no se dejan pasar ni un día."
+- 2026-10-31 · 1 Redactor · Apertura con "tres mensajes/respuestas" calcada de precio-del-botox-en-pereira ("Le escribiste a tres lugares… tres respuestas") y cierre de apertura que solo anuncia ("Aquí va la lista…") · Abre con un objeto: "Tres capturas de pantalla en la galería, tres valores y ninguna dice qué incluye."
+- 2026-10-31 · 1 Redactor · Ningún h2 llevaba la keyword y todos los párrafos de 2 a 4 líneas, sin ninguno de una línea (otra vez) · "Cómo comparar cotizaciones de tratamientos estéticos: lo que debe decir cada una" + una línea suelta: "Solo se puede comparar lo que está escrito."
+- 2026-10-31 · 1 Redactor · Frases de folleto o que comparan con terceros sin respaldo: "Lo que nosotros sí hacemos distinto", "coinciden con lo que ya publicamos en esta web", "tiene su trampa" · Di lo tuyo sin contrastar: "Lo que hacemos nosotros, y lo que una tabla no resuelve"; "Son las que más repiten las guías que revisamos."
 
 ## Resueltas
 
