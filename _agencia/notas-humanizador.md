@@ -41,6 +41,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-10-31 · 1 Redactor · Apertura con "tres mensajes/respuestas" calcada de precio-del-botox-en-pereira ("Le escribiste a tres lugares… tres respuestas") y cierre de apertura que solo anuncia ("Aquí va la lista…") · Abre con un objeto: "Tres capturas de pantalla en la galería, tres valores y ninguna dice qué incluye."
 - 2026-10-31 · 1 Redactor · Ningún h2 llevaba la keyword y todos los párrafos de 2 a 4 líneas, sin ninguno de una línea (otra vez) · "Cómo comparar cotizaciones de tratamientos estéticos: lo que debe decir cada una" + una línea suelta: "Solo se puede comparar lo que está escrito."
 - 2026-10-31 · 1 Redactor · Frases de folleto o que comparan con terceros sin respaldo: "Lo que nosotros sí hacemos distinto", "coinciden con lo que ya publicamos en esta web", "tiene su trampa" · Di lo tuyo sin contrastar: "Lo que hacemos nosotros, y lo que una tabla no resuelve"; "Son las que más repiten las guías que revisamos."
+- 2026-11-01 · 1 Redactor · Cifras de plazo inventadas al combinar datos: "resta seis a ocho semanas como mínimo" y "el plan ocupa más de dos meses" (no están en datos.py ni hechos.md) · Deriva solo de lo permitido: "retrocede hasta la semana 8" y "entre una sesión y otra pasan de 4 a 8 semanas".
+- 2026-11-01 · 1 Redactor · Apertura y descripción calcadas: "Tienes una fecha marcada en el calendario de diciembre" (hermano antes-de-diciembre) y descripción que repite el title palabra por palabra · Abre con un objeto: "La invitación está pegada en la nevera con la fecha marcada y tienes una sola pregunta: ¿alcanzo?"
+- 2026-11-01 · 1 Redactor · Generalización sobre terceros y dato no respaldado: "casi todas son de clínicas", "vienen pacientes de Dosquebradas, Santa Rosa…", "ningún inyectable reemplaza una cirugía" · Di solo lo tuyo: "los plazos cambian de una página a otra" y "está pensado para una flacidez leve a moderada".
 
 ## Resueltas
 

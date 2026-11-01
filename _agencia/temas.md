@@ -23,7 +23,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 15 | ¿duele el bótox? | qué se siente, cuánto dura la cita (20–30 min) y qué hacer si le tienes miedo a las agujas; sin prometer ausencia de dolor | toxina-botulinica | publicado 2026-10-29 |
 | 16 | morados e inflamación después del ácido hialurónico | qué es normal (inflamación de 24 a 72 horas, algún morado), cuánto tarda en bajar y qué señales piden consultar el mismo día | acido-hialuronico | publicado 2026-10-30 |
 | 17 | cómo comparar cotizaciones de tratamientos estéticos | qué debería incluir el valor (valoración, producto que puedas verificar, cantidad, control) y por qué dos cotizaciones parecidas no son lo mismo; sin cifras | valoracion | publicado 2026-10-31 |
-| 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | pendiente |
+| 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | publicado 2026-11-01 |
 | 19 | cuánto se pela la piel después de un peeling | tipos de peeling, de ninguna a una semana de descamación y cómo encajarlo con tu agenda y tu trabajo | peelings-medicos | pendiente |
 | 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | pendiente |
 | 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | pendiente |
