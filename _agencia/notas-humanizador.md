@@ -44,6 +44,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-11-01 · 1 Redactor · Cifras de plazo inventadas al combinar datos: "resta seis a ocho semanas como mínimo" y "el plan ocupa más de dos meses" (no están en datos.py ni hechos.md) · Deriva solo de lo permitido: "retrocede hasta la semana 8" y "entre una sesión y otra pasan de 4 a 8 semanas".
 - 2026-11-01 · 1 Redactor · Apertura y descripción calcadas: "Tienes una fecha marcada en el calendario de diciembre" (hermano antes-de-diciembre) y descripción que repite el title palabra por palabra · Abre con un objeto: "La invitación está pegada en la nevera con la fecha marcada y tienes una sola pregunta: ¿alcanzo?"
 - 2026-11-01 · 1 Redactor · Generalización sobre terceros y dato no respaldado: "casi todas son de clínicas", "vienen pacientes de Dosquebradas, Santa Rosa…", "ningún inyectable reemplaza una cirugía" · Di solo lo tuyo: "los plazos cambian de una página a otra" y "está pensado para una flacidez leve a moderada".
+- 2026-11-02 · 1 Redactor · Entrada con "La pregunta es una sola" (muletilla ya multada el 27-oct) y relleno geográfico "En Pereira, como en cualquier parte" · Ata la pregunta a un objeto y deja Pereira natural: "Lo que no te deja tranquila es esto: cuánto se pela la piel…"
+- 2026-11-02 · 1 Redactor · Párrafo de una línea suelto que no dice nada ("Eso es lo que se puede planear.") · Si usas una línea corta, que afirme algo: "Y se puede planear."
+- 2026-11-02 · 1 Redactor · Afirmaciones sobre la piel sin respaldo en datos.py/hechos.md: "una misma intensidad puede pelarse distinto en dos personas", "no es lo que más ayuda a una cicatriz hundida" · Di solo lo respaldado: "Tu piel tampoco es la de otra persona" y "se piensa para manchas, tono apagado, poros y marcas de acné".
 
 ## Resueltas
 

@@ -24,7 +24,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 16 | morados e inflamación después del ácido hialurónico | qué es normal (inflamación de 24 a 72 horas, algún morado), cuánto tarda en bajar y qué señales piden consultar el mismo día | acido-hialuronico | publicado 2026-10-30 |
 | 17 | cómo comparar cotizaciones de tratamientos estéticos | qué debería incluir el valor (valoración, producto que puedas verificar, cantidad, control) y por qué dos cotizaciones parecidas no son lo mismo; sin cifras | valoracion | publicado 2026-10-31 |
 | 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | publicado 2026-11-01 |
-| 19 | cuánto se pela la piel después de un peeling | tipos de peeling, de ninguna a una semana de descamación y cómo encajarlo con tu agenda y tu trabajo | peelings-medicos | pendiente |
+| 19 | cuánto se pela la piel después de un peeling | tipos de peeling, de ninguna a una semana de descamación y cómo encajarlo con tu agenda y tu trabajo | peelings-medicos | publicado 2026-11-02 |
 | 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | pendiente |
 | 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | pendiente |
 | 22 | peeling antes de un viaje a la playa | cuánto tiempo antes de las vacaciones de diciembre, por qué el sol de la costa cambia la elección del peeling y la regla del protector | peelings-medicos | pendiente |
@@ -49,6 +49,9 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 41 | manchas que deja el acné | marca oscura o rojiza frente a cicatriz, por qué quedan y cuándo conviene tratarlas | manchas-y-melasma | pendiente |
 | 42 | ¿qué pasa si dejo de ponerme bótox? | el efecto es temporal: qué ocurre con el paso de los meses, sin mitos de dependencia | toxina-botulinica | pendiente |
 | 43 | cara de Ozempic | pérdida de volumen al bajar de peso, qué ayuda y qué no se puede prometer | bioestimuladores | pendiente |
+| 44 | cuántos ml de ácido hialurónico para labios | por qué no hay una cifra única, qué dice la revisión de 16 estudios (solo como dato de aumento) y cómo se decide la cantidad en la valoración; sin precios | relleno-de-labios | pendiente |
+| 45 | cuándo volver a ponerse bótox | señales de que el efecto se va y por qué no conviene esperar al último día; tiempos de la web (4–6 meses); evita repetir cuanto-dura-el-botox | toxina-botulinica | pendiente |
+| 46 | radiesse en Pereira: qué es y a quién le sirve | búsqueda "radiesse" ya aparece en Search Console (pos. 140); explicar la hidroxiapatita de calcio sin afirmar que la clínica usa la marca | bioestimuladores | pendiente |
 
 ## Criterio de la lista (27-oct-2026)
 
