@@ -9,6 +9,45 @@ Aquí se copian los datos cada lunes (la nube no puede abrir Search Console):
 página · impresiones · clics · posición · consultas principales (solo medicina estética).
 Todavía sin datos: la web es nueva y Google tarda unos días en mostrar impresiones.
 
+## Foto del 2-nov-2026 (últimos 28 días: 4-oct a 31-oct)
+
+Totales: **3 clics · 231 impresiones · CTR 1,3 % · posición media 13,3**.
+
+**Top 10 búsquedas (medicina estética; sin vasculares):**
+| Consulta | Clics | Impr. | Posición |
+|---|---|---|---|
+| 1 ml de acido hialuronico | 0 | 5 | 10,0 |
+| 1 ml de ácido hialurónico para que alcanza | 0 | 5 | 9,4 |
+| botox pereira | 0 | 4 | 14,0 |
+| skin haus (marca) | 0 | 4 | 3,8 |
+| armonizacion facial pereira | 0 | 3 | 10,7 |
+| botox en la cara cuanto tiempo dura | 0 | 2 | 87,0 |
+| cuanto dura el botox | 0 | 2 | 82,5 |
+| cuanto dura el botox en la cara | 0 | 2 | 77,0 |
+| ml de acido hialuronico | 0 | 2 | 9,0 |
+| botox es lo mismo que toxina botulinica | 0 | 1 | 8,0 |
+
+**Top 10 páginas:**
+| Página | Clics | Impr. | Posición |
+|---|---|---|---|
+| /relleno-de-labios | 1 | 23 | 7,5 |
+| /nosotros | 1 | 5 | 2,6 |
+| /tratamiento-de-ojeras | 1 | 5 | 4,4 |
+| /blog/cuanto-rinde-1-ml-de-acido-hialuronico | 0 | 55 | 9,5 |
+| /eco-doppler-venoso (vascular) | 0 | 41 | 8,7 |
+| /blog/cuanto-dura-el-botox | 0 | 12 | 64,1 |
+| /blog/botox-o-toxina-botulinica-es-lo-mismo | 0 | 11 | 12,3 |
+| /blog/precio-del-botox-en-pereira | 0 | 10 | 6,5 |
+| / (inicio) | 0 | 9 | 7,4 |
+| /blog/dermapen-cuantas-sesiones-cicatrices-de-acne | 0 | 9 | 8,9 |
+
+**Indexación:** 44 páginas en el sitemap · **40 en Google** · 4 todavía no ("Google no reconoce esta URL"):
+/dra-valeria-enciso, /blog/cuanto-se-pela-la-piel-despues-de-un-peeling, /blog/limpieza-facial-medica-o-de-spa, /blog/sculptra-o-radiesse.
+
+**Salen pero casi nadie abre:** /relleno-de-labios (23 impr., pos. 7,5), /blog/cuanto-rinde-1-ml-de-acido-hialuronico (55 impr., pos. 9,5, 0 clics), /blog/botox-o-toxina-botulinica-es-lo-mismo (11), /blog/precio-del-botox-en-pereira (10, pos. 6,5): mejorar título y descripción.
+
+**Lectura:** frente a la foto anterior (27-oct) suben los clics (1 → 3) y las apariciones (63 → 231), y las páginas en Google pasan de 33 a 40. Búsquedas nuevas de medicina estética: "botox pereira" (pos. 14, cerca de página 1) y "armonización facial pereira" (pos. 10,7). "Cuánto dura el botox" sigue lejos (pos. ~80): el artículo necesita más fuerza. La página de la Dra. Valeria Enciso aún no está en Google.
+
 ## Foto del 27-oct-2026 (últimos 28 días)
 
 Totales: **1 clic · 63 impresiones · CTR 1,6 % · posición media 16,0**.
