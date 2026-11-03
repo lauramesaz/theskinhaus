@@ -708,6 +708,18 @@ def resena():
 
 
 
+def recomendada():
+    """/recomendada: a donde lleva el QR de la tarjeta "Te recomiendo" (3-nov-2026). Cada visita = una tarjeta escaneada;
+    el mensaje de WhatsApp dice que viene recomendada para que quien atiende sepa de dónde llegó."""
+    msj = "Hola, me recomendaron The Skin Haus y quiero agendar mi valoración. Me recomendó: "
+    boton = '<a class="btn lleno" href="%s" target="_blank" rel="noopener">Escribir por WhatsApp</a>' % wa(msj)
+    cuerpo = hero("Te recomendaron", "Alguien pensó <em>en ti.</em>",
+                  "Una persona que nos conoce te recomendó The Skin Haus. Escríbenos y agendamos tu valoración con la %s, médica estética, en la Torre Médica Oval." % MEDICA_ESTETICA["nombre"],
+                  "consulta", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Valoración en The Skin Haus")
+    pagina("recomendada", "Te recomendaron The Skin Haus · Pereira", "Agenda tu valoración en The Skin Haus, medicina estética en Pereira.",
+           cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj)
+
+
 def extras():
     fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion", MEDICA_ESTETICA["slug"], "preguntas-frecuentes"] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
     filas = [(u, ACTUALIZADO) for u in fijas] + blog.para_sitemap()
@@ -730,7 +742,7 @@ def extras():
            "%s. Valoración médica presencial; se agenda por WhatsApp %s. También atiende medicina vascular." % (", ".join(AREA[:-1]) + " y " + AREA[-1], TELEFONO_VISIBLE), "",
            "## Datos clave",
            "- Nombre: The Skin Haus (no confundir con negocios de nombre parecido). Web oficial: %s" % DOMINIO,
-           "- Dónde: Torre Médica Oval, Pereira, Risaralda, Colombia.",
+           "- Dónde: %s, Risaralda, Colombia." % DIRECCION,
            "- Cómo agendar: WhatsApp %s o %s/valoracion" % (TELEFONO_VISIBLE, DOMINIO),
            "- Primera cita: valoración médica presencial, sin compromiso de hacerse ningún tratamiento. El valor de cada tratamiento se da en la valoración.",
            "- Criterio: menos, mejor puesto; planes por etapas, dosis precisas y controles; resultados naturales.", "",
@@ -769,6 +781,7 @@ if __name__ == "__main__":
     preguntas_frecuentes()
     pagina_404()
     resena()
+    recomendada()
     n_blog = blog.generar()
     extras()
     import guia_whatsapp  # página interna /equipo (guía de ventas por WhatsApp, clave 111, noindex)

@@ -70,6 +70,13 @@ SEGUIMIENTO = [  # (grupo, [(cuándo, mensaje)])
         ("Día 21 · pedir reseña", "Hola, {nombre} 🤍 ¿Nos ayudas con tu opinión? Le sirve mucho a otras personas de Pereira para encontrarnos: " + WEB + "/resena ¡Gracias!"),
         ("Bótox · mes 4", "Hola, {nombre}. Ya van unos 4 meses desde tu bótox; entre los 4 y los 6 meses es cuando suele tocar repetir. ¿Quieres que te revisemos un espacio?"),
     ]),
+    ("Recomendaciones", [
+        ("Día 21 · después de la reseña", "Gracias, {nombre} 🤍 Si alguna amiga quiere conocernos, puede escribirnos aquí y decir que va de tu parte: " + WEB + "/recomendada"),
+        ("Llega alguien recomendada", "¡Hola! Qué alegría que vengas de parte de {quien recomendó} 🤍 ¿Cómo te llamas y qué te gustaría mejorar?"),
+    ]),
+    ("Invitadas de la inauguración (16 de octubre)", [
+        ("Una sola vez", "¡Hola, {nombre}! Gracias por acompañarnos en la apertura de The Skin Haus 🤍 Ya estamos atendiendo en la Torre Médica Oval, consultorio 904. Si quieres tu valoración con la %s, te busco un espacio. ¿Te queda mejor esta semana o la próxima?" % DRA),
+    ]),
 ]
 
 ATAJOS = [("hola", BIENVENIDA), ("agendar", AGENDAR), ("precio", OBJECIONES[0][1]), ("porque", OBJECIONES[1][1]),
@@ -78,7 +85,8 @@ ATAJOS = [("hola", BIENVENIDA), ("agendar", AGENDAR), ("precio", OBJECIONES[0][1
 for _g, _ms in SEGUIMIENTO:
     for _c, _m in _ms:
         _k = {"Al día siguiente": "sincita1", "Día 3": "sincita3", "Día 7 (último)": "sincita7", "Día 2": "valor2", "Día 7": "valor7",
-              "Día 30": "valor30", "Día 1": "cuidados", "Bótox · día 12": "control", "Día 21 · pedir reseña": "resena", "Bótox · mes 4": "retoque"}[_c]
+              "Día 30": "valor30", "Día 1": "cuidados", "Bótox · día 12": "control", "Día 21 · pedir reseña": "resena", "Bótox · mes 4": "retoque",
+              "Día 21 · después de la reseña": "recomienda", "Llega alguien recomendada": "recomendada", "Una sola vez": "inauguracion"}[_c]
         ATAJOS.append((_k, _m))
 
 PERFIL = [
