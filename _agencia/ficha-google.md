@@ -44,7 +44,7 @@ WhatsApp.
 - Sitio web: https://theskinhaus.com.co
 - Botón de cita: https://theskinhaus.com.co/valoracion
 - WhatsApp / teléfono: +57 317 441 2203
-- Dirección: Torre Médica Oval, Pereira (poner la dirección exacta con número y el consultorio)
+- Dirección: Av. Juan B. Gutiérrez #18-60, Edificio Oval Médica (Torre Médica Oval), consultorio 904, Pinares, Pereira, Risaralda (consultorio según la invitación de la inauguración; calle del edificio confirmada en directorios médicos, 3-nov-2026)
 - Horario: el real de la clínica
 
 ## Fotos (reales, no de banco)
@@ -65,3 +65,21 @@ categoría spa, 19 reseñas, Instagram @skin_haus). NO es The Skin Haus. Al crea
 ## Kit de reseñas
 Tarjeta con QR, mensajes de WhatsApp y respuestas modelo en `kit-resenas/`. Cuando la ficha exista,
 pegar su enlace de reseñas en `datos.py` → `RESENA_URL` y publicar: el QR empieza a llevar directo a Google.
+
+
+## Primeras 4 publicaciones de la ficha (una por semana, con foto propia de assets/fotos)
+1. **Abrimos en la Torre Médica Oval.** The Skin Haus ya atiende en el consultorio 904 de la Torre Médica Oval, en Pinares. Medicina estética con valoración médica presencial con la Dra. Valeria Enciso. Botón: Reservar → https://theskinhaus.com.co/valoracion
+2. **Bótox: cuánto dura y cuándo se ve.** Empieza a notarse entre el día 3 y el 7, se ve completo hacia las dos semanas, cuando hacemos control, y se suele repetir cada 4 a 6 meses. Botón: Más información → https://theskinhaus.com.co/toxina-botulinica
+3. **Ojeras: ¿se tratan con ácido hialurónico?** Depende de tu tipo de ojera; por eso se define viéndote en persona. Botón: Más información → https://theskinhaus.com.co/tratamiento-de-ojeras
+4. **¿Primera vez en medicina estética?** En la valoración conversamos, te examinamos, te explicamos las opciones y decides con calma. Botón: Reservar → https://theskinhaus.com.co/valoracion
+
+## Preguntas y respuestas (publicarlas desde la propia ficha)
+- **¿Quién hace los procedimientos?** Siempre un médico. Los realiza o supervisa directamente el equipo médico de la clínica.
+- **¿Atienden pacientes de Dosquebradas y Santa Rosa de Cabal?** Sí, atendemos a pacientes de toda el área: Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago.
+- **¿Me puedo hacer el tratamiento el mismo día de la valoración?** En muchos casos sí, si el médico lo considera adecuado y tú te sientes lista para decidir.
+- **¿Dan precios por WhatsApp?** El valor exacto se da en la valoración, porque depende de tu caso. Por WhatsApp te explicamos de qué depende y te agendamos.
+
+## Después de verificar la ficha (lo hago yo con tu permiso)
+- Pegar el enlace de reseñas en `datos.py` → `RESENA_URL`, publicar y probar el QR.
+- Poner el enlace de la ficha en la web (pie y página de valoración) y en los datos estructurados (`sameAs`).
+- Revisar cada lunes las reseñas nuevas y dejar lista la respuesta.

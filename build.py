@@ -246,6 +246,8 @@ CLINICA_LD = {
     "description": "Clínica de medicina estética en Pereira: toxina botulínica (bótox), ácido hialurónico, bioestimuladores, skinboosters, peelings, microagujas y manejo de manchas. También medicina vascular.",
     "url": DOMINIO, "telephone": TELEFONO_VISIBLE, "image": DOMINIO + "/" + foto_jpg("recepcion"),
     "address": {"@type": "PostalAddress", "streetAddress": "Av. Juan B. Gutiérrez #18-60, Edificio Oval Médica, consultorio 904", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 4.8027788, "longitude": -75.6857281},  # edificio Oval Médica (Google Maps, 3-nov-2026)
+    "hasMap": "https://www.google.com/maps?q=4.8027788,-75.6857281",
     "areaServed": [{"@type": "City", "name": c} for c in AREA],
     "medicalSpecialty": "Dermatology",
     "availableService": [{"@type": "MedicalProcedure", "name": t["nombre"], "url": DOMINIO + "/" + t["slug"]} for t in ESTETICA + BUSQUEDAS],
@@ -548,7 +550,7 @@ def valoracion():
     <p class="sub rev">Cuéntanos qué te interesa y te respondemos por WhatsApp para encontrar tu espacio. Sin compromiso y sin presión.</p>
     <div class="info-contacto rev">
       <div><p class="ceja">WhatsApp</p><p><a class="enlace" style="letter-spacing:.08em" href="%s" target="_blank" rel="noopener">%s %s</a></p></div>
-      <div><p class="ceja">Dónde estamos</p><p>%s</p></div>
+      <div><p class="ceja">Dónde estamos</p><p>%s</p><p><a class="enlace" href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></p></div>
     </div>
   </div>
   <form class="form isla rev" id="form-valoracion" data-wa="%s" data-clarity-mask="true" style="margin:0">
