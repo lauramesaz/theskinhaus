@@ -48,6 +48,10 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-11-02 · 1 Redactor · Párrafo de una línea suelto que no dice nada ("Eso es lo que se puede planear.") · Si usas una línea corta, que afirme algo: "Y se puede planear."
 - 2026-11-02 · 1 Redactor · Afirmaciones sobre la piel sin respaldo en datos.py/hechos.md: "una misma intensidad puede pelarse distinto en dos personas", "no es lo que más ayuda a una cicatriz hundida" · Di solo lo respaldado: "Tu piel tampoco es la de otra persona" y "se piensa para manchas, tono apagado, poros y marcas de acné".
 
+- 2026-11-03 · 1 Redactor · Frases sin respaldo en hechos.md: "Es más fácil agregar que deshacer, porque el bótox no se disuelve ni se corrige a las pocas horas", "Un martes, por ejemplo", "no sustituye cuidarte del sol" · Quédate en lo respaldado: "Así decides con el resultado a la vista y no a ojo."
+- 2026-11-03 · 1 Redactor · Title, h1 y h2 con "qué se trata" (calco del inglés, suena a traducción) y descripción que empaqueta "sin incapacidad y una dosis que cuida tu expresión y tus cejas" (folleto) · "Bótox para hombres: dónde se pone y cómo no se nota"
+- 2026-11-03 · 1 Redactor · Apertura "Tienes…/llevas semanas…" (familia ya multada: matrimonio, cotizaciones, cita a un clic) · Abre con un objeto: "El lunes hay reunión con el cliente y en el espejo sigue la raya del entrecejo."
+
 ## Resueltas
 
 - 2026-10-20 · 1 Redactor · Párrafos todos de 3 a 5 líneas, sin ninguno corto (artículo 5 de 5) · Parte un párrafo en dos o deja uno de una línea para respirar.

@@ -25,7 +25,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 17 | cómo comparar cotizaciones de tratamientos estéticos | qué debería incluir el valor (valoración, producto que puedas verificar, cantidad, control) y por qué dos cotizaciones parecidas no son lo mismo; sin cifras | valoracion | publicado 2026-10-31 |
 | 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | publicado 2026-11-01 |
 | 19 | cuánto se pela la piel después de un peeling | tipos de peeling, de ninguna a una semana de descamación y cómo encajarlo con tu agenda y tu trabajo | peelings-medicos | publicado 2026-11-02 |
-| 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | pendiente |
+| 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | publicado 2026-11-03 |
 | 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | pendiente |
 | 22 | peeling antes de un viaje a la playa | cuánto tiempo antes de las vacaciones de diciembre, por qué el sol de la costa cambia la elección del peeling y la regla del protector | peelings-medicos | pendiente |
 | 23 | cómo hidratar los labios sin agrandarlos | qué opciones médicas hidratan o mejoran la textura sin cambiar el tamaño y cuándo sí conviene volumen sutil | relleno-de-labios | pendiente |
