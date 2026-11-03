@@ -122,6 +122,7 @@ def articulo(a, todos):
         otros_html = '''<section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Sigue leyendo</p></div>%s
 </div></section>''' % rejilla(otros)
+    msg_blog = "Hola, leí «%s» en el blog de la web y quiero agendar una valoración en The Skin Haus." % a["title"]
     cuerpo = '''<section class="bloque art-cab"><div class="aura a1"></div><div class="caja sobre">
   <nav class="migas rev" aria-label="Migas"><a href="">Inicio</a><span>/</span><a href="blog/">Blog</a><span>/</span><span>%s</span></nav>
   <p class="ceja rev">%s</p>
@@ -139,7 +140,7 @@ def articulo(a, todos):
 %s
 %s''' % (a.get("ceja", "Blog"), a.get("ceja", "Blog"), a.get("h1", a["title"]), a.get("intro", ""), fecha(a["actualizado"]), minutos,
          B["foto"](foto_de(a)), a["title"], a["cuerpo"], faq_html, rel_html, otros_html,
-         B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>"))
+         B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_blog))
     imagen = "%s/%s" % (B["DOMINIO"], B["foto_jpg"](foto_de(a)))
     ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["descripcion"],
            "datePublished": a["publicado"], "dateModified": a["actualizado"], "inLanguage": "es-CO",
@@ -152,7 +153,7 @@ def articulo(a, todos):
         ld.append(B["faq_ld"](a["faq"]))
     t = a["title"]
     titulo = t + " · The Skin Haus" if len(t) + 16 <= 62 else t
-    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), tipo="article")
+    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), tipo="article", wa_msg=msg_blog)
 
 
 def indice(arts):

@@ -99,7 +99,7 @@ def estilo_en_linea():
     return _CSS
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head=""):
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None):
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
     ld = HEAD_MEDICION + ld
@@ -133,7 +133,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
               '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", estilo_en_linea(), ld,
-              cabecera(activo), cuerpo, pie(), wa(), WA_SVG, V)
+              cabecera(activo), cuerpo, pie(), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
         f.write(html)
@@ -211,7 +211,7 @@ def faq(pares):
         '<details class="rev"><summary>%s<span class="circ">+</span></summary><p>%s</p></details>' % p for p in pares)
 
 
-def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica"):
+def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica", msg=None):
     return '''<section class="bloque"><div class="isla lino cierre" style="position:relative">
 <div class="aura a1" style="opacity:.8"></div><div class="aura a2"></div>
 <div class="flota f1" data-vel="-0.05"><div class="circulo"><img src="assets/fotos/cabina-espejo.webp" alt="" loading="lazy"></div></div>
@@ -219,7 +219,7 @@ def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica"):
 <div class="sobre"><p class="ceja rev">%s</p><h2 class="rev">%s</h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
 <div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a></div></div>
-</div></section>''' % (ceja, titulo, wa(), CIRC)
+</div></section>''' % (ceja, titulo, wa(msg) if msg else wa(), CIRC)
 
 
 def manifiesto(texto, ceja="Lo que nos mueve"):
@@ -245,7 +245,7 @@ CLINICA_LD = {
     "alternateName": "The Skin Haus Pereira",
     "description": "Clínica de medicina estética en Pereira: toxina botulínica (bótox), ácido hialurónico, bioestimuladores, skinboosters, peelings, microagujas y manejo de manchas. También medicina vascular.",
     "url": DOMINIO, "telephone": TELEFONO_VISIBLE, "image": DOMINIO + "/" + foto_jpg("recepcion"),
-    "address": {"@type": "PostalAddress", "streetAddress": "Torre Médica Oval", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"},
+    "address": {"@type": "PostalAddress", "streetAddress": "Av. Juan B. Gutiérrez #18-60, Edificio Oval Médica, consultorio 904", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"},
     "areaServed": [{"@type": "City", "name": c} for c in AREA],
     "medicalSpecialty": "Dermatology",
     "availableService": [{"@type": "MedicalProcedure", "name": t["nombre"], "url": DOMINIO + "/" + t["slug"]} for t in ESTETICA + BUSQUEDAS],
@@ -351,7 +351,7 @@ def inicio():
 
 %s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR), foto("consulta"),
          camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre())
-    pagina("index", "Medicina estética en Pereira · The Skin Haus",
+    pagina("index", "The Skin Haus · Medicina estética en Pereira, Oval Médica",
            "Clínica de medicina estética en Pereira: bótox, ácido hialurónico, bioestimuladores, manchas y calidad de piel, con criterio médico. También medicina vascular.",
            cuerpo, jsonld=[CLINICA_LD, {"@context": "https://schema.org", "@type": "WebSite", "name": MARCA, "url": DOMINIO + "/"}])
 
@@ -447,6 +447,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
         circ_foto = {"facial": "piel", "retrato": "manos", "piel": "facial-detalle", "vascular": "vascular-detalle", "manos": "piel"}.get(t["foto"], "manos")
     acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Pregúntanos %s</a></div>' % (
         wa("Hola, quiero información sobre %s en The Skin Haus." % t["nombre"].lower()), CIRC)
+    msg_cita = "Hola, vengo de la página de %s en la web y quiero agendar mi valoración en The Skin Haus." % t["nombre"].lower()
     preguntas = list(t["faq"]) + list(seo.get("faq", []) if seo is not t else [])
     alt = "%s en Pereira: %s" % (t["nombre"], t["linea"][0].lower() + t["linea"][1:].rstrip("."))
     cuerpo = hero(ceja, seo.get("h1", t["nombre"]), t["linea"], principal, circ_foto, acciones, corto=True, alt=alt) + '''
@@ -475,7 +476,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
          ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
              MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
          secciones(seo.get("secciones", [])), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
-         cierre("Conversemos sobre lo que <em>quieres cuidar.</em>"))
+         cierre("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_cita))
     url = DOMINIO + "/" + t["slug"]
     ld = [CLINICA_LD,
           {"@context": "https://schema.org", "@type": "MedicalProcedure", "name": t["nombre"], "url": url,
@@ -484,7 +485,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
           faq_ld(preguntas), migas_ld(migas)]
     titulo = seo.get("titulo", "%s en Pereira · The Skin Haus" % t["nombre"])
     desc = seo.get("desc", "%s %s" % (t["linea"], t["intro"][:110].rsplit(" ", 1)[0] + "…"))
-    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=principal)
+    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=principal, wa_msg=msg_cita)
 
 
 # ---------------------------------------------------------------- nosotros
@@ -616,10 +617,10 @@ def medica():
               + faq(preguntas) + '</div></section>'
               + '<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">'
               + '<div class="centro"><p class="ceja rev">Lo que más le consultan</p></div>' + tarjetas(rel) + '</div></div></section>'
-              + cierre("Agenda con la <em>Dra. Enciso.</em>"))
+              + cierre("Agenda con la <em>Dra. Enciso.</em>", msg="Hola, quiero agendar una valoración con la Dra. Valeria Enciso en The Skin Haus."))
     pagina(m["slug"], "Dra. Valeria Enciso · Médica estética en Pereira",
            "Dra. Valeria Enciso, médica estética de The Skin Haus en la Torre Médica Oval de Pereira: valoración presencial, bótox, ácido hialurónico, bioestimuladores y calidad de piel.",
-           cuerpo, activo="nosotros", imagen=m["foto"], tipo="profile",
+           cuerpo, activo="nosotros", imagen=m["foto"], tipo="profile", wa_msg="Hola, quiero agendar una valoración con la Dra. Valeria Enciso en The Skin Haus.",
            jsonld=[CLINICA_LD, medica_ld(), {"@context": "https://schema.org", "@type": "ProfilePage", "url": DOMINIO + "/" + m["slug"],
                                               "mainEntity": {"@id": DOMINIO + "/" + m["slug"] + "#medica"}},
                    faq_ld(preguntas), migas_ld([("Inicio", ""), ("Nosotros", "nosotros"), (m["nombre"], m["slug"])])])

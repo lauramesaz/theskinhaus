@@ -6,7 +6,7 @@ CIUDAD = "Pereira"
 DOMINIO = "https://theskinhaus.com.co"          # comprado en GoDaddy 28-sep-2026 (principal SIN www)
 WHATSAPP = "573174412203"
 TELEFONO_VISIBLE = "+57 317 441 2203"
-DIRECCION = "Torre Médica Oval · Pereira"
+DIRECCION = "Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira"
 HORARIO = [("Lunes a viernes", "8:00 a. m. – 6:00 p. m."), ("Sábados", "9:00 a. m. – 1:00 p. m.")]  # PENDIENTE
 INSTAGRAM = "https://www.instagram.com/"         # PENDIENTE: usuario real
 CORREO = "hola@theskinhaus.com.co"                 # PENDIENTE
@@ -302,8 +302,8 @@ BUSQUEDAS = [
               ("¿Cuánto dura el relleno de labios?", "Varios meses. En los labios suele durar menos que en otras zonas porque es una zona con mucho movimiento. Te damos una referencia según el producto y tu caso."),
               ("¿Se puede revertir?", "Sí. El ácido hialurónico se puede disolver con una enzima (hialuronidasa) si alguna vez fuera necesario."),
               ("¿Se va a notar que me hice algo?", "La idea es que se note que te ves bien, no qué te hiciste. Empezamos con poca cantidad y, si hace falta, completamos después.")],
-         titulo="Relleno de labios en Pereira con ácido hialurónico",
-         desc="Relleno de labios en Pereira con ácido hialurónico: definición, hidratación o volumen sutil en 30–45 minutos, en proporción con tu rostro. Y es reversible.",
+         titulo="Relleno de labios en Pereira: natural y reversible",
+         desc="Relleno de labios en Pereira con ácido hialurónico: definir, hidratar o dar volumen sutil en 30–45 minutos, en proporción con tu rostro. Te valora la Dra. Enciso.",
          secciones=[
              ("Relleno de labios natural en Pereira",
               "<p>Si lo que te frena es el miedo a que se note, empecemos por ahí. Un relleno de labios no tiene que ser “más boca”. Puede ser solo perfilar el borde, corregir una asimetría leve o devolver hidratación a unos labios que se ven secos.</p>"
@@ -345,7 +345,7 @@ BUSQUEDAS = [
          faq=[("¿Cuánto cuesta una armonización facial en Pereira?", "Depende del plan: qué zonas, qué tratamientos y cuánto producto. Te damos el valor en la valoración, por etapas, para que decidas con calma."),
               ("¿Se hace todo en una sola cita?", "No necesariamente. Muchas veces conviene hacerlo por etapas: así el cambio es gradual y podemos ajustar en el control."),
               ("¿Se ve natural?", "Ese es el objetivo. No buscamos cambiar quién eres, sino que tu rostro se vea en proporción y descansado.")],
-         titulo="Armonización facial en Pereira · The Skin Haus",
+         titulo="Armonización facial en Pereira: natural y por etapas",
          desc="Armonización facial en Pereira: un plan por etapas con ácido hialurónico, bótox o bioestimuladores, pensado para tu proporción y no para cambiar quién eres.",
          secciones=[
              ("Qué puede incluir una armonización facial",
