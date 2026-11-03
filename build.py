@@ -769,4 +769,6 @@ if __name__ == "__main__":
     resena()
     n_blog = blog.generar()
     extras()
+    import guia_whatsapp  # página interna /equipo (guía de ventas por WhatsApp, clave 111, noindex)
+    guia_whatsapp.generar()
     print("listo:", 7 + len(TODOS) + len(BUSQUEDAS), "páginas (+ 404 y reseña) +", n_blog, "artículos del blog")

@@ -161,7 +161,7 @@ SEO = {
     "toxina-botulinica": dict(
         titulo="Bótox en Pereira (toxina botulínica) · The Skin Haus",
         desc="Bótox en Pereira con criterio médico: frente, entrecejo y patas de gallo en 20–30 minutos y sin incapacidad. Valoración en la Torre Médica Oval.",
-        h1="Toxina botulínica <em>(bótox)</em>",
+        h1="Bótox en Pereira <em>(toxina botulínica)</em>",
         secciones=[
             ("¿Bótox y toxina botulínica son lo mismo?",
              "<p>Sí, en lo esencial. Botox es el nombre comercial más conocido de la toxina botulínica tipo A, y por eso en Pereira casi todo el mundo dice “bótox”. Existen otras marcas con registro sanitario.</p>"
