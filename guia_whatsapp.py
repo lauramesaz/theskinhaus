@@ -34,6 +34,7 @@ PREGUNTAS_CLAVE = [
     "¿Te has hecho algún tratamiento antes? ¿Cuál y cuándo?",
     "¿Desde dónde nos escribes? (Pereira, Dosquebradas, Santa Rosa…)",
 ]
+PORTAFOLIO = "Te comparto nuestro portafolio con todos los tratamientos, sus tiempos y cómo es la valoración: " + WEB + "/assets/portafolio-the-skin-haus.pdf ¿Cuál te llamó la atención?"
 AGENDAR = "Te propongo tu valoración con la %s, médica estética. Ahí te examina, te explica qué tiene sentido para ti y te da el valor exacto. ¿Te queda mejor [día 1] o [día 2]?" % DRA
 CONFIRMACION = ("✨ *Tu valoración en The Skin Haus*\n\n"
                 "🤍 *Nombre:* \n🗓️ *Fecha:* \n🕰️ *Hora:* \n👩🏻‍⚕️ *Con:* " + DRA + "\n"
@@ -79,7 +80,7 @@ SEGUIMIENTO = [  # (grupo, [(cuándo, mensaje)])
     ]),
 ]
 
-ATAJOS = [("hola", BIENVENIDA), ("agendar", AGENDAR), ("precio", OBJECIONES[0][1]), ("porque", OBJECIONES[1][1]),
+ATAJOS = [("hola", BIENVENIDA), ("portafolio", PORTAFOLIO), ("agendar", AGENDAR), ("precio", OBJECIONES[0][1]), ("porque", OBJECIONES[1][1]),
           ("comparar", OBJECIONES[2][1]), ("miedo", OBJECIONES[4][1]), ("duele", OBJECIONES[5][1]),
           ("pensar", OBJECIONES[8][1]), ("dosquebradas", OBJECIONES[7][1])]
 for _g, _ms in SEGUIMIENTO:
@@ -200,6 +201,7 @@ def generar():
     c.append('<h2 id="reglas">Las 6 <em>reglas</em></h2><div class="reglas">%s</div>' % "".join('<div class="regla"><b>%s</b><span>%s</span></div>' % (escape(a), escape(b)) for a, b in REGLAS))
     c.append('<h2 id="primer">El primer <em>mensaje</em></h2>' + _msj(BIENVENIDA, "Cuando alguien escribe")
              + '<div class="msj"><div class="cuando">Las 4 preguntas que siempre haces</div><ol class="lista">%s</ol></div>' % "".join("<li>%s</li>" % escape(p) for p in PREGUNTAS_CLAVE)
+             + _msj(PORTAFOLIO, "Si pregunta qué tratamientos hacen (manda el portafolio en PDF)")
              + _msj(AGENDAR, "Para agendar (ofrece siempre dos opciones)") + _msj(CONFIRMACION, "Cuando confirma: mensaje de confirmación"))
     tr = []
     for t in _trat():
