@@ -51,6 +51,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 - 2026-11-03 · 1 Redactor · Frases sin respaldo en hechos.md: "Es más fácil agregar que deshacer, porque el bótox no se disuelve ni se corrige a las pocas horas", "Un martes, por ejemplo", "no sustituye cuidarte del sol" · Quédate en lo respaldado: "Así decides con el resultado a la vista y no a ojo."
 - 2026-11-03 · 1 Redactor · Title, h1 y h2 con "qué se trata" (calco del inglés, suena a traducción) y descripción que empaqueta "sin incapacidad y una dosis que cuida tu expresión y tus cejas" (folleto) · "Bótox para hombres: dónde se pone y cómo no se nota"
 - 2026-11-03 · 1 Redactor · Apertura "Tienes…/llevas semanas…" (familia ya multada: matrimonio, cotizaciones, cita a un clic) · Abre con un objeto: "El lunes hay reunión con el cliente y en el espejo sigue la raya del entrecejo."
+- 2026-11-04 · 1 Redactor · Title, descripción y entrada calcados de hermanos · ": cuánto margen" (igual que tratamientos-esteticos-antes-de-diciembre) y "la descamación va de ninguna a una semana… depende de la profundidad" (igual que cuanto-se-pela-la-piel-despues-de-un-peeling) → "Peeling antes de un viaje a la playa: cuenta desde el vuelo"
+- 2026-11-04 · 1 Redactor · Generalización sobre terceros sin respaldo (ya multada el 25-oct y el 29-oct) · "cada página da una cifra distinta y ninguna se apoya en una guía médica oficial" → "los plazos cambian de una página a otra"
+- 2026-11-04 · 1 Redactor · Frases de folleto o sin respaldo en datos.py · "el calendario pesa tanto como el ácido", "Una persona del equipo médico te lo calcula…", "hace parte del equipo médico que realiza o supervisa…" → "La cuenta exacta se hace en la valoración, con tu fecha en la mano."
 
 ## Resueltas
 
