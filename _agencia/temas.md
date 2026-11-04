@@ -26,10 +26,10 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 18 | bioestimuladores: cuándo se ven los resultados | semana 6–8 en adelante, por qué es progresivo y cómo contar los días si el evento es en diciembre | bioestimuladores | publicado 2026-11-01 |
 | 19 | cuánto se pela la piel después de un peeling | tipos de peeling, de ninguna a una semana de descamación y cómo encajarlo con tu agenda y tu trabajo | peelings-medicos | publicado 2026-11-02 |
 | 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | publicado 2026-11-03 |
-| 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | en curso |
+| 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | publicado 2026-11-04 |
 | 22 | peeling antes de un viaje a la playa | cuánto tiempo antes de las vacaciones de diciembre, por qué el sol de la costa cambia la elección del peeling y la regla del protector | peelings-medicos | publicado 2026-11-04 |
 | 23 | cómo hidratar los labios sin agrandarlos | qué opciones médicas hidratan o mejoran la textura sin cambiar el tamaño y cuándo sí conviene volumen sutil | relleno-de-labios | pendiente |
-| 24 | bótox y ácido hialurónico el mismo día | cuándo se combinan, cuál se ve primero y cómo se planea para no pasarse | armonizacion-facial | en curso |
+| 24 | bótox y ácido hialurónico el mismo día | cuándo se combinan, cuál se ve primero y cómo se planea para no pasarse | armonizacion-facial | publicado 2026-11-04 |
 | 25 | dermapen o peeling: cuál elegir | textura y cicatrices frente a color y manchas, cuándo se combinan y cuál va primero | microagujas | pendiente |
 | 26 | bótox preventivo: a qué edad empezar | líneas dinámicas frente a estáticas; se decide por tu gesto y no por un número de años | toxina-botulinica | pendiente |
 | 27 | hialuronidasa: disolver un relleno | cuándo se usa, por qué el ácido hialurónico es reversible y qué preguntar antes de elegir un relleno | acido-hialuronico | pendiente |
@@ -43,14 +43,14 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 35 | peeling en piel morena | el ácido y la preparación correctos, por qué se valora antes y qué pasa con el sol | peelings-medicos | pendiente |
 | 36 | relleno de pómulos y sienes | soporte y no volumen, cómo se elige la cantidad y por qué se puede revertir | acido-hialuronico | pendiente |
 | 37 | flacidez del cuello: qué sirve | bioestimuladores y skinboosters, y cuándo ningún inyectable reemplaza una cirugía | bioestimuladores | pendiente |
-| 38 | medicina estética en Dosquebradas y Santa Rosa de Cabal | valoración presencial a pocos minutos, cita entre semana y cómo organizar las citas de un plan si vienes de fuera de Pereira | valoracion | en curso |
+| 38 | medicina estética en Dosquebradas y Santa Rosa de Cabal | valoración presencial a pocos minutos, cita entre semana y cómo organizar las citas de un plan si vienes de fuera de Pereira | valoracion | publicado 2026-11-04 |
 | 39 | skinbooster en cuello y escote | líneas finas y piel opaca en cuello y escote, hidratación y cuidado del sol | skinboosters | pendiente |
 | 40 | poros abiertos: qué sirve | limpieza, peeling y microagujas; qué mejora y qué no | microagujas | pendiente |
 | 41 | manchas que deja el acné | marca oscura o rojiza frente a cicatriz, por qué quedan y cuándo conviene tratarlas | manchas-y-melasma | pendiente |
 | 42 | ¿qué pasa si dejo de ponerme bótox? | el efecto es temporal: qué ocurre con el paso de los meses, sin mitos de dependencia | toxina-botulinica | pendiente |
 | 43 | cara de Ozempic | pérdida de volumen al bajar de peso, qué ayuda y qué no se puede prometer | bioestimuladores | pendiente |
 | 44 | cuántos ml de ácido hialurónico para labios | por qué no hay una cifra única, qué dice la revisión de 16 estudios (solo como dato de aumento) y cómo se decide la cantidad en la valoración; sin precios | relleno-de-labios | pendiente |
-| 45 | cuándo volver a ponerse bótox | señales de que el efecto se va y por qué no conviene esperar al último día; tiempos de la web (4–6 meses); evita repetir cuanto-dura-el-botox | toxina-botulinica | en curso |
+| 45 | cuándo volver a ponerse bótox | señales de que el efecto se va y por qué no conviene esperar al último día; tiempos de la web (4–6 meses); evita repetir cuanto-dura-el-botox | toxina-botulinica | publicado 2026-11-04 |
 | 46 | radiesse en Pereira: qué es y a quién le sirve | búsqueda "radiesse" ya aparece en Search Console (pos. 140); explicar la hidroxiapatita de calcio sin afirmar que la clínica usa la marca | bioestimuladores | pendiente |
 
 ## Criterio de la lista (27-oct-2026)
