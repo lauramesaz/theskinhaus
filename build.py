@@ -710,12 +710,37 @@ def resena():
 
 def recomendada():
     """/recomendada: a donde lleva el QR de la tarjeta "Te recomiendo" (3-nov-2026). Cada visita = una tarjeta escaneada;
-    el mensaje de WhatsApp dice que viene recomendada para que quien atiende sepa de dónde llegó."""
+    el mensaje de WhatsApp dice que viene recomendada para que quien atiende sepa de dónde llegó.
+    4-nov-2026: con ?de=<aliado> (QR propio de cada negocio aliado) el WhatsApp dice "vengo de parte de <nombre>"
+    y Analytics registra escaneo_aliado {aliado}."""
     msj = "Hola, me recomendaron The Skin Haus y quiero agendar mi valoración. Me recomendó: "
+    resto = "Escríbenos y agendamos tu valoración con la %s, médica estética, en la Torre Médica Oval." % MEDICA_ESTETICA["nombre"]
     boton = '<a class="btn lleno" href="%s" target="_blank" rel="noopener">Escribir por WhatsApp</a>' % wa(msj)
+    aliado = """<script>
+(function () {
+  var ALIADOS = %s, de = null;
+  try { de = new URLSearchParams(location.search).get('de'); } catch (e) { return; }
+  if (!de) return;
+  var base = de.trim().toLowerCase().replace(/\\s+/g, '-').replace(/[^a-z0-9áéíóúüñ_-]/g, '').slice(0, 60);
+  var clave = base.normalize ? base.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '') : base;
+  if (!clave.replace(/[-_]/g, '')) return;
+  var menores = { de: 1, del: 1, la: 1, las: 1, el: 1, los: 1, y: 1, e: 1 };
+  var nombre = ALIADOS[clave] || base.split(/[-_]+/).filter(Boolean).map(function (p, i) {
+    return i && menores[p] ? p : p.charAt(0).toUpperCase() + p.slice(1);
+  }).join(' ');
+  var url = 'https://wa.me/%s?text=' + encodeURIComponent('Hola, vengo de parte de ' + nombre + ' y quiero agendar mi valoración en The Skin Haus.');
+  var sub = document.querySelector('.hero .sub');
+  if (sub) sub.textContent = 'Vienes de parte de ' + nombre + '. ' + %s;
+  function enlaces() { document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) { a.href = url; }); }
+  enlaces();
+  document.addEventListener('DOMContentLoaded', enlaces);
+  if (window.gtag) gtag('event', 'escaneo_aliado', { aliado: clave });
+  if (window.clarity) { clarity('set', 'aliado', clave); clarity('event', 'escaneo_aliado'); }
+})();
+</script>""" % (json.dumps(ALIADOS, ensure_ascii=False), WHATSAPP, json.dumps(resto, ensure_ascii=False))
     cuerpo = hero("Te recomendaron", "Alguien pensó <em>en ti.</em>",
-                  "Una persona que nos conoce te recomendó The Skin Haus. Escríbenos y agendamos tu valoración con la %s, médica estética, en la Torre Médica Oval." % MEDICA_ESTETICA["nombre"],
-                  "consulta", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Valoración en The Skin Haus")
+                  "Una persona que nos conoce te recomendó The Skin Haus. " + resto,
+                  "consulta", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Valoración en The Skin Haus") + aliado
     pagina("recomendada", "Te recomendaron The Skin Haus · Pereira", "Agenda tu valoración en The Skin Haus, medicina estética en Pereira.",
            cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj)
 

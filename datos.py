@@ -490,3 +490,21 @@ MEDICA_ESTETICA = dict(
 # Cuando exista, pegar aquí el enlace que da Google (g.page/r/…/review) y /resena redirige solo; el QR impreso no cambia.
 RESENA_URL = ""
 
+
+# Aliados con QR propio (plan del Comercializador, "Hoy 3", 4-nov-2026): theskinhaus.com.co/recomendada?de=<slug>
+# El WhatsApp dice "vengo de parte de <nombre>" y Analytics cuenta el evento escaneo_aliado {aliado: slug}.
+# Nombres revisados contra ~/Documents/Skin Haus - Ventas/Aliados en Pereira.xlsx (ahí van con el nombre largo:
+# "Luminous Nails Pinares", "María Ángel Beauty Salon", "Italiss Hair Salon Studio"…; misma escritura).
+# Un slug que no esté aquí se muestra con formato (guiones → espacios, mayúscula inicial).
+ALIADOS = {
+    "luminous-nails": "Luminous Nails",
+    "figurin": "Figurín",
+    "sentra-pilates": "Sentra Pilates",
+    "maria-angel": "María Ángel",
+    "italiss": "Italiss",
+    "lashes-pereira": "Lashes Pereira",
+    "clay-medina": "Clay Medina",
+    "enjoy-pilates": "Enjoy Pilates",
+    "yoda-yoga": "Yoda Yoga",
+    "bocas-odontologia": "Bocas Odontología",
+}
