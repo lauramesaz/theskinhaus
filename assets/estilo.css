@@ -278,6 +278,9 @@ main{overflow-x:clip}
 .titular-vivo .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .titular-vivo .w>span{display:inline-block;transform:translateY(105%);animation:sube 1.1s var(--suave) forwards;animation-delay:calc(.15s + var(--i) * .08s)}
 @keyframes sube{to{transform:none}}
+/* 4-nov: la portada se ve completa desde el primer instante (antes arrancaba en blanco y desteñida en celular) */
+.hero .rev{opacity:1;transform:none;transition:none}
+.hero .titular-vivo .w>span{animation-duration:.8s;animation-delay:calc(.05s + var(--i) * .06s)}
 
 /* fotos que se asientan al aparecer */
 .rev .arco img,.rev .gota img,.rev.arco img,.rev.gota img,.rev.circulo img,.rev .circulo img{transform:scale(1.14);transition:transform 1.8s var(--suave)}
