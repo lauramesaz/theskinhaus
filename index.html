@@ -383,7 +383,45 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 .medico h3{font-size:clamp(26px,2.4vw,32px)}
 .medico p:not(.ceja){font-size:15.5px;line-height:1.6;opacity:.85}
 .medico .enlace{margin-top:6px}
-@media (max-width:700px){.equipo{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}</style>
+@media (max-width:700px){.equipo{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.hero .acciones .enlace{order:2}
+.hero .confianza{order:3;flex-basis:100%;display:flex;flex-wrap:wrap;margin-top:-2px;font-size:14.5px;line-height:1.6;color:#5c5047;max-width:36em}
+.hero .confianza span{white-space:nowrap}
+.hero .confianza span:first-child{flex-basis:100%}            
+.hero .confianza span:nth-child(2) i{display:none}
+.hero .confianza i{font-style:normal;font-weight:700;color:var(--nude);padding:0 .15em 0 .5em}
+.accesos{display:flex;flex-wrap:wrap;gap:16px 22px;margin-top:30px}
+.accesos a{display:flex;flex-direction:column;align-items:center;gap:9px;width:76px;text-align:center;font:400 13.5px/1.25 var(--sans);white-space:nowrap}
+.accesos .ico{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--blanco) var(--tex-blanca) 0 0/640px;border:1px solid rgba(17,17,17,.12);box-shadow:0 14px 30px -22px rgba(90,70,50,.55);transition:transform .4s var(--suave),border-color .4s}
+.accesos .ico svg{width:27px;height:27px;fill:none;stroke:var(--negro);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.accesos a:hover .ico{transform:translateY(-3px);border-color:var(--negro)}
+.franja{display:flex;align-items:center;gap:14px;max-width:470px;margin-top:26px;padding:9px 9px 9px 10px;border-radius:999px;background:var(--marfil) var(--tex-marfil) 0 0/640px;box-shadow:0 18px 40px -30px rgba(90,70,50,.55);transition:transform .4s var(--suave)}
+.franja:hover{transform:translateY(-2px)}
+.franja-ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--blanco)}
+.franja-ico svg{width:22px;height:22px;fill:none;stroke:var(--negro);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.franja-txt{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.franja-txt span{font-size:13.5px;line-height:1.3;color:#5c5047}
+.franja-txt strong{font:400 17px/1.25 var(--serif-texto)}
+.franja .circ{width:42px;height:42px}
+.franja:hover .circ{background:var(--negro);color:var(--blanco);transform:rotate(-45deg)}
+@media (min-width:861px){
+.hero:has(.accesos){padding-top:136px}
+.hero:has(.accesos) .acciones{margin-top:34px}
+.hero .acciones~.accesos{margin-top:26px}
+.hero .accesos~.franja{margin-top:22px}
+}
+@media (max-width:560px){
+.hero .confianza{order:2;margin-top:-4px;font-size:14px}
+.hero .acciones .enlace{order:3}
+.accesos{flex-wrap:nowrap;gap:9px;margin-top:28px}
+.accesos a{flex:none;width:58px;font-size:13px}
+.accesos .ico{width:56px;height:56px}
+.franja{border-radius:30px;margin-top:24px;padding:10px 22px 10px 10px}
+.franja .circ{display:none}
+.franja-txt strong{font-size:16px}
+.franja-txt strong::after{content:"\00a0\2192"}
+}
+@media (max-width:370px){.hero:has(.accesos){padding-top:126px}}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-79WV8JCLPD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-79WV8JCLPD');</script>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z0v793pqdy");</script>
@@ -398,7 +436,7 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <main>
 <section class="hero">
   <div class="aura a1"></div>
-  <div class="texto"><h1 class="ceja rev">Medicina estética y vascular en Pereira</h1><p class="titular-vivo h1v"><span class="w"><span style="--i:1">Tu</span></span> <span class="w"><span style="--i:2">piel</span></span> <span class="w"><span style="--i:3">también</span></span> <span class="w"><span style="--i:4"><em>tiene</em></span></span> <span class="w"><span style="--i:5"><em>planes.</em></span></span></p><p class="sub rev">Una clínica que combina criterio médico, acompañamiento cercano y resultados armónicos. Sofisticación sin distancia.</p><div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="#especialidades">Conoce los tratamientos <span class="circ">&#8594;</span></a></div></div>
+  <div class="texto"><h1 class="ceja rev">Medicina estética y vascular en Pereira</h1><p class="titular-vivo h1v"><span class="w"><span style="--i:1">Tu</span></span> <span class="w"><span style="--i:2">piel</span></span> <span class="w"><span style="--i:3">también</span></span> <span class="w"><span style="--i:4"><em>tiene</em></span></span> <span class="w"><span style="--i:5"><em>planes.</em></span></span></p><p class="sub rev">Bótox, labios, ojeras y piel, con valoración médica de la Dra. Valeria Enciso. Te decimos qué sí, qué no y cuánto, antes de empezar.</p><div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><p class="confianza"><span>Dra. Valeria Enciso, médica estética </span><span><i>·</i> Torre Médica Oval, consultorio 904 </span><span><i>·</i> Única sede</span></p><a class="enlace" href="#especialidades">Conoce los tratamientos <span class="circ">&#8594;</span></a></div><nav class="accesos" aria-label="Tratamientos más buscados"><a href="toxina-botulinica" data-ev="clic_acceso" data-destino="toxina-botulinica"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M8.5 10.5c1-.8 2-.8 3 0M12.5 10.5c1-.8 2-.8 3 0M9 15c1.8 1.3 4.2 1.3 6 0"/><path d="M9 3.5h6"/></svg></span><span>Bótox</span></a><a href="relleno-de-labios" data-ev="clic_acceso" data-destino="relleno-de-labios"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c2.5-3 5-4.5 6.5-4.5 1 0 1.8.6 2.5 1.3.7-.7 1.5-1.3 2.5-1.3C16 7.5 18.5 9 21 12c-2.5 3-5.5 4.5-9 4.5S5.5 15 3 12z"/><path d="M3 12h18"/></svg></span><span>Labios</span></a><a href="tratamiento-de-ojeras" data-ev="clic_acceso" data-destino="tratamiento-de-ojeras"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11S6 5.5 12 5.5s9.5 5.5 9.5 5.5-3.5 5.5-9.5 5.5S2.5 11 2.5 11z"/><path d="M12 11m-2.4 0a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0-4.8 0"/><path d="M7 19.5c1.5.8 3.2 1.2 5 1.2s3.5-.4 5-1.2"/></svg></span><span>Ojeras</span></a><a href="skinboosters" data-ev="clic_acceso" data-destino="skinboosters"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="M12 8.5l1.2 2.3 2.3 1.2-2.3 1.2L12 15.5l-1.2-2.3L8.5 12l2.3-1.2z"/></svg></span><span>Piel con luz</span></a></nav><a class="franja" href="tu-fecha" data-ev="clic_franja" data-destino="tu-fecha"><span class="franja-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="4.5"/><path d="M8 3.2v3.6M16 3.2v3.6M3.5 10.2h17"/><circle cx="12" cy="15.2" r="1.3"/></svg></span><span class="franja-txt"><span>¿Tienes una fecha en diciembre?</span><strong>Pon tu fecha y mira qué alcanza</strong></span><span class="circ">&#8594;</span></a><script>(function(){var f=document.currentScript.previousElementSibling;if(Date.now()>=Date.parse("2026-12-25T00:00:00-05:00"))f.parentNode.removeChild(f);})();</script></div>
   <div class="compo"><svg class="sello" viewBox="0 0 124 124" aria-hidden="true"><defs><path id="rueda" d="M62,62 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
 <text><textPath href="#rueda" textLength="286" lengthAdjust="spacing">Estética · Vascular · Pereira · The Skin Haus ·</textPath></text><circle cx="62" cy="62" r="3" fill="#C6A88F"/></svg><div class="arco"><img src="assets/fotos/retrato.webp" alt="Mujer con piel natural y luz suave" fetchpriority="high"></div><div class="circulo rev" data-vel="-0.08"><img src="assets/fotos/manos.webp" alt=""></div></div>
 </section>
@@ -457,7 +495,7 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.webp" alt="" loading="lazy"></div></div>
 <div class="sobre"><p class="ceja rev">Valoración médica</p><h2 class="rev">Hablemos de tu piel.</h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
-<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="https://wa.me/573174412203?text=Hola%2C%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="circ">&#8594;</span></a></div></div>
+<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20inicio%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="circ">&#8594;</span></a></div></div>
 </div></section>
 </main>
 <footer class="pie-web"><div class="caja">
@@ -465,11 +503,11 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
   <div><span class="logo completo" aria-label="The Skin Haus"><span class="nombre"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span><span class="barra"></span><span class="desc"><span>MEDICAL</span><span>AESTHETICS</span></span></span><p class="frase-marca" style="margin-top:36px;max-width:15em">Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal.</p></div>
   <div><h4>Medicina estética</h4><ul><li><a href="toxina-botulinica">Toxina botulínica</a></li><li><a href="acido-hialuronico">Ácido hialurónico</a></li><li><a href="bioestimuladores">Bioestimuladores de colágeno</a></li><li><a href="skinboosters">Skinboosters</a></li><li><a href="relleno-de-labios">Relleno de labios</a></li><li><a href="tratamiento-de-ojeras">Tratamiento de ojeras</a></li><li><a href="medicina-estetica">Ver todos</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
   <div><h4>Medicina vascular</h4><ul><li><a href="aranitas-vasculares">Arañitas vasculares</a></li><li><a href="varices">Várices</a></li><li><a href="eco-doppler-venoso">Eco-doppler venoso</a></li><li><a href="cuperosis-y-rojeces">Cuperosis y rojeces</a></li></ul></div>
-  <div><h4>Visítanos</h4><ul><li>Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira</li><li><a href="https://wa.me/573174412203?text=Hola%2C%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">WhatsApp +57 317 441 2203</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
+  <div><h4>Visítanos</h4><ul><li>Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira</li><li><a href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20inicio%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">WhatsApp +57 317 441 2203</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · Pereira · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
 </div></footer>
-<a class="wa" href="https://wa.me/573174412203?text=Hola%2C%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
-<script src="assets/app.js?v=1793824461" defer></script>
+<a class="wa" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20inicio%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<script src="assets/app.js?v=1793832490" defer></script>
 </body>
 </html>

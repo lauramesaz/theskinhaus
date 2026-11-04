@@ -383,7 +383,45 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 .medico h3{font-size:clamp(26px,2.4vw,32px)}
 .medico p:not(.ceja){font-size:15.5px;line-height:1.6;opacity:.85}
 .medico .enlace{margin-top:6px}
-@media (max-width:700px){.equipo{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}</style>
+@media (max-width:700px){.equipo{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.hero .acciones .enlace{order:2}
+.hero .confianza{order:3;flex-basis:100%;display:flex;flex-wrap:wrap;margin-top:-2px;font-size:14.5px;line-height:1.6;color:#5c5047;max-width:36em}
+.hero .confianza span{white-space:nowrap}
+.hero .confianza span:first-child{flex-basis:100%}            
+.hero .confianza span:nth-child(2) i{display:none}
+.hero .confianza i{font-style:normal;font-weight:700;color:var(--nude);padding:0 .15em 0 .5em}
+.accesos{display:flex;flex-wrap:wrap;gap:16px 22px;margin-top:30px}
+.accesos a{display:flex;flex-direction:column;align-items:center;gap:9px;width:76px;text-align:center;font:400 13.5px/1.25 var(--sans);white-space:nowrap}
+.accesos .ico{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--blanco) var(--tex-blanca) 0 0/640px;border:1px solid rgba(17,17,17,.12);box-shadow:0 14px 30px -22px rgba(90,70,50,.55);transition:transform .4s var(--suave),border-color .4s}
+.accesos .ico svg{width:27px;height:27px;fill:none;stroke:var(--negro);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.accesos a:hover .ico{transform:translateY(-3px);border-color:var(--negro)}
+.franja{display:flex;align-items:center;gap:14px;max-width:470px;margin-top:26px;padding:9px 9px 9px 10px;border-radius:999px;background:var(--marfil) var(--tex-marfil) 0 0/640px;box-shadow:0 18px 40px -30px rgba(90,70,50,.55);transition:transform .4s var(--suave)}
+.franja:hover{transform:translateY(-2px)}
+.franja-ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--blanco)}
+.franja-ico svg{width:22px;height:22px;fill:none;stroke:var(--negro);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.franja-txt{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.franja-txt span{font-size:13.5px;line-height:1.3;color:#5c5047}
+.franja-txt strong{font:400 17px/1.25 var(--serif-texto)}
+.franja .circ{width:42px;height:42px}
+.franja:hover .circ{background:var(--negro);color:var(--blanco);transform:rotate(-45deg)}
+@media (min-width:861px){
+.hero:has(.accesos){padding-top:136px}
+.hero:has(.accesos) .acciones{margin-top:34px}
+.hero .acciones~.accesos{margin-top:26px}
+.hero .accesos~.franja{margin-top:22px}
+}
+@media (max-width:560px){
+.hero .confianza{order:2;margin-top:-4px;font-size:14px}
+.hero .acciones .enlace{order:3}
+.accesos{flex-wrap:nowrap;gap:9px;margin-top:28px}
+.accesos a{flex:none;width:58px;font-size:13px}
+.accesos .ico{width:56px;height:56px}
+.franja{border-radius:30px;margin-top:24px;padding:10px 22px 10px 10px}
+.franja .circ{display:none}
+.franja-txt strong{font-size:16px}
+.franja-txt strong::after{content:"\00a0\2192"}
+}
+@media (max-width:370px){.hero:has(.accesos){padding-top:126px}}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-79WV8JCLPD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-79WV8JCLPD');</script>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z0v793pqdy");</script>
@@ -448,6 +486,6 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <div class="pie-final"><span>The Skin Haus · Pereira · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
 </div></footer>
 <a class="wa" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20bioestimuladores%20de%20col%C3%A1geno%20en%20la%20web%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
-<script src="assets/app.js?v=1793824461" defer></script>
+<script src="assets/app.js?v=1793832490" defer></script>
 </body>
 </html>

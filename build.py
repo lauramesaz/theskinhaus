@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # The Skin Haus · genera todas las páginas a partir de datos.py.   Uso:  python3 build.py
 # v3 "fluida": arcos, círculos, gotas, islas marfil, cinta de frases y camino con curva.
-import os, time, json, re
+import os, time, json, re, datetime
 from urllib.parse import quote
 from datos import *
 from ampliacion import NOSOTROS_TEXTO, VALORACION_TEXTO   # 27-oct-2026: páginas más completas
@@ -50,7 +50,7 @@ def cabecera(activo):
 </div></header>''' % (logo(), links)
 
 
-def pie():
+def pie(msg=None):
     est = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in ESTETICA[:4] + BUSQUEDAS[:2])
     vas = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in VASCULAR)
     return '''<footer class="pie-web"><div class="caja">
@@ -61,7 +61,7 @@ def pie():
   <div><h4>Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · %s · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
-</div></footer>''' % (logo("completo", True), est, vas, DIRECCION, wa(), TELEFONO_VISIBLE, CIUDAD)
+</div></footer>''' % (logo("completo", True), est, vas, DIRECCION, wa(msg) if msg else wa(), TELEFONO_VISIBLE, CIUDAD)
 
 
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
@@ -99,7 +99,7 @@ def estilo_en_linea():
     return _CSS
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None):
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None, pie_msg=None):
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
     ld = HEAD_MEDICION + ld
@@ -133,7 +133,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
               '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", estilo_en_linea(), ld,
-              cabecera(activo), cuerpo, pie(), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
+              cabecera(activo), cuerpo, pie(pie_msg), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
         f.write(html)
@@ -304,11 +304,36 @@ FRASES = ["Belleza que se acompaña", "Tu piel también tiene planes", "Primero 
 
 
 # ---------------------------------------------------------------- inicio
+# 4-nov-2026 (plan del Comercializador, "Hoy 2"): la primera pantalla dice qué, dónde y quién. Sin clase "rev" en
+# lo nuevo, para que la portada se vea completa al instante.
+MSG_INICIO = "Hola, vengo de la página de inicio y quiero agendar mi valoración en The Skin Haus."
+ACCESOS_INICIO = [("toxina-botulinica", "Bótox"), ("relleno-de-labios", "Labios"), ("tratamiento-de-ojeras", "Ojeras"), ("skinboosters", "Piel con luz")]
+FRANJA_HASTA = datetime.date(2026, 12, 24)      # la franja de diciembre se esconde sola desde el 25-dic (también con JS)
+CALENDARIO_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="4.5"/>'
+                  '<path d="M8 3.2v3.6M16 3.2v3.6M3.5 10.2h17"/><circle cx="12" cy="15.2" r="1.3"/></svg>')
+
+
+def franja_diciembre():
+    if datetime.date.today() > FRANJA_HASTA:
+        return ""
+    return ('<a class="franja" href="tu-fecha" data-ev="clic_franja" data-destino="tu-fecha"><span class="franja-ico">%s</span>'
+            '<span class="franja-txt"><span>¿Tienes una fecha en diciembre?</span><strong>Pon tu fecha y mira qué alcanza</strong></span>%s</a>'
+            '<script>(function(){var f=document.currentScript.previousElementSibling;'
+            'if(Date.now()>=Date.parse("%sT00:00:00-05:00"))f.parentNode.removeChild(f);})();</script>') % (
+        CALENDARIO_SVG, CIRC, (FRANJA_HASTA + datetime.timedelta(days=1)).isoformat())
+
+
 def inicio():
-    acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="#especialidades">Conoce los tratamientos %s</a></div>' % CIRC
+    acciones = ('<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a>'
+                '<p class="confianza"><span>%s, médica estética </span><span><i>·</i> Torre Médica Oval, consultorio 904 </span><span><i>·</i> Única sede</span></p>'
+                '<a class="enlace" href="#especialidades">Conoce los tratamientos %s</a></div>') % (MEDICA_ESTETICA["nombre"], CIRC)
+    acciones += '<nav class="accesos" aria-label="Tratamientos más buscados">%s</nav>' % "".join(
+        '<a href="%s" data-ev="clic_acceso" data-destino="%s">%s<span>%s</span></a>' % (slug, slug, icono(slug), nombre)
+        for slug, nombre in ACCESOS_INICIO)
+    acciones += franja_diciembre()
 
     cuerpo = hero("Medicina estética y vascular en %s" % CIUDAD, "Tu piel también <em>tiene planes.</em>",
-                  "Una clínica que combina criterio médico, acompañamiento cercano y resultados armónicos. Sofisticación sin distancia.",
+                  "Bótox, labios, ojeras y piel, con valoración médica de la %s. Te decimos qué sí, qué no y cuánto, antes de empezar." % MEDICA_ESTETICA["nombre"],
                   "retrato", "manos", acciones, alt="Mujer con piel natural y luz suave", h1_ceja=True) + '''
 
 <section class="bloque" id="especialidades"><div class="caja">
@@ -352,10 +377,11 @@ def inicio():
 %s
 
 %s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR), foto("consulta"),
-         camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre())
+         camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre(msg=MSG_INICIO))
     pagina("index", "The Skin Haus · Medicina estética en Pereira, Oval Médica",
            "Clínica de medicina estética en Pereira: bótox, ácido hialurónico, bioestimuladores, manchas y calidad de piel, con criterio médico. También medicina vascular.",
-           cuerpo, jsonld=[CLINICA_LD, {"@context": "https://schema.org", "@type": "WebSite", "name": MARCA, "url": DOMINIO + "/"}])
+           cuerpo, jsonld=[CLINICA_LD, {"@context": "https://schema.org", "@type": "WebSite", "name": MARCA, "url": DOMINIO + "/"}],
+           wa_msg=MSG_INICIO, pie_msg=MSG_INICIO)
 
 
 def busquedas_enlaces():

@@ -99,6 +99,14 @@
     if (a) contarWhatsApp(a.classList.contains('wa') ? 'boton-flotante' : 'enlace');
   }, true);
 
+  // 4-nov-2026: clics en los accesos redondos y la franja de diciembre de la portada (data-ev = nombre del evento)
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest && ev.target.closest('[data-ev]');
+    if (!el) return;
+    if (window.gtag) gtag('event', el.dataset.ev, { destino: el.dataset.destino || el.getAttribute('href'), pagina: location.pathname });
+    if (window.clarity) clarity('event', el.dataset.ev);
+  }, true);
+
   var form = document.querySelector('#form-valoracion');
   if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();
