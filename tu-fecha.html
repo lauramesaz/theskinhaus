@@ -790,9 +790,9 @@ h3{font-family:var(--serif-t);font-weight:400;font-size:21px;line-height:1.25}
     document.querySelector('.hero').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  // ---------- enlaces de campaña: ?fecha=2026-12-24 · ?pestana=visita|repetir|fecha
+  // ---------- enlaces de campaña: ?fecha=2026-12-24 · ?pestana=visita|repetir|fecha · o #visita / #repetir
   try {
-    var q = new URLSearchParams(location.search), qp = q.get('pestana'), qf = deISO(q.get('fecha'));
+    var q = new URLSearchParams(location.search), qp = q.get('pestana') || (location.hash || '').replace('#', ''), qf = deISO(q.get('fecha'));
     if (qf) {
       E.fecha = qf; inFecha.value = aISO(qf);
       var igual = rapidas.filter(function (b) { return deISO(b.dataset.fecha) === qf; })[0];
