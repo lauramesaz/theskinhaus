@@ -28,7 +28,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 20 | bótox para hombres | qué se trata (frente, entrecejo, patas de gallo), cómo se dosifica para que no se note y cómo cabe en la semana laboral | toxina-botulinica | publicado 2026-11-03 |
 | 21 | primera vez en medicina estética | los miedos más comunes (que se note, que duela, no saber cuándo parar) y cómo se hablan en la cita; la valoración no obliga a nada | valoracion | publicado 2026-11-04 |
 | 22 | peeling antes de un viaje a la playa | cuánto tiempo antes de las vacaciones de diciembre, por qué el sol de la costa cambia la elección del peeling y la regla del protector | peelings-medicos | publicado 2026-11-04 |
-| 23 | cómo hidratar los labios sin agrandarlos | qué opciones médicas hidratan o mejoran la textura sin cambiar el tamaño y cuándo sí conviene volumen sutil | relleno-de-labios | pendiente |
+| 23 | cómo hidratar los labios sin agrandarlos | qué opciones médicas hidratan o mejoran la textura sin cambiar el tamaño y cuándo sí conviene volumen sutil | relleno-de-labios | publicado 2026-11-05 |
 | 24 | bótox y ácido hialurónico el mismo día | cuándo se combinan, cuál se ve primero y cómo se planea para no pasarse | armonizacion-facial | publicado 2026-11-04 |
 | 25 | dermapen o peeling: cuál elegir | textura y cicatrices frente a color y manchas, cuándo se combinan y cuál va primero | microagujas | pendiente |
 | 26 | bótox preventivo: a qué edad empezar | líneas dinámicas frente a estáticas; se decide por tu gesto y no por un número de años | toxina-botulinica | pendiente |

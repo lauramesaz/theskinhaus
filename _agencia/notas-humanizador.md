@@ -5,6 +5,9 @@ Formato: fecha · agente · vicio · ejemplo corto. Máximo 25 activas.
 
 ## Activas
 
+- 2026-11-05 · 1 Redactor · Descripción que arranca copiando el title ("Hidratar los labios sin agrandarlos en Pereira: qué es…", ya multado el 01-nov y el 03-nov) y entrada que cierra anunciando lo que sigue ("Lo que sigue es qué opciones hay y hasta dónde llega cada una") · Abre la descripción con la situación: "Labios secos y el labial marcado en las líneas: …" y termina la entrada en la idea, sin anunciar.
+- 2026-11-05 · 1 Redactor · Ningún párrafo de una línea en todo el borrador y "tres frases" que anuncia tres y la lista trae una foto · Deja una línea que afirme algo ("Pedir uno no obliga a aceptar el otro.") y cuenta bien: "tres cosas".
+- 2026-11-05 · 1 Redactor · Generalización sobre terceros y datos sin respaldo en hechos.md: "casi todos pensamos en una boca más grande", "la boca puede cambiar un poco de tamaño aun con poca cantidad" · Di solo lo tuyo: "lo que suele venir a la mente…" y limita a lo respaldado.
 - 2026-10-31 · 1 Redactor · Frases de folleto o que comparan con terceros sin respaldo: "Lo que nosotros sí hacemos distinto", "coinciden con lo que ya publicamos en esta web", "tiene su trampa" · Di lo tuyo sin contrastar: "Lo que hacemos nosotros, y lo que una tabla no resuelve"; "Son las que más repiten las guías que revisamos."
 - 2026-11-01 · 1 Redactor · Cifras de plazo inventadas al combinar datos: "resta seis a ocho semanas como mínimo" y "el plan ocupa más de dos meses" (no están en datos.py ni hechos.md) · Deriva solo de lo permitido: "retrocede hasta la semana 8" y "entre una sesión y otra pasan de 4 a 8 semanas".
 - 2026-11-01 · 1 Redactor · Apertura y descripción calcadas: "Tienes una fecha marcada en el calendario de diciembre" (hermano antes-de-diciembre) y descripción que repite el title palabra por palabra · Abre con un objeto: "La invitación está pegada en la nevera con la fecha marcada y tienes una sola pregunta: ¿alcanzo?"
