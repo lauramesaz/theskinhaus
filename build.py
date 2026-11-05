@@ -317,7 +317,7 @@ def franja_diciembre():
     if datetime.date.today() > FRANJA_HASTA:
         return ""
     return ('<a class="franja" href="tu-fecha" data-ev="clic_franja" data-destino="tu-fecha"><span class="franja-ico">%s</span>'
-            '<span class="franja-txt"><span>¿Tienes una fecha en diciembre?</span><strong>Pon tu fecha y mira qué alcanza</strong></span>%s</a>'
+            '<span class="franja-txt"><span>¿Tienes una fecha en diciembre?</span><strong>Encuentra el momento ideal para tu tratamiento</strong></span>%s</a>'
             '<script>(function(){var f=document.currentScript.previousElementSibling;'
             'if(Date.now()>=Date.parse("%sT00:00:00-05:00"))f.parentNode.removeChild(f);})();</script>') % (
         CALENDARIO_SVG, CIRC, (FRANJA_HASTA + datetime.timedelta(days=1)).isoformat())

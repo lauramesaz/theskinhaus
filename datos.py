@@ -20,7 +20,7 @@ ESTETICA = [
          intro="Suaviza las arrugas que aparecen al gesticular —frente, entrecejo y patas de gallo— relajando de forma temporal y localizada el músculo que las marca. Bien dosificada, la cara descansa; no se congela.",
          para=["Líneas de expresión en frente, entrecejo o contorno de ojos", "Quienes quieren prevenir que esas líneas se marquen más", "Sudoración excesiva en axilas o manos (hiperhidrosis)"],
          como=("20–30 minutos", "Una sesión; se repite cada 4–6 meses", "Vuelves a tu día de inmediato"),
-         faq=[("¿Voy a quedar con la cara rígida?", "No es la idea. Dosificamos según tu musculatura y tus gestos para que el resultado se vea descansado y natural."),
+         faq=[("¿Voy a quedar con la cara rígida?", "No es la idea. Dosificamos según tu musculatura y tus gestos para que el resultado se vea natural y conserves tu expresión."),
               ("¿Cuándo se ve el efecto?", "Empieza a notarse entre el día 3 y el 7, y se ve completo alrededor de las dos semanas, cuando hacemos control."),
               ("¿Duele?", "Son punciones muy finas y rápidas. La mayoría lo describe como una molestia leve y breve.")]),
     dict(slug="acido-hialuronico", nombre="Ácido hialurónico", foto="retrato",
@@ -318,9 +318,9 @@ BUSQUEDAS = [
          ]),
 
     dict(slug="tratamiento-de-ojeras", nombre="Tratamiento de ojeras", foto="facial", padre="acido-hialuronico",
-         linea="Una mirada descansada, sin cambiar tu expresión.",
+         linea="Una mirada más luminosa, sin cambiar tu expresión.",
          intro="No todas las ojeras son iguales. Cuando la ojera es un hundimiento debajo del ojo, el ácido hialurónico puede suavizar esa sombra. Cuando es pigmento o una bolsa, la solución es otra, y te lo decimos.",
-         para=["Ojera hundida que da aspecto de cansancio", "Sombra marcada entre el párpado y la mejilla", "Quienes quieren verse descansados sin cirugía"],
+         para=["Ojera hundida que da aspecto de cansancio", "Sombra marcada entre el párpado y la mejilla", "Quienes quieren una mirada más fresca sin cirugía"],
          como=("30–45 minutos", "Una sesión", "Inflamación leve 24–72 horas"),
          faq=[("¿El ácido hialurónico quita las ojeras oscuras?", "Si lo oscuro es pigmento, no. El ácido hialurónico mejora la sombra que produce un hundimiento. Para el pigmento hay otros tratamientos, como peelings o manejo de manchas."),
               ("¿Cuánto dura el tratamiento de ojeras?", "El ácido hialurónico dura de 9 a 18 meses según la zona y la persona. Te damos una referencia para tu caso en la valoración."),
@@ -334,7 +334,7 @@ BUSQUEDAS = [
               "<li><strong>Bolsa.</strong> Un abultamiento debajo del ojo. Rellenar puede empeorarla; a veces la respuesta es una cirugía de párpados y te orientamos.</li></ul>"
               "<p>Muchas personas tienen una mezcla. Por eso la valoración pesa tanto aquí.</p>"),
              ("Por qué preferimos poca cantidad",
-              "<p>La piel debajo del ojo es fina y cualquier exceso se nota. Trabajamos con poco producto, en el plano correcto, y preferimos completar después que pasarnos. El objetivo es que te veas descansada o descansado, no distinta o distinto.</p>"),
+              "<p>La piel debajo del ojo es fina y cualquier exceso se nota. Trabajamos con poco producto, en el plano correcto, y preferimos completar después que pasarnos. El objetivo es que te veas natural, con tus mismos rasgos.</p>"),
          ]),
 
     dict(slug="armonizacion-facial", nombre="Armonización facial", foto="retrato", padre="acido-hialuronico",
@@ -344,7 +344,7 @@ BUSQUEDAS = [
          como=("Plan por etapas", "Sesiones según el plan", "Según los tratamientos elegidos"),
          faq=[("¿Cuánto cuesta una armonización facial en Pereira?", "Depende del plan: qué zonas, qué tratamientos y cuánto producto. Te damos el valor en la valoración, por etapas, para que decidas con calma."),
               ("¿Se hace todo en una sola cita?", "No necesariamente. Muchas veces conviene hacerlo por etapas: así el cambio es gradual y podemos ajustar en el control."),
-              ("¿Se ve natural?", "Ese es el objetivo. No buscamos cambiar quién eres, sino que tu rostro se vea en proporción y descansado.")],
+              ("¿Se ve natural?", "Ese es el objetivo. No buscamos cambiar quién eres, sino que tu rostro se vea en proporción y natural.")],
          titulo="Armonización facial en Pereira: natural y por etapas",
          desc="Armonización facial en Pereira: un plan por etapas con ácido hialurónico, bótox o bioestimuladores, pensado para tu proporción y no para cambiar quién eres.",
          secciones=[
@@ -400,7 +400,7 @@ BUSQUEDAS = [
 
 CLAVE.update({
     "relleno-de-labios": ("Definición e hidratación", "30–45 min", "Reversible"),
-    "tratamiento-de-ojeras": ("Mirada descansada", "30–45 min", "Según tu ojera"),
+    "tratamiento-de-ojeras": ("Mirada más luminosa", "30–45 min", "Según tu ojera"),
     "armonizacion-facial": ("Proporción y equilibrio", "Plan por etapas", "Resultado natural"),
     "hiperhidrosis": ("Sudor excesivo", "Cita corta", "Sin incapacidad"),
     "cicatrices-de-acne": ("Textura y marcas", "3–5 sesiones", "Plan por etapas"),

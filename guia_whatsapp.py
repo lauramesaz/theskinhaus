@@ -24,7 +24,7 @@ DRA = MEDICA_ESTETICA["nombre"]
 WEB = DOMINIO.replace("https://", "")
 
 # Enlaces que usan los mensajes nuevos
-TU_FECHA = WEB + "/tu-fecha"   # calculadora "¿Llegas a diciembre?" (Hoy 1 del plan; la monta otro constructor el 4-nov)
+TU_FECHA = WEB + "/tu-fecha"   # calculadora "Tu piel, a tiempo para tu fecha" (Hoy 1 del plan; la monta otro constructor el 4-nov)
 RETHUS = "https://web.sispro.gov.co/THS/Cliente/ConsultasPublicas/ConsultaPublicaDeTHxIdentificacion.aspx"  # hechos.md C1
 INVIMA = "https://www.invima.gov.co/consulta-registros-sanitarios"                                          # hechos.md C2
 BLOG_PLAYA = WEB + "/blog/peeling-antes-de-un-viaje-a-la-playa"
@@ -45,7 +45,7 @@ REGLAS = [
 # 4-nov: la bienvenida pregunta si vive en Pereira o está de visita (así se cuenta a quien viene de afuera) y si tiene fecha.
 BIENVENIDA = ("Hola, gracias por escribirnos. Te saluda [tu nombre], de The Skin Haus, en la Torre Médica Oval. ¿Con quién tengo "
               "el gusto? Cuéntame qué te gustaría mejorar y si vives en Pereira o estás de visita. Y si tienes alguna fecha en "
-              "diciembre, dímela y miramos qué alcanza.")
+              "diciembre, dímela y te digo el momento ideal para empezar.")
 BIENVENIDA_AUTO = ("Hola, gracias por escribir a The Skin Haus, en la Torre Médica Oval de Pereira. Para ayudarte más rápido, "
                    "cuéntanos tu nombre, qué te gustaría mejorar y si vives en Pereira o estás de visita.")
 PREGUNTAS_CLAVE = [
@@ -110,20 +110,20 @@ SEGUIMIENTO = [  # (grupo, [(cuándo, mensaje)]) · las invitadas de la inaugura
 # el jue 3-dic (21 días) y justo hasta el jue 10-dic (14 días; el mar 8 es festivo); skinbooster 1 o 2 de 3 sesiones si
 # empieza ya; bioestimuladores para enero y febrero (cambios desde la semana 6 a 8); limpieza cabe siempre.
 DICIEMBRE = dict(
-    general=("Si pregunta qué alcanza para diciembre",
+    general=("Si pregunta qué puede hacerse antes de diciembre",
              "Depende de qué te quieras hacer: hay tratamientos que se ven completos hacia las dos semanas y otros que conviene "
-             "empezar desde ya. Si pones tu fecha aquí, te sale qué alcanza: " + TU_FECHA + " ¿Para qué fecha lo quieres?"),
+             "empezar desde ya. Si pones tu fecha aquí, te muestra el momento ideal para cada tratamiento: " + TU_FECHA + " ¿Para qué fecha lo quieres?"),
     tratamientos=[  # (nombre, resumen de fechas, mensaje)
         ("Líneas de expresión", "Con calma hasta el jue 3 · justo hasta el jue 10",
          "Para el 24, lo ideal es aplicarlo a más tardar el jueves 3 de diciembre: el efecto se ve completo hacia las dos semanas "
-         "y en ese momento te hacemos el control, todavía antes de tu fecha. Hasta el jueves 10 alcanza, pero muy justo y sin ese "
+         "y en ese momento te hacemos el control, todavía antes de tu fecha. Hasta el jueves 10 todavía es posible, pero muy justo y sin ese "
          "margen. ¿Te busco espacio esta semana o la próxima?"),
         ("Labios y ojeras", "Con calma hasta el jue 3 · justo hasta el jue 10",
          "Con el ácido hialurónico en labios u ojeras puede haber una inflamación leve de 24 a 72 horas, por eso para una fecha "
          "importante dejamos por lo menos dos semanas, y un poco más si es tu primera vez o son labios. Para el 24: con calma, "
          "hasta el jueves 3 de diciembre; muy justo, hasta el jueves 10. ¿Qué día te queda bien venir a la valoración?"),
-        ("Skinbooster", "Si empieza ya, alcanza 1 o 2 de las 3 sesiones",
-         "El skinbooster va en serie: son 3 sesiones, una cada 3 a 4 semanas. Si empiezas en estos días, antes del 24 alcanzas "
+        ("Skinbooster", "Si empieza ya, caben 1 o 2 de las 3 sesiones",
+         "El skinbooster va en serie: son 3 sesiones, una cada 3 a 4 semanas. Si empiezas en estos días, antes del 24 caben "
          "1 o 2, y la serie se completa después. ¿Te agendo la valoración para arrancar esta semana?"),
         ("Bioestimuladores", "Para enero y febrero",
          "Los bioestimuladores van despacio: los primeros cambios aparecen entre la semana 6 y la 8, y la mejoría sigue por "
@@ -134,10 +134,10 @@ DICIEMBRE = dict(
          "se puede pelar hasta una semana. Cuál te conviene antes de tu fecha lo define la Dra. en la valoración. ¿Para cuándo "
          "es tu fecha?"),
         ("Limpieza facial médica", "Cabe siempre",
-         "La limpieza facial médica te alcanza aunque falte poco. Dura más o menos una hora y de ahí sigues con tus cosas. A "
+         "La limpieza facial médica cabe aunque falte poco. Dura más o menos una hora y de ahí sigues con tus cosas. A "
          "veces la piel queda un poco roja unas horas. ¿Qué día te queda bien?"),
     ],
-    no_alcanza=("Si para su fecha ya no alcanza (ponle la etiqueta «Volver en enero»)",
+    no_alcanza=("Si para su fecha conviene dejarlo para después (ponle la etiqueta «Volver en enero»)",
                 "Para esa fecha ya no nos da el tiempo, y no queremos hacerlo a las carreras. Lo podemos dejar para enero, con "
                 "calma. ¿Te escribo la primera semana del año y lo cuadramos?"),
 )
@@ -156,7 +156,7 @@ VISITA = [
      "en tu visita. Lo ideal es la valoración en tus primeros días, para que si te haces algo que lleva control, alcancemos a "
      "hacerlo antes de que te vayas."),
     ("Visita de 16 días o más (líneas de expresión)",
-     "Para las líneas de expresión, con esos días sí alcanza. Si vienes a la valoración apenas llegues, se puede aplicar ese "
+     "Para las líneas de expresión, con esos días sí hay tiempo. Si vienes a la valoración apenas llegues, se puede aplicar ese "
      "mismo día si la Dra. lo ve adecuado y tú te animas, y el control de las dos semanas queda antes de tu regreso. ¿Te "
      "aparto la cita para tu primer o segundo día aquí?"),
     ("Visita más corta (menos de 16 días)",
@@ -175,7 +175,7 @@ VISITA = [
 INVITADAS = [
     ("El mensaje (una sola vez)",
      "Hola, [nombre], te escribe [tu nombre] de The Skin Haus. Gracias otra vez por venir a la apertura: ya estamos atendiendo "
-     "en el 904. Si tienes una fecha en diciembre, aquí miras qué te alcanza: " + TU_FECHA + ". Y si alguien que conozcas se "
+     "en el 904. Si tienes una fecha en diciembre, aquí ves el momento ideal para cada tratamiento: " + TU_FECHA + ". Y si alguien que conozcas se "
      "anima, que nos escriba de tu parte. ¿Te busco un espacio para tu valoración con la " + DRA + "?"),
     ("Si dice que una amiga quiere venir",
      "Qué bien, gracias. Dile que nos escriba a este mismo número y nos cuente que va de tu parte. ¿Cómo se llama, para estar "
@@ -244,7 +244,7 @@ CIERRE_PREGUNTAS = [  # (id, pregunta, ayuda) · la 2 son las fuentes y la 8 es 
 FUERA_HORARIO = [
     ("Hasta el 10 de diciembre",
      "Gracias por escribir a The Skin Haus. En este momento no estamos atendiendo, pero te respondemos apenas abramos. Mientras "
-     "tanto, si tienes una fecha en diciembre, aquí miras qué te alcanza: " + TU_FECHA),
+     "tanto, si tienes una fecha en diciembre, aquí ves el momento ideal para cada tratamiento: " + TU_FECHA),
     ("Desde el 11 de diciembre",
      "Gracias por escribir a The Skin Haus. En este momento no estamos atendiendo, pero te respondemos apenas abramos. Si nos "
      "dejas tu nombre y qué te gustaría mejorar, te contestamos con eso en la mano."),
@@ -256,7 +256,7 @@ ETIQUETAS = [  # (nombre, color sugerido, muestra, cuándo se usa)
     ("Vino", "verde", "#4caf72", "Vino a la valoración."),
     ("Se hizo algo", "morado", "#9478cf", "Se hizo un tratamiento: le toca su recordatorio y pedirle la reseña."),
     ("De visita", "naranja", "#ee8f45", "Vive afuera y viene a Pereira: se agenda en sus primeros días."),
-    ("Volver en enero", "gris", "#a4a6a9", "Para su fecha ya no alcanzaba o lo dejó para después: se le escribe una vez en enero."),
+    ("Volver en enero", "gris", "#a4a6a9", "Para su fecha convenía dejarlo para después o lo pospuso: se le escribe una vez en enero."),
 ]
 
 ATAJOS = [("hola", BIENVENIDA), ("portafolio", PORTAFOLIO), ("agendar", AGENDAR), ("precio", OBJECIONES[0][1]), ("porque", OBJECIONES[1][1]),
@@ -548,7 +548,7 @@ def _fuente(id_, etiqueta):
 def _diciembre():
     acc = "".join('<details><summary><span>%s<small>%s</small></span></summary><div class="dentro">%s</div></details>'
                   % (escape(n), escape(r), _msj(m)) for n, r, m in DICIEMBRE["tratamientos"])
-    return ('<h2 id="diciembre">Diciembre: <em>qué alcanza</em></h2>'
+    return ('<h2 id="diciembre">Diciembre: <em>el momento ideal</em></h2>'
             '<p class="sub">Las fechas son para Nochebuena (jueves 24 de diciembre). Para cualquier otra fecha (el grado, la fiesta de '
             'la empresa, fin de año), la calculadora hace la cuenta: %s. El martes 8 es festivo: esa semana hay un día menos para '
             'agendar.</p>' % _enlace(TU_FECHA)
