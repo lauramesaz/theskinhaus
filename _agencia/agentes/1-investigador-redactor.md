@@ -3,7 +3,8 @@
 Lee antes: `../INSTRUCCIONES.md`, `../estrategia.md`, `../hechos.md`, `../temas.md`,
 `../registro.md` y `../notas-humanizador.md` (multas del Policía: no repitas esos vicios).
 
-1. Toma el siguiente tema `pendiente` de `temas.md` y márcalo `en curso`. Revisa `registro.md`,
+1. Toma el siguiente tema `pendiente` de `temas.md` (de arriba hacia abajo; si es de bótox y hubo otro de bótox
+   hace menos de 14 días, sáltalo, ver `estrategia.md` §5) y márcalo `en curso`. Revisa `registro.md`,
    `articulos/` y `../datos.py` para no repetir keyword ni chocar con la página dueña
    (`INSTRUCCIONES.md` §3).
 2. Investiga con WebSearch: qué preguntas hace la gente (las de `estrategia.md` §3 y las que

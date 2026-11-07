@@ -17,6 +17,12 @@ Si no se puede confirmar, no se usa.
   considera adecuado y la persona se siente lista.
 - Médica estética: **Dra. Valeria Enciso** (confirmado por Laura el 19-oct-2026; mismo nombre y cargo que en
   noon.clinic/especialistas). Solo "médica estética": no inventar títulos, universidad, años ni registros.
+- **En The Skin Haus no hay dermatólogos** (plan SEO del 7-nov-2026; la web quitó "Dermatology" de sus datos ese día:
+  la Dra. Enciso es médica estética y el Dr. Puerta, internista con subespecialidad en medicina vascular).
+  Nunca escribir "dermatología", "dermatológica" ni "dermatóloga" para la clínica ni para la Dra. Enciso. Se puede
+  mencionar al dermatólogo como otra especialidad a la que se orienta a la paciente cuando hace falta.
+- Revisión médica del blog: no confirmada. Mientras esta línea no diga "revisa el blog: sí", ningún artículo lleva
+  "Revisado por".
 - Medicina vascular: **Dr. José David Puerta Rojas**, médico internista con subespecialidad en medicina vascular
   (confirmado por Laura el 19-oct-2026; también atiende en Seravena, Medellín:
   https://www.clinicaseravena.com/dr-jose-david-puerta-rojas). La agencia NO escribe de vascular.
@@ -171,7 +177,8 @@ Si no se puede confirmar, no se usa.
   Cochrane antigua calificó los tratamientos disponibles como poco satisfactorios (no usar la cifra ni el ranking de terapias).
   Fuentes de páginas: https://www.healthday.com/a-to-z-health/conditions/melasma-2665323656.html . NO usar: ranking de láseres,
   nombres de cremas ni ácidos, FPS exacto como receta, ni afirmar quién debe tratarlo (las páginas dicen "dermatólogo"; la web de la
-  clínica dice medicina estética o dermatología). Preguntas reales: "¿el melasma se cura?", "¿qué es lo más efectivo?", "¿qué médico lo trata?".
+  clínica dice que las manchas se tratan en medicina estética y en dermatología, pero The Skin Haus no es de
+  dermatología: ver sección A). Preguntas reales: "¿el melasma se cura?", "¿qué es lo más efectivo?", "¿qué médico lo trata?".
   Hueco: las páginas listan tratamientos; ninguna explica por qué el plan es por etapas ni qué pasa cuando reaparece. · consultado 2026-10-23.
 
 - Duración del relleno de labios (investigación 2026-10-24, 3 WebSearch; fuentes secundarias: FAQ de sitios genéricos, Doctoralia España y blogs, usar solo de forma general): las páginas dan cifras que no coinciden (de 2–3 meses a 12–18 meses, según el producto) y atribuyen la variación al producto, a la zona (los labios se mueven mucho) y al metabolismo de cada persona. NO usar ninguna cifra de meses para labios (solo datos.py: AH 9–18 meses según la zona; en los labios suele durar menos; "varios meses"). Preguntas reales: "¿cuánto dura el relleno de labios?", "¿cuándo retocar?", "¿cómo se ve al mes?". Ninguna fuente seria confirma cómo se ve a un mes. Hueco: las páginas dan un número y no explican por qué varía ni cómo decidir cuándo volver. Fuente oficial a enlazar: FDA rellenos (C3) · consultado 2026-10-24.

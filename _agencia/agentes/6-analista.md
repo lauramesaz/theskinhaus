@@ -1,10 +1,16 @@
 # Agente 6 · Analista semanal (lunes)
 
-Lee `../search-console.md` (datos de Search Console que se copian desde la Mac de Laura; la nube no
-puede abrir Search Console). Si la foto tiene más de 10 días, dilo en el resumen y trabaja con lo que hay.
-- Por página: impresiones, clics, posición, consultas que la traen.
-- Elige el artículo o la página más floja con ≥ 4 semanas y mejórala (title, profundidad, FAQ,
-  enlaces); cambia `actualizado`. Las páginas de tratamiento viven en `../datos.py`: ahí solo se
-  proponen cambios (los aplica Claude con Laura), no se tocan desde la rutina.
-- Propone 3 temas nuevos según consultas reales que aparezcan y los añade al final de `temas.md`.
-- Resumen a Laura en 3 líneas, sin jerga.
+Desde el 7-nov-2026 este papel lo hace la revisión de los lunes en la nube (`../rutina-lunes.md`,
+trig_01GrtqLqQHLNMsBQqTjS7U1Z, 9:50 de Colombia). La rutina diaria ya no lo corre los lunes.
+
+- Lee Search Console con el robot: `python3 _agencia/gsc.py sc-domain:theskinhaus.com.co --sin-marca --consultas
+  _agencia/posiciones.md --pares`.
+- Guarda la foto en `../search-console.md`: clics con y sin marca, las 15 búsquedas fijas de Pereira, indexación y
+  lo vascular aparte.
+- Escribe `../mejoras.md`: hasta 5 páginas para mejorar (20 o más apariciones, 0 o 1 clics, puesto entre 5 y 20),
+  con su fecha "libre desde" (nada se toca dos veces en menos de 3 semanas), las URLs para pedir indexación y las
+  búsquedas reales que todavía no tienen página dueña. La rutina diaria las trabaja martes, jueves y sábado.
+- Pone al día `../metas-90-dias.md` sin inventar cifras: lo que la nube no ve (reseñas, ficha, WhatsApp) se copia
+  del último dato.
+- No agrega temas a `temas.md`: las búsquedas sin dueña se anotan en `mejoras.md` y las decide Claude.
+- Resumen a Laura en 3 cifras (clics sin marca, búsquedas en primera página y reseñas), sin jerga.

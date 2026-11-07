@@ -10,6 +10,9 @@ BLOQUEA si encuentra:
 - Precios de The Skin Haus o rangos de precios del mercado; promesas de resultado; "sin riesgo",
   "sin dolor", "garantizado", "permanente", "rejuvenece 10 años".
 - Antes y después, casos o testimonios; frases atribuidas a médicos; nombres de médicos distintos de la Dra. Valeria Enciso (médica estética) o títulos/años/registros inventados para ella.
+- "Dermatología", "dermatológica" o "dermatóloga" dichos de la clínica o de la Dra. Enciso (en The Skin Haus no hay
+  dermatólogos; nombrar al dermatólogo como otra especialidad sí se puede). El nombre de la Dra. Enciso enlazado a
+  algo distinto de `dra-valeria-enciso`. "Revisado por" sin la línea "revisa el blog: sí" en `hechos.md`.
 - Afirmar que la clínica usa una marca comercial concreta (Botox, Sculptra, Radiesse, Profhilo, Dermapen).
 - Diagnóstico o indicación a distancia ("por WhatsApp te decimos qué necesitas").
 - Menciones de otras clínicas o médicos, o ataques a otros profesionales.

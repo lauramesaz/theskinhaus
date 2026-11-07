@@ -6,6 +6,30 @@ y Skin Haus todavía no tiene ficha. "Mapa: sí" quiere decir que Google mostró
 "> 20" quiere decir que no apareció en los primeros 20 resultados (2 páginas); "> 10", en la primera página.
 Repetir cada semana con las mismas 15 búsquedas, espaciando 5–8 s entre cada una para que Google no bloquee.
 
+Desde el 9-nov-2026 hay dos medidas que no se mezclan: (1) cada lunes, el puesto medio en Colombia que da la API de
+Search Console (`python3 _agencia/gsc.py sc-domain:theskinhaus.com.co --sin-marca --consultas _agencia/posiciones.md`),
+que solo trae las búsquedas que ya tienen apariciones; y (2) una vez al mes, la revisión en Google con ubicación de
+Pereira (SH-27), que muestra también el mapa. La primera revisión con ubicación de Pereira pasa a ser la base real:
+la del 27-oct se hizo sin ubicación.
+
+## Las 15 búsquedas fijas
+
+- medicina estética pereira
+- botox pereira
+- bótox en pereira
+- toxina botulínica pereira
+- ácido hialurónico pereira
+- relleno de labios pereira
+- armonización facial pereira
+- tratamiento de ojeras pereira
+- bioestimuladores pereira
+- skinbooster pereira
+- peeling químico pereira
+- dermapen pereira
+- tratamiento manchas cara pereira
+- clínica estética pereira
+- médico estético pereira
+
 ## 27-oct-2026 (web con 9 días en Google)
 
 | Búsqueda | Puesto | Página que sale | Mapa |

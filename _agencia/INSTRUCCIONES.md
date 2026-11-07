@@ -17,7 +17,9 @@ Lector: mujeres y hombres de Pereira y su área (Dosquebradas, Santa Rosa de Cab
 Cartago) que están averiguando un tratamiento, casi siempre desde el celular, y que se preguntan
 cuánto vale, cuánto dura, si se va a notar, si duele y en quién confiar.
 
-**Meta: 1 artículo nuevo al día** (o 1 actualización de uno viejo), en el orden de `temas.md`.
+**Ritmo desde el 9-nov-2026** (plan de 90 días): lunes, miércoles y viernes, 1 artículo nuevo en el orden de
+`temas.md` (máximo 1 de bótox cada 2 semanas); martes, jueves y sábado, día de mejora sobre `mejoras.md`; domingo,
+solo la limpieza del Policía humanizador. El detalle está en `estrategia.md` §5 y el encargo en `rutina-diaria.md`.
 
 ## 1. Marca (tono)
 
@@ -33,6 +35,11 @@ cuánto vale, cuánto dura, si se va a notar, si duele y en quién confiar.
   no a `nosotros`; desde el 7-nov-2026). Nunca inventarle
   títulos, años de experiencia, registros ni frases entre comillas: no decir que ella "dice", "recomienda"
   u "opina" algo que no esté escrito y aprobado. No nombrar a ningún otro médico.
+- **Nunca "dermatología" para la clínica ni para la médica.** The Skin Haus hace medicina estética y la Dra. Enciso
+  es médica estética: no escribir "dermatología", "dermatológica" ni "dermatóloga" para ninguna de las dos. Sí se
+  puede nombrar al dermatólogo como otra especialidad ("si vemos un lunar que debe revisar un dermatólogo, te lo
+  decimos") y citar a la American Academy of Dermatology como fuente.
+- **"Revisado por"** solo si `hechos.md` dice "revisa el blog: sí". Hoy no lo dice: no se pone.
 
 ## 2. Reglas de oro médicas y legales (contenido de salud, YMYL)
 
@@ -62,6 +69,8 @@ cuánto vale, cuánto dura, si se va a notar, si duele y en quién confiar.
 - Keyword como la escribe alguien en Colombia: "bótox" (con o sin tilde) más que "toxina
   botulínica"; "cuánto vale", "cuánto dura", "es lo mismo", "precio". Las preguntas reales que
   Google muestra en Pereira están en `estrategia.md`.
+- **Los H1 de las páginas de servicio llevan "en Pereira"** (`SEO[slug]['h1']` y `BUSQUEDAS` en `../datos.py`,
+  desde el 7-nov-2026). La agencia no los quita ni los cambia; en un día de mejora solo toca `titulo=` y `desc=`.
 - **Pereira** aparece natural en el primer párrafo, en un `<h2>` y en la descripción cuando la
   keyword es local. Señales locales verdaderas (de `hechos.md`): el sol y la altitud del Eje
   Cafetero, Dosquebradas y Santa Rosa a pocos minutos, la Torre Médica Oval, la cita entre semana.
@@ -110,9 +119,11 @@ palabras. `"estado": "publicado"` para que salga; `"borrador"` no se publica.
 ```
 cd <carpeta del repositorio>
 python3 build.py                      # genera páginas, blog, sitemap.xml, robots.txt y llms.txt
-git add -A && git commit -m "blog: <título>"
-git pull --rebase && git push
+git add _agencia blog *.html sitemap.xml robots.txt llms.txt     # nunca git add -A
+git commit -m "blog: <título>"        # o "mejora: <página>" / "humanizador: <slug>"
+git pull --rebase && git push origin HEAD:main
 ```
+En un día de mejora de una página de servicio se agrega también `datos.py` (solo con `titulo=` y `desc=` cambiados).
 Luego verificar que `https://theskinhaus.com.co/blog/<slug>` responde 200 (1–3 min) y anotar en
 `registro.md`. Fase: **automática** (aprobada por Laura el 19-oct-2026), ver `pipeline.md`.
 
