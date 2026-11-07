@@ -31,7 +31,7 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 23 | cómo hidratar los labios sin agrandarlos | qué opciones médicas hidratan o mejoran la textura sin cambiar el tamaño y cuándo sí conviene volumen sutil | relleno-de-labios | publicado 2026-11-05 |
 | 24 | bótox y ácido hialurónico el mismo día | cuándo se combinan, cuál se ve primero y cómo se planea para no pasarse | armonizacion-facial | publicado 2026-11-04 |
 | 25 | dermapen o peeling: cuál elegir | textura y cicatrices frente a color y manchas, cuándo se combinan y cuál va primero | microagujas | publicado 2026-11-06 |
-| 26 | bótox preventivo: a qué edad empezar | líneas dinámicas frente a estáticas; se decide por tu gesto y no por un número de años | toxina-botulinica | pendiente |
+| 26 | bótox preventivo: a qué edad empezar | líneas dinámicas frente a estáticas; se decide por tu gesto y no por un número de años | toxina-botulinica | publicado 2026-11-07 |
 | 27 | hialuronidasa: disolver un relleno | cuándo se usa, por qué el ácido hialurónico es reversible y qué preguntar antes de elegir un relleno | acido-hialuronico | pendiente |
 | 28 | medicina estética o dermatología | a quién consultar según lo que quieres tratar; cuándo conviene el dermatólogo y te lo decimos | valoracion | pendiente |
 | 29 | relleno de mentón y mandíbula | perfilar el tercio inferior, qué se puede lograr, qué no y cómo se ve de perfil | acido-hialuronico | pendiente |
