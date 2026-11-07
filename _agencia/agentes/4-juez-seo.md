@@ -1,7 +1,7 @@
 # Agente 4 · Juez SEO (≥ 85/100)
 
 Puntúa el artículo y corrige lo que falte:
-- Keyword en title (≤ 60 car.), h1, entrada, un h2, descripción (140–160 car.) · 25
+- Keyword en title (≤ 60 car.), h1, entrada, un h2, descripción (140–155 car.) · 25
 - Intención de búsqueda cubierta mejor que las 5 primeras de Google (responde la pregunta en los
   primeros 2 párrafos, luego profundiza) · 20
 - No compite con la página dueña: el title nunca es solo "<tratamiento> en Pereira"; si choca, se

@@ -65,7 +65,7 @@ solo la limpieza del Policía humanizador. El detalle está en `estrategia.md` �
 - **1 keyword principal por artículo** + 3 a 5 secundarias. Debe ir en `title`, `h1`, primer
   párrafo (`entrada`), un `<h2>` y la `descripcion`.
 - `title` ≤ 60 caracteres (la plantilla añade " · The Skin Haus" solo si cabe). `descripcion`
-  140–160 caracteres, con un dato concreto, distinta en cada artículo.
+  140–155 caracteres (más larga, Google la corta), con un dato concreto, distinta en cada artículo.
 - Keyword como la escribe alguien en Colombia: "bótox" (con o sin tilde) más que "toxina
   botulínica"; "cuánto vale", "cuánto dura", "es lo mismo", "precio". Las preguntas reales que
   Google muestra en Pereira están en `estrategia.md`.

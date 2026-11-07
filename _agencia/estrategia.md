@@ -91,6 +91,10 @@ médico para mostrarlo en la web.
   `/hiperhidrosis` se queda con "bótox para el sudor en Pereira" e "hiperhidrosis Pereira", y su pregunta de duración
   sigue en una línea ("varios meses"). Cuando el artículo salga, Claude le agrega a esa respuesta el enlace al
   artículo en una sesión de trabajo (la rutina no toca esa parte de `datos.py`).
+- **Lo mismo con la limpieza facial:** "cada cuánto hacerse una limpieza facial" → artículo del tema 48;
+  `/limpieza-facial-medica` se queda con "limpieza facial Pereira" y su pregunta "¿Cada cuánto debo hacerme una
+  limpieza facial?" sigue corta (cada 4 a 6 semanas). El artículo enlaza a la página en el primer tercio y su title
+  no puede ser "limpieza facial en Pereira". Cuando salga, Claude suma el enlace desde esa respuesta.
 - **La clínica y la médica:** The Skin Haus hace medicina estética (y vascular con el Dr. Puerta, que esta agencia
   no toca). Nunca se escribe "dermatología", "dermatológica" ni "dermatóloga" para la clínica ni para la Dra. Valeria
   Enciso. Su nombre enlaza siempre a `dra-valeria-enciso`. Los H1 de las páginas de servicio llevan "en Pereira"
