@@ -89,33 +89,15 @@ HEAD_MEDICION = (
 )
 
 
-# 7-nov-2026 (CLS): las fuentes se declaran dentro de la página en vez de pedir la hoja de Google Fonts aparte.
-# Antes la hoja llegaba tarde (media=print + onload): el titular se pintaba con una fuente del sistema en 3 líneas y,
-# al llegar Cormorant/Libre Caslon, quedaba en 2; todo lo de abajo subía 44 px (Lighthouse móvil: CLS 0,157 en
-# /medicina-estetica y 0,105 en /toxina-botulinica). Ahora el navegador conoce las fuentes desde el primer byte y
-# precarga las dos del titular. Son los mismos archivos de fonts.gstatic.com que daba la hoja de Google (subconjuntos
-# latin y latin-ext, que cubren todo el español). Google mantiene publicadas las versiones anteriores; si alguna
-# dejara de cargar, la web se vería con los respaldos de abajo: copiar las direcciones nuevas de la hoja
-# https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1
-_GF = "https://fonts.gstatic.com/s/"
-_LATIN = ("U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, "
-          "U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD")
-_LATIN_EXT = ("U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, "
-              "U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF")
-FUENTES = [  # (familia, estilo, peso, archivo latin, archivo latin-ext, display)
-    ("Cormorant Garamond", "italic", "400 500", "cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSqn7B6D.woff2",
-     "cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtGmSqn7B6DxjY.woff2", "swap"),
-    ("Libre Caslon Display", "normal", "400", "librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lWfxlPCz4c.woff2",
-     "librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lYfxlPCz4c3AU.woff2", "swap"),
-    ("Libre Caslon Text", "normal", "400", "librecaslontext/v5/DdT878IGsGw1aF1JU10PUbTvNNaDMfq41-JJHRO0.woff2",
-     "librecaslontext/v5/DdT878IGsGw1aF1JU10PUbTvNNaDMfq21-JJHRO0i9o.woff2", "swap"),
-    ("Libre Caslon Text", "italic", "400", "librecaslontext/v5/DdT678IGsGw1aF1JU10PUbTvNNaDMfq95-BDGjG2u9s.woff2",
-     "librecaslontext/v5/DdT678IGsGw1aF1JU10PUbTvNNaDMfq95-5DGjG2u9vUKg.woff2", "swap"),
-]
-FUENTES_CSS = "".join(
-    "@font-face{font-family:'%s';font-style:%s;font-weight:%s;font-display:%s;src:url(%s%s) format('woff2');unicode-range:%s}" % (
-        fam, est, peso, disp, _GF, archivo, rango)
-    for fam, est, peso, latin, ext, disp in FUENTES for archivo, rango in ((ext, _LATIN_EXT), (latin, _LATIN)))
+# 7-nov-2026 (CLS): lo que saltaba en /medicina-estetica (0,157) y /toxina-botulinica (0,105) era el titular. La hoja
+# de Google Fonts llega tarde a propósito (media=print + onload, para no frenar el primer pintado), así que el
+# titular se pintaba con una fuente del sistema más ancha, en 3 líneas, y al llegar Cormorant/Libre Caslon quedaba
+# en 2: todo lo de abajo subía 44 px. El arreglo son los RESPALDOS de abajo, no la forma de cargar las fuentes.
+# Se probó declarar las fuentes en la página y precargarlas: el CLS también quedaba en 0, pero el primer pintado
+# pasaba de 1,0 a 2,1 s en muchas corridas y el LCP subía hasta 0,9 s en Lighthouse móvil. Con la hoja de siempre +
+# respaldos: CLS 0 y casi los mismos tiempos de antes.
+FUENTES_GOOGLE = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500"
+                  "&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap")
 # Respaldos con medidas ajustadas: si un texto se pinta antes de que llegue la fuente de marca, se pinta con una
 # fuente del sistema escalada para ocupar el mismo ancho y alto (size-adjust + ascent/descent). Así corta las líneas
 # casi siempre en el mismo sitio y nada se mueve cuando llega la buena. Proporciones medidas en Chrome el 7-nov-2026
@@ -147,13 +129,11 @@ RESPALDOS = [
     ("SH Texto Noto", "normal", "400", _NOTO, 1.072, 0.97, 0.26),
     ("SH Texto Noto", "italic", "400", _NOTO_IT, 1.049, 0.97, 0.26),
 ]
-FUENTES_CSS += "".join(
+FUENTES_CSS = "".join(
     "@font-face{font-family:'%s';font-style:%s;font-weight:%s;src:%s;size-adjust:%.1f%%;ascent-override:%.1f%%;"
     "descent-override:%.1f%%;line-gap-override:0%%}" % (fam, est, peso, ",".join('local("%s")' % n for n in nombres),
                                                         ajuste * 100, asc / ajuste * 100, desc / ajuste * 100)
     for fam, est, peso, nombres, ajuste, asc, desc in RESPALDOS)
-# solo las dos del titular del primer pantallazo (más precargas competirían con la foto principal)
-FUENTES_PRECARGA = "".join('<link rel="preload" as="font" type="font/woff2" href="%s%s" crossorigin>\n' % (_GF, f[3]) for f in FUENTES[:2])
 
 _CSS = None
 
@@ -187,8 +167,9 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <meta property="og:url" content="%s"><meta property="og:image" content="%s/%s"><meta property="og:locale" content="es_CO">
 <meta name="theme-color" content="#FAF8F3">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-%s%s
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+%s<link href="%s" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="%s" rel="stylesheet"></noscript>
 <style>%s%s</style>
 %s
 </head>
@@ -202,7 +183,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <script src="assets/app.js?v=%d" defer></script>
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
-              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", FUENTES_PRECARGA,
+              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", FUENTES_GOOGLE, FUENTES_GOOGLE,
               FUENTES_CSS, estilo_en_linea(), ld,
               cabecera(activo), cuerpo, pie(pie_msg), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
