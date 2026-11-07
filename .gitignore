@@ -1,2 +1,8 @@
 .DS_Store
 __pycache__/
+
+# 7-nov-2026 · documentos internos que NO van en este repositorio (es público): viven en el Mac de Laura,
+# carpeta ~/skin-haus-privado/ (misma ruta interna). Ninguna rutina ni tarea automática los usa.
+_agencia/google-ads-listo.md
+_agencia/meta-ads-listo.md
+_privado/

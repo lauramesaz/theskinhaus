@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) · 7-nov-2026
+# El repositorio es público, pero la WEB no tiene por qué servir el código fuente: estos archivos generan las
+# páginas en el computador o en la rutina de la nube y nadie los necesita en theskinhaus.com.co.
+# Las carpetas y archivos que empiezan por "_" (como _agencia) nunca se publican. NO crear .nojekyll: con él SÍ se publicarían.
+# La guía del equipo (/equipo, equipo.html) SÍ se sigue publicando: el equipo la abre desde la web.
+exclude:
+  - build.py
+  - datos.py
+  - blog.py
+  - ampliacion.py
+  - guia_whatsapp.py
+  - "*.py"

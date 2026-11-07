@@ -83,6 +83,7 @@ ESTETICA = [
 
 VASCULAR = [
     dict(slug="aranitas-vasculares", nombre="Arañitas vasculares", foto="vascular",
+         h1="Arañitas vasculares: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          linea="Piernas más limpias, con un tratamiento sencillo y ambulatorio.",
          intro="Las arañitas (telangiectasias) son pequeños vasos visibles, rojos o violeta. Con escleroterapia —microinyecciones de una sustancia que cierra el vaso— y, cuando conviene, láser, van desapareciendo de forma progresiva.",
          para=["Arañitas rojas o violeta en muslos y piernas", "Venitas azules pequeñas (reticulares)", "Quienes quieren mejorar la apariencia de sus piernas"],
@@ -91,6 +92,7 @@ VASCULAR = [
               ("¿Duele la escleroterapia?", "Se usan agujas muy finas. Se siente como pequeños pinchazos."),
               ("¿Pueden volver a salir?", "Los vasos tratados no vuelven, pero pueden aparecer nuevos. Te enseñamos cómo prevenirlos.")]),
     dict(slug="varices", nombre="Várices", foto="vascular",
+         h1="Várices: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          linea="Más que estética: tus venas también hablan de tu salud.",
          intro="Las várices son venas dilatadas por insuficiencia venosa: la sangre no regresa bien al corazón. Con un diagnóstico preciso elegimos el tratamiento mínimamente invasivo adecuado, casi siempre ambulatorio y sin cirugía abierta.",
          para=["Venas abultadas o visibles en las piernas", "Pesadez, cansancio, calambres o hinchazón al final del día", "Antecedentes familiares de várices"],
@@ -99,6 +101,7 @@ VASCULAR = [
               ("¿Hay que operarse?", "Hoy la mayoría se trata con técnicas mínimamente invasivas en consultorio. Te explicamos las opciones según tu caso."),
               ("¿Qué pasa si no las trato?", "Depende del caso. En la valoración te decimos con claridad si es urgente o si puede esperar.")]),
     dict(slug="eco-doppler-venoso", nombre="Eco-doppler venoso", foto="vascular",
+         h1="Eco-doppler venoso <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          linea="Ver cómo circula tu sangre antes de decidir nada.",
          intro="Una ecografía que muestra en tiempo real cómo funcionan las venas de tus piernas: si las válvulas cierran bien, dónde hay reflujo y cuál es el origen de las várices o arañitas. Es el mapa para un tratamiento acertado.",
          para=["Antes de tratar arañitas o várices", "Pesadez, hinchazón o dolor en piernas", "Seguimiento después de un tratamiento vascular"],
@@ -107,6 +110,7 @@ VASCULAR = [
               ("¿Tengo que ir en ayunas?", "No. Ven con ropa cómoda que permita descubrir las piernas."),
               ("¿Me entregan resultado?", "Sí, con el mapa venoso y la explicación del médico en la misma cita.")]),
     dict(slug="cuperosis-y-rojeces", nombre="Cuperosis y rojeces", foto="retrato",
+         h1="Cuperosis y rojeces: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          linea="Donde la piel y los vasos se encuentran.",
          intro="Los vasitos visibles en nariz y mejillas, el enrojecimiento persistente y la rosácea tienen un componente vascular. Los tratamos con láser o luz pulsada y una rutina que calme la piel, uniendo nuestras dos especialidades.",
          para=["Vasitos visibles en nariz y mejillas", "Enrojecimiento persistente o rosácea", "Piel reactiva que se enrojece con facilidad"],
@@ -181,6 +185,7 @@ SEO = {
 
     "acido-hialuronico": dict(
         titulo="Ácido hialurónico en Pereira: labios, ojeras y pómulos",
+        h1="Ácido hialurónico <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Ácido hialurónico en Pereira para labios, ojeras, pómulos, mentón y mandíbula. Resultados que duran de 9 a 18 meses según la zona y que se pueden revertir.",
         secciones=[
             ("¿Para qué zonas sirve el ácido hialurónico?",
@@ -201,6 +206,7 @@ SEO = {
 
     "bioestimuladores": dict(
         titulo="Bioestimuladores de colágeno en Pereira · The Skin Haus",
+        h1="Bioestimuladores de colágeno <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Bioestimuladores de colágeno en Pereira (ácido poliláctico e hidroxiapatita de calcio) para flacidez y firmeza. Un cambio progresivo que dura de 12 a 24 meses.",
         secciones=[
             ("Sculptra, Radiesse y otros nombres que has oído",
@@ -218,6 +224,7 @@ SEO = {
 
     "skinboosters": dict(
         titulo="Skinbooster en Pereira: piel hidratada y luminosa",
+        h1="Skinboosters <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Skinboosters en Pereira: microinyecciones de ácido hialurónico ligero para piel opaca o deshidratada. 3 sesiones cada 3 a 4 semanas, sin cambiar volúmenes.",
         secciones=[
             ("¿Skinbooster o Profhilo?",
@@ -232,6 +239,7 @@ SEO = {
 
     "peelings-medicos": dict(
         titulo="Peeling químico en Pereira: manchas, poros y acné",
+        h1="Peelings médicos <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Peelings médicos en Pereira elegidos para tu tipo de piel: manchas, textura, poros y marcas de acné. Desde peelings suaves sin descamación hasta más profundos.",
         secciones=[
             ("Los tipos de peeling",
@@ -246,7 +254,7 @@ SEO = {
     "microagujas": dict(
         titulo="Microagujas (dermapen) en Pereira · The Skin Haus",
         desc="Microagujas o dermapen en Pereira para cicatrices de acné, poros y textura. De 3 a 5 sesiones cada 4 semanas, con anestesia tópica y rubor de 24 a 48 horas.",
-        h1="Microagujas <em>(dermapen)</em>",
+        h1="Microagujas en Pereira <em>(dermapen)</em>",
         secciones=[
             ("Microagujas, dermapen o microneedling",
              "<p>Son nombres para lo mismo. Dermapen es una marca de dispositivo muy conocida, y “microneedling” es el término en inglés. La idea es crear microcanales controlados para que la piel active su propia reparación.</p>"),
@@ -259,6 +267,7 @@ SEO = {
 
     "manchas-y-melasma": dict(
         titulo="Tratamiento de manchas y melasma en Pereira · The Skin Haus",
+        h1="Manchas y melasma: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Tratamiento de manchas en la cara y melasma en Pereira con un plan por etapas: diagnóstico, cuidado en casa, peelings y tecnologías según tu tipo de mancha.",
         secciones=[
             ("No todas las manchas son iguales",
@@ -276,6 +285,7 @@ SEO = {
 
     "limpieza-facial-medica": dict(
         titulo="Limpieza facial profunda en Pereira · The Skin Haus",
+        h1="Limpieza facial médica <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Limpieza facial médica en Pereira: extracción cuidadosa, exfoliación, activos según tu piel e hidratación, en 60 minutos. Ideal cada 4 a 6 semanas.",
         secciones=[
             ("¿Qué incluye la limpieza facial?",
@@ -303,6 +313,7 @@ BUSQUEDAS = [
               ("¿Se puede revertir?", "Sí. El ácido hialurónico se puede disolver con una enzima (hialuronidasa) si alguna vez fuera necesario."),
               ("¿Se va a notar que me hice algo?", "La idea es que se note que te ves bien, no qué te hiciste. Empezamos con poca cantidad y, si hace falta, completamos después.")],
          titulo="Relleno de labios en Pereira: natural y reversible",
+         h1="Relleno de labios <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          desc="Relleno de labios en Pereira con ácido hialurónico: definir, hidratar o dar volumen sutil en 30–45 minutos, en proporción con tu rostro. Te valora la Dra. Enciso.",
          secciones=[
              ("Relleno de labios natural en Pereira",
@@ -326,6 +337,7 @@ BUSQUEDAS = [
               ("¿Cuánto dura el tratamiento de ojeras?", "El ácido hialurónico dura de 9 a 18 meses según la zona y la persona. Te damos una referencia para tu caso en la valoración."),
               ("¿Es seguro rellenar las ojeras?", "Es una zona delicada que pide experiencia, poca cantidad y buena técnica. Todo procedimiento tiene riesgos; por eso lo hace un médico después de valorarte.")],
          titulo="Tratamiento de ojeras en Pereira · The Skin Haus",
+         h1="Tratamiento de ojeras <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          desc="Tratamiento de ojeras en Pereira: si tu ojera es hundida, el ácido hialurónico suaviza la sombra en 30–45 minutos. Si es pigmento o bolsa, te decimos qué sirve.",
          secciones=[
              ("¿Qué tipo de ojera tienes?",
@@ -346,6 +358,7 @@ BUSQUEDAS = [
               ("¿Se hace todo en una sola cita?", "No necesariamente. Muchas veces conviene hacerlo por etapas: así el cambio es gradual y podemos ajustar en el control."),
               ("¿Se ve natural?", "Ese es el objetivo. No buscamos cambiar quién eres, sino que tu rostro se vea en proporción y natural.")],
          titulo="Armonización facial en Pereira: natural y por etapas",
+         h1="Armonización facial <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          desc="Armonización facial en Pereira: un plan por etapas con ácido hialurónico, bótox o bioestimuladores, pensado para tu proporción y no para cambiar quién eres.",
          secciones=[
              ("Qué puede incluir una armonización facial",
@@ -369,6 +382,7 @@ BUSQUEDAS = [
               ("¿Cuánto dura el efecto del bótox en las axilas?", "Varios meses. Cuando el sudor vuelve a aumentar, se repite. Te damos una referencia según la zona en la valoración."),
               ("¿Dejo de sudar en todo el cuerpo?", "No. Solo disminuye el sudor en la zona tratada; el resto del cuerpo sigue regulando la temperatura normalmente.")],
          titulo="Bótox para hiperhidrosis en Pereira · The Skin Haus",
+         h1="Hiperhidrosis: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          desc="Bótox para la hiperhidrosis en Pereira: la toxina botulínica reduce el sudor excesivo de axilas y manos de forma temporal, en una cita corta y sin incapacidad.",
          secciones=[
              ("Cómo funciona",
@@ -387,6 +401,7 @@ BUSQUEDAS = [
               ("¿Cuántas sesiones necesito?", "Con microagujas, normalmente de 3 a 5 sesiones cada 4 semanas, a veces combinadas con peelings. Depende del tipo y la profundidad de las cicatrices."),
               ("¿Sirve si tengo la piel morena?", "Sí, eligiendo bien la técnica y preparando la piel. Por eso valoramos antes de empezar.")],
          titulo="Tratamiento de cicatrices de acné en Pereira · The Skin Haus",
+         h1="Cicatrices de acné: <em>tratamiento en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
          desc="Tratamiento de cicatrices de acné en Pereira con microagujas, peelings y manejo de manchas: un plan por etapas de 3 a 5 sesiones, con metas realistas.",
          secciones=[
              ("¿Cicatriz o mancha?",

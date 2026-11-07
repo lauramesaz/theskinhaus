@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # The Skin Haus · genera todas las páginas a partir de datos.py.   Uso:  python3 build.py
 # v3 "fluida": arcos, círculos, gotas, islas marfil, cinta de frases y camino con curva.
-import os, time, json, re, datetime
+import os, time, json, re, datetime, subprocess
 from urllib.parse import quote
 from datos import *
 from ampliacion import NOSOTROS_TEXTO, VALORACION_TEXTO   # 27-oct-2026: páginas más completas
@@ -51,17 +51,22 @@ def cabecera(activo):
 
 
 def pie(msg=None):
-    est = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in ESTETICA[:4] + BUSQUEDAS[:2])
-    vas = "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in VASCULAR)
+    # 7-nov-2026: el pie enlaza TODOS los tratamientos (antes solo 6 de estética; armonización, peelings, manchas,
+    # microagujas, limpieza, cicatrices e hiperhidrosis casi no recibían enlaces internos). Mismas 4 columnas:
+    # en dos de ellas va un segundo grupo debajo (La clínica, Visítanos).
+    li = lambda lista: "".join('<li><a href="%s">%s</a></li>' % (t["slug"], t["nombre"]) for t in lista)
     return '''<footer class="pie-web"><div class="caja">
 <div class="pie-grid">
   <div>%s<p class="frase-marca" style="margin-top:36px;max-width:15em">Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal.</p></div>
-  <div><h4>Medicina estética</h4><ul>%s<li><a href="medicina-estetica">Ver todos</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
-  <div><h4>Medicina vascular</h4><ul>%s</ul></div>
-  <div><h4>Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
+  <div><h4>Medicina estética</h4><ul>%s<li><a href="medicina-estetica">Ver todos</a></li></ul></div>
+  <div><h4>También tratamos</h4><ul>%s</ul>
+    <h4 class="pie-sig">La clínica</h4><ul><li><a href="nosotros">Nosotros</a></li><li><a href="%s">%s</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
+  <div><h4>Medicina vascular</h4><ul>%s</ul>
+    <h4 class="pie-sig">Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · %s · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
-</div></footer>''' % (logo("completo", True), est, vas, DIRECCION, wa(msg) if msg else wa(), TELEFONO_VISIBLE, CIUDAD)
+</div></footer>''' % (logo("completo", True), li(ESTETICA), li(BUSQUEDAS), MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"], li(VASCULAR),
+                     DIRECCION, wa(msg) if msg else wa(), TELEFONO_VISIBLE, CIUDAD)
 
 
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
@@ -83,6 +88,72 @@ HEAD_MEDICION = (
     'y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","' + CLARITY + '");</script>\n'
 )
 
+
+# 7-nov-2026 (CLS): las fuentes se declaran dentro de la página en vez de pedir la hoja de Google Fonts aparte.
+# Antes la hoja llegaba tarde (media=print + onload): el titular se pintaba con una fuente del sistema en 3 líneas y,
+# al llegar Cormorant/Libre Caslon, quedaba en 2; todo lo de abajo subía 44 px (Lighthouse móvil: CLS 0,157 en
+# /medicina-estetica y 0,105 en /toxina-botulinica). Ahora el navegador conoce las fuentes desde el primer byte y
+# precarga las dos del titular. Son los mismos archivos de fonts.gstatic.com que daba la hoja de Google (subconjuntos
+# latin y latin-ext, que cubren todo el español). Google mantiene publicadas las versiones anteriores; si alguna
+# dejara de cargar, la web se vería con los respaldos de abajo: copiar las direcciones nuevas de la hoja
+# https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1
+_GF = "https://fonts.gstatic.com/s/"
+_LATIN = ("U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, "
+          "U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD")
+_LATIN_EXT = ("U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, "
+              "U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF")
+FUENTES = [  # (familia, estilo, peso, archivo latin, archivo latin-ext, display)
+    ("Cormorant Garamond", "italic", "400 500", "cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSqn7B6D.woff2",
+     "cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtGmSqn7B6DxjY.woff2", "swap"),
+    ("Libre Caslon Display", "normal", "400", "librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lWfxlPCz4c.woff2",
+     "librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lYfxlPCz4c3AU.woff2", "swap"),
+    ("Libre Caslon Text", "normal", "400", "librecaslontext/v5/DdT878IGsGw1aF1JU10PUbTvNNaDMfq41-JJHRO0.woff2",
+     "librecaslontext/v5/DdT878IGsGw1aF1JU10PUbTvNNaDMfq21-JJHRO0i9o.woff2", "swap"),
+    ("Libre Caslon Text", "italic", "400", "librecaslontext/v5/DdT678IGsGw1aF1JU10PUbTvNNaDMfq95-BDGjG2u9s.woff2",
+     "librecaslontext/v5/DdT678IGsGw1aF1JU10PUbTvNNaDMfq95-5DGjG2u9vUKg.woff2", "swap"),
+]
+FUENTES_CSS = "".join(
+    "@font-face{font-family:'%s';font-style:%s;font-weight:%s;font-display:%s;src:url(%s%s) format('woff2');unicode-range:%s}" % (
+        fam, est, peso, disp, _GF, archivo, rango)
+    for fam, est, peso, latin, ext, disp in FUENTES for archivo, rango in ((ext, _LATIN_EXT), (latin, _LATIN)))
+# Respaldos con medidas ajustadas: si un texto se pinta antes de que llegue la fuente de marca, se pinta con una
+# fuente del sistema escalada para ocupar el mismo ancho y alto (size-adjust + ascent/descent). Así corta las líneas
+# casi siempre en el mismo sitio y nada se mueve cuando llega la buena. Proporciones medidas en Chrome el 7-nov-2026
+# con TODOS los textos de las 53 páginas (ancho con la fuente de marca ÷ ancho con la del sistema; entre el 10 % y el
+# 90 % de los textos la proporción varía ±1,5 %). Noto Serif (Android) no está en este Mac: usa la proporción de
+# Georgia, que tiene un ancho parecido.
+# (familia CSS, estilo, peso, [nombres locales], size-adjust, ascenso, descenso de la fuente de marca)
+_TIMES_IT = ["Times New Roman Italic", "TimesNewRomanPS-ItalicMT", "Liberation Serif Italic", "LiberationSerif-Italic", "Tinos Italic", "Tinos-Italic"]
+_TIMES = ["Times New Roman", "TimesNewRomanPSMT", "Liberation Serif", "LiberationSerif", "Tinos", "Tinos-Regular"]
+_GEORGIA_IT, _GEORGIA = ["Georgia Italic", "Georgia-Italic"], ["Georgia", "Georgia-Regular"]
+_NOTO_IT, _NOTO = ["Noto Serif Italic", "NotoSerif-Italic"], ["Noto Serif", "NotoSerif-Regular", "NotoSerif"]
+_BIG = ["Big Caslon Medium", "BigCaslon-Medium", "Big Caslon"]
+RESPALDOS = [
+    # Cormorant Garamond cursiva (acentos en cursiva) → --cursiva
+    ("SH Cormorant Times", "italic", "400 500", _TIMES_IT, 0.869, 0.92, 0.29),
+    ("SH Cormorant Georgia", "italic", "400 500", _GEORGIA_IT, 0.771, 0.92, 0.29),
+    ("SH Cormorant Noto", "italic", "400 500", _NOTO_IT, 0.771, 0.92, 0.29),
+    # Libre Caslon Display (titulares) → --serif
+    ("SH Caslon Big", "normal", "400", _BIG, 0.911, 0.97, 0.27),
+    ("SH Caslon Times", "normal", "400", _TIMES, 0.914, 0.97, 0.27),
+    ("SH Caslon Georgia", "normal", "400", _GEORGIA, 0.834, 0.97, 0.27),
+    ("SH Caslon Noto", "normal", "400", _NOTO, 0.834, 0.97, 0.27),
+    # Libre Caslon Text (textos largos, preguntas, datos) → --serif-texto
+    ("SH Texto Big", "normal", "400", _BIG, 1.180, 0.97, 0.26),
+    ("SH Texto Times", "normal", "400", _TIMES, 1.175, 0.97, 0.26),
+    ("SH Texto Times", "italic", "400", _TIMES_IT, 1.175, 0.97, 0.26),
+    ("SH Texto Georgia", "normal", "400", _GEORGIA, 1.072, 0.97, 0.26),
+    ("SH Texto Georgia", "italic", "400", _GEORGIA_IT, 1.049, 0.97, 0.26),
+    ("SH Texto Noto", "normal", "400", _NOTO, 1.072, 0.97, 0.26),
+    ("SH Texto Noto", "italic", "400", _NOTO_IT, 1.049, 0.97, 0.26),
+]
+FUENTES_CSS += "".join(
+    "@font-face{font-family:'%s';font-style:%s;font-weight:%s;src:%s;size-adjust:%.1f%%;ascent-override:%.1f%%;"
+    "descent-override:%.1f%%;line-gap-override:0%%}" % (fam, est, peso, ",".join('local("%s")' % n for n in nombres),
+                                                        ajuste * 100, asc / ajuste * 100, desc / ajuste * 100)
+    for fam, est, peso, nombres, ajuste, asc, desc in RESPALDOS)
+# solo las dos del titular del primer pantallazo (más precargas competirían con la foto principal)
+FUENTES_PRECARGA = "".join('<link rel="preload" as="font" type="font/woff2" href="%s%s" crossorigin>\n' % (_GF, f[3]) for f in FUENTES[:2])
 
 _CSS = None
 
@@ -116,10 +187,9 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <meta property="og:url" content="%s"><meta property="og:image" content="%s/%s"><meta property="og:locale" content="es_CO">
 <meta name="theme-color" content="#FAF8F3">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-%s<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet"></noscript>
-<style>%s</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+%s%s
+<style>%s%s</style>
 %s
 </head>
 <body>
@@ -132,7 +202,8 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <script src="assets/app.js?v=%d" defer></script>
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
-              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", estilo_en_linea(), ld,
+              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", FUENTES_PRECARGA,
+              FUENTES_CSS, estilo_en_linea(), ld,
               cabecera(activo), cuerpo, pie(pie_msg), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
@@ -249,7 +320,9 @@ CLINICA_LD = {
     "geo": {"@type": "GeoCoordinates", "latitude": 4.8027788, "longitude": -75.6857281},  # edificio Oval Médica (Google Maps, 3-nov-2026)
     "hasMap": "https://www.google.com/maps?q=4.8027788,-75.6857281",
     "areaServed": [{"@type": "City", "name": c} for c in AREA],
-    "medicalSpecialty": "Dermatology",
+    # 7-nov-2026: fuera "Dermatology" (aquí no hay dermatólogos). schema.org no tiene un valor para medicina estética;
+    # el de la medicina vascular ("Cardiovascular") va en el bloque del Dr. Puerta. Las dos áreas van en texto.
+    "knowsAbout": ["Medicina estética", "Medicina vascular"],
     "availableService": [{"@type": "MedicalProcedure", "name": t["nombre"], "url": DOMINIO + "/" + t["slug"]} for t in ESTETICA + BUSQUEDAS],
 }
 
@@ -258,7 +331,7 @@ def medica_ld():
     return {"@context": "https://schema.org", "@type": "Physician", "@id": DOMINIO + "/" + MEDICA_ESTETICA["slug"] + "#medica",
             "name": MEDICA_ESTETICA["nombre"], "description": MEDICA_ESTETICA["titulo"], "jobTitle": MEDICA_ESTETICA["titulo"],
             "image": DOMINIO + "/" + MEDICA_ESTETICA["foto"] + ".jpg", "url": DOMINIO + "/" + MEDICA_ESTETICA["slug"],
-            "medicalSpecialty": "Dermatology", "knowsAbout": [t["nombre"] for t in ESTETICA + BUSQUEDAS],
+            "knowsAbout": ["Medicina estética"] + [t["nombre"] for t in ESTETICA + BUSQUEDAS],   # sin medicalSpecialty: no es dermatóloga y schema.org no tiene "medicina estética"
             "worksFor": {"@id": DOMINIO + "/#clinica"}}
 
 
@@ -459,13 +532,13 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
         p = next(x for x in ESTETICA if x["slug"] == padre)
         rel = [p] + [h for h in BUSQUEDAS if h["slug"] != t["slug"] and h.get("padre") == padre][:1]
         rel += [h for h in ESTETICA if h["slug"] not in (padre, t["slug"])][:3 - len(rel)]
-        ceja = '<a href="%s">%s</a> · Pereira' % (padre, p["nombre"])
+        ceja = '<a href="%s">%s</a>' % (padre, p["nombre"])      # 7-nov-2026: "Pereira" ya va en el H1
         migas = [("Inicio", ""), (esp_nombre, esp_slug), (p["nombre"], padre), (t["nombre"], t["slug"])]
     else:
         # 27-oct-2026: primero las páginas que dependen de esta (bótox → hiperhidrosis; ácido hialurónico → labios, ojeras…)
         hijos = [b for b in BUSQUEDAS if b.get("padre") == t["slug"]]
         rel = (hijos + [h for h in hermanos if h["slug"] != t["slug"]])[:3]
-        ceja = '<a href="%s">%s</a> · Pereira' % (esp_slug, esp_nombre)
+        ceja = '<a href="%s">%s</a>' % (esp_slug, esp_nombre)
         migas = [("Inicio", ""), (esp_nombre, esp_slug), (t["nombre"], t["slug"])]
     dur, ses, rec = t["como"]
     principal = foto_trat(t)
@@ -771,9 +844,87 @@ def recomendada():
            cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj)
 
 
+# ---------------------------------------------------------------- fecha real de cada página (7-nov-2026)
+# Antes el sitemap ponía la misma fecha (ACTUALIZADO) a todas las páginas fijas. Ahora cada URL lleva el día del
+# último cambio real de su archivo, sacado del historial de git. Qué cuenta como cambio: el título, la descripción,
+# la dirección canónica, los datos estructurados y el contenido principal (<main>). Qué NO cuenta: el ?v= de app.js
+# que cambia en cada construcción, el menú, el pie y las listas automáticas de artículos del blog ("Sigue leyendo",
+# "Del blog"), que cambian solas cada vez que se publica un artículo nuevo. Si una fecha cambiara todos los días,
+# Google dejaría de creerle al sitemap.
+def huella(html):
+    partes = re.findall(r"<title>.*?</title>|<meta name=\"description\"[^>]*>|<link rel=\"canonical\"[^>]*>|"
+                        r"<script type=\"application/ld\+json\">.*?</script>", html, re.S)
+    m = re.search(r"<main>(.*)</main>", html, re.S)
+    if m:
+        partes += [l for l in m.group(1).split("\n") if 'class="rejilla-blog"' not in l]
+    return "\n".join(partes)
+
+
+def fechas_reales(archivos):
+    """{archivo: 'AAAA-MM-DD'} según git. Vacío si no hay git (entonces el sitemap usa la fecha que ya tenía)."""
+    hoy = datetime.date.today().isoformat()
+
+    def git(*args):
+        return subprocess.run(["git", "-C", AQUI] + list(args), capture_output=True, text=True, check=True).stdout
+    try:
+        historial = {}                                   # archivo -> [(commit, fecha), ...] del más nuevo al más viejo
+        commit = fecha = None
+        for linea in git("log", "--no-renames", "--format=@@ %H %cs", "--name-only", "--", *archivos).splitlines():
+            if linea.startswith("@@ "):
+                commit, fecha = linea[3:].split()
+            elif linea.strip():
+                historial.setdefault(linea.strip(), []).append((commit, fecha))
+        corto = git("rev-parse", "--is-shallow-repository").strip() == "true"   # clon a medias: el historial engaña
+        lector = subprocess.Popen(["git", "-C", AQUI, "cat-file", "--batch"], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                  stderr=subprocess.DEVNULL)
+
+        def version(commit, archivo):
+            lector.stdin.write(("%s:%s\n" % (commit, archivo)).encode()); lector.stdin.flush()
+            cab = lector.stdout.readline().split()
+            if len(cab) < 3 or cab[1] != b"blob":
+                return None
+            datos = lector.stdout.read(int(cab[2])); lector.stdout.read(1)
+            return huella(datos.decode("utf-8", "replace"))
+
+        res = {}
+        try:
+            for f in archivos:
+                try:
+                    actual = huella(open(os.path.join(AQUI, f), encoding="utf-8").read())
+                except OSError:
+                    continue
+                versiones = historial.get(f, [])
+                if not versiones or actual != version(versiones[0][0], f):
+                    res[f] = hoy                         # página nueva o que cambió en esta construcción
+                    continue
+                if corto:
+                    continue                             # sin historial completo: se queda la fecha que ya tenía
+                res[f] = versiones[-1][1]                # si nunca cambió de verdad: el día en que se creó
+                for (_, d), (c_ant, _) in zip(versiones, versiones[1:]):
+                    if version(c_ant, f) != actual:      # en ese commit (fecha d) cambió de verdad
+                        res[f] = d
+                        break
+        finally:
+            lector.stdin.close(); lector.wait()
+        return res
+    except (OSError, ValueError, subprocess.CalledProcessError):
+        return {}
+
+
+def archivo_de(url):
+    return "index.html" if url == "" else url + "index.html" if url.endswith("/") else url + ".html"
+
+
 def extras():
     fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion", MEDICA_ESTETICA["slug"], "preguntas-frecuentes"] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
     filas = [(u, ACTUALIZADO) for u in fijas] + blog.para_sitemap()
+    try:   # la fecha que ya tenía cada URL: respaldo si no hay git o el clon no tiene historial
+        previas = dict(re.findall(r"<loc>%s/(.*?)</loc><lastmod>([\d-]+)</lastmod>" % re.escape(DOMINIO),
+                                  open(os.path.join(AQUI, "sitemap.xml"), encoding="utf-8").read()))
+    except OSError:
+        previas = {}
+    reales = fechas_reales([archivo_de(u) for u, _ in filas])
+    filas = [(u, reales.get(archivo_de(u)) or previas.get(u) or d) for u, d in filas]
     with open(os.path.join(AQUI, "sitemap.xml"), "w") as f:
         # 27-oct-2026: cada tratamiento declara su foto propia (para salir en Google Imágenes)
         imgs = {t["slug"]: foto_jpg(foto_trat(t)) for t in ESTETICA + BUSQUEDAS + VASCULAR if foto_trat(t) == t["slug"]}

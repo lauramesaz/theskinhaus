@@ -5,9 +5,9 @@
 :root{
   --blanco:#FAF8F3; --marfil:#F3EEE5; --lino:#ECE5DA; --nude:#C6A88F; --negro:#111111;
   --tex-blanca:url(textura-blanca.jpg); --tex-marfil:url(textura-marfil.jpg); --tex-lino:url(textura-lino.jpg);
-  --serif:"Libre Caslon Display","Big Caslon",Georgia,serif;
-  --serif-texto:"Libre Caslon Text","Big Caslon",Georgia,serif;
-  --cursiva:"Cormorant Garamond","Libre Caslon Text",Georgia,serif;
+  --serif:"Libre Caslon Display","SH Caslon Big","SH Caslon Times","SH Caslon Georgia","SH Caslon Noto","Big Caslon",Georgia,serif;
+  --serif-texto:"Libre Caslon Text","SH Texto Big","SH Texto Times","SH Texto Georgia","SH Texto Noto","Big Caslon",Georgia,serif;
+  --cursiva:"Cormorant Garamond","SH Cormorant Times","SH Cormorant Georgia","SH Cormorant Noto",Georgia,serif; /* SH ...: respaldos medidos (build.py, RESPALDOS) */
   --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
   --ancho:1280px; --lado:clamp(20px,6vw,88px);
   --suave:cubic-bezier(.2,.7,.2,1);
@@ -493,3 +493,18 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
   .franja-txt strong::after{content:"\00a0\2192"}
 }
 @media (max-width:370px){.hero:has(.accesos){padding-top:126px}}
+
+/* 7-nov-2026 · pie con todos los tratamientos: segundo grupo dentro de la columna y, en celular, dos columnas */
+.pie-grid h4.pie-sig{margin-top:40px}
+@media (max-width:560px){
+  .pie-grid{grid-template-columns:1fr 1fr;gap:44px 22px}
+  .pie-grid>div:first-child{grid-column:1/-1}
+  .pie-grid ul{font-size:14px}
+  /* la última columna (vascular + visítanos) se abre en dos, lado a lado */
+  .pie-grid>div:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:22px;align-content:start}
+  .pie-grid>div:last-child>h4:first-child{grid-area:1/1}
+  .pie-grid>div:last-child>ul:nth-of-type(1){grid-area:2/1}
+  .pie-grid>div:last-child>h4.pie-sig{grid-area:1/2;margin-top:0}
+  .pie-grid>div:last-child>ul:nth-of-type(2){grid-area:2/2}
+  .pie-grid>div:last-child>ul{align-self:start}
+}

@@ -29,7 +29,8 @@ cuánto vale, cuánto dura, si se va a notar, si duele y en quién confiar.
   menor", "cara perfecta".
 - CTA de la marca: "Agenda tu valoración". El WhatsApp y el cierre los pone la plantilla.
 - Firma: "Equipo médico The Skin Haus". Médica estética confirmada: **Dra. Valeria Enciso** (se puede
-  nombrar como "nuestra médica estética, la Dra. Valeria Enciso" y enlazar a `nosotros`). Nunca inventarle
+  nombrar como "nuestra médica estética, la Dra. Valeria Enciso" y enlazar a su perfil `dra-valeria-enciso`,
+  no a `nosotros`; desde el 7-nov-2026). Nunca inventarle
   títulos, años de experiencia, registros ni frases entre comillas: no decir que ella "dice", "recomienda"
   u "opina" algo que no esté escrito y aprobado. No nombrar a ningún otro médico.
 
