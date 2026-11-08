@@ -5,3 +5,4 @@ Los artículos nuevos ya pasan por el Policía completo; esta lista es para lo q
 pasar por él (hoy, ninguno: la agencia nace con el Policía desde el día 1).
 
 - [humanizado 2026-10-20 · 7→10/10 (fallaban 3,7,9); Verificador APROBADO tras 1 corrección] articulos/cuanto-dura-el-botox.html — publicado el 19-oct por la 1ª ejecución de la rutina SIN pasar por el Policía ni el Verificador como pasos separados (se autoevaluó). Pasarlo por la prueba de 10 puntos completa y por el Verificador; completar la viñeta "Tus hábitos" solo si hay dato en hechos.md.
+- [revisado 2026-11-08 · 9/10, sin cambios (leve: punto 7, contraste de folleto)] articulos/sculptra-o-radiesse.html — limpieza de domingo; el Verificador debe revisar 'ningún inyectable reemplaza una cirugía' y 'Muchas páginas de internet eligen un ganador' en la próxima pasada.
