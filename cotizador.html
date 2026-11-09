@@ -630,7 +630,7 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
     <p class="m-label">Fecha del abono</p>
     <input id="mi-fecha" type="date" class="campo-fecha">
     <p class="m-label">Medio de pago</p>
-    <select id="mi-medio"><option>Transferencia</option><option>Link de pago</option><option>Datáfono</option><option>Efectivo</option><option>Otro</option></select>
+    <select id="mi-medio"><option>Transferencia Bancolombia</option><option>Link de pago</option><option>Datáfono</option><option>Efectivo</option><option>Otro</option></select>
     <p class="m-label">Nota <small style="font-weight:400">(opcional)</small></p>
     <textarea id="mi-nota" rows="2" placeholder="Ej: paga el resto en 3 cuotas, empieza el lunes…"></textarea>
     <p class="mm-error oculto" id="mi-error">Escribe el valor y la fecha del abono.</p>
@@ -681,7 +681,7 @@ const ESTETICA = { nombre: ESPECIALISTA, especialidad: ESPECIALIDAD };
 const COMERCIAL = { nombre: "Federico", whatsapp: "573006397083" }; // a quien le llega "Enviar al comercial" (el mismo de Seravena; cambiar aquí si en Skin Haus es otra persona)
 const SITIO = "https://theskinhaus.com.co/cotizador";
 const ENVIO_INGRESO = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-ingreso"; // solo correo de aviso (no toca la hoja de Seravena)
-const ENVIO_COPIA = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-enviar"; // proyecto ~/seravena-cotizador-correo (Vercel + Resend) → lauramesazuluaga@gmail.com
+const ENVIO_COPIA = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-enviar"; // proyecto ~/seravena-cotizador-correo (Vercel + Resend) → msclinicpereira@gmail.com y lauramesazuluaga@gmail.com
 const FRASE = "Resultados naturales, con criterio médico y sin afán.";
 
 /* costo real de una sesión de aparatología (el mismo de Seravena, 28-oct) */
@@ -730,8 +730,8 @@ const PROGRAMAS = {
   },
 };
 const FACTOR_SIN_PLANTILLA = 1 / 0.6; // si no hay precio de lista: el costo es el 60% del precio
-/* medios de pago de The Skin Haus: falta que Laura pase la cuenta → mientras, genérico */
-const PAGOS_BASE = ["Transferencia bancaria (te enviamos los datos de la cuenta por WhatsApp)", "Link de pago: 5% adicional", "Datáfono: 5% adicional"];
+/* medios de pago de The Skin Haus (Laura, 9-nov: la cuenta está a nombre de MS Clinic y no importa que no diga Skin Haus) */
+const PAGOS_BASE = ["Cuenta de ahorros Bancolombia: 72300006500 · MS Clinic · NIT 902066720", "Link de pago: 5% adicional", "Datáfono: 5% adicional"];
 /* ============================================================================ */
 
 const $ = s => document.querySelector(s);
