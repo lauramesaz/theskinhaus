@@ -26,7 +26,7 @@ A Laura le llegan solo 3 cifras: **clics sin marca**, **búsquedas de Pereira en
 
 | Mes | Clics sin marca | Apariciones | Fijas en 1.ª página (API) | Fijas en 1.ª página (Google desde Pereira) | Reseñas | WhatsApp desde Google | Páginas en Google |
 |---|---|---|---|---|---|---|---|
-| Noviembre (base 9-nov) | | | | | | | |
+| Noviembre (base 9-nov) | 8 | 476 | 0 de 15 (2 con datos) | | | | 52 de 54 |
 | Diciembre | | | | | | | |
 | Enero | | | | | | | |
 | Febrero (cierre 7-feb) | | | | | | | |
@@ -35,6 +35,7 @@ A Laura le llegan solo 3 cifras: **clics sin marca**, **búsquedas de Pereira en
 
 | Lunes | Clics sin marca | Clics de marca | Apariciones | Fijas en 1.ª página (API) | Reseñas | Páginas en Google | Nota |
 |---|---|---|---|---|---|---|---|
+| 9-nov | 8 | 0 | 476 | 0 de 15 (2 con datos) | 0 (último dato) | 52 de 54 | Línea base 9-nov |
 | 7-nov (lectura previa, Claude) | 7 | 0 | 402 | 0 de 15 (2 con datos) | 0 | 50 de 53 | Lectura de prueba del lector nuevo; la base oficial es la del 9-nov |
 
 ## Perfiles externos (enlace de cada uno cuando exista)

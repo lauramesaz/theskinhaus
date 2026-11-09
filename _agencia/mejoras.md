@@ -8,20 +8,21 @@ Estados: `[pendiente]` → `[mejorada AAAA-MM-DD · qué cambió]` o `[saltada A
 Tipo: **blog** (se edita `_agencia/articulos/<slug>.html`) o **servicio** (en `datos.py` solo `titulo=` y `desc=` de
 esa página; nada más).
 
-Sembrada por Claude el 7-nov-2026 con Search Console del 9-oct al 5-nov (la revisión del 9-nov la reemplaza).
+Revisión del 9-nov-2026 con Search Console del 11-oct al 7-nov (la siguiente la reemplaza).
 
 ## Para mejorar (en orden)
 
-1. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 30 apariciones, 0 clics, puesto 10,2 · libre desde 2026-11-20
-2. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 94 apariciones, 0 clics, puesto 9,3 · libre desde 2026-11-24 (title y descripción cambiados el 3-nov; su descripción tiene 172 caracteres y SH-14 la baja a 155)
-3. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 37 apariciones, 1 clic, puesto 7,6 · libre desde 2026-11-24 (title cambiado el 3-nov)
-4. [pendiente] /microagujas · servicio (SEO en `datos.py`) · 10 apariciones, 1 clic, puesto 7,3 · libre desde 2026-11-28 (title y descripción sin cambios desde el 19-oct, pero el H1 cambió el 7-nov)
+1. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 43 apariciones, 0 clics, puesto 10,4 · libre desde 2026-11-20
+2. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 110 apariciones, 0 clics, puesto 9,1 · libre desde 2026-11-24 (title y descripción cambiados el 3-nov; su descripción tiene 172 caracteres y SH-14 la baja a 155)
+3. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 41 apariciones, 1 clic, puesto 7,7 · libre desde 2026-11-24 (title cambiado el 3-nov)
+4. [pendiente] /blog/precio-del-botox-en-pereira · blog · 21 apariciones, 0 clics, puesto 6,3 · libre desde 2026-11-24 (title cambiado el 3-nov)
+5. [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 20 apariciones, 0 clics, puesto 13,2 · libre desde 2026-11-24 (title cambiado el 3-nov)
 
 Esta semana ninguna está libre: los días de mejora del 10, 12 y 14-nov son días de enlaces (sección siguiente).
 
-Salen sin clics pero cambiaron hace poco (no tocar antes de la fecha): /blog/precio-del-botox-en-pereira (19 apar.,
-puesto 6,4), /armonizacion-facial (18; 9,2), /blog/dermapen-cuantas-sesiones-cicatrices-de-acne (15; 8,5),
-/blog/botox-o-toxina-botulinica-es-lo-mismo (12; 12,0) y /toxina-botulinica (12; 16,4): todas libres desde 2026-11-24.
+Salen sin clics pero cambiaron hace poco (no tocar antes de la fecha): /armonizacion-facial (19 apar., puesto 9,2),
+/blog/botox-o-toxina-botulinica-es-lo-mismo (14; 13,1) y /toxina-botulinica (12; 16,4): libres desde 2026-11-24.
+Mejoraron y ya no están en la lista: /microagujas (11 apar., 1 clic).
 
 ## Si ninguna está libre: día de enlaces
 
@@ -35,9 +36,9 @@ tocaste: `[enlaces AAAA-MM-DD] /blog/<slug> → servicio1, servicio2`.
 
 ## Pedir indexación (máximo 10; la tarea del navegador las pide y las marca)
 
-- [pendiente] /preguntas-frecuentes (Rastreada: actualmente sin indexar, 7-nov)
-- [pendiente] /blog/botox-preventivo-a-que-edad-empezar (Descubierta: actualmente sin indexar, 7-nov)
-- [pendiente] /blog/botox-para-hombres (Descubierta: actualmente sin indexar, 7-nov)
+- [pendiente] /blog/manchas-que-deja-el-acne (Google no reconoce esta URL; publicada el 9-nov)
+- [pendiente] /blog/botox-para-hombres (Descubierta: actualmente sin indexar, 9-nov)
+- [pendiente] /blog/ (índice del blog, cambió el 9-nov)
 - [pendiente] /acido-hialuronico (H1 nuevo con "en Pereira", 7-nov)
 - [pendiente] /toxina-botulinica (H1 y letra, 7-nov)
 - [pendiente] /medicina-estetica (letra y pie, 7-nov)
@@ -48,12 +49,12 @@ tocaste: `[enlaces AAAA-MM-DD] /blog/<slug> → servicio1, servicio2`.
 
 ## Aparte: lo vascular (la agencia no lo toca; queda anotado para Claude y Laura)
 
-- /eco-doppler-venoso · 51 apariciones, 0 clics, puesto 8,3
+- /eco-doppler-venoso · 58 apariciones, 0 clics, puesto 8,4
 - /aranitas-vasculares · 5 apariciones, puesto 8,6 · /varices · 3, puesto 40,7 · /cuperosis-y-rojeces · 1 · /medicina-vascular · 1
 
 ## Búsquedas sin dueña (solo se anotan; las decide Claude en una sesión de trabajo)
 
-- ninguna por ahora
+- ninguna por ahora ("cuántas jeringas de ácido hialurónico necesito", puesto 19,3, la cubre /blog/cuanto-rinde-1-ml-de-acido-hialuronico)
 
 ## Hecho (últimas 4 semanas)
 
