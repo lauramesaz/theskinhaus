@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cotizador de celulitis · The Skin Haus</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<!--
+  The Skin Haus · página INTERNA "Cotizador de celulitis (HAUSFORM)" (código 111, no indexada, sin enlace desde la web).
+  Copia del cotizador de Seravena (9-nov-2026), solo con los paquetes de celulitis y con la marca de The Skin Haus.
+  Para cambiar precios, renglones o costos: editar el bloque PROGRAMAS de abajo.
+  "u" = costo por unidad (solo lo ves tú, nunca sale en el PDF) · "q" = cantidad · interno:true = costo que no sale en el PDF.
+-->
+<style>
+:root{
+  --marfil:#F3EEE5; --marfil-2:#ECE5DA; --blanco:#FDFBF7; --linea:#E4DBCF; --linea-2:#D7CABB;
+  --texto:#111111; --tenue:#6b625a; --choco:#111111; --choco-2:#2a2724; --camel:#C6A88F; --camel-osc:#8a7867;
+  --error:#A23B3B; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{overflow-x:clip;background:var(--marfil);color:var(--texto);font:15px/1.55 Arial,"Helvetica Neue",Helvetica,sans-serif;min-height:100vh;position:relative}
+/* textura de grano suave */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .37 0 0 0 0 .33 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* luz cálida de fondo */
+body::after{content:"";position:fixed;width:min(900px,120vw);height:min(900px,120vw);right:-20vw;top:-380px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(198,168,143,.28),rgba(198,168,143,0) 65%)}
+button,input,select{font:inherit;color:inherit}
+.oculto{display:none!important}
+.serif{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em}
+
+/* candado */
+#candado{position:fixed;inset:0;background:var(--marfil);display:grid;place-items:center;z-index:90;padding:16px}
+#candado form{background:var(--blanco);border:1px solid var(--linea);border-radius:32px;padding:44px 34px;width:100%;max-width:350px;text-align:center;box-shadow:0 30px 60px -30px rgba(17,17,17,.25)}
+#candado img{height:28px;margin:0 auto 24px}
+#candado p{color:var(--tenue);font-size:14px;margin-bottom:18px}
+#candado input{width:100%;text-align:center;font-size:24px;letter-spacing:.4em;padding:12px;border:1px solid var(--linea);border-radius:999px;outline:none;background:#fff}
+#candado input:focus{border-color:var(--camel)}
+#candado .mal{color:var(--error);font-size:13px;margin-top:10px;min-height:20px}
+
+.envoltura{position:relative;z-index:1}
+header{display:flex;justify-content:center;padding:26px 16px 0}
+header .logo-sh{font-size:22px}
+.logo-sh{display:inline-flex;flex-direction:column;font-family:"Libre Caslon Display",Georgia,serif;line-height:.98;color:#111;text-align:left}
+.logo-sh .the{font:400 .26em/1 Arial,sans-serif;letter-spacing:.55em;margin-bottom:.55em}
+.logo-sh .sh{letter-spacing:.12em}
+.logo-sh.blanco{color:#fff;font-size:20px}
+#candado .logo-sh{font-size:24px;margin:0 auto 24px}
+
+.intro{text-align:center;max-width:680px;margin:0 auto;padding:44px 20px 34px}
+.ojo{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--camel-osc);font-weight:600;margin-bottom:14px}
+.intro h1{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:clamp(34px,5vw,52px);line-height:1.05;color:var(--choco);letter-spacing:-.01em}
+.intro p{color:var(--tenue);margin-top:14px;font-size:16px}
+
+/* tarjetas de programa */
+.programas{max-width:1120px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.prog-card{position:relative;border:0;background:var(--blanco);border-radius:28px;padding:8px 8px 16px;cursor:pointer;text-align:left;
+  box-shadow:0 0 0 1px var(--linea);transition:transform .5s var(--ease),box-shadow .3s}
+.prog-card:hover{transform:translateY(-3px)}
+.prog-card .foto{height:150px;border-radius:22px;background-size:cover;background-position:center;filter:saturate(.85);transition:filter .3s}
+aside .total{margin-top:14px}
+.prog-card b{display:block;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:20px;line-height:1.1;color:var(--choco);margin:14px 10px 4px}
+.prog-card small{display:block;margin:0 10px;font-size:12.5px;color:var(--tenue)}
+.prog-card::after{content:"";position:absolute;top:18px;right:18px;width:22px;height:22px;border-radius:50%;background:rgba(255,253,249,.9);box-shadow:inset 0 0 0 1.5px var(--linea-2);transition:.3s}
+.prog-card.activa{box-shadow:0 0 0 2px var(--choco),0 24px 40px -24px rgba(17,17,17,.45)}
+.prog-card.activa::after{background:var(--choco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center;box-shadow:none}
+.prog-card:not(.activa) .foto{filter:saturate(.5) brightness(1.04)}
+
+main{max-width:1120px;margin:0 auto;padding:44px 28px 120px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:36px;align-items:start}
+
+.bloque{background:var(--blanco);border-radius:32px;padding:32px;box-shadow:0 0 0 1px var(--linea);margin-bottom:20px}
+.bloque-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.bloque h2{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:26px;line-height:1;color:var(--choco)}
+.bloque .ayuda{color:var(--tenue);font-size:14px;margin-top:6px}
+.link-sutil{border:0;background:none;color:var(--camel-osc);font-size:13px;font-weight:600;cursor:pointer;padding:6px 0;border-bottom:1px solid currentColor}
+.pendiente{background:var(--marfil);border-radius:18px;padding:14px 18px;font-size:14px;color:var(--choco);margin-bottom:16px}
+
+/* servicios: lista tipo cotizador */
+#items{border-top:1px solid var(--linea)}
+.item{display:grid;grid-template-columns:46px minmax(0,1fr) auto auto auto;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--linea);cursor:pointer;transition:opacity .25s,background .25s}
+.item.interno{display:none}
+.item:hover{background:rgba(243,238,229,.25)}
+.item.apagado{opacity:.5}
+.item .check{position:absolute;opacity:0;pointer-events:none}
+.emoji{width:46px;height:46px;border-radius:14px;background:var(--marfil);display:grid;place-items:center;font-size:22px;transition:.25s}
+.item:not(.apagado) .emoji{background:var(--marfil-2)}
+.item.apagado .emoji{filter:grayscale(1)}
+.it-cab .titulo{font-weight:600;font-size:15px;line-height:1.3;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.it-cab .desc{display:block;font-size:13px;color:var(--tenue);margin-top:2px;line-height:1.4}
+.leyenda{display:none;margin-top:6px;font-size:12px;font-weight:600;color:#9a3412;background:#FFF1E6;border-radius:999px;padding:3px 10px;width:max-content;max-width:100%}
+.item.bloqueado .leyenda{display:inline-block}
+body:not(.comercial) .leyenda{display:none!important}
+.candado{border:1px solid transparent;background:transparent;border-radius:999px;height:32px;padding:0 10px;min-width:104px;font-size:14px;cursor:pointer;filter:grayscale(1);opacity:.35;transition:.2s;white-space:nowrap}
+.candado:hover{opacity:.9;border-color:var(--linea);background:#fff}
+.item.bloqueado .candado{filter:none;opacity:1;background:#FFF1E6;border-color:#F5C9A8}
+body.comercial .candado,body.paciente .candado{display:none}
+body.comercial .item.bloqueado .titulo::after{content:"🔒";font-size:14px}
+.paso-q{display:flex;align-items:center;gap:2px;background:var(--marfil);border-radius:999px;padding:3px;cursor:default}
+.paso-q button{border:0;background:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:15px;color:var(--choco);box-shadow:0 1px 2px rgba(17,17,17,.12);transition:.2s}
+.paso-q button:hover{background:var(--choco);color:#fff}
+.item .paso-q input[type=text]{border:0;background:transparent;text-align:center;width:78px;padding:0;border-radius:0;font-weight:700;font-size:14px;outline:none}
+.marca{display:none}
+.agregar{display:none;border:1px dashed var(--linea-2);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--camel-osc);white-space:nowrap}
+.item.apagado .agregar{display:inline-block}
+.item.apagado .paso-q{display:none}
+.item.apagado:hover .agregar{border-style:solid;border-color:var(--camel);background:#fff}
+.candado .on{display:none}
+.item.bloqueado .candado .on{display:inline}
+.item.bloqueado .candado .off{display:none}
+.item.apagado .candado{visibility:hidden}
+
+/* lista compacta: todo el plan en una sola vista */
+.item{grid-template-columns:34px minmax(0,1fr) auto auto;gap:12px;padding:6px 4px}
+.emoji{width:34px;height:34px;border-radius:10px;font-size:17px}
+.it-cab .titulo{font-size:13.5px;line-height:1.25}
+.it-cab .desc{font-size:11.5px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it-cab{min-width:0}
+.paso-q{padding:2px}
+.paso-q button{width:24px;height:24px;font-size:13px}
+.item .paso-q input[type=text]{width:70px;font-size:13px}
+.candado{height:26px;min-width:88px;font-size:12px}
+.agregar{padding:4px 12px;font-size:12px}
+.leyenda{margin-top:3px;font-size:11px;padding:2px 8px}
+
+/* ---- vectores ---- */
+.ico{width:20px;height:20px;flex:none;display:block}
+.emoji{color:var(--choco);background:transparent!important;filter:none!important}
+.emoji .ico{width:21px;height:21px}
+.item.apagado .emoji{color:var(--tenue)}
+/* casilla visible */
+.caja-check{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--linea-2);display:grid;place-items:center;transition:.2s;flex:none}
+.caja-check .ico{width:13px;height:13px;color:#fff;opacity:0;stroke-width:2.6}
+.item:not(.apagado) .caja-check{background:var(--choco);border-color:var(--choco)}
+.item:not(.apagado) .caja-check .ico{opacity:1}
+body.paciente .caja-check{display:none}
+.item{grid-template-columns:20px 30px minmax(0,1fr) auto auto!important}
+body.paciente .item{grid-template-columns:30px minmax(0,1fr) auto!important}
+.item > .caja-check{grid-column:1;grid-row:1}
+.item > .emoji{grid-column:2;grid-row:1}
+.item > .it-cab{grid-column:3;grid-row:1}
+.item > .paso-q,.item > .agregar{grid-column:4;grid-row:1}
+.item > .candado{grid-column:5;grid-row:1}
+body.paciente .item > .emoji{grid-column:1}
+body.paciente .item > .it-cab{grid-column:2}
+body.paciente .item > .paso-q{grid-column:3}
+.candado{display:inline-flex;align-items:center;justify-content:center;gap:5px;filter:none}
+.candado .ico{width:15px;height:15px}
+.item.bloqueado .candado{color:#9a3412}
+.leyenda{display:none;align-items:center;gap:5px;grid-column:3/-1;grid-row:2;margin-top:-2px!important;justify-self:start}
+.item.bloqueado .leyenda{display:inline-flex}
+.leyenda .ico{width:12px;height:12px}
+body.comercial .item.bloqueado .titulo::after{content:none}
+.titulo .ico-lock{width:13px;height:13px;color:#9a3412;display:none}
+body.comercial .item.bloqueado .titulo .ico-lock{display:block}
+/* grupos */
+.grupo{border:1px solid var(--linea);border-radius:20px;background:#fff;margin-bottom:12px;overflow:hidden}
+.grupo summary{list-style:none;display:flex;align-items:center;gap:14px;padding:14px 18px;cursor:pointer;background:var(--blanco)}
+.grupo summary::-webkit-details-marker{display:none}
+.grupo summary .ico{color:var(--choco);width:22px;height:22px}
+.grupo summary b{display:block;font-size:15px;font-weight:600}
+.grupo summary small{display:block;font-size:12px;color:var(--tenue)}
+.grupo summary .ico.flecha-g{margin-left:auto;width:18px;height:18px;color:var(--tenue);transition:transform .3s}
+.grupo[open] summary .ico.flecha-g{transform:rotate(180deg)}
+.grupo .lista{border-top:1px solid var(--linea);padding:2px 14px}
+.grupo .lista .item:last-child{border-bottom:0}
+#items{border-top:0}
+/* pasos */
+.pasos{display:flex;align-items:center;justify-content:center;gap:14px;margin:-6px auto 30px;padding:0 16px;flex-wrap:wrap}
+.pasos button{display:flex;align-items:center;gap:9px;border:0;background:none;cursor:pointer;font-size:13.5px;color:var(--tenue);font-weight:500;padding:4px}
+.pasos button span{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--linea-2);display:grid;place-items:center;font-size:12.5px;font-weight:700;transition:.25s}
+.pasos button.activo{color:var(--texto);font-weight:600}
+.pasos button.activo span{background:var(--choco);border-color:var(--choco);color:#fff}
+.pasos button.hecho span{background:var(--marfil-2);border-color:var(--marfil-2);color:var(--choco)}
+.pasos i{width:56px;height:1px;background:var(--linea-2)}
+body.paciente .pasos{display:none}
+/* resumen con íconos */
+.pasos em{font-style:normal}
+.ico-txt .ico{display:inline-block;width:14px;height:14px;vertical-align:-2px;color:var(--choco)}
+.total b span{display:inline;font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+.total b small{display:inline;font-size:15px;font-weight:600;color:#C6A88F;margin-left:8px;letter-spacing:.04em}
+.caja-inicial{margin-top:14px;background:rgba(243,238,229,.09);border-radius:16px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.caja-inicial span{font-size:12.5px;color:#cfc4b6}
+.caja-inicial b{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.02em}
+.r-incluye{margin:4px 0 6px;border-top:1px solid rgba(243,238,229,.14);padding-top:12px}
+.r-tit{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-bottom:4px}
+#resumen{max-height:none!important;overflow:visible!important}
+#resumen .linea-r{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;padding:4px 0;font-size:12.5px;border-bottom:0}
+#resumen .linea-r .ico{width:16px;height:16px;color:#C6A88F}
+#resumen .linea-r span:last-child{font-weight:600;color:#fff}
+.r-filas{margin-top:16px;border-top:1px solid rgba(243,238,229,.14)}
+.r-fila{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(243,238,229,.1);font-size:13.5px;color:#E4DBCF}
+.r-fila .ico{color:#C6A88F;width:19px;height:19px}
+.r-fila b{margin-left:auto;font-weight:500;color:#cfc4b6;font-size:13px}
+.r-lista{border-top:0!important}
+.chip-osc{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.chip-osc .ico{width:17px;height:17px;color:#C6A88F}
+.btn,.btn-sec{display:flex;align-items:center;justify-content:center;gap:9px}
+.btn .ico,.btn-sec .ico{width:18px;height:18px}
+/* 3 meses con íconos */
+.duracion-wow .stat .ico{width:20px;height:20px;color:#C6A88F;margin-bottom:6px}
+.duracion-wow .grande{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.duracion-wow .grande .ico{width:44px;height:44px;color:#C6A88F;stroke-width:1.3}
+
+/* notas del medicamento */
+.item{row-gap:0}
+.it-nota{grid-column:3/-1;grid-row:3;width:100%;margin:8px 0 4px;border:1px solid var(--linea);border-radius:14px;padding:10px 14px;font:inherit;font-size:13px;line-height:1.45;color:var(--texto);background:var(--marfil);resize:none;outline:none;min-height:44px;cursor:text}
+.it-nota:focus{border-color:var(--camel);background:#fff}
+.item.apagado .it-nota{display:none}
+body.paciente .it-nota{border:0;background:transparent;padding:0 0 0 2px;color:var(--tenue);pointer-events:none;min-height:0}
+body.paciente .it-nota.vacia{display:none}
+@media (max-width:640px){.it-nota{grid-column:2/-1}}
+
+/* precio manual */
+.chip-osc.ancho{grid-column:1/-1}
+#manual-caja input[type=text]{color:var(--choco);background:rgba(255,255,255,.95);font-weight:600}
+#manual-caja textarea{width:100%;border:0;border-radius:16px;padding:12px 16px;font:inherit;font-size:13.5px;color:var(--choco);background:rgba(255,255,255,.95);resize:vertical;outline:none;min-height:60px}
+#manual-caja .link-claro{margin:10px 0 0;font-size:12.5px}
+.r-manual{margin-top:8px;background:rgba(225,6,0,.12);border:1px solid rgba(255,140,120,.35);border-radius:14px;padding:10px 14px;font-size:12.5px;color:#ffd9d2;line-height:1.45}
+.r-manual b{color:#fff}
+body.paciente #abrir-manual,body.paciente .r-manual{display:none!important}
+body.doctor.desc-libre-on .acciones-sec{grid-template-columns:1fr 1fr}
+
+/* venas */
+.item.incluido .paso-q{display:none}
+.item.incluido::after{content:"Incluidas";grid-column:4;grid-row:1;font-size:12px;font-weight:600;color:var(--camel-osc);background:var(--marfil);border-radius:999px;padding:5px 12px}
+.item.incluido.apagado::after{content:none}
+.dinero.mini{margin-top:6px;max-width:200px}
+.dinero.mini input[type=text]{padding:7px 12px 7px 26px;font-size:13px}
+.dinero.mini::before{left:12px}
+.item.apagado .dinero.mini{display:none}
+body.paciente .dinero.mini{display:none}
+.desc-libre{display:none;align-items:center;gap:10px}
+.desc-libre .porcentaje{width:140px}
+.desc-libre small{color:#cfc4b6;font-size:12px}
+body.desc-libre-on .desc-libre{display:flex}
+body.desc-libre-on .desc-rapidos{display:none}
+body.doctor.desc-libre-on #abrir-desc,body.doctor.desc-libre-on #desc-caja{display:none!important}
+body.doctor.desc-libre-on .acciones-sec{grid-template-columns:1fr}
+
+/* paquetes (HAUSFORM) */
+.variantes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.variantes button{border:1.5px solid var(--linea);background:#fff;border-radius:20px;padding:16px;text-align:left;cursor:pointer;transition:.25s}
+.variantes button:hover{border-color:var(--camel)}
+.variantes button.activa{border-color:var(--choco);background:var(--choco);color:#fff}
+.variantes b{display:block;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.variantes small{display:block;font-size:12px;opacity:.7;margin-top:2px}
+.variantes span{display:block;font-size:15px;font-weight:600;margin-top:10px;font-variant-numeric:tabular-nums}
+body.paciente .variantes button:not(.activa){display:none}
+body.paciente .variantes{grid-template-columns:1fr}
+@media (max-width:640px){.variantes{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr))}.variantes button{padding:12px 10px;border-radius:16px}.variantes b{font-size:14px}.variantes small{font-size:11px}.variantes span{font-size:13px}}
+
+/* duración protagonista */
+.duracion-wow{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;background:var(--choco);color:var(--marfil);border-radius:26px;padding:26px 30px;margin-bottom:26px;position:relative;overflow:hidden}
+.duracion-wow::after{content:"";position:absolute;width:300px;height:300px;right:-120px;top:-150px;border-radius:50%;background:radial-gradient(circle,rgba(198,168,143,.35),transparent 65%)}
+.duracion-wow .grande{font-size:clamp(54px,8vw,84px);font-weight:700;letter-spacing:-.05em;line-height:.9;color:#fff}
+.duracion-wow .grande small{display:inline-block;margin-left:14px;vertical-align:middle;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-top:10px}
+.duracion-wow .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;position:relative;z-index:1}
+.duracion-wow .stat{border-left:1px solid rgba(243,238,229,.2);padding-left:16px}
+.duracion-wow .stat b{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em;color:#fff;line-height:1.1}
+.duracion-wow .stat span{font-size:12.5px;color:#cfc4b6;line-height:1.3;display:block;margin-top:2px}
+
+/* simulador de cuotas */
+.btn-cuotas{width:100%;margin-top:10px;background:transparent;border:1px solid #C6A88F;color:#fff;border-radius:999px;padding:13px;cursor:pointer;font-size:14px;font-weight:600}
+.btn-cuotas:hover{background:rgba(198,168,143,.15)}
+.plan-pago{margin-top:12px;font-size:13px;color:#cfc4b6;background:rgba(243,238,229,.08);border-radius:14px;padding:10px 14px}
+.plan-pago b{color:#fff}
+#modal,#modal-manual,#modal-ingreso{position:fixed;inset:0;z-index:92;background:rgba(17,17,17,.45);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+#modal.ver,#modal-manual.ver,#modal-ingreso.ver{opacity:1;pointer-events:auto}
+.caja-modal{background:var(--blanco);border-radius:32px;width:100%;max-width:520px;padding:32px;box-shadow:0 40px 80px -30px rgba(17,17,17,.5);transform:translateY(16px) scale(.98);transition:transform .45s var(--ease);max-height:calc(100vh - 32px);overflow:auto}
+#modal.ver .caja-modal,#modal-manual.ver .caja-modal,#modal-ingreso.ver .caja-modal{transform:none}
+#mi-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:14px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:60px}
+.campo-fecha{width:100%;padding:12px 18px;border:1px solid var(--linea);border-radius:999px;background:#fff;font:inherit;color:var(--texto);outline:none}
+.campo-fecha:focus,#mi-nota:focus{border-color:var(--camel)}
+.btn-ingreso{background:#3E6B4A!important;color:#fff!important}
+.btn-ingreso:hover{background:#335a3d!important}
+.btn-ingreso .ico{color:#fff}
+body:not(.comercial) #abrir-ingreso{display:none!important}
+#mm-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:14px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:80px}
+#mm-nota:focus{border-color:var(--camel)}
+.mm-error{color:var(--error);font-size:13px;margin-top:10px}
+#mm-dif b.baja{color:#9a3412}
+.caja-modal h3{font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--choco)}
+.caja-modal .ayuda{color:var(--tenue);font-size:14px;margin:4px 0 22px}
+.cerrar{float:right;border:0;background:var(--marfil);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--choco)}
+.m-anticipo{display:flex;justify-content:space-between;align-items:center;background:var(--choco);color:#fff;border-radius:20px;padding:18px 22px}
+.m-anticipo span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#C6A88F;font-weight:600}
+.m-anticipo b{font-size:28px;font-weight:700;letter-spacing:-.03em}
+.m-resta{display:flex;justify-content:space-between;align-items:center;background:var(--marfil);border-radius:16px;padding:14px 18px;margin-top:10px;font-size:14px;color:var(--tenue)}
+.m-resta b{color:var(--choco);font-size:18px}
+.m-paso{display:flex;align-items:center;justify-content:space-between;background:var(--marfil);border-radius:999px;padding:6px;max-width:220px}
+.m-paso button{border:0;background:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:22px;color:var(--choco);box-shadow:0 1px 3px rgba(17,17,17,.15)}
+.m-paso button:hover{background:var(--choco);color:#fff}
+.m-paso b{font-size:28px;font-weight:700;color:var(--choco)}
+.m-label{font-size:13px;font-weight:600;color:var(--tenue);margin:22px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--linea);background:#fff;border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:600;font-size:14px;color:var(--tenue)}
+.chips button.activa{background:var(--choco);border-color:var(--choco);color:#fff}
+.m-cuota{text-align:center;margin:24px 0 8px}
+.m-cuota span{display:block;font-size:13px;color:var(--tenue)}
+.m-cuota small{display:block;font-size:12.5px;color:var(--camel-osc);margin-top:4px}
+.calendario div small{color:var(--tenue);font-size:12px}
+.calendario div.pagada span:last-child{color:var(--tenue);font-weight:500}
+.m-cuota b{display:block;font-size:46px;font-weight:700;letter-spacing:-.04em;color:var(--choco);line-height:1.1}
+.calendario{border-top:1px solid var(--linea);margin-top:14px}
+.calendario div{display:flex;justify-content:space-between;padding:9px 2px;border-bottom:1px solid var(--linea);font-size:14px}
+.calendario div span:last-child{font-weight:600;font-variant-numeric:tabular-nums}
+.m-botones{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.m-botones button{border-radius:999px;padding:14px;font-weight:700;cursor:pointer;font-size:14px}
+.m-botones .si{background:var(--choco);color:#fff;border:0}
+.m-botones .no{background:#fff;border:1px solid var(--linea);color:var(--choco)}
+
+/* datos */
+.fila{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+label{display:block;font-size:12px;font-weight:600;margin:0 0 7px 4px;color:var(--tenue);letter-spacing:.02em}
+label small{font-weight:400}
+input[type=text],select{width:100%;padding:13px 18px;border:1px solid var(--linea);border-radius:999px;background:#fff;outline:none;transition:border-color .2s}
+select{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237A6E5A' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 18px center;padding-right:40px}
+input:focus,select:focus{border-color:var(--camel)}
+.campo.error input,.campo.error select{border-color:var(--error)}
+.dinero{position:relative}
+.dinero input{padding-left:32px;font-variant-numeric:tabular-nums}
+.dinero::before{content:"$";position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--tenue)}
+.especialista{display:flex;align-items:center;gap:14px;background:var(--marfil);border-radius:999px;padding:8px 22px 8px 8px;margin-bottom:22px}
+.especialista .ini{width:44px;height:44px;border-radius:50%;background:var(--choco);color:var(--marfil);display:grid;place-items:center;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:20px;flex:none}
+.especialista b{display:block;font-size:14px}
+.especialista span{font-size:12.5px;color:var(--tenue)}
+.especialista button{margin-left:auto}
+.esp-editar{margin-bottom:22px}
+
+/* resumen */
+aside{padding:24px 24px!important;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto!important;scrollbar-width:thin;scrollbar-color:rgba(243,238,229,.25) transparent;background:var(--choco);color:var(--marfil);border-radius:32px;padding:30px 28px;overflow:hidden;box-shadow:0 40px 70px -40px rgba(17,17,17,.7)}
+aside::before{content:"";position:absolute;width:360px;height:360px;right:-160px;top:-170px;border-radius:50%;background:radial-gradient(circle,rgba(198,168,143,.35),transparent 65%)}
+aside > *{position:relative}
+aside .ojo{color:#C6A88F;margin-bottom:8px}
+aside .prog{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:30px;line-height:1.05;color:#fff;margin-bottom:22px}
+.r-meta{font-size:13px;color:#cfc4b6;margin:-14px 0 14px}
+.r-lista{border-top:1px solid rgba(243,238,229,.16);border-bottom:1px solid rgba(243,238,229,.16)}
+.r-lista summary{list-style:none;cursor:pointer;padding:12px 0;font-size:13.5px;font-weight:600;color:#e3d7c8;display:flex;justify-content:space-between}
+.r-lista summary::-webkit-details-marker{display:none}
+.r-lista summary::after{content:"+";font-size:18px;line-height:1;transition:transform .3s}
+.r-lista[open] summary::after{transform:rotate(45deg)}
+#resumen{max-height:280px;overflow:auto;padding-bottom:6px}
+#resumen .linea-r:last-child{border-bottom:0}
+.acciones-sec{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.chip-osc{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:11px 8px;cursor:pointer;font-size:13px;font-weight:600;transition:.2s}
+.chip-osc:hover,.chip-osc.activa{background:rgba(243,238,229,.18);border-color:#C6A88F}
+.desc-caja{margin-top:12px}
+.desc-fila{display:grid;grid-template-columns:1fr;gap:8px;align-items:center}
+.porcentaje{position:relative}
+.porcentaje input[type=text]{width:100%;text-align:center;padding-right:30px;font-weight:700;background:rgba(255,255,255,.95);color:var(--choco)}
+.porcentaje::after{content:"%";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--tenue);font-weight:700}
+.desc-rapidos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.desc-rapidos button{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:10px 0;cursor:pointer;font-size:13px;font-weight:600}
+.desc-rapidos button:hover,.desc-rapidos button.activa{background:#E4DBCF;color:var(--choco);border-color:#E4DBCF}
+.desc-caja label{color:#C6A88F;margin-left:6px}
+.desc-caja input[type=text]{background:rgba(255,255,255,.95)}
+.link-claro{display:block;margin:16px auto 0;background:none;border:0;color:#C6A88F;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.link-claro:hover{color:#fff}
+.linea-r{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(243,238,229,.1)}
+.linea-r span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;color:#cfc4b6}
+.linea-r.vacio{color:#C6A88F;border:0}
+.total{margin-top:22px}
+.total span{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#C6A88F;font-weight:600}
+.total b{display:block;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.035em;font-size:44px;line-height:1.05;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.01em;transition:color .3s}
+.total b.cambia{color:#e3d7c8}
+.sub-total{display:flex;justify-content:space-between;font-size:13px;color:#cfc4b6;margin-top:6px}
+.btn{width:100%;margin-top:20px;background:var(--marfil);color:var(--choco);border:0;border-radius:999px;padding:16px;font-weight:700;cursor:pointer;font-size:15px;transition:transform .3s var(--ease),background .2s}
+.btn:hover{background:#fff;transform:translateY(-1px)}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn-sec{width:100%;margin-top:10px;background:transparent;border:1px solid rgba(243,238,229,.25);color:var(--marfil);border-radius:999px;padding:12px;cursor:pointer;font-size:13.5px}
+.btn-sec:hover{border-color:rgba(243,238,229,.6)}
+
+/* modos: comercial y paciente */
+.franja{position:relative;z-index:2;max-width:760px;margin:24px auto 0;background:var(--blanco);box-shadow:0 0 0 1px var(--linea);border-radius:999px;padding:16px 30px;font-size:17px;color:var(--choco);text-align:center}
+.franja .rojo{color:#E10600;font-weight:800}
+@media (max-width:640px){.franja{margin:18px 16px 0;border-radius:22px;font-size:15px;padding:14px 18px}}
+.franja b{font-weight:700}
+body.paciente .programas,body.paciente #restaurar,body.paciente #datos,body.paciente .item.apagado,
+body.comercial #enviar-correo,body.paciente #enviar-correo,body.paciente .r-lista,body.paciente #enviar,body.paciente #nueva,body.paciente .acciones-sec,body.paciente #desc-caja,body.paciente .agregar,body.paciente .candado,body.paciente .barra button{display:none!important}
+body.paciente .item{cursor:default}
+body.paciente .item .marca{display:none}
+body.paciente .paso-q{background:transparent!important;width:auto;padding:0}
+body.paciente .paso-q button{display:none}
+body.paciente .paso-q::before{content:"×";font-size:13px;color:var(--tenue);margin:0 2px 0 10px}
+body.paciente .item .paso-q input[type=text]{text-align:left;width:84px;padding:0;color:var(--choco);font-weight:700;pointer-events:none}
+body.paciente #descargar{background:var(--marfil);color:var(--choco);border:0;font-weight:700;padding:16px;margin-top:24px}
+#compartir-pdf{display:none}
+body.comercial #compartir-pdf.puede{display:block}
+body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(--choco);border:0;font-weight:700;padding:16px;margin-top:20px}
+
+/* barra fija en celular */
+.barra{display:none}
+
+#aviso{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--choco);color:#fff;padding:12px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:95;max-width:calc(100% - 32px)}
+#aviso.ver{opacity:1;transform:translateX(-50%)}
+#aviso.mal{background:var(--error)}
+
+@media (max-width:980px){
+  .programas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  main{grid-template-columns:1fr}
+  aside{position:static;max-height:none}
+}
+@media (max-width:640px){
+  .programas{padding:0 16px;gap:10px}
+  .prog-card{border-radius:22px}
+  .prog-card .foto{height:96px;border-radius:16px}
+  .prog-card b{font-size:17px;margin:10px 8px 2px}
+  .prog-card small{margin:0 8px;font-size:11.5px}
+  .intro{padding:30px 16px 24px}
+  main{padding:24px 16px 120px;gap:20px}
+  .bloque{padding:22px 16px;border-radius:24px}
+  .bloque h2{font-size:22px}
+  .item{grid-template-columns:18px 24px minmax(0,1fr) auto auto!important;gap:8px;padding:7px 0}
+  body.paciente .item{grid-template-columns:24px minmax(0,1fr) auto!important}
+  .emoji .ico{width:18px;height:18px}
+  .grupo .lista{padding:2px 10px}
+  .grupo summary{padding:12px 14px}
+  .pasos{gap:6px;margin-bottom:22px}
+  .pasos button em{display:none}
+  .pasos button.activo em{display:inline}
+  .pasos i{width:18px}
+  .emoji{width:32px;height:32px;font-size:16px;border-radius:9px}
+  .candado{min-width:0;width:30px;padding:0;height:26px}
+  .candado .on{display:none!important}
+  .item .paso-q input[type=text]{width:68px;font-size:12px}
+  .item.apagado .paso-q{display:none}
+  .duracion-wow{grid-template-columns:1fr;gap:18px;padding:22px}
+  .duracion-wow .grande small{display:block;margin:10px 0 0}
+  .duracion-wow .stat{padding-left:10px}
+  .duracion-wow .stat b{font-size:24px}
+  .fila{grid-template-columns:1fr}
+  #aviso{bottom:92px}
+  .barra{transition:transform .4s var(--ease),opacity .3s}
+  .barra.esconder{transform:translateY(120%);opacity:0;pointer-events:none}
+  .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:80;background:var(--choco);color:#fff;border-radius:999px;padding:10px 10px 10px 22px;align-items:center;justify-content:space-between;box-shadow:0 20px 40px -16px rgba(17,17,17,.6)}
+  .barra span{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F}
+  .barra b{font-size:22px!important;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:26px;line-height:1}
+  .barra button{border:0;background:var(--marfil);color:var(--choco);border-radius:999px;padding:12px 18px;font-weight:700;font-size:13.5px}
+}
+
+/* ---------- PDF: 1 hoja carta exacta (816 × 1056 px) ---------- */
+#pdf-caja{position:absolute;left:-10000px;top:0}
+#pdf{width:816px;background:#fff;color:#111111;font:12px/1.45 Arial,"Helvetica Neue",Helvetica,sans-serif}
+#pdf .hoja{width:816px;height:1056px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+#pdf .cab{background:#111111;color:#E4DBCF;padding:24px 48px 20px;display:flex;justify-content:space-between;align-items:flex-end;position:relative;overflow:hidden;flex:none}
+#pdf .cab::after{content:"";position:absolute;width:320px;height:320px;right:-110px;top:-190px;border-radius:50%;background:radial-gradient(circle,rgba(198,168,143,.35),transparent 65%)}
+#pdf .cab img{height:24px;position:relative;z-index:1}
+#pdf .cab .der{text-align:right;position:relative;z-index:1}
+#pdf .cab .eti{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:#C6A88F;font-weight:600}
+#pdf .cab .tit{font-size:23px;font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.15;margin:3px 0}
+#pdf .cab .num{font-size:11px;color:#cfc4b6}
+#pdf .cuerpo{flex:1;min-height:0;padding:18px 48px 0;display:flex;flex-direction:column}
+#pdf .sec{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#7a6b5d;font-weight:700;margin:0 0 7px}
+#pdf .datos{display:grid;grid-template-columns:1.2fr .9fr .8fr 1.3fr;gap:10px 18px;background:#F3EEE5;border-radius:12px;padding:12px 18px}
+#pdf .datos span{display:block;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#6b625a}
+#pdf .datos b{display:block;font-size:12.5px;font-weight:600;margin-top:1px;line-height:1.25}
+#pdf .datos small{display:block;font-size:10px;color:#6b625a;line-height:1.3}
+#pdf .wow{margin-top:12px;background:#111111;border-radius:14px;padding:11px 18px;display:flex;align-items:center;gap:18px;color:#E4DBCF}
+#pdf .wow .g{font-size:26px;font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1;white-space:nowrap}
+#pdf .wow .g small{display:block;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-top:4px}
+#pdf .wow .st{border-left:1px solid rgba(243,238,229,.22);padding-left:14px}
+#pdf .wow .st b{display:block;font-size:16px;font-weight:700;color:#fff;line-height:1.1}
+#pdf .wow .st span{font-size:9.5px;color:#cfc4b6;line-height:1.2;display:block}
+#pdf .cols{margin-top:16px;display:grid;grid-template-columns:1.12fr .88fr;gap:24px;flex:1;min-height:0}
+#pdf .fila{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid #E4DBCF}
+#pdf .lista .fila:first-of-type{border-top:1px solid #111111}
+#pdf .fila .ic{width:24px;height:24px;border-radius:7px;background:#F3EEE5;display:grid;place-items:center;color:#111111}
+#pdf .fila .ic svg{width:13px;height:13px}
+#pdf .fila b{display:block;font-size:12px;font-weight:600;line-height:1.25}
+#pdf .fila small{display:block;font-size:9.5px;color:#6b625a;line-height:1.3}
+#pdf .fila .nota{margin-top:2px;background:#F3EEE5;border-radius:5px;padding:2px 7px;color:#7a6b5d;font-size:9.5px}
+#pdf .fila .q{font-size:12px;font-weight:700;color:#111111;white-space:nowrap}
+#pdf .total{background:#9B8978;color:#fff;border-radius:14px;padding:14px 18px}
+#pdf .total span{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+#pdf .total b{display:block;font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-top:2px}
+#pdf .desc{display:flex;justify-content:space-between;font-size:10.5px;color:#6b625a;padding:6px 2px 0}
+#pdf .inicial{margin-top:10px;display:flex;justify-content:space-between;align-items:center;border:1.5px solid #111111;border-radius:12px;padding:9px 14px}
+#pdf .inicial span{font-size:10.5px;color:#111111;line-height:1.3}
+#pdf .inicial b{font-size:17px;font-weight:700;color:#111111;white-space:nowrap}
+#pdf .cal{margin-top:8px;border-radius:10px;overflow:hidden;border:1px solid #E4DBCF}
+#pdf .cal div{display:flex;justify-content:space-between;padding:4px 12px;font-size:10.5px;border-bottom:1px solid #E4DBCF}
+#pdf .cal div:last-child{border-bottom:0}
+#pdf .cal div:nth-child(odd){background:#FAF8F3}
+#pdf .cal b{font-weight:700}
+#pdf .plan-txt{margin-top:8px;font-size:10.5px;color:#111111;background:#F3EEE5;border-radius:10px;padding:8px 12px;line-height:1.4}
+#pdf .caja{margin-top:12px;background:#F3EEE5;border-radius:12px;padding:11px 14px}
+#pdf ul{list-style:none}
+#pdf li{padding-left:12px;position:relative;margin-bottom:2px;font-size:10.5px;line-height:1.4}
+#pdf li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:1.5px;background:#9B8978}
+#pdf .vence{font-size:10px;color:#6b625a;margin-top:6px;text-align:right}
+#pdf .frase{flex:none;margin:12px 0 14px;text-align:center;font-size:13.5px;font-weight:600;letter-spacing:-.01em;color:#111111}
+#pdf .pie{flex:none;display:flex;justify-content:space-between;align-items:center;padding:11px 48px;background:#E4DBCF;font-size:10px;color:#6b625a;letter-spacing:.04em}
+#pdf .pie b{color:#111111}
+/* si no cabe, se compacta solo */
+#pdf .hoja.apretado .fila{padding:4px 0}
+#pdf .hoja.apretado .fila small{display:none}
+#pdf .hoja.apretado .wow{padding:8px 16px}
+#pdf .hoja.apretado .caja{padding:8px 12px;margin-top:8px}
+#pdf .hoja.apretado .frase{margin:8px 0 10px;font-size:12px}
+</style>
+</head>
+<body>
+
+<div id="candado">
+  <form id="f-candado" autocomplete="off">
+    <span class="logo-sh" aria-label="The Skin Haus"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span>
+    <p>Escribe el código para entrar.</p>
+    <input id="codigo" type="password" inputmode="numeric" maxlength="6" autofocus>
+    <div class="mal" id="codigo-mal"></div>
+  </form>
+</div>
+
+<div class="envoltura">
+<header><span class="logo-sh" aria-label="The Skin Haus"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span></header>
+
+<div class="franja oculto" id="franja"></div>
+
+<section class="intro">
+  <p class="ojo" id="intro-ojo">Tu plan a la medida</p>
+  <h1 id="intro-h1">Arma tu tratamiento</h1>
+  <p id="intro-p">Elige el tratamiento de celulitis, ajusta lo que necesitas y mira tu inversión al instante.</p>
+</section>
+
+<nav class="pasos" id="pasos">
+  <button type="button" data-ir="programas" class="activo"><span>1</span><em>Tratamiento</em></button><i></i>
+  <button type="button" data-ir="datos"><span>2</span><em>Tus datos</em></button><i></i>
+  <button type="button" data-ir="resumen-caja"><span>3</span><em>Revisar y compartir</em></button>
+</nav>
+
+<div class="programas oculto" id="programas"></div>
+
+<main>
+  <div>
+    <section class="bloque">
+      <div class="bloque-cab">
+        <div><h2>Qué incluye</h2><p class="ayuda" id="ayuda-items">Toca un servicio para sumarlo o quitarlo, y ajusta cuántas veces.</p></div>
+        <button type="button" class="link-sutil" id="restaurar">Volver al plan original</button>
+      </div>
+      <div class="variantes oculto" id="variantes"></div>
+      <div class="pendiente oculto" id="pendiente"></div>
+      <div class="duracion-wow" id="wow">
+        <div class="grande" data-ico="reloj"><span id="wow-dur">3 meses</span><small>de acompañamiento</small></div>
+        <div class="stats">
+          <div class="stat" data-ico="calendario"><b id="wow-sem">12</b><span>semanas de seguimiento médico</span></div>
+          <div class="stat" data-ico="personas"><b id="wow-citas">10</b><span>citas con especialistas</span></div>
+          <div class="stat" data-ico="aparatologia"><b id="wow-apa">20</b><span>sesiones de aparatología</span></div>
+          <div class="stat" data-ico="drenaje"><b id="wow-dre">6</b><span>drenajes linfáticos</span></div>
+          <div class="stat" data-ico="tirzepatida"><b id="wow-med">5</b><span>aplicaciones de medicamento</span></div>
+        </div>
+      </div>
+      <div id="items"></div>
+    </section>
+
+    <section class="bloque" id="datos">
+      <div class="bloque-cab"><div><h2>Tus datos</h2><p class="ayuda">Para dejar la cotización a tu nombre.</p></div></div>
+      <div class="especialista" id="esp-tarjeta">
+        <div class="ini">VE</div>
+        <div><b id="esp-nombre"></b><span id="esp-espec"></span></div>
+        <button type="button" class="link-sutil" id="esp-cambiar">Cambiar</button>
+      </div>
+      <div class="fila esp-editar oculto" id="esp-editar">
+        <div class="campo"><label for="esp">Especialista</label><input id="esp" type="text"></div>
+        <div class="campo"><label for="espec">Especialidad</label><input id="espec" type="text"></div>
+      </div>
+      <div class="fila">
+        <div class="campo"><label for="nombre">Nombre completo <small>(obligatorio)</small></label><input id="nombre" type="text" autocomplete="off"></div>
+        <div class="campo"><label for="contacto">Celular</label><input id="contacto" type="text" inputmode="tel" autocomplete="off" placeholder="300 000 0000"></div>
+        <div class="campo"><label for="tipo-id">Tipo de identificación</label>
+          <select id="tipo-id"><option>Cédula de ciudadanía</option><option>Cédula de extranjería</option><option>Pasaporte</option><option>Tarjeta de identidad</option><option>PPT</option></select></div>
+        <div class="campo"><label for="num-id">Número de identificación</label><input id="num-id" type="text" autocomplete="off"></div>
+        <div class="campo"><label for="duracion">Duración del programa <small>(sale grande en el plan)</small></label><input id="duracion" type="text"></div>
+      </div>
+      <p class="ayuda oculto" id="ayuda-precio"></p>
+    </section>
+  </div>
+
+  <aside id="resumen-caja">
+    <p class="ojo">Resumen de tu tratamiento</p>
+    <div class="prog" id="r-prog"></div>
+    <p class="r-meta" id="r-meta"></p>
+    <div class="r-incluye"><p class="r-tit">Lo que incluye</p><div id="resumen"></div></div>
+    <div class="total"><span>Tu inversión total</span><b><span id="total">$0</span><small>COP</small></b></div>
+    <div class="sub-total oculto" id="r-desc"><span>Descuento aplicado</span><span></span></div>
+    <div class="r-manual oculto" id="r-manual"></div>
+    <div class="caja-inicial"><span id="anticipo-t">Valor inicial (50%)</span><b id="anticipo">$0</b></div>
+    <div class="plan-pago oculto" id="plan-pago"></div>
+    <div class="acciones-sec">
+      <button type="button" class="chip-osc" id="abrir-cuotas" data-ico="tarjeta">Simular cuotas</button>
+      <button type="button" class="chip-osc" id="abrir-desc" data-ico="porcentaje">Descuento</button>
+      <button type="button" class="chip-osc ancho" id="abrir-manual" data-ico="lapiz">Agregar precio manual</button>
+    </div>
+    <div class="desc-caja oculto" id="desc-caja">
+      <label for="descuento">Descuento</label>
+      <div class="desc-fila">
+        <input id="descuento" type="hidden" value="">
+        <div class="desc-libre"><div class="porcentaje"><input id="desc-libre" type="text" inputmode="decimal" placeholder="0" maxlength="5"></div><small>Escribe el % que vas a dar</small></div>
+        <div class="desc-rapidos"><button type="button" data-p="0">Sin descuento</button><button type="button" data-p="3">3%</button><button type="button" data-p="5">5%</button></div>
+      </div>
+    </div>
+    <input type="hidden" id="manual-v" value=""><input type="hidden" id="manual-nota" value="">
+    <div class="r-filas oculto">
+      <div class="r-fila" data-ico="personas"><span>Especialistas</span><b id="rf-citas"></b></div>
+      <div class="r-fila" data-ico="calendario"><span>Seguimiento médico</span><b id="rf-sem"></b></div>
+      <div class="r-fila" data-ico="corazon"><span>Tratamiento y bienestar</span><b id="rf-tto"></b></div>
+    </div>
+    <button class="btn btn-ingreso" id="abrir-ingreso" data-ico="check"><span>Paciente ingresó al tratamiento</span></button>
+    <button class="btn" id="enviar-correo" data-ico="correo"><span>Enviar por correo a Federico</span></button>
+    <button class="btn-sec" id="enviar" data-ico="enviar"><span id="enviar-txt">Enviar al comercial</span></button>
+    <button class="btn-sec" id="compartir-pdf">Enviar el PDF</button>
+    <button class="btn-sec" id="descargar" data-ico="descargar"><span class="txt-desc">Descargar PDF</span></button>
+    <button type="button" class="link-claro" id="nueva">Empezar una cotización nueva</button>
+  </aside>
+</main>
+
+<div class="barra"><div><span>Tu inversión</span><b id="total-m">$0</b></div><button type="button" id="ir-resumen">Ver resumen</button></div>
+</div>
+
+<div id="modal-ingreso" class="modal">
+  <div class="caja-modal">
+    <button type="button" class="cerrar" id="cerrar-ingreso" aria-label="Cerrar">×</button>
+    <h3>Paciente ingresó al tratamiento</h3>
+    <p class="ayuda" id="mi-ayuda"></p>
+    <p class="m-label">Valor del abono</p>
+    <div class="dinero"><input id="mi-abono" type="text" inputmode="numeric" data-dinero></div>
+    <p class="m-label">Fecha del abono</p>
+    <input id="mi-fecha" type="date" class="campo-fecha">
+    <p class="m-label">Medio de pago</p>
+    <select id="mi-medio"><option>Transferencia</option><option>Link de pago</option><option>Datáfono</option><option>Efectivo</option><option>Otro</option></select>
+    <p class="m-label">Nota <small style="font-weight:400">(opcional)</small></p>
+    <textarea id="mi-nota" rows="2" placeholder="Ej: paga el resto en 3 cuotas, empieza el lunes…"></textarea>
+    <p class="mm-error oculto" id="mi-error">Escribe el valor y la fecha del abono.</p>
+    <div class="m-botones"><button type="button" class="no" id="mi-cancelar">Cancelar</button><button type="button" class="si" id="mi-guardar">Registrar ingreso</button></div>
+  </div>
+</div>
+<div id="modal-manual" class="modal">
+  <div class="caja-modal">
+    <button type="button" class="cerrar" id="cerrar-manual" aria-label="Cerrar">×</button>
+    <h3>Precio manual</h3>
+    <p class="ayuda" id="mm-ayuda"></p>
+    <p class="m-label">Precio final</p>
+    <div class="dinero"><input id="mm-v" type="text" inputmode="numeric" data-dinero placeholder="Escribe el precio final"></div>
+    <div class="m-resta" id="mm-dif"><span>Diferencia con el calculado</span><b></b></div>
+    <p class="m-label">¿Por qué es manual? <small style="font-weight:400">(obligatorio)</small></p>
+    <textarea id="mm-nota" rows="3" placeholder="Ej: precio especial acordado con el doctor por…"></textarea>
+    <p class="mm-error oculto" id="mm-error">Escribe el precio y el motivo para poder usarlo.</p>
+    <div class="m-botones"><button type="button" class="no" id="mm-quitar">Quitar precio manual</button><button type="button" class="si" id="mm-usar">Usar este precio</button></div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="caja-modal">
+    <button type="button" class="cerrar" id="cerrar-modal" aria-label="Cerrar">×</button>
+    <h3>Simulador de cuotas</h3>
+    <p class="ayuda" id="m-ayuda"></p>
+    <p class="m-label">Valor inicial <small style="font-weight:400">(se descuenta de la primera cuota)</small></p>
+    <div class="dinero"><input id="m-ini" type="text" inputmode="numeric" data-dinero></div>
+    <div class="m-resta"><span>Lo que resta</span><b id="m-resto"></b></div>
+    <p class="m-label">Número de cuotas</p>
+    <div class="m-paso"><button type="button" id="m-menos" aria-label="Menos">−</button><b id="m-n">3</b><button type="button" id="m-mas" aria-label="Más">+</button></div>
+    <div class="m-cuota"><span id="m-cuota-t"></span><b id="m-cuota"></b><small id="m-nota"></small></div>
+    <div class="calendario" id="m-cal"></div>
+    <div class="m-botones"><button type="button" class="no" id="m-quitar">Sin cuotas</button><button type="button" class="si" id="m-usar">Usar este plan</button></div>
+  </div>
+</div>
+<div id="aviso"></div>
+<div id="pdf-caja"><div id="pdf"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+/* ============ CONFIGURACIÓN (aquí se cambian precios y renglones) ============ */
+/* The Skin Haus · cotizador SOLO de celulitis (HAUSFORM). Copia del de Seravena (www.clinicaseravena.com/cotizador), 9-nov-2026. */
+const CODIGO = "111";
+const VIGENCIA_DIAS = 30;
+const ESPECIALISTA = "Valeria Enciso";
+const ESPECIALIDAD = "Médica estética";
+const ESTETICA = { nombre: ESPECIALISTA, especialidad: ESPECIALIDAD };
+const COMERCIAL = { nombre: "Federico", whatsapp: "573006397083" }; // a quien le llega "Enviar al comercial" (el mismo de Seravena; cambiar aquí si en Skin Haus es otra persona)
+const SITIO = "https://theskinhaus.com.co/cotizador";
+const ENVIO_INGRESO = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-ingreso"; // solo correo de aviso (no toca la hoja de Seravena)
+const ENVIO_COPIA = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-enviar"; // proyecto ~/seravena-cotizador-correo (Vercel + Resend) → lauramesazuluaga@gmail.com
+const FRASE = "Resultados naturales, con criterio médico y sin afán.";
+
+/* costo real de una sesión de aparatología (el mismo de Seravena, 28-oct) */
+const COSTO_APARATOLOGIA = 39000;
+
+/* Todos los servicios que se pueden incluir. u = costo por unidad (solo lo ves tú). interno = no sale en el PDF. */
+const CATALOGO = [
+  /* HAUSFORM (celulitis) — costos que dio Laura el 28-oct (Sculptra: 2 ampollas = 2.334.000) */
+  { id: "sculptra",   n: "Sculptra (bioestimulador de colágeno)", u: 1167000, t: "Sculptra", d: "Bioestimulador de colágeno · por ampolla" },
+  { id: "sveltia",    n: "Sveltia (hidroxiapatita de calcio)", u: 600000, t: "Sveltia", d: "Bioestimulador de colágeno · por ampolla" },
+  /* todo lo del procedimiento va junto en un solo renglón:
+     lidocaína 25.000 + cánulas 18G 20.000 + material 50.000 + agua estéril 10.000 + tiempo médico 1.000.000 + indirectos 120.000 */
+  { id: "proc_gluteos", n: "Procedimiento en glúteos", u: 1225000, t: "Procedimiento en glúteos", d: "Aplicación por la médica con anestesia local y materiales" },
+  { id: "venufill",   n: "Venufill 50 ml", u: 1200000, t: "Venufill 50 ml", d: "Tratamiento para la textura de la piel" },
+  { id: "prp",        n: "Plasma rico en plaquetas (PRP)", u: 120000, t: "Plasma rico en plaquetas", d: "PRP con tu propia sangre" },
+  { id: "medico",     n: "Procedimiento médico", u: 1000000, t: "Procedimiento médico", d: "Realizado por la especialista" },
+  { id: "insumos",    n: "Anestesia local y materiales", u: 105000, t: "Anestesia local y materiales", d: "Lidocaína, cánulas y material estéril" },
+  { id: "indirectos", n: "Consultorio e indirectos", u: 180000, interno: true },
+  { id: "aparatologia_hf", n: "Aparatología para celulitis", u: COSTO_APARATOLOGIA, t: "Aparatología", d: "Dermatens, onda de choque y presoterapia · por sesión" },
+];
+
+/* Cada plan: qué trae (id: cantidad, o [cantidad, costo distinto]) y su precio de lista.
+   ganancia: el precio es lo que cuesta + 30% (igual que en Seravena, 28-oct) */
+const PROGRAMAS = {
+  celulitis: {
+    familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
+    nombre: "HAUSFORM Sculptra", corto: "Sculptra", resumen: "Ampollas de Sculptra · glúteos", titulo: "Celulitis · HAUSFORM con Sculptra", duracion: "", pagos: null,
+    plan: { sculptra: 2, proc_gluteos: 1 }, muestra: ["sculptra", "proc_gluteos", "aparatologia_hf"],
+  },
+  celulitis_sveltia: {
+    familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
+    nombre: "HAUSFORM Sveltia", corto: "Sveltia", resumen: "Ampollas de Sveltia · glúteos", titulo: "Celulitis · HAUSFORM con Sveltia", duracion: "", pagos: null,
+    plan: { sveltia: 2, proc_gluteos: 1 }, muestra: ["sveltia", "proc_gluteos", "aparatologia_hf"],
+  },
+  celulitis_advance: {
+    familia: "celulitis", solo: "hf", esp: ESTETICA,
+    nombre: "HAUSFORM Advance", corto: "Advance", resumen: "Venufill + PRP", titulo: "Celulitis · HAUSFORM Advance", precio: 3500000, duracion: "", pagos: null,
+    plan: { venufill: 1, prp: 1, medico: 1, insumos: [1, 95000], indirectos: [1, 180000] },
+    muestra: ["sculptra", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"],
+  },
+  celulitis_prestige: {
+    familia: "celulitis", solo: "hf", esp: ESTETICA,
+    nombre: "HAUSFORM Prestige", corto: "Prestige", resumen: "Sculptra + Venufill", titulo: "Celulitis · HAUSFORM Prestige", precio: 5800000, duracion: "", pagos: null,
+    plan: { sculptra: 2, venufill: 1, medico: 1, insumos: [1, 115000], indirectos: [1, 210000] },
+    muestra: ["sculptra", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"],
+  },
+};
+const FACTOR_SIN_PLANTILLA = 1 / 0.6; // si no hay precio de lista: el costo es el 60% del precio
+/* medios de pago de The Skin Haus: falta que Laura pase la cuenta → mientras, genérico */
+const PAGOS_BASE = ["Transferencia bancaria (te enviamos los datos de la cuenta por WhatsApp)", "Link de pago: 5% adicional", "Datáfono: 5% adicional"];
+/* ============================================================================ */
+
+const $ = s => document.querySelector(s);
+const fmt = n => "$" + Math.round(n || 0).toLocaleString("es-CO");
+const num = v => parseInt(String(v || "").replace(/\D/g, ""), 10) || 0;
+const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mult = q => { const n = parseFloat(String(q).replace(",", ".")); return isNaN(n) ? 1 : n; }; // "A demanda" cuenta como 1
+
+/* costo del plan original y factor costo → precio */
+function costoPlan(p){
+  return Object.entries(p.plan).reduce((s, [id, v]) => {
+    const c = CATALOGO.find(x => x.id === id), [q, u] = Array.isArray(v) ? v : [v, c.u];
+    return s + mult(q) * u;
+  }, 0);
+}
+Object.values(PROGRAMAS).forEach(p => {
+  const c = costoPlan(p);
+  if (p.ganancia){ p.factor = 1 + p.ganancia; p.precio = Math.round(c * p.factor); return; } // costo + ganancia del consultorio
+  p.factor = p.sinCostos ? 1 : p.precio && c ? p.precio / c : FACTOR_SIN_PLANTILLA;
+});
+
+/* ---- íconos de línea (estilo Lucide, trazo 1,6) ---- */
+const ICO = {
+  psicologia: '<path d="M12 3a7 7 0 0 0-7 7c0 2.1.9 3.6 2 4.8V21h7v-3h2a2 2 0 0 0 2-2v-2.4l1.6-.6-1.6-3.2A7 7 0 0 0 12 3Z"/><path d="M10 9.5a2 2 0 0 1 3.5-1.3 1.8 1.8 0 0 1 .5 2.8"/>',
+  nutriologa: '<path d="M12 20.9c1.5 0 2.8 1.1 4 1.1 3 0 6-8 6-12.2A4.9 4.9 0 0 0 17 5c-2.2 0-4 1.4-5 2-1-.6-2.8-2-5-2a4.9 4.9 0 0 0-5 4.8C2 14 5 22 8 22c1.2 0 2.5-1.1 4-1.1Z"/><path d="M10 2c1 .5 2 2 2 5"/>',
+  nutricionista: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/>',
+  deportologia: '<path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/>',
+  interna: '<path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="11" r="2"/>',
+  general: '<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/>',
+  tirzepatida: '<path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>',
+  enfermeria: '<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/><path d="M3.2 12h6.3l.5-1 2 4.5 2-7 1.5 3.5h5.3"/>',
+  medias: '<path d="M9 2h7v8.5l-5.4 9.3a3 3 0 0 1-4.1 1.1l-1.4-.8a3 3 0 0 1-1.1-4.1L9 9.5Z"/><path d="M9 6h7"/>',
+  aparatologia: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>',
+  aparatologia_hf: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>',
+  sveltia: '<path d="M14.5 2v17.5a2.5 2.5 0 0 1-5 0V2"/><path d="M8.5 2h7M14.5 9h-5M14.5 15h-5"/>',
+  proc_gluteos: '<path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="11" r="2"/>',
+  drenaje: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7Z"/>',
+  escleroterapia: '<path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>',
+  espuma_trib: '<circle cx="8" cy="14" r="4"/><circle cx="16" cy="9" r="3"/><circle cx="17" cy="17" r="2"/><circle cx="8" cy="5" r="1.5"/>',
+  espuma_safena: '<path d="M10 2v6c0 3-3 4-3 8a5 5 0 0 0 10 0c0-4-3-5-3-8V2"/><circle cx="12" cy="16" r="1.5"/>',
+  endolaser: '<path d="M2 12h6M16 12h6M12 2v6M12 16v6"/><circle cx="12" cy="12" r="3"/>',
+  medias_v: '<path d="M9 2h7v8.5l-5.4 9.3a3 3 0 0 1-4.1 1.1l-1.4-.8a3 3 0 0 1-1.1-4.1L9 9.5Z"/><path d="M9 6h7"/>',
+  rivaroxaban: '<rect x="3" y="8" width="18" height="8" rx="4"/><path d="M12 8v8"/>',
+  sculptra: '<path d="M14.5 2v17.5a2.5 2.5 0 0 1-5 0V2"/><path d="M8.5 2h7M14.5 9h-5M14.5 15h-5"/>',
+  venufill: '<path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>',
+  prp: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7Z"/><path d="M9 15h6M12 12v6"/>',
+  medico: '<path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="11" r="2"/>',
+  insumos: '<path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/>',
+  brillo: '<path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2Z"/>',
+  ecografia: '<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/>',
+  personas: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+  calendario: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  corazon: '<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/>',
+  tarjeta: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
+  porcentaje: '<path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+  candado: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  flecha: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  abajo: '<path d="m6 9 6 6 6-6"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  enviar: '<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+  descargar: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+  correo: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+  lapiz: '<path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>',
+  reloj: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+};
+const ico = (k, c = "") => `<svg class="ico ${c}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k] || ICO.check}</svg>`;
+document.querySelectorAll("[data-ico]").forEach(el => el.insertAdjacentHTML("afterbegin", ico(el.dataset.ico)));
+
+/* ---- grupos de servicios ---- */
+const GRUPOS = [
+  { id: "hf", t: "Tratamiento HAUSFORM para celulitis", i: "brillo", ids: ["sculptra", "sveltia", "proc_gluteos", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"] },
+];
+
+/* ---- candado ---- */
+function abrir(){ $("#candado").classList.add("oculto"); try{ sessionStorage.setItem("sh-cot", "1"); }catch(e){} }
+try{ if (sessionStorage.getItem("sh-cot") === "1" || location.hash.startsWith("#p=")) abrir(); }catch(e){}
+$("#f-candado").addEventListener("submit", e => e.preventDefault());
+$("#codigo").addEventListener("input", e => {
+  const v = e.target.value;
+  if (v === CODIGO) abrir();
+  else $("#codigo-mal").textContent = v.length >= CODIGO.length ? "Código incorrecto" : "";
+});
+
+$("#esp").value = ESPECIALISTA; $("#espec").value = ESPECIALIDAD;
+function pintarEsp(){
+  const n = $("#esp").value.trim();
+  $("#esp-nombre").textContent = n; $("#esp-espec").textContent = $("#espec").value.trim();
+  $(".especialista .ini").textContent = n.split(/\s+/).slice(0, 2).map(x => x[0] || "").join("").toUpperCase();
+}
+pintarEsp();
+$("#esp").addEventListener("input", pintarEsp); $("#espec").addEventListener("input", pintarEsp);
+$("#esp-cambiar").onclick = () => { $("#esp-editar").classList.toggle("oculto"); };
+document.querySelectorAll("#pasos button").forEach(b => b.onclick = () => document.getElementById(b.dataset.ir).scrollIntoView({ behavior: "smooth", block: "start" }));
+function pasoActivo(){
+  const y = window.scrollY + innerHeight * .35, orden = ["programas", "datos", "resumen-caja"];
+  let k = 0;
+  const datos = $("#datos").getBoundingClientRect().top + scrollY, res = $("#resumen-caja").getBoundingClientRect().top + scrollY;
+  if (y > datos) k = 1;
+  if (innerWidth <= 980 ? y > res : (y > datos + $("#datos").offsetHeight * .6)) k = 2;
+  document.querySelectorAll("#pasos button").forEach((b, i) => { b.classList.toggle("activo", i === k); b.classList.toggle("hecho", i < k); });
+}
+addEventListener("scroll", pasoActivo, { passive: true });
+
+/* en celular la barra de precio se esconde cuando ya se ve el resumen */
+try{ new IntersectionObserver(([e]) => document.querySelector(".barra").classList.toggle("esconder", e.isIntersecting), { threshold: .15 }).observe($("#resumen-caja")); }catch(e){}
+$("#descuento").addEventListener("input", e => { e.target.value = e.target.value.replace(/[^\d.,]/g, ""); });
+document.querySelectorAll(".desc-rapidos button").forEach(b => b.onclick = () => {
+  $("#descuento").value = b.dataset.p === "0" ? "" : b.dataset.p; calcular();
+});
+$("#desc-libre").addEventListener("input", e => { e.target.value = e.target.value.replace(/[^\d.,]/g, ""); $("#descuento").value = e.target.value; calcular(); });
+/* paciente ingresó al programa → Google Sheets + correo */
+const hoyISO = () => { const d = new Date(); return d.getFullYear() + "-" + dos(d.getMonth() + 1) + "-" + dos(d.getDate()); };
+$("#abrir-ingreso").onclick = () => {
+  const s = calcular();
+  if (!s.nombre){ aviso("Falta el nombre de la paciente", true); $("#datos").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+  $("#mi-ayuda").textContent = `${s.nombre} · ${P().nombre} · ${fmt(s.precio)}`;
+  $("#mi-abono").value = anticipoDe(s.precio).toLocaleString("es-CO");
+  $("#mi-fecha").value = hoyISO(); $("#mi-nota").value = ""; $("#mi-error").classList.add("oculto");
+  $("#modal-ingreso").classList.add("ver");
+};
+const cerrarIngreso = () => $("#modal-ingreso").classList.remove("ver");
+$("#cerrar-ingreso").onclick = cerrarIngreso; $("#mi-cancelar").onclick = cerrarIngreso;
+$("#modal-ingreso").addEventListener("click", e => { if (e.target.id === "modal-ingreso") cerrarIngreso(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarIngreso(); });
+$("#mi-guardar").onclick = async () => {
+  const s = calcular(), abono = num($("#mi-abono").value), fechaAbono = $("#mi-fecha").value;
+  if (!abono || !fechaAbono){ $("#mi-error").classList.remove("oculto"); return; }
+  const b = $("#mi-guardar"); b.disabled = true; b.textContent = "Registrando…";
+  const hoy = new Date();
+  const datos = {
+    paciente: s.nombre, tipoId: s.tipoId, documento: s.numId, celular: s.contacto,
+    programa: s.programa, valorPrograma: s.precio, abono, fechaAbono, medio: $("#mi-medio").value,
+    plan: CUOTAS ? textoPlan(s.precio) : "", descuento: s.descuento && !s.manual ? String(s.pct).replace(".", ",") + "%" : "",
+    manual: s.manual ? fmt(s.manual.v) + " · " + s.manual.nota : "", especialista: s.esp, nota: $("#mi-nota").value.trim(),
+    numero: "SH-" + String(hoy.getFullYear()).slice(2) + dos(hoy.getMonth() + 1) + dos(hoy.getDate()) + "-" + dos(hoy.getHours()) + dos(hoy.getMinutes()),
+    link: SITIO + "#c=" + empacar(),
+  };
+  try{
+    const r = await fetch(ENVIO_INGRESO, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos) });
+    const j = await r.json().catch(() => ({}));
+    if (j.ok) aviso("Ingreso registrado en la hoja ✓");
+    else if (j.correo) aviso("Se avisó por correo, pero no se pudo anotar en la hoja", true);
+    else throw new Error();
+    cerrarIngreso();
+  }catch(e){ aviso("No se pudo registrar. Intenta de nuevo.", true); }
+  b.disabled = false; b.textContent = "Registrar ingreso";
+};
+
+/* precio manual en ventana emergente */
+function precioCalculado(){ const v = $("#manual-v").value; $("#manual-v").value = ""; const p = leer().precio; $("#manual-v").value = v; return p; }
+function pintarManual(){
+  const calc = precioCalculado(), v = num($("#mm-v").value), dif = v - calc;
+  $("#mm-ayuda").textContent = `Precio calculado de ${P().nombre}: ${fmt(calc)}`;
+  $("#mm-dif").classList.toggle("oculto", !v);
+  const b = $("#mm-dif b"); b.textContent = (dif < 0 ? "−" : "+") + fmt(Math.abs(dif)); b.classList.toggle("baja", dif < 0);
+}
+$("#abrir-manual").onclick = () => {
+  $("#mm-v").value = $("#manual-v").value; $("#mm-nota").value = $("#manual-nota").value;
+  $("#mm-error").classList.add("oculto"); pintarManual(); $("#modal-manual").classList.add("ver"); setTimeout(() => $("#mm-v").focus(), 200);
+};
+$("#mm-v").addEventListener("input", () => setTimeout(pintarManual));
+const cerrarManual = () => $("#modal-manual").classList.remove("ver");
+$("#cerrar-manual").onclick = cerrarManual;
+$("#modal-manual").addEventListener("click", e => { if (e.target.id === "modal-manual") cerrarManual(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarManual(); });
+$("#mm-usar").onclick = () => {
+  if (!num($("#mm-v").value) || !$("#mm-nota").value.trim()){ $("#mm-error").classList.remove("oculto"); return; }
+  $("#manual-v").value = $("#mm-v").value; $("#manual-nota").value = $("#mm-nota").value.trim();
+  totalVisto = totalVisto; calcular(); cerrarManual(); aviso("Precio manual aplicado");
+};
+$("#mm-quitar").onclick = () => { $("#manual-v").value = ""; $("#manual-nota").value = ""; calcular(); cerrarManual(); };
+$("#abrir-desc").onclick = () => { const c = $("#desc-caja"); c.classList.toggle("oculto"); $("#abrir-desc").classList.toggle("activa", !c.classList.contains("oculto")); };
+$("#ir-resumen").onclick = () => $("#resumen-caja").scrollIntoView({ behavior: "smooth", block: "start" });
+
+/* ---- programas ---- */
+let PROG = "celulitis";
+const P = () => PROGRAMAS[PROG];
+$("#programas").innerHTML = Object.entries(PROGRAMAS).filter(([, p]) => !p.oculto).map(([id, p]) =>
+  `<button type="button" class="prog-card" data-prog="${id}"><div class="foto" style="background-image:url('${p.foto}')"></div><b>${p.familia ? p.familia[0].toUpperCase() + p.familia.slice(1) : p.nombre}</b><small>${p.frase}</small></button>`).join("");
+document.querySelectorAll("#programas button").forEach(b => b.onclick = () => ponerPrograma(b.dataset.prog));
+
+function ponerPrograma(id){
+  PROG = id;
+  const e = P().esp; // cada programa trae su especialista (celulitis = médica estética)
+  $("#esp").value = e ? e.nombre : ESPECIALISTA; $("#espec").value = e ? e.especialidad : ESPECIALIDAD; pintarEsp();
+  const fam = P().familia;
+  document.body.classList.toggle("desc-libre-on", !!P().descuentoLibre);
+  document.querySelectorAll("#programas button").forEach(b => b.classList.toggle("activa", b.dataset.prog === id || (!!fam && PROGRAMAS[b.dataset.prog].familia === fam)));
+  const vars = fam ? Object.entries(PROGRAMAS).filter(([, p]) => p.familia === fam) : [];
+  $("#variantes").innerHTML = vars.map(([k, p]) => `<button type="button" data-v="${k}" class="${k === id ? "activa" : ""}"><b>${p.corto}</b><small>${p.resumen}</small>${p.etiqueta === "" ? "" : `<span>${p.etiqueta || fmt(p.precio)}</span>`}</button>`).join("");
+  $("#variantes").classList.toggle("oculto", !vars.length);
+  $("#variantes").querySelectorAll("button").forEach(b => b.onclick = () => ponerPrograma(b.dataset.v));
+  $("#pendiente").textContent = P().pendiente || "";
+  $("#pendiente").classList.toggle("oculto", !P().pendiente);
+  $("#ayuda-precio").textContent = P().precio
+    ? `El plan original de ${P().nombre} vale ${fmt(P().precio)}. Si agregas o quitas servicios, el precio se mueve en la misma proporción.`
+    : `El precio se arma con lo que marques en el plan.`;
+  cargarPlantilla();
+}
+function cargarPlantilla(){
+  const grupos = GRUPOS.filter(g => P().solo ? g.id === P().solo : !["hf", "vn"].includes(g.id));
+  $("#items").innerHTML = grupos.map(g => `<details class="grupo" open data-g="${g.id}"><summary>${ico(g.i)}<div><b>${g.t}</b><small class="g-cuenta"></small></div>${ico("abajo", "flecha-g")}</summary><div class="lista"></div></details>`).join("");
+  const permitidos = P().muestra || grupos.flatMap(g => g.ids);
+  CATALOGO.filter(c => permitidos.includes(c.id)).forEach(c => {
+    const v = P().plan[c.id], [q, u] = v == null ? [1, c.u] : Array.isArray(v) ? v : [v, c.u];
+    agregarItem({ id: c.id, n: c.n, t: c.t, d: c.d, q: String(q), u, interno: c.interno, on: v != null, fijo: true, max: c.max, incluido: c.incluido, precioLibre: c.precioLibre, unidad: c.unidad });
+  });
+  $("#descuento").value = ""; $("#desc-libre").value = ""; $("#manual-v").value = ""; $("#manual-nota").value = "";
+  $("#duracion").value = P().duracion;
+  calcular();
+}
+
+/* ---- renglones ---- */
+function agregarItem(it = {}){
+  const d = document.createElement("div");
+  d.className = "item" + (it.interno ? " interno" : "");
+  d.dataset.interno = it.interno ? "1" : "";
+  if (it.fijo) d.dataset.n = it.n;
+  const on = it.on !== false;
+  d.innerHTML = `<input type="checkbox" class="check" ${on ? "checked" : ""} tabindex="-1">
+    <span class="caja-check">${ico("check")}</span>
+    <span class="emoji">${ico(it.id)}</span>
+    <div class="it-cab"><span class="titulo">${esc(it.t || it.n)}${ico("candado", "ico-lock")}</span>${it.d ? `<span class="desc">${esc(it.d)}</span>` : ""}</div>
+    <div class="paso-q"><button type="button" data-d="-1" aria-label="Menos">−</button><input type="text" class="it-q" value="${esc(it.q || "1")}"><button type="button" data-d="1" aria-label="Más">+</button></div>
+    <span class="agregar">+ Agregar</span>
+    <span class="leyenda">${ico("candado")}La médica recomienda que esto no se quite</span>
+    ${it.id === "tirzepatida" ? `<textarea class="it-nota" rows="2" placeholder="Notas del medicamento: dosis, cambios de dosis, indicaciones…"></textarea>` : ""}
+    <button type="button" class="candado" title="Marcar como recomendado: el comercial verá que no se debería quitar">${ico("candado")}<span class="on">No quitar</span></button>`;
+  if (it.lock) d.classList.add("bloqueado");
+  if (it.incluido) d.classList.add("incluido");
+  if (it.max) d.dataset.max = it.max;
+  if (it.precioLibre){
+    d.classList.add("precio-libre");
+    d.querySelector(".it-cab").insertAdjacentHTML("beforeend", `<div class="dinero mini"><input type="text" class="it-precio" inputmode="numeric" data-dinero placeholder="Valor por unidad"></div>`);
+    const pi = d.querySelector(".it-precio");
+    ["click", "keydown"].forEach(ev => pi.addEventListener(ev, e => e.stopPropagation()));
+    pi.addEventListener("input", () => { d.dataset.u = num(pi.value); calcular(); });
+  }
+  const nota = d.querySelector(".it-nota");
+  if (nota){ ["click", "keydown"].forEach(ev => nota.addEventListener(ev, e => e.stopPropagation())); nota.addEventListener("input", () => { nota.style.height = "auto"; nota.style.height = nota.scrollHeight + "px"; }); }
+  d.querySelector(".candado").onclick = e => { e.stopPropagation(); d.classList.toggle("bloqueado"); };
+  d.dataset.u = it.u || 0;
+  d.classList.toggle("apagado", !on);
+  const poner = v => { d.querySelector(".check").checked = v; d.classList.toggle("apagado", !v); calcular(); };
+  d.addEventListener("click", e => {
+    if (e.target.closest(".paso-q") || MODO === "paciente") return;
+    const ch = d.querySelector(".check"), inp = d.querySelector(".it-q");
+    if (ch.checked && MODO === "comercial" && d.classList.contains("bloqueado") && !confirm("La médica recomienda que esto no se quite. ¿Quitarlo igual?")) return;
+    if (!ch.checked && mult(inp.value) === 0) inp.value = "1";
+    poner(!ch.checked);
+  });
+  d.querySelectorAll(".paso-q button").forEach(b => b.onclick = () => {
+    const inp = d.querySelector(".it-q"), n = parseFloat(String(inp.value).replace(",", "."));
+    const nuevo = Math.min(Number(d.dataset.max) || 999, Math.max(0, (isNaN(n) ? 1 : n) + Number(b.dataset.d)));
+    inp.value = nuevo;
+    poner(nuevo > 0);
+  });
+  const g = GRUPOS.find(g => g.ids.includes(it.id)) || GRUPOS[0];
+  $(`.grupo[data-g="${g.id}"] .lista`).appendChild(d);
+  calcular();
+}
+$("#restaurar").onclick = () => { if (confirm("¿Volver al plan original de " + P().nombre + "?")) cargarPlantilla(); };
+
+document.addEventListener("input", e => {
+  if (!e.target.matches("[data-dinero]")) return;
+  const n = num(e.target.value);
+  e.target.value = n ? n.toLocaleString("es-CO") : "";
+});
+
+/* ---- cálculo ---- */
+function leer(){
+  const f = P().factor;
+  const items = [...document.querySelectorAll(".item")].map(x => {
+    const n = x.dataset.n || "", q = x.querySelector(".it-q").value.trim(), u = Number(x.dataset.u) || 0;
+    const cat = CATALOGO.find(k => k.n === n), mq = mult(q);
+    const costo = cat && cat.tabla && cat.tabla[mq] != null ? cat.tabla[mq] : u * mq;
+    const nt = x.querySelector(".it-nota");
+    return { n, q, u, nota: nt ? nt.value.trim() : "", costo, valor: costo * f, on: x.querySelector(".check").checked && mult(q) > 0, interno: !!x.dataset.interno, el: x };
+  });
+  const sel = items.filter(x => x.on && (x.n || x.u));
+  const costo = sel.reduce((s, x) => s + x.costo, 0);
+  const lista = Math.round(costo * f);
+  const pct = Math.min(100, Math.max(0, parseFloat(String($("#descuento").value).replace(",", ".")) || 0));
+  const descuento = Math.round(lista * pct / 100);
+  const manualV = num($("#manual-v").value);
+  const manual = manualV ? { v: manualV, antes: lista - descuento, nota: $("#manual-nota").value.trim() } : null;
+  const precio = manual ? manual.v : lista - descuento;
+  return {
+    programa: P().titulo, nombre: $("#nombre").value.trim(), tipoId: $("#tipo-id").value, numId: $("#num-id").value.trim(),
+    contacto: $("#contacto").value.trim(), esp: $("#esp").value.trim(), espec: $("#espec").value.trim(),
+    duracion: $("#duracion").value.trim(), todos: items, items: sel, lista, pct, descuento, precio, manual, costo, queda: precio - costo,
+  };
+}
+/* bloque "3 meses" */
+const ESPECIALISTAS = ["psicologia", "nutriologa", "nutricionista", "deportologia", "interna"];
+const SESIONES = ["aparatologia", "drenaje"];
+function cantDe(s, ids){ return s.items.filter(x => { const c = CATALOGO.find(k => k.n === x.n); return c && ids.includes(c.id); }).reduce((t, x) => t + mult(x.q), 0); }
+function pintarWow(s){
+  const dur = s.duracion;
+  $("#wow").classList.toggle("oculto", !dur);
+  $("#wow-dur").textContent = dur;
+  const sem = cantDe(s, ["general"]), citas = cantDe(s, ESPECIALISTAS), ses = cantDe(s, SESIONES), med = cantDe(s, ["tirzepatida"]);
+  $("#wow-sem").textContent = sem; $("#wow-sem").parentElement.classList.toggle("oculto", !sem);
+  $("#wow-citas").textContent = citas; $("#wow-citas").parentElement.classList.toggle("oculto", !citas);
+  // cada número sale de la cantidad que dice el cotizador para ese servicio
+  const apa = cantDe(s, ["aparatologia"]), dre = cantDe(s, ["drenaje"]);
+  $("#wow-apa").textContent = apa; $("#wow-apa").parentElement.classList.toggle("oculto", !apa);
+  $("#wow-dre").textContent = dre; $("#wow-dre").parentElement.classList.toggle("oculto", !dre);
+  // el medicamento solo se muestra si no hay aparatología ni drenaje (para no llenar el bloque)
+  $("#wow-med").textContent = med; $("#wow-med").parentElement.classList.toggle("oculto", !med || !!(apa || dre));
+}
+
+/* simulador de cuotas: anticipo 50% + el resto en cuotas mensuales */
+const MAX_CUOTAS = 3;   // máximo 3 meses para pagar (decisión de Laura, 3-nov-2026)
+let CUOTAS = 0, INICIAL = null, mN = 3;   // INICIAL null = sin plan (valor inicial del 50%)
+const anticipoDe = p => INICIAL != null ? Math.min(INICIAL, p) : Math.round(p / 2);
+/* el total se divide en cuotas iguales; lo que se paga hoy se descuenta de la primera cuota (y si sobra, de la siguiente) */
+function repartir(total, ini, n){
+  const base = total / n, cuotas = [];
+  let abono = Math.min(ini, total);
+  for (let i = 0; i < n; i++){ const usa = Math.min(abono, base); cuotas.push(base - usa); abono -= usa; }
+  return { base, cuotas };
+}
+function textoPlan(total, corto){
+  const ini = anticipoDe(total), { base, cuotas } = repartir(total, ini, CUOTAS);
+  const grupos = []; // junta cuotas iguales seguidas
+  cuotas.forEach((v, i) => { const g = grupos[grupos.length - 1]; if (g && Math.round(g.v) === Math.round(v)) g.n++; else grupos.push({ v, n: 1, desde: i + 1 }); });
+  const partes = grupos.filter(g => Math.round(g.v) > 0).map(g => g.n === 1 ? `cuota ${g.desde} de ${fmt(g.v)}` : `${g.n} cuotas de ${fmt(g.v)}`);
+  return (ini ? `${corto ? "Hoy" : "Valor inicial"} ${fmt(ini)} (se descuenta de la primera cuota) + ` : "") + partes.join(" + ");
+}
+function pintarPlanPago(s){
+  const pp = $("#plan-pago");
+  if (!CUOTAS || !s.precio){ pp.classList.add("oculto"); return; }
+  pp.innerHTML = `Plan de pago en ${CUOTAS} ${CUOTAS === 1 ? "cuota" : "cuotas"} de <b>${fmt(s.precio / CUOTAS)}</b>: ${textoPlan(s.precio)}`;
+  pp.classList.remove("oculto");
+}
+function pintarModal(){
+  const s = leer(), ini = Math.min(num($("#m-ini").value), s.precio), { base, cuotas } = repartir(s.precio, ini, mN);
+  $("#m-ayuda").textContent = `${P().nombre} · ${fmt(s.precio)}`;
+  $("#m-resto").textContent = fmt(s.precio - ini);
+  $("#m-n").textContent = mN;
+  $("#m-cuota-t").textContent = mN === 1 ? "Un solo pago de" : `${mN} cuotas mensuales de`;
+  $("#m-cuota").textContent = fmt(base);
+  $("#m-nota").textContent = ini ? `Lo que paga hoy (${fmt(ini)}) se descuenta de la primera cuota.` : "";
+  let cal = ini ? `<div><span>Hoy · valor inicial</span><span>${fmt(ini)}</span></div>` : "";
+  cuotas.forEach((v, i) => {
+    const bajo = Math.round(v) < Math.round(base);
+    cal += `<div class="${Math.round(v) === 0 ? "pagada" : ""}"><span>Cuota ${i + 1}${bajo ? ` <small>(${fmt(base)} − abono)</small>` : ""}</span><span>${Math.round(v) === 0 ? "Cubierta con el abono" : fmt(v)}</span></div>`;
+  });
+  $("#m-cal").innerHTML = cal;
+}
+$("#m-ini").addEventListener("input", () => setTimeout(pintarModal));
+$("#m-menos").onclick = () => { mN = Math.max(1, mN - 1); pintarModal(); };
+$("#m-mas").onclick = () => { mN = Math.min(MAX_CUOTAS, mN + 1); pintarModal(); };
+$("#abrir-cuotas").onclick = () => {
+  const s = leer(); if (!s.precio){ aviso("Primero arma el plan", true); return; }
+  mN = CUOTAS || 3; $("#m-ini").value = INICIAL ? INICIAL.toLocaleString("es-CO") : "";
+  pintarModal(); $("#modal").classList.add("ver");
+};
+const cerrarModal = () => $("#modal").classList.remove("ver");
+$("#cerrar-modal").onclick = cerrarModal;
+$("#modal").addEventListener("click", e => { if (e.target.id === "modal") cerrarModal(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarModal(); });
+$("#m-usar").onclick = () => { CUOTAS = mN; INICIAL = num($("#m-ini").value); calcular(); cerrarModal(); aviso("Plan de pago agregado a la cotización"); };
+$("#m-quitar").onclick = () => { CUOTAS = 0; INICIAL = null; calcular(); cerrarModal(); };
+
+let totalVisto = null;
+function animarTotal(v){
+  const t = $("#total"), m = $("#total-m");
+  if (totalVisto === null || totalVisto === v){ totalVisto = v; t.textContent = m.textContent = fmt(v); return; }
+  const de = totalVisto, ini = performance.now(); totalVisto = v;
+  t.classList.add("cambia");
+  cancelAnimationFrame(animarTotal.f);
+  const paso = now => {
+    const k = Math.min(1, (now - ini) / 500), e = 1 - Math.pow(1 - k, 3);
+    t.textContent = m.textContent = fmt(de + (v - de) * e);
+    if (k < 1) animarTotal.f = requestAnimationFrame(paso); else t.classList.remove("cambia");
+  };
+  animarTotal.f = requestAnimationFrame(paso);
+}
+function calcular(){
+  const s = leer();
+  $("#r-prog").textContent = P().nombre;
+  const vis = s.items.filter(x => !x.interno && x.n);
+  $("#resumen").innerHTML = vis.length
+    ? vis.map(x => { const c = CATALOGO.find(k => k.n === x.n); return `<div class="linea-r">${c ? ico(c.id) : ""}<span>${esc(c ? c.t : x.n)}</span><span>${esc(/^\d/.test(x.q) ? "× " + x.q : x.q)}</span></div>`; }).join("")
+    : `<p class="linea-r vacio">Toca los servicios para armar tu plan.</p>`;
+  $("#r-desc").classList.toggle("oculto", !s.descuento || !!s.manual);
+  $("#r-manual").classList.toggle("oculto", !s.manual);
+  if (s.manual) $("#r-manual").innerHTML = `✍️ <b>Precio manual</b> (el calculado era ${fmt(s.manual.antes)})${s.manual.nota ? `<br>Motivo: ${esc(s.manual.nota)}` : ""}`;
+  $("#abrir-manual").classList.toggle("activa", !!s.manual);
+  $("#abrir-manual").lastChild.textContent = s.manual ? "Editar precio manual" : "Agregar precio manual";
+  $("#r-desc").firstElementChild.textContent = `Descuento del ${String(s.pct).replace(".", ",")}%`;
+  $("#r-desc").lastElementChild.textContent = "−" + fmt(s.descuento);
+  document.querySelectorAll(".desc-rapidos button").forEach(b => b.classList.toggle("activa", Number(b.dataset.p) === s.pct));
+  const nServ = vis.length;
+  const citas = cantDe(s, ESPECIALISTAS), sem = cantDe(s, ["general"]), ses = cantDe(s, SESIONES);
+  $("#rf-citas").textContent = citas ? citas + (citas === 1 ? " cita" : " citas") : "—";
+  $("#rf-sem").textContent = sem ? sem + (sem === 1 ? " semana" : " semanas") : "—";
+  $("#rf-tto").textContent = ses ? cantDe(s, ["aparatologia"]) + " aparatología · " + cantDe(s, ["drenaje"]) + " drenajes" : (cantDe(s, ["tirzepatida", "medias", "enfermeria"]) ? "Incluido" : "—");
+  document.querySelectorAll(".grupo").forEach(g => {
+    const n = g.querySelectorAll(".item:not(.apagado):not(.interno)").length;
+    g.querySelector(".g-cuenta").textContent = n + (n === 1 ? " servicio incluido" : " servicios incluidos");
+    g.classList.toggle("oculto", MODO === "paciente" && !n);
+  });
+  $("#r-meta").textContent = nServ ? `${nServ} ${nServ === 1 ? "servicio" : "servicios"}${s.duracion ? " · " + s.duracion : ""}` : "";
+  animarTotal(s.precio);
+  pintarWow(s);
+  pintarPlanPago(s);
+  $("#anticipo").textContent = fmt(anticipoDe(s.precio));
+  $("#anticipo-t").textContent = INICIAL != null ? "Valor inicial" : "Valor inicial (50%)";
+  return s;
+}
+document.addEventListener("input", calcular);
+document.addEventListener("change", e => { if (e.target.matches("input,select")) calcular(); });
+
+function validar(s){
+  const faltan = [];
+  const marca = (id, mal, txt) => { $(id).closest(".campo").classList.toggle("error", mal); if (mal) faltan.push(txt); };
+  marca("#nombre", !s.nombre, "nombre");
+  if (!s.items.some(x => !x.interno && x.n)) faltan.push("qué trae el plan");
+  
+  return faltan;
+}
+
+/* ---- PDF ---- */
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const fecha = d => d.getDate() + " de " + MESES[d.getMonth()] + " de " + d.getFullYear();
+const dos = n => String(n).padStart(2, "0");
+
+function armarPDF(s, numero, hoy, vence){
+  const filas = s.items.filter(x => !x.interno && x.n);
+  const pagos = P().pagos || PAGOS_BASE;
+  const catDe = x => CATALOGO.find(k => k.n === x.n) || {};
+  const cant = q => /^\d/.test(q) ? "× " + q : q;
+  const stats = [
+    [cantDe(s, ["general"]), "semanas de seguimiento"], [cantDe(s, ESPECIALISTAS), "citas con especialistas"],
+    [cantDe(s, ["aparatologia"]), "sesiones de aparatología"], [cantDe(s, ["drenaje"]), "drenajes linfáticos"],
+  ].filter(x => x[0]);
+  const ini = anticipoDe(s.precio), plan = CUOTAS ? repartir(s.precio, ini, CUOTAS) : null;
+  const calendario = !plan ? "" : CUOTAS <= 6
+    ? `<div class="cal">${ini ? `<div><span>Hoy · valor inicial</span><b>${fmt(ini)}</b></div>` : ""}${plan.cuotas.map((v, i) => `<div><span>Cuota ${i + 1}${Math.round(v) < Math.round(plan.base) ? " (con abono)" : ""}</span><b>${Math.round(v) ? fmt(v) : "Cubierta"}</b></div>`).join("")}</div>`
+    : `<div class="plan-txt">${esc(textoPlan(s.precio))}</div>`;
+  $("#pdf").innerHTML = `
+  <section class="hoja">
+    <div class="cab"><span class="logo-sh blanco" aria-label="The Skin Haus"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span>
+      <div class="der"><div class="eti">Cotización</div><div class="tit">${esc(s.programa)}</div><div class="num">N.º ${numero} · ${fecha(hoy)}</div></div></div>
+    <div class="cuerpo">
+      <div class="datos">
+        <div><span>Paciente</span><b>${esc(s.nombre)}</b></div>
+        <div><span>${esc(s.tipoId)}</span><b>${esc(s.numId) || "—"}</b></div>
+        <div><span>Celular</span><b>${esc(s.contacto) || "—"}</b></div>
+        <div><span>Especialista</span><b>${esc(s.esp)}</b><small>${esc(s.espec)}</small></div>
+      </div>
+      ${s.duracion ? `<div class="wow"><div class="g">${esc(s.duracion)}<small>de acompañamiento</small></div>${stats.map(([v, t]) => `<div class="st"><b>${v}</b><span>${t}</span></div>`).join("")}</div>` : ""}
+      <div class="cols">
+        <div class="lista">
+          <p class="sec">Lo que incluye tu plan</p>
+          ${filas.map(f => { const c = catDe(f); return `<div class="fila"><span class="ic">${ico(c.id)}</span><div><b>${esc(c.t || f.n)}</b>${c.d ? `<small>${esc(c.d)}</small>` : ""}${f.nota ? `<div class="nota">Nota: ${esc(f.nota)}</div>` : ""}</div><span class="q">${esc(cant(f.q))}</span></div>`; }).join("")}
+        </div>
+        <div>
+          <p class="sec">Tu inversión</p>
+          <div class="total"><span>Valor del tratamiento</span><b>${fmt(s.precio)}</b></div>
+          ${s.descuento && !s.manual ? `<div class="desc"><span>Antes ${fmt(s.lista)}</span><span>Descuento ${String(s.pct).replace(".", ",")}%: −${fmt(s.descuento)}</span></div>` : ""}
+          <div class="inicial"><span>Valor inicial para empezar${plan ? "<br>se descuenta de la primera cuota" : ""}</span><b>${fmt(ini)}</b></div>
+          ${plan ? `<p class="sec" style="margin-top:12px">${CUOTAS} ${CUOTAS === 1 ? "cuota" : "cuotas mensuales"} de ${fmt(plan.base)}</p>${calendario}` : ""}
+          <div class="caja"><p class="sec">Medios de pago</p><ul>${pagos.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>
+          <div class="caja"><p class="sec">Condiciones</p><ul><li>El tratamiento inicia con el pago del valor inicial.</li><li>Los valores pueden ajustarse según la evolución y la recomendación médica.</li></ul></div>
+          <p class="vence">Válida hasta el ${fecha(vence)}</p>
+        </div>
+      </div>
+      <p class="frase">${esc(FRASE)}</p>
+    </div>
+    <div class="pie"><span><b>The Skin Haus</b> · Medicina estética · Torre Médica Oval, consultorio 904 · Pereira</span><span>theskinhaus.com.co</span></div>
+  </section>`;
+  // si el contenido no cabe en la hoja, se compacta
+  const h = $("#pdf .hoja"), c = h.querySelector(".cuerpo");
+  const cols = h.querySelector(".cols"), sobra = () => c.scrollHeight > c.clientHeight + 1 || [...cols.children].some(x => x.scrollHeight > cols.clientHeight + 1);
+  if (sobra()) h.classList.add("apretado");
+}
+
+function aviso(t, mal){
+  const a = $("#aviso"); a.textContent = t; a.classList.toggle("mal", !!mal); a.classList.add("ver");
+  clearTimeout(aviso.t); aviso.t = setTimeout(() => a.classList.remove("ver"), 4500);
+}
+
+/* ---- PDF ---- */
+async function hacerPDF(s){
+  const hoy = new Date(), vence = new Date(hoy); vence.setDate(vence.getDate() + VIGENCIA_DIAS);
+  const numero = "SH-" + String(hoy.getFullYear()).slice(2) + dos(hoy.getMonth() + 1) + dos(hoy.getDate()) + "-" + dos(hoy.getHours()) + dos(hoy.getMinutes());
+  armarPDF(s, numero, hoy, vence);
+  await document.fonts.ready;
+  window.scrollTo(0, 0);
+  const archivo = `Cotizacion The Skin Haus - ${s.nombre} - ${P().nombre} - ${numero}-${dos(hoy.getSeconds())}.pdf`.replace(/[\\/:*?"<>|]/g, "");
+  const doc = await html2pdf().set({
+    margin: 0, filename: archivo,
+    image: { type: "jpeg", quality: 0.97 },
+    html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    pagebreak: { mode: ["legacy"] },
+  }).from($("#pdf")).toPdf().get("pdf");
+  return { doc, archivo, numero, hoy, vence };
+}
+/* copia por correo de cada PDF descargado */
+async function enviarCopia(s, r, tipo = "descarga"){
+  const ini = anticipoDe(s.precio), resto = s.precio - ini;
+  const datos = {
+    tipo, numero: r.numero, fecha: fecha(r.hoy), vence: fecha(r.vence), modo: MODO,
+    programa: s.programa, paciente: s.nombre, tipoId: s.tipoId, documento: s.numId, celular: s.contacto,
+    especialista: s.esp, duracion: s.duracion,
+    servicios: s.items.filter(x => !x.interno && x.n).map(x => { const c = CATALOGO.find(k => k.n === x.n); return { n: c ? c.t : x.n, q: x.q, nota: x.nota, lock: x.el.classList.contains("bloqueado") }; }),
+    lista: s.lista, pct: String(s.pct).replace(".", ","), descuento: s.manual ? 0 : s.descuento, total: s.precio, manual: s.manual,
+    inicial: ini, cuotas: CUOTAS, valorCuota: CUOTAS ? s.precio / CUOTAS : 0, planTexto: CUOTAS ? textoPlan(s.precio) : "",
+    costo: P().sinCostos ? null : s.costo, queda: P().sinCostos ? null : s.queda,
+    link: SITIO + "#c=" + empacar(),
+  };
+  if (r.doc){ datos.archivo = r.archivo; datos.pdf = r.doc.output("datauristring").split(",")[1]; }
+  const res = await fetch(ENVIO_COPIA, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos) });
+  const j = await res.json().catch(() => ({}));
+  if (!res.ok || !j.ok) throw new Error(j.error || "error");
+}
+$("#descargar").onclick = async () => {
+  const s = calcular(), faltan = MODO === "paciente" ? [] : validar(s);
+  if (faltan.length){ aviso("Para descargar falta: " + faltan.join(", "), true); $("#datos").scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(() => $("#nombre").focus(), 400); return; }
+  const b = $("#descargar"), tx = b.querySelector(".txt-desc"), t = tx.textContent; b.disabled = true; tx.textContent = "Generando…";
+  let r;
+  try{ r = await hacerPDF(s); r.doc.save(r.archivo); aviso("PDF descargado"); }
+  catch(e){ aviso("No se pudo generar el PDF. Intenta de nuevo.", true); b.disabled = false; tx.textContent = t; return; }
+  tx.textContent = "Enviando copia…";
+  try{ await enviarCopia(s, r); aviso("PDF descargado · copia enviada al correo"); }
+  catch(e){ aviso("El PDF se descargó, pero no se pudo enviar la copia al correo.", true); }
+  b.disabled = false; tx.textContent = t;
+};
+/* en celular: compartir el PDF como archivo (WhatsApp, correo…) */
+try{ if (navigator.canShare && navigator.canShare({ files: [new File(["x"], "x.pdf", { type: "application/pdf" })] })) $("#compartir-pdf").classList.add("puede"); }catch(e){}
+$("#compartir-pdf").onclick = async () => {
+  const s = calcular(), faltan = validar(s);
+  if (faltan.length){ aviso("Falta: " + faltan.join(", "), true); return; }
+  try{
+    const r = await hacerPDF(s);
+    const f = new File([r.doc.output("blob")], r.archivo, { type: "application/pdf" });
+    enviarCopia(s, r).catch(() => {});
+    await navigator.share({ files: [f], title: r.archivo });
+  }catch(e){ if (e && e.name !== "AbortError") aviso("No se pudo compartir el PDF.", true); }
+};
+
+/* ---- la cotización viaja guardada dentro del link ---- */
+function empacar(){
+  const d = {
+    p: PROG, i: [...document.querySelectorAll(".item")].map(x => [x.querySelector(".it-q").value, x.querySelector(".check").checked ? 1 : 0, x.classList.contains("bloqueado") ? 1 : 0, x.classList.contains("precio-libre") ? Number(x.dataset.u) || 0 : 0]),
+    cu: CUOTAS, ini: INICIAL, pm: $("#manual-v").value, pmn: $("#manual-nota").value,
+    n: $("#nombre").value, c: $("#contacto").value, t: $("#tipo-id").value, id: $("#num-id").value,
+    e: $("#esp").value, es: $("#espec").value, du: $("#duracion").value, de: $("#descuento").value,
+    nm: ($(".it-nota") || {}).value || "",
+  };
+  return btoa(unescape(encodeURIComponent(JSON.stringify(d)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function desempacar(txt){
+  try{ return JSON.parse(decodeURIComponent(escape(atob(txt.replace(/-/g, "+").replace(/_/g, "/"))))); }catch(e){ return null; }
+}
+function cargar(d){
+  ponerPrograma(d.p in PROGRAMAS ? d.p : "celulitis");
+  const items = document.querySelectorAll(".item");
+  (d.i || []).forEach(([q, on, lock, pu], k) => { const x = items[k]; if (!x) return;
+    if (pu && x.classList.contains("precio-libre")){ x.dataset.u = pu; x.querySelector(".it-precio").value = Number(pu).toLocaleString("es-CO"); }
+    x.querySelector(".it-q").value = q; x.querySelector(".check").checked = !!on; x.classList.toggle("apagado", !on); x.classList.toggle("bloqueado", !!lock); });
+  $("#manual-v").value = d.pm || ""; $("#manual-nota").value = d.pmn || "";
+  CUOTAS = Number(d.cu) || 0; INICIAL = CUOTAS && d.ini != null && d.ini !== 0 ? Number(d.ini) : (CUOTAS && d.ini === 0 ? 0 : null);
+  $("#nombre").value = d.n || ""; $("#contacto").value = d.c || ""; $("#num-id").value = d.id || "";
+  if (d.t) $("#tipo-id").value = d.t;
+  $("#esp").value = d.e || ESPECIALISTA; $("#espec").value = d.es || ESPECIALIDAD; pintarEsp();
+  $("#duracion").value = d.du || ""; $("#descuento").value = d.de || ""; $("#desc-libre").value = d.de || "";
+  const nt = $(".it-nota"); if (nt){ nt.value = d.nm || ""; nt.classList.toggle("vacia", !d.nm); setTimeout(() => { nt.style.height = "auto"; nt.style.height = nt.scrollHeight + "px"; }); }
+  totalVisto = null; calcular();
+}
+const celular = c => { let n = String(c || "").replace(/\D/g, ""); if (n.length === 10 && n[0] === "3") n = "57" + n; return n; };
+const abrirWhatsApp = (num, txt) => window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(txt), "_blank");
+
+/* ---- modos: doctor (normal) · comercial (#c=) · paciente (#p=) ---- */
+let MODO = "doctor";
+$("#enviar-correo").onclick = async () => {
+  const s = calcular();
+  if (!s.nombre){ $("#nombre").closest(".campo").classList.add("error"); aviso("Falta el nombre de la paciente", true); $("#datos").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+  if (!s.items.some(x => !x.interno)){ aviso("Falta lo que incluye el plan", true); return; }
+  const b = $("#enviar-correo"), tx = b.querySelector("span"), t = tx.textContent; b.disabled = true; tx.textContent = "Enviando…";
+  const hoy = new Date(), vence = new Date(hoy); vence.setDate(vence.getDate() + VIGENCIA_DIAS);
+  const numero = "SH-" + String(hoy.getFullYear()).slice(2) + dos(hoy.getMonth() + 1) + dos(hoy.getDate()) + "-" + dos(hoy.getHours()) + dos(hoy.getMinutes());
+  try{ await enviarCopia(s, { numero, hoy, vence }, "para-comercial"); aviso("Enviado por correo a " + COMERCIAL.nombre + " ✓"); }
+  catch(e){ aviso("No se pudo enviar el correo. Intenta de nuevo.", true); }
+  b.disabled = false; tx.textContent = t;
+};
+$("#enviar").onclick = () => {
+  const s = calcular();
+  if (MODO === "doctor"){
+    const faltan = [];
+    $("#nombre").closest(".campo").classList.toggle("error", !s.nombre); if (!s.nombre) faltan.push("nombre de la paciente");
+    if (!s.items.some(x => !x.interno)) faltan.push("qué incluye");
+    if (faltan.length){ aviso("Falta: " + faltan.join(", "), true); $("#datos").scrollIntoView({ behavior: "smooth" }); return; }
+    const link = SITIO + "#c=" + empacar();
+    const bloq = [...document.querySelectorAll(".item.bloqueado:not(.apagado)")].map(x => { const c = CATALOGO.find(k => k.n === x.dataset.n); return c ? c.t : x.dataset.n; });
+    abrirWhatsApp(COMERCIAL.whatsapp,
+      `Hola ${COMERCIAL.nombre} 👋 Nueva cotización de The Skin Haus\n\n` +
+      `Paciente: ${s.nombre}${s.contacto ? "\nCelular: " + s.contacto : ""}\nPrograma: ${P().nombre}\nValor: ${fmt(s.precio)}\nArmada por: ${s.esp}\n\n` +
+      (s.manual ? `✍️ Precio manual (calculado ${fmt(s.manual.antes)}). Motivo: ${s.manual.nota}\n\n` : "") +
+      (bloq.length ? `🔒 La médica recomienda no quitar:\n${bloq.map(x => "• " + x).join("\n")}\n\n` : "") +
+      `Ábrela aquí para negociar:\n${link}`);
+    aviso("Se abrió WhatsApp con la cotización para " + COMERCIAL.nombre);
+  } else {
+    const num = celular(s.contacto);
+    if (num.length < 11){ $("#contacto").closest(".campo").classList.add("error"); aviso("Falta el celular de la paciente", true); $("#datos").scrollIntoView({ behavior: "smooth" }); return; }
+    const link = SITIO + "#p=" + empacar();
+    abrirWhatsApp(num,
+      `Hola ${s.nombre.split(" ")[0]} 🤍 Te comparto tu plan de ${P().nombre} en The Skin Haus.\n\n` +
+      `Inversión: ${fmt(s.precio)} (valor inicial: ${fmt(anticipoDe(s.precio))})` +
+      (CUOTAS ? `\nPlan de pago: ${textoPlan(s.precio)}` : "") + `\n\nAquí puedes ver todo lo que incluye y descargar tu cotización:\n${link}\n\n` +
+      `Cualquier duda, aquí estoy.`);
+    aviso("Se abrió WhatsApp con el chat de la paciente");
+  }
+};
+function ponerModo(){
+  const h = location.hash, c = h.startsWith("#c="), pa = h.startsWith("#p=");
+  MODO = c ? "comercial" : pa ? "paciente" : "doctor";
+  document.body.classList.toggle("comercial", c); document.body.classList.toggle("paciente", pa); document.body.classList.toggle("doctor", !c && !pa);
+  const d = (c || pa) ? desempacar(h.slice(3)) : null;
+  if (d) cargar(d); else ponerPrograma("celulitis");
+  const fr = $("#franja");
+  if (MODO === "comercial"){
+    fr.innerHTML = `Cotización armada por <b>${esc($("#esp").value)}</b> para <b class="rojo">${esc($("#nombre").value.trim())}</b>. Ajústala con la paciente y envíasela.`;
+    fr.classList.remove("oculto");
+    $("#enviar-txt").textContent = "Enviar a la paciente por WhatsApp";
+    $("#intro-h1").textContent = "Negocia el plan";
+    $("#intro-p").textContent = "Lo que muevas aquí cambia el precio al instante.";
+    $("#ayuda-items").innerHTML = `Toca un servicio para sumarlo o quitarlo. Lo que tiene <span class="ico-txt">${ico("candado")}</span> la médica recomienda no quitarlo.`;
+    if ($("#descuento").value){ $("#desc-caja").classList.remove("oculto"); $("#abrir-desc").classList.add("activa"); }
+  } else if (MODO === "paciente"){
+    abrir();
+    $("#intro-ojo").textContent = "Tu plan en The Skin Haus";
+    $("#intro-h1").textContent = (($("#nombre").value || "").split(" ")[0] || "Tu") + ", este es tu plan";
+    $("#intro-p").textContent = "Aquí está todo lo que incluye tu tratamiento. Puedes descargar tu cotización en PDF.";
+    $(".txt-desc").textContent = "Descargar mi cotización";
+    $("#ayuda-items").textContent = "Esto es lo que trae tu tratamiento y cuántas veces.";
+    document.querySelectorAll(".it-q, .it-nota").forEach(i => { i.readOnly = true; i.tabIndex = -1; });
+    document.title = "Tu plan · The Skin Haus";
+  } else {
+    $("#enviar-txt").textContent = "Enviar a " + COMERCIAL.nombre + " por WhatsApp";
+    $("#ayuda-items").innerHTML = `Toca un servicio para sumarlo o quitarlo. Con <span class="ico-txt">${ico("candado")}</span> marcas lo que el comercial no debería quitar.`;
+  }
+}
+window.addEventListener("hashchange", () => location.reload());
+
+$("#nueva").onclick = () => {
+  if (location.hash){ if (confirm("¿Empezar una cotización nueva?")) location.href = location.pathname; return; }
+  if (!confirm("¿Borrar los datos del paciente y empezar una cotización nueva?")) return;
+  ["#nombre", "#num-id", "#contacto"].forEach(id => $(id).value = "");
+  $("#tipo-id").selectedIndex = 0;
+  document.querySelectorAll(".campo.error").forEach(c => c.classList.remove("error"));
+  CUOTAS = 0; INICIAL = null; cargarPlantilla(); window.scrollTo(0, 0);
+};
+
+ponerModo();
+</script>
+</body>
+</html>
