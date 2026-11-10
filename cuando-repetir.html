@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<base href="/">
+<title>¿Cuándo repetir el bótox o el relleno? Calcula tu fecha</title>
+<meta name="description" content="Pon la fecha de tu última aplicación y mira cuándo te toca: bótox cada 4 a 6 meses, ácido hialurónico de 9 a 18. También para un evento. En Pereira.">
+<link rel="canonical" href="https://theskinhaus.com.co/cuando-repetir">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Cuándo repetir el bótox o el relleno? Calcula tu fecha">
+<meta property="og:description" content="Pon la fecha de tu última aplicación, o la de tu evento, y mira tu momento. Luego te valora la médica en Pereira.">
+<meta property="og:image" content="https://theskinhaus.com.co/assets/fotos/landing/lineas-og.jpg">
+<meta property="og:url" content="https://theskinhaus.com.co/cuando-repetir">
+<meta property="og:locale" content="es_CO">
+<meta name="theme-color" content="#FAF8F3">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/fotos/landing/foto-lineas-ancha.webp" media="(min-width:761px)">
+<link rel="preload" as="image" href="assets/fotos/landing/foto-lineas-cara.webp" media="(max-width:760px)">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blanco:#FAF8F3; --marfil:#F3EEE5; --marfil-m:#EEE7DE; --arena:#D7CABB; --nude:#C6A88F; --taupe:#9B8978;
+  --taupe-t:#6E6152; --negro:#111111; --linea:rgba(17,17,17,.10);
+  --serif:"Libre Caslon Display","Big Caslon",Georgia,serif;
+  --serif-t:"Libre Caslon Text","Big Caslon",Georgia,serif;
+  --cursiva:"Cormorant Garamond","Libre Caslon Text",Georgia,serif;
+  --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
+  --lado:clamp(16px,5vw,64px); --ancho:1200px; --sec:clamp(72px,9vw,120px);
+  --curva:cubic-bezier(.2,.8,.2,1); --lenta:cubic-bezier(.16,1,.3,1);
+  /* semáforo en tonos de la marca: salvia, ocre y piedra (el texto siempre dice el estado) */
+  --v:#6E8B64; --v-f:#E5EBDD; --v-t:#3A5233;
+  --a:#C29544; --a-f:#F2E6CC; --a-t:#6E4F16;
+  --g:#A1978C; --g-f:#ECE6DF; --g-t:#5F554B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--blanco) url(assets/textura-blanca.jpg) repeat 0 0/640px;color:var(--negro);font:16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.45;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .35 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.caja{max-width:var(--ancho);margin:0 auto;padding:0 var(--lado)}
+.estrecha{max-width:880px}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.018em;line-height:1.04}
+h2{font-size:clamp(32px,4.4vw,54px);max-width:16em}
+h3{font-family:var(--serif-t);font-weight:400;font-size:21px;line-height:1.25}
+.gris{color:#857464}
+.it{font-family:var(--cursiva);font-style:italic;font-weight:500}
+.ceja{font:700 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--taupe-t);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ceja::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--nude);flex:none}
+.lead{font-size:clamp(17px,1.5vw,19px);line-height:1.6;max-width:32em;color:#2a2622}
+
+/* logo (texto, siempre negro) */
+.logo{display:inline-flex;flex-direction:column;font-family:var(--serif);line-height:.98;color:var(--negro);font-size:21px;text-decoration:none}
+.logo .the{font:400 .26em/1 var(--sans);letter-spacing:.55em;margin-bottom:.55em}
+.logo .sh{letter-spacing:.12em}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;border-radius:999px;background:var(--negro);color:#fff;text-decoration:none;font:600 16.5px/1 var(--sans);letter-spacing:.01em;box-shadow:0 14px 30px -14px rgba(17,17,17,.55);transition:transform .3s var(--curva),box-shadow .3s var(--curva),background .3s}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 36px -16px rgba(17,17,17,.6)}
+.btn.claro{background:var(--blanco);color:var(--negro);box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.btn.chico{min-height:44px;padding:0 20px;font-size:14.5px;box-shadow:none}
+.btn.chico svg{width:17px;height:17px}
+.btn.ancho{width:100%}
+.inmediatez{font-size:14px;line-height:1.5;color:var(--taupe-t);margin-top:14px}
+
+/* cabecera mínima */
+.cab{position:absolute;top:0;left:0;right:0;z-index:20}
+.cab .caja{display:flex;align-items:center;justify-content:space-between;height:84px}
+
+/* secciones */
+.sec{padding:var(--sec) 0 0}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .8s var(--curva),transform .8s var(--curva)}
+.rev.ve{opacity:1;transform:none}
+.isla{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:clamp(28px,4vw,56px);padding:clamp(32px,6vw,80px)}
+
+/* ===== bloque 1 · portada con la calculadora ===== */
+.hero{position:relative;min-height:min(100svh,940px);display:flex;align-items:center;padding:108px 0 56px;overflow:hidden}
+.fondo{position:absolute;inset:0;z-index:-1;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
+.fondo img{width:100%;height:100%;object-fit:cover;object-position:72% 30%;animation:asienta 3s var(--lenta) both}
+.fondo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,238,229,.95) 0%,rgba(243,238,229,.74) 40%,rgba(243,238,229,.08) 70%),linear-gradient(0deg,rgba(250,248,243,.9),transparent 26%)}
+@keyframes asienta{from{transform:scale(1.06)}to{transform:none}}
+.hero-in{width:100%}
+.vidrio{max-width:590px;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);border:1px solid rgba(255,255,255,.8);border-radius:34px;padding:clamp(24px,3.2vw,42px);box-shadow:0 30px 60px -40px rgba(80,60,40,.45)}
+.vidrio h1{font-size:clamp(36px,4.3vw,58px);margin-bottom:14px}
+.vidrio h1 .it{color:var(--taupe-t)}
+.vidrio .lead{font-size:17px;margin-bottom:24px}
+
+/* pestañas en píldora */
+.pestanas{display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(238,231,222,.9)}
+.pestanas button{flex:1 1 auto;border:0;background:transparent;border-radius:999px;min-height:48px;padding:7px 12px;font:700 13.5px/1.2 var(--sans);color:var(--taupe-t);cursor:pointer;transition:background .3s var(--curva),color .3s,box-shadow .3s}
+.pestanas button:hover{color:var(--negro)}
+.pestanas button[aria-selected="true"]{background:var(--negro);color:#fff;box-shadow:0 10px 22px -12px rgba(17,17,17,.6)}
+.pestanas button:focus-visible,.rapida:focus-visible,.chips button:focus-visible,.resumen a:focus-visible{outline:2px solid var(--negro);outline-offset:3px}
+.panel{margin-top:16px}
+.rapidas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rapida{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;text-align:left;min-height:70px;padding:12px 18px;border-radius:24px;border:1px solid rgba(17,17,17,.12);background:rgba(255,255,255,.74);cursor:pointer;transition:background .3s,border-color .3s,color .3s,transform .3s var(--curva)}
+.rapida:hover{border-color:rgba(17,17,17,.35);transform:translateY(-1px)}
+.rapida b{font:400 16.5px/1.2 var(--serif-t)}
+.rapida span{font-size:13px;line-height:1.2;color:var(--taupe-t)}
+.rapida .mas{display:inline-flex;align-items:center;gap:6px}
+.rapida[aria-pressed="true"]{background:var(--negro);border-color:var(--negro);color:#fff}
+.rapida[aria-pressed="true"] span{color:var(--arena)}
+.campo{display:grid;gap:7px;margin-top:14px}
+.campo>span{font:700 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe-t)}
+.campo input{display:block;width:100%;min-height:52px;font:16px/1.2 var(--sans);color:var(--negro);background:#fff;border:1px solid rgba(17,17,17,.16);border-radius:999px;padding:14px 20px;-webkit-appearance:none;appearance:none;outline:none;transition:border-color .3s}
+.campo input:focus{border-color:var(--negro)}
+.campo input::-webkit-date-and-time-value{text-align:left}
+.campos2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.campos2 .campo{margin-top:0}
+.pregunta{font:700 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe-t);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(17,17,17,.14);background:rgba(255,255,255,.74);font-size:14.5px;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.chips button[aria-checked="true"]{background:var(--negro);border-color:var(--negro);color:#fff}
+.aviso-campo{margin-top:10px;font-size:14px;color:var(--a-t)}
+.resumen{margin-top:16px;font-size:14.5px;line-height:1.5;color:var(--taupe-t)}
+.resumen a{display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;color:var(--negro);background:#fff;border-radius:22px;padding:12px 12px 12px 18px;box-shadow:0 14px 30px -24px rgba(80,60,40,.5)}
+.resumen a b{font-weight:700}
+.resumen .puntos{display:block;margin-top:3px;font-size:13.5px;color:var(--taupe-t)}
+.resumen .puntos i{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 5px 1px 0;vertical-align:middle}
+.resumen .puntos i.v{background:var(--v)}.resumen .puntos i.a{background:var(--a)}.resumen .puntos i.g{background:var(--g)}
+.resumen .bajar{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--negro);color:#fff;font-size:17px;line-height:1}
+
+/* ===== bloque 2 · resultado ===== */
+.res-cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
+.res-cab h2{max-width:14em}
+.leyenda{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.sema{display:inline-flex;align-items:center;gap:8px;font:700 11.5px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 13px;border-radius:999px;align-self:flex-start}
+.sema i{width:8px;height:8px;border-radius:50%;flex:none}
+.sema.v{background:var(--v-f);color:var(--v-t)}.sema.v i{background:var(--v)}
+.sema.a{background:var(--a-f);color:var(--a-t)}.sema.a i{background:var(--a)}
+.sema.g{background:var(--g-f);color:var(--g-t)}.sema.g i{background:var(--g)}
+.tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:34px}
+.tarjetas.una{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);max-width:900px}
+.tarjetas:not(.una) .cta{grid-column:span 2}
+.tarjeta{display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.95);border-radius:28px;padding:22px 22px 16px;box-shadow:0 18px 40px -30px rgba(80,60,40,.35);transition:box-shadow .3s var(--curva)}
+.tarjeta h3{font-size:22px;line-height:1.2}
+.tarjeta .sub{font-size:13.5px;line-height:1.4;color:var(--taupe-t);margin-top:-8px}
+.limite{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:20px;padding:13px 16px 14px}
+.limite .et{display:block;font:700 11.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe-t)}
+.limite b{display:block;font:400 21px/1.22 var(--serif-t);margin-top:5px}
+.limite .otra{display:block;font-size:13.5px;line-height:1.45;color:#4a4239;margin-top:5px}
+.tarjeta.g .limite b{color:var(--g-t)}
+.razon{font-size:14.5px;line-height:1.55;color:#2a2622}
+.razon a{text-underline-offset:3px}
+.interes{margin-top:auto;display:flex;align-items:center;gap:10px;min-height:46px;padding-top:4px;border-top:1px solid var(--linea);cursor:pointer;font:700 13.5px/1 var(--sans);user-select:none}
+.interes input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.marca{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(17,17,17,.35);background:#fff;transition:background .25s,border-color .25s}
+.interes input:checked+.marca{background:var(--negro);border-color:var(--negro)}
+.interes input:checked+.marca::after{content:"";width:10px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:translateY(-1px) rotate(-45deg)}
+.interes input:focus-visible+.marca{outline:2px solid var(--negro);outline-offset:2px}
+.tarjeta.marcada{box-shadow:0 0 0 1.5px var(--negro),0 18px 40px -30px rgba(80,60,40,.35)}
+.tarjeta.cta{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;justify-content:center;gap:0;padding:28px 24px 24px}
+.cta .ceja{margin-bottom:12px}
+.cta h3{font:400 clamp(28px,2.6vw,40px)/1.06 var(--serif);margin-bottom:10px}
+.cta h3 .it{color:var(--taupe-t)}
+.cta p{font-size:15px;line-height:1.5;color:#2a2622;max-width:30em;margin-bottom:20px}
+.cta .btn{width:100%;padding:0 22px}
+.cta-foto{display:none}
+.cta-foto img{width:100%;height:100%;min-height:250px;object-fit:cover;border-radius:999px 999px 22px 22px}
+.tarjetas:not(.una) .cta{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,230px);gap:34px;align-items:center;padding:18px 18px 18px 34px}
+.tarjetas:not(.una) .cta-foto{display:block;order:2;align-self:stretch}
+.tarjetas:not(.una) .cta .btn{width:auto}
+.nota{margin-top:22px;font-size:14px;line-height:1.55;color:var(--taupe-t);max-width:52em}
+.otra-pestana{margin-top:14px;font-size:15px}
+.otra-pestana button{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-weight:700;padding:6px 0}
+.aparece{animation:aparece .7s var(--curva) both}
+@keyframes aparece{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ===== bloque 3 · así contamos ===== */
+.contamos-cab{display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;align-items:end;margin-bottom:34px}
+.contamos-cab .lead{font-size:16.5px}
+.tiempos{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tiempos li{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.72);border-radius:26px;padding:18px 22px 18px 16px}
+.tiempos .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blanco);border:1px solid var(--arena);font:400 18px/1 var(--serif)}
+.tiempos b{display:block;font:400 19px/1.25 var(--serif-t);margin-bottom:4px}
+.tiempos span{font-size:15px;line-height:1.5;color:#2a2622}
+
+/* ===== bloque 4 · quién te atiende ===== */
+.medica{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:clamp(36px,6vw,96px);align-items:center}
+.medica-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 28px 28px}
+.cargo{font-family:var(--cursiva);font-style:italic;font-size:24px;color:var(--taupe-t);margin:6px 0 18px}
+.confia{list-style:none;display:grid;gap:16px;margin-top:28px}
+.confia li{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.5}
+.confia div{display:flex;flex-direction:column;gap:2px}
+.confia strong{font-weight:700}
+.confia span{color:var(--taupe-t);font-size:15.5px}
+.confia a{text-underline-offset:3px}
+.m{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;margin-top:-1px;background:var(--negro)}
+.m svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== bloque 5 · cierre ===== */
+.cierre-sec{padding-bottom:var(--sec)}
+.cierre{text-align:center;background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:clamp(160px,30vw,420px) clamp(160px,30vw,420px) 56px 56px;padding:clamp(80px,10vw,140px) var(--lado) clamp(48px,6vw,80px)}
+.cierre .ceja{justify-content:center}
+.cierre h2{margin:0 auto 32px;font-size:clamp(34px,5vw,62px);max-width:13em}
+.cierre .inmediatez{margin-top:20px}
+.letra{max-width:38em;margin:30px auto 0;font-size:13.5px;line-height:1.6;color:var(--taupe-t)}
+
+.pie{padding:40px 0 120px;border-top:1px solid var(--linea)}
+.pie .caja{display:grid;gap:10px}
+.pie p{font-size:14px;color:var(--taupe-t)}
+.pie .legal{font-size:13px;max-width:60em}
+.pie .logo{margin-bottom:10px}
+
+.barra-fija{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;transform:translateY(140%);transition:transform .45s var(--curva);display:none}
+.barra-fija.ve{transform:none}
+
+@media (max-width:1100px){
+  .tarjetas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tarjetas:not(.una) .cta{grid-column:auto;display:flex;padding:28px 24px 24px}
+  .tarjetas:not(.una) .cta-foto{display:none}
+  .tarjetas:not(.una) .cta .btn{width:100%}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .cab .caja{height:68px}
+  .logo{font-size:18px}
+  .hero{display:block;min-height:0;padding:0 0 4px}
+  .fondo{position:relative;inset:auto;display:block;height:30svh;min-height:210px;max-height:270px;z-index:0;-webkit-mask-image:none;mask-image:none}
+  .fondo img{object-position:50% 24%;-webkit-mask-image:linear-gradient(180deg,#000 52%,transparent 100%);mask-image:linear-gradient(180deg,#000 52%,transparent 100%)}
+  .fondo::after{display:none}
+  .hero-in{margin-top:-74px;position:relative;z-index:2}
+  .vidrio{padding:22px 18px 18px;border-radius:28px;background:rgba(255,255,255,.66)}
+  .vidrio h1{font-size:clamp(31px,8.6vw,40px);margin-bottom:10px}
+  .vidrio .lead{font-size:15.5px;margin-bottom:18px}
+  .pestanas{border-radius:28px}
+  .pestanas button{font-size:12.5px;min-height:50px;padding:6px 8px;border-radius:24px}
+  .rapida{min-height:72px;padding:11px 15px;border-radius:22px}
+  .rapida b{font-size:15.5px}
+  .campos2{grid-template-columns:1fr;gap:0}
+  .campos2 .campo{margin-top:12px}
+  .campos2 .campo:first-child{margin-top:0}
+  .res-cab{display:block}
+  .leyenda{margin-top:18px}
+  .tarjetas,.tarjetas.una{grid-template-columns:1fr;gap:14px;margin-top:26px}
+  .contamos-cab{grid-template-columns:1fr;margin-bottom:24px}
+  .tiempos{grid-template-columns:1fr}
+  .isla{padding:30px 16px 18px;border-radius:30px}
+  .tiempos{gap:10px}
+  .tiempos li{border-radius:22px;padding:15px 16px 15px 12px;gap:12px}
+  .tiempos li{display:grid;grid-template-columns:34px 1fr;align-items:center;row-gap:8px}
+  .tiempos li>div{display:contents}
+  .tiempos li>div>span{grid-column:1/-1}
+  .tiempos .n{width:34px;height:34px;font-size:16px}
+  .tiempos b{font-size:18px;margin:0}
+  .tarjeta{padding:20px 18px 14px}
+  .medica{grid-template-columns:1fr}
+  .medica-foto{max-width:280px}
+  .cierre{border-radius:180px 180px 36px 36px}
+  .cierre .btn{width:100%}
+  .barra-fija{display:block}
+  .pie{padding-bottom:110px}
+}
+@media (max-width:350px){
+  .rapidas{grid-template-columns:1fr}
+  .pestanas{flex-direction:column;border-radius:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rev{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+.logo{cursor:pointer}.pregs{display:grid;gap:10px;margin-top:34px;max-width:860px}.pregs details{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:26px;padding:18px 24px}.pregs summary{cursor:pointer;font:400 19px/1.3 var(--serif-t);list-style:none;display:flex;justify-content:space-between;gap:16px}.pregs summary::-webkit-details-marker{display:none}.pregs summary::after{content:'+';font:400 22px/1 var(--serif);flex:none}.pregs details[open] summary::after{content:'\2212'}.pregs p{margin-top:10px;font-size:16px;line-height:1.6;color:#2a2622;max-width:46em}.sigue{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.sigue a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(17,17,17,.14);background:rgba(255,255,255,.74);font-size:14.5px;line-height:1.3;text-decoration:none}.sigue a:hover{border-color:rgba(17,17,17,.4)}.sigue-t{margin-top:44px;font:700 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--taupe-t)}.pie nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14.5px;margin:4px 0 6px}.pie nav a{text-underline-offset:3px;padding:6px 0}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-79WV8JCLPD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-79WV8JCLPD');</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z0v793pqdy");</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "MedicalClinic", "@id": "https://theskinhaus.com.co/#clinica", "name": "The Skin Haus", "alternateName": "The Skin Haus Pereira", "description": "Clínica de medicina estética en Pereira: toxina botulínica (bótox), ácido hialurónico, bioestimuladores, skinboosters, peelings, microagujas y manejo de manchas. También medicina vascular.", "url": "https://theskinhaus.com.co", "telephone": "+57 317 441 2203", "image": "https://theskinhaus.com.co/assets/fotos/recepcion.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Av. Juan B. Gutiérrez #18-60, Edificio Oval Médica, consultorio 904", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"}, "geo": {"@type": "GeoCoordinates", "latitude": 4.8027788, "longitude": -75.6857281}, "hasMap": "https://www.google.com/maps?q=4.8027788,-75.6857281", "areaServed": [{"@type": "City", "name": "Pereira"}, {"@type": "City", "name": "Dosquebradas"}, {"@type": "City", "name": "Santa Rosa de Cabal"}, {"@type": "City", "name": "La Virginia"}, {"@type": "City", "name": "Cartago"}], "knowsAbout": ["Medicina estética", "Medicina vascular"], "availableService": [{"@type": "MedicalProcedure", "name": "Toxina botulínica", "url": "https://theskinhaus.com.co/toxina-botulinica"}, {"@type": "MedicalProcedure", "name": "Ácido hialurónico", "url": "https://theskinhaus.com.co/acido-hialuronico"}, {"@type": "MedicalProcedure", "name": "Bioestimuladores de colágeno", "url": "https://theskinhaus.com.co/bioestimuladores"}, {"@type": "MedicalProcedure", "name": "Skinboosters", "url": "https://theskinhaus.com.co/skinboosters"}, {"@type": "MedicalProcedure", "name": "Peelings médicos", "url": "https://theskinhaus.com.co/peelings-medicos"}, {"@type": "MedicalProcedure", "name": "Microagujas", "url": "https://theskinhaus.com.co/microagujas"}, {"@type": "MedicalProcedure", "name": "Manchas y melasma", "url": "https://theskinhaus.com.co/manchas-y-melasma"}, {"@type": "MedicalProcedure", "name": "Limpieza facial médica", "url": "https://theskinhaus.com.co/limpieza-facial-medica"}, {"@type": "MedicalProcedure", "name": "Relleno de labios", "url": "https://theskinhaus.com.co/relleno-de-labios"}, {"@type": "MedicalProcedure", "name": "Tratamiento de ojeras", "url": "https://theskinhaus.com.co/tratamiento-de-ojeras"}, {"@type": "MedicalProcedure", "name": "Armonización facial", "url": "https://theskinhaus.com.co/armonizacion-facial"}, {"@type": "MedicalProcedure", "name": "Hiperhidrosis", "url": "https://theskinhaus.com.co/hiperhidrosis"}, {"@type": "MedicalProcedure", "name": "Cicatrices de acné", "url": "https://theskinhaus.com.co/cicatrices-de-acne"}]}, {"@context": "https://schema.org", "@type": "WebPage", "name": "¿Cuándo repetir el bótox o el relleno? Calcula tu fecha", "description": "Pon la fecha de tu última aplicación y mira cuándo te toca: bótox cada 4 a 6 meses, ácido hialurónico de 9 a 18. También para un evento. En Pereira.", "url": "https://theskinhaus.com.co/cuando-repetir", "inLanguage": "es-CO", "about": [{"@type": "MedicalProcedure", "name": "Bótox en Pereira", "url": "https://theskinhaus.com.co/toxina-botulinica"}, {"@type": "MedicalProcedure", "name": "Ácido hialurónico", "url": "https://theskinhaus.com.co/acido-hialuronico"}, {"@type": "MedicalProcedure", "name": "Relleno de labios", "url": "https://theskinhaus.com.co/relleno-de-labios"}], "publisher": {"@id": "https://theskinhaus.com.co/#clinica"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cada cuánto se repite el bótox?", "acceptedAnswer": {"@type": "Answer", "text": "Por lo general, cada 4 a 6 meses. Cuánto te dura depende de tu musculatura, de la zona y de tus hábitos, y preferimos no adelantarlo."}}, {"@type": "Question", "name": "¿Cuándo se repite el ácido hialurónico o el relleno de labios?", "acceptedAnswer": {"@type": "Answer", "text": "El ácido hialurónico dura de 9 a 18 meses según la zona, el producto y cómo lo procesa tu cuerpo. En los labios suele durar menos."}}, {"@type": "Question", "name": "Tengo un evento: ¿con cuánta anticipación me aplico el bótox?", "acceptedAnswer": {"@type": "Answer", "text": "Empieza a notarse entre el día 3 y el 7 y se ve completo hacia las 2 semanas, cuando te vemos en control. Con una semana más queda margen si en el control hay que completar."}}, {"@type": "Question", "name": "¿Y los labios o las ojeras antes de un evento?", "acceptedAnswer": {"@type": "Answer", "text": "Puede haber inflamación leve o algún morado de 24 a 72 horas. Para una fecha importante pedimos por lo menos 2 semanas de margen, y más si es tu primera vez."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://theskinhaus.com.co/"}, {"@type": "ListItem", "position": 2, "name": "Medicina estética", "item": "https://theskinhaus.com.co/medicina-estetica"}, {"@type": "ListItem", "position": 3, "name": "¿Cuándo me toca repetir?", "item": "https://theskinhaus.com.co/cuando-repetir"}]}]</script>
+</head>
+<body>
+<header class="cab"><div class="caja"><a class="logo" href="./" aria-label="The Skin Haus, inicio"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></a><a class="btn chico" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20calculadora%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" data-wa><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Agendar</span></a></div></header>
+<main>
+<section class="hero">
+  <picture class="fondo">
+    <source media="(max-width:760px)" srcset="assets/fotos/landing/foto-lineas-cara.webp">
+    <img src="assets/fotos/landing/foto-lineas-ancha.webp" alt="Mujer de rostro sereno con luz suave, en tonos marfil" width="1600" height="1080" fetchpriority="high">
+  </picture>
+  <div class="caja hero-in">
+    <div class="vidrio">
+      <p class="ceja">Medicina estética · Pereira</p>
+      <h1>¿Cuándo me toca repetir <span class="it">mi bótox o mi relleno?</span></h1>
+      <p class="lead">Pon la fecha de tu última aplicación y te mostramos tu momento. Y si tienes un evento, con cuánta anticipación conviene aplicártelo.</p>
+      <div class="pestanas" role="tablist" aria-label="Qué quieres calcular">
+        <button type="button" role="tab" id="t-repetir" aria-controls="p-repetir" aria-selected="true" data-p="repetir">¿Cuándo me toca repetir?</button>
+        <button type="button" role="tab" id="t-fecha" aria-controls="p-fecha" aria-selected="false" tabindex="-1" data-p="fecha">Tengo un evento</button>
+        <button type="button" role="tab" id="t-visita" aria-controls="p-visita" aria-selected="false" tabindex="-1" data-p="visita">Vengo de visita</button>
+      </div>
+      <div class="panel" id="p-fecha" role="tabpanel" aria-labelledby="t-fecha" hidden>
+        <div class="rapidas" hidden>
+          <button type="button" class="rapida" data-otra aria-pressed="false" aria-controls="campo-fecha" aria-expanded="false"><b>Otra fecha</b><span>Elige el día</span></button>
+        </div>
+        <label class="campo" id="campo-fecha" style="margin-top:0"><span>La fecha de tu evento</span><input type="date" id="in-fecha"></label>
+      </div>
+      <div class="panel" id="p-visita" role="tabpanel" aria-labelledby="t-visita" hidden>
+        <div class="campos2">
+          <label class="campo"><span>Llego a Pereira el</span><input type="date" id="in-llego"></label>
+          <label class="campo"><span>Me voy el</span><input type="date" id="in-voy"></label>
+        </div>
+      </div>
+      <div class="panel" id="p-repetir" role="tabpanel" aria-labelledby="t-repetir">
+        <p class="pregunta" id="q-trat">¿Qué te hiciste?</p>
+        <div class="chips" role="radiogroup" aria-labelledby="q-trat">
+          <button type="button" role="radio" aria-checked="false" data-r="lineas">Bótox</button>
+          <button type="button" role="radio" aria-checked="false" data-r="ah">Ácido hialurónico</button>
+          <button type="button" role="radio" aria-checked="false" data-r="skin">Skinbooster</button>
+          <button type="button" role="radio" aria-checked="false" data-r="bio">Bioestimuladores</button>
+          <button type="button" role="radio" aria-checked="false" data-r="limpieza">Limpieza facial</button>
+        </div>
+        <label class="campo"><span id="et-ultima">Mi última aplicación fue el</span><input type="date" id="in-ultima"></label>
+      </div>
+      <p class="aviso-campo" id="aviso" role="alert" hidden></p>
+      <div class="resumen" id="resumen" aria-live="polite">Elige qué te hiciste y cuándo fue la última vez.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="resultado" hidden>
+  <div class="caja">
+    <div class="res-cab">
+      <div><p class="ceja" id="res-ceja">Tu resultado</p><h2 id="res-titulo"></h2></div>
+      <ul class="leyenda" id="res-leyenda" aria-label="Qué significa cada color"></ul>
+    </div>
+    <div class="tarjetas" id="res-tarjetas"></div>
+    <p class="nota" id="res-nota"></p>
+  </div>
+</section>
+
+<section class="sec" id="asi-contamos">
+  <div class="caja">
+    <div class="isla">
+      <div class="contamos-cab">
+        <div><p class="ceja">Así contamos</p><h2>Los tiempos <span class="gris">que usamos.</span></h2></div>
+        <p class="lead">Son los mismos de nuestras páginas de cada tratamiento. Sirven de guía: tu plan y tus fechas los define la médica en la valoración.</p>
+      </div>
+      <ol class="tiempos">
+        <li><span class="n">1</span><div><b>Bótox · líneas de expresión</b><span>Empiezan a notarse entre el día 3 y el 7 y se ven completas hacia las 2 semanas, cuando te vemos en control. Se repiten cada 4 a 6 meses.</span></div></li>
+        <li><span class="n">2</span><div><b>Labios, ojeras y contorno</b><span>Puede haber inflamación leve o algún morado de 24 a 72 horas. Para una fecha importante, por lo menos 2 semanas de margen; más si es tu primera vez o son labios.</span></div></li>
+        <li><span class="n">3</span><div><b>Skinbooster</b><span>Una serie de 3 sesiones, cada 3 a 4 semanas: unos dos meses. Después, mantenimiento cada 6 meses.</span></div></li>
+        <li><span class="n">4</span><div><b>Bioestimuladores</b><span>Los cambios se empiezan a notar hacia la semana 6 a 8 y siguen mejorando por meses. Duran de 12 a 24 meses.</span></div></li>
+        <li><span class="n">5</span><div><b>Peeling médico</b><span>Según la profundidad, de ninguna a una semana de descamación. La serie es de 3 a 6 sesiones, cada 2 a 4 semanas.</span></div></li>
+        <li><span class="n">6</span><div><b>Limpieza facial médica</b><span>60 minutos y vuelves a tu día. Puede quedar un rubor leve por unas horas. Se repite cada 4 a 6 semanas.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="medica">
+  <div class="caja medica">
+    <figure class="medica-foto rev"><img src="assets/equipo/valeria-enciso.webp" alt="Dra. Valeria Enciso, médica estética de The Skin Haus en Pereira" width="800" height="1000" loading="lazy"></figure>
+    <div class="medica-txt">
+      <p class="ceja">Quién te atiende</p>
+      <h2 class="rev">Dra. Valeria Enciso</h2>
+      <p class="cargo">Médica estética de The Skin Haus</p>
+      <p class="lead rev">Te valora en persona, mira tu piel y tu fecha, y decide contigo qué tiene sentido. Si algo conviene dejarlo para después, te lo dice.</p>
+      <ul class="confia">
+        <li><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg></span><div><strong>Te valora una médica</strong><span>Puedes verificar su registro en el <a href="https://web.sispro.gov.co/THS/Cliente/ConsultasPublicas/ConsultaPublicaDeTHxIdentificacion.aspx" target="_blank" rel="noopener">RETHUS</a>, la consulta pública del Ministerio de Salud.</span></div></li>
+        <li><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg></span><div><strong>Producto con registro INVIMA</strong><span>En la valoración te decimos cuál usamos y por qué, y lo puedes consultar en el <a href="https://www.invima.gov.co/consulta-registros-sanitarios" target="_blank" rel="noopener">INVIMA</a>.</span></div></li>
+        <li><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg></span><div><strong>En un lugar de salud</strong><span>Torre Médica Oval, consultorio 904, Pereira.</span></div></li>
+        <li><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg></span><div><strong>Con control</strong><span>En las líneas de expresión, hacia las 2 semanas te vemos otra vez.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="preguntas">
+  <div class="caja">
+    <p class="ceja">Preguntas frecuentes</p>
+    <h2>Repetir, <span class="gris">sin adelantarse.</span></h2>
+    <div class="pregs"><details><summary>¿Cada cuánto se repite el bótox?</summary><p>Por lo general, cada 4 a 6 meses. Cuánto te dura depende de tu musculatura, de la zona y de tus hábitos, y preferimos no adelantarlo.</p></details><details><summary>¿Cuándo se repite el ácido hialurónico o el relleno de labios?</summary><p>El ácido hialurónico dura de 9 a 18 meses según la zona, el producto y cómo lo procesa tu cuerpo. En los labios suele durar menos.</p></details><details><summary>Tengo un evento: ¿con cuánta anticipación me aplico el bótox?</summary><p>Empieza a notarse entre el día 3 y el 7 y se ve completo hacia las 2 semanas, cuando te vemos en control. Con una semana más queda margen si en el control hay que completar.</p></details><details><summary>¿Y los labios o las ojeras antes de un evento?</summary><p>Puede haber inflamación leve o algún morado de 24 a 72 horas. Para una fecha importante pedimos por lo menos 2 semanas de margen, y más si es tu primera vez.</p></details></div>
+    <p class="sigue-t">Los tratamientos</p>
+    <div class="sigue"><a href="toxina-botulinica">Bótox en Pereira</a><a href="acido-hialuronico">Ácido hialurónico</a><a href="relleno-de-labios">Relleno de labios</a></div>
+    <p class="sigue-t">Para leer con calma</p>
+    <div class="sigue"><a href="blog/cuanto-dura-el-botox">¿Cuánto dura el bótox? Qué esperar mes a mes</a><a href="blog/cuando-volver-a-ponerse-botox">Cuándo volver a ponerse bótox: las señales del espejo</a><a href="blog/cuanto-dura-el-relleno-de-labios">Cuánto dura el relleno de labios y por qué cambia tanto</a><a href="blog/cuanto-rinde-1-ml-de-acido-hialuronico">1 ml de ácido hialurónico: para qué alcanza (y para qué no)</a></div>
+  </div>
+</section>
+
+<section class="sec cierre-sec">
+  <div class="caja">
+    <div class="cierre rev">
+      <p class="ceja">Valoración médica · Pereira</p>
+      <h2>Escríbenos <span class="it">tu fecha.</span></h2>
+      <a class="btn" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20calculadora%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" data-wa><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Escríbenos tu fecha</span></a>
+      <p class="inmediatez">Respondemos por WhatsApp · Torre Médica Oval, consultorio 904 · Pereira</p>
+      <p class="letra">Información orientativa: el plan y las fechas los define la médica en tu valoración. Todo procedimiento tiene riesgos y los resultados varían en cada persona.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pie">
+  <div class="caja">
+    <a class="logo" href="./" aria-label="The Skin Haus, inicio"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></a>
+    <p>The Skin Haus · Medicina estética · Torre Médica Oval, consultorio 904 · Pereira, Colombia</p>
+    <nav aria-label="Más de The Skin Haus"><a href="./">Inicio</a><a href="medicina-estetica">Medicina estética</a><a href="blog/">Blog</a><a href="valoracion?desde=cuando-repetir">Agenda por formulario</a></nav>
+    <p class="legal">Información orientativa; no reemplaza una consulta médica. Los resultados varían en cada persona y toda indicación requiere valoración médica. Las fotos de personas son ilustrativas.</p>
+  </div>
+</footer>
+<div class="barra-fija" aria-hidden="true"><a class="btn ancho" href="https://wa.me/573174412203?text=Hola%2C%20vengo%20de%20la%20calculadora%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" data-wa tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Escríbenos tu fecha</span></a></div>
+
+<script>
+(function () {
+  'use strict';
+  var WA = '573174412203', DIA = 864e5;
+  var WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+  var DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  // Festivos de Colombia (Ley 51 de 1983), de noviembre de 2026 a diciembre de 2027.
+  var FESTIVOS = ['2026-11-02', '2026-11-16', '2026-12-08', '2026-12-25', '2027-01-01', '2027-01-11', '2027-03-22', '2027-03-25',
+    '2027-03-26', '2027-05-01', '2027-05-10', '2027-05-31', '2027-06-07', '2027-07-05', '2027-07-20', '2027-08-07', '2027-08-16',
+    '2027-10-18', '2027-11-01', '2027-11-15', '2027-12-08', '2027-12-25'];
+
+  // ---------- fechas como número de día (sin horas: no hay líos de zona horaria)
+  function dn(y, m, d) { return Math.round(Date.UTC(y, m, d) / DIA); }
+  function partes(x) { var f = new Date(x * DIA); return { y: f.getUTCFullYear(), m: f.getUTCMonth(), d: f.getUTCDate(), w: f.getUTCDay() }; }
+  function deISO(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+    if (!m) return null;
+    var x = dn(+m[1], +m[2] - 1, +m[3]), p = partes(x);
+    return (p.m === +m[2] - 1 && p.d === +m[3]) ? x : null;
+  }
+  function dos(n) { return (n < 10 ? '0' : '') + n; }
+  function aISO(x) { var p = partes(x); return p.y + '-' + dos(p.m + 1) + '-' + dos(p.d); }
+  var ahora = new Date(), HOY = dn(ahora.getFullYear(), ahora.getMonth(), ahora.getDate()), ANIO = partes(HOY).y;
+  var FEST = {};
+  FESTIVOS.forEach(function (s) { FEST[deISO(s)] = 1; });
+  function habil(x) { var w = partes(x).w; return w !== 0 && w !== 6 && !FEST[x]; }
+  // Si la fecha límite cae en sábado, domingo o festivo, se corre al día hábil anterior (el horario no está confirmado).
+  function antesHabil(x) { while (!habil(x)) x--; return x; }
+  function largo(x) { var p = partes(x); return DIAS[p.w] + ' ' + p.d + ' de ' + MESES[p.m] + (p.y !== ANIO ? ' de ' + p.y : ''); }
+  function corto(x) { var p = partes(x); return p.d + ' de ' + MESES[p.m] + (p.y !== ANIO ? ' de ' + p.y : ''); }
+  function masMeses(x, n) {
+    var p = partes(x), m = p.m + n, y = p.y + Math.floor(m / 12);
+    m = ((m % 12) + 12) % 12;
+    var ultimo = partes(dn(y, m + 1, 1) - 1).d;
+    return dn(y, m, Math.min(p.d, ultimo));
+  }
+  function lista(xs) { return xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' y ' + xs[xs.length - 1]; }
+  function plural(n, uno, varios) { return n + ' ' + (n === 1 ? uno : varios); }
+
+  // ---------- reglas (respaldo de cada una al final del archivo)
+  var TRAT = [
+    { id: 'lineas', n: 'Bótox · líneas de expresión', msj: 'bótox', sub: 'Frente, entrecejo y patas de gallo', v: 21, a: 14,
+      t: { v: 'Se ven completas hacia las 2 semanas, cuando te vemos en control. Con una semana más queda margen si en el control hay que completar.',
+           a: 'Se ven completas hacia las 2 semanas: llegan, pero sin margen para ajustar después del control.',
+           g: 'Se ven completas hacia las 2 semanas, y antes de tu fecha no hay tiempo suficiente para verse completas ni para el control.' } },
+    { id: 'labios', n: 'Labios', msj: 'labios', sub: 'Definir, hidratar o dar volumen sutil', v: 21, a: 14,
+      t: { v: 'Puede haber inflamación leve o algún morado de 24 a 72 horas. Pedimos por lo menos 2 semanas de margen, y más si es tu primera vez.',
+           a: 'Llegas con el margen mínimo de 2 semanas. Si es tu primera vez, mejor con más tiempo: lo define la médica en tu valoración.',
+           g: 'Para una fecha importante pedimos por lo menos 2 semanas de margen: puede haber inflamación leve o algún morado de 24 a 72 horas.' } },
+    { id: 'ojeras', n: 'Ojeras y contorno', msj: 'ojeras y contorno', sub: 'Ácido hialurónico en ojeras, pómulos, mentón o mandíbula', v: 21, a: 14,
+      t: { v: 'Puede haber inflamación leve o algún morado de 24 a 72 horas. Con una fecha importante, por lo menos 2 semanas de margen; si es tu primera vez, más.',
+           a: 'Llegas con el margen mínimo de 2 semanas. Si es tu primera vez, mejor con más tiempo: lo define la médica en tu valoración.',
+           g: 'Con una fecha importante pedimos por lo menos 2 semanas de margen: puede haber inflamación leve o algún morado de 24 a 72 horas.' } },
+    { id: 'skin', n: 'Skinbooster', msj: 'skinbooster', sub: 'Hidratación y luz de la piel', v: 56, a: 21, otra: 'Para 1 o 2 sesiones: hasta el ',
+      t: { v: 'Es una serie de 3 sesiones, cada 3 a 4 semanas: unos dos meses. Con tus días cabe completa.',
+           a: 'La serie son 3 sesiones, cada 3 a 4 semanas. Antes de tu fecha caben 1 o 2, y la serie se completa después. Cuántas, lo define la médica en tu valoración.',
+           g: 'La serie son 3 sesiones, cada 3 a 4 semanas, y antes de tu fecha no hay tiempo para la serie completa. Si quieres empezar igual, lo define la médica en tu valoración.' } },
+    { id: 'bio', n: 'Bioestimuladores', msj: 'bioestimuladores', sub: 'Firmeza y colágeno', v: 56, a: 42, otra: 'Para que apenas empiece a notarse: hasta el ',
+      t: { v: 'Los cambios se empiezan a notar hacia la semana 6 a 8 y siguen mejorando por meses. A tu fecha ya se empiezan a ver.',
+           a: 'Los cambios se empiezan a notar hacia la semana 6 a 8: a tu fecha apenas empezarían a notarse. Siguen mejorando por meses.',
+           g: 'Los cambios se empiezan a notar hacia la semana 6 a 8, así que su mejor momento es después de tu fecha, con calma.',
+           gDic: 'Los cambios se empiezan a notar hacia la semana 6 a 8, así que su mejor momento es enero o febrero.' } },
+    { id: 'peeling', n: 'Peeling médico', msj: 'peeling médico', sub: 'Manchas, textura y poros', v: 14, a: 8, otra: 'Solo uno suave: hasta el ',
+      t: { v: 'Según la profundidad, la descamación va de ninguna a una semana, y esa semana no debe caer sobre tu fecha. La intensidad la define la médica en tu valoración.',
+           a: 'Con estos días, solo uno suave: la descamación puede durar hasta una semana. Cuál, lo decide la médica en tu valoración.',
+           g: 'La descamación puede durar hasta una semana y caería sobre tu fecha. Si hay una opción que casi no se nota para tu piel, te lo dice la médica en tu valoración.' } },
+    { id: 'limpieza', n: 'Limpieza facial médica', msj: 'limpieza facial médica', sub: 'Piel limpia y sana', v: 1, a: null,
+      t: { v: 'Son 60 minutos y vuelves a tu día de inmediato. Puede quedar un rubor leve por unas horas: cabe aunque falte poco.' } }
+  ];
+  var POR_ID = {};
+  TRAT.forEach(function (t) { POR_ID[t.id] = t; });
+  var ETIQ = { fecha: { v: 'Llega con calma', a: 'Llega justo', g: 'Mejor después de tu fecha' },
+               visita: { v: 'Cabe en tu visita', a: 'Lo definimos en la valoración' },
+               repetir: { v: 'Es tu momento', a: 'Ya pasó la referencia', g: 'Todavía no te toca' } };
+
+  // Pestaña 1 · Tengo una fecha
+  function pestanaFecha(F) {
+    var dic = partes(F).m === 11;
+    return TRAT.map(function (t) {
+      var calma = antesHabil(F - t.v), justo = t.a ? antesHabil(F - t.a) : null, c = { t: t };
+      if (t.id === 'limpieza') {
+        c.e = 'v'; c.et = 'Tu última fecha para empezar';
+        if (calma >= HOY) { c.b = largo(calma); c.otra = 'La víspera de tu fecha'; } else { c.b = 'Cabe aunque falte poco'; }
+        c.razon = t.t.v;
+      } else if (calma >= HOY) {
+        c.e = 'v'; c.et = 'Tu última fecha para empezar'; c.b = largo(calma);
+        if (justo >= HOY) c.otra = (t.otra || 'Si no, justo hasta el ') + largo(justo);
+        c.razon = t.t.v;
+      } else if (justo !== null && justo >= HOY) {
+        c.e = 'a'; c.et = 'Tu última fecha para empezar'; c.b = largo(justo); c.razon = t.t.a;
+      } else {
+        c.e = 'g'; c.et = 'Cuándo empezar'; c.b = (t.id === 'bio' && dic) ? 'En enero' : 'Después de tu fecha';
+        c.razon = (t.id === 'bio' && dic) ? t.t.gDic : t.t.g;
+      }
+      return c;
+    });
+  }
+
+  // Pestaña 2 · Vengo de visita (L = llego, V = me voy)
+  function pestanaVisita(L, V) {
+    var D = V - L, desde = Math.max(L, HOY);
+    function ultimo(dias) { var x = antesHabil(V - dias); return x >= desde ? x : null; }
+    return TRAT.map(function (t) {
+      var c = { t: t, et: 'Cuándo hacerlo' }, x;
+      if (t.id === 'lineas') {
+        x = D >= 16 ? ultimo(15) : null;
+        if (x) { c.e = 'v'; c.et = 'Aplicación en tus primeros días'; c.b = 'a más tardar el ' + largo(x); c.otra = 'El control, hacia las 2 semanas, antes de irte';
+          c.razon = 'Se ven completas hacia las 2 semanas, cuando te vemos en control. Con 16 días o más de visita caben, si la aplicación es al comienzo.'; }
+        else { c.e = 'a'; c.b = 'Según tu visita'; c.razon = 'Con menos de 16 días de visita, lo definimos en la valoración: el control es parte de cómo trabajamos.'; }
+      } else if (t.id === 'labios' || t.id === 'ojeras') {
+        x = D >= 14 ? ultimo(14) : null;
+        if (x) { c.e = 'v'; c.et = 'Al comienzo de tu visita'; c.b = 'a más tardar el ' + largo(x);
+          c.razon = 'Puede haber inflamación leve o algún morado de 24 a 72 horas: al comienzo de la visita se asienta mientras estás aquí. Si es tu primera vez, mejor con más tiempo.'; }
+        else { c.e = 'a'; c.b = 'Al comienzo de tu visita'; c.razon = 'Puede haber inflamación leve o algún morado de 24 a 72 horas. Con menos de 2 semanas de visita, lo define la médica en tu valoración.'; }
+      } else if (t.id === 'skin') {
+        if (D >= 56) { c.e = 'v'; c.et = 'Primera sesión'; c.b = 'Al comienzo de tu visita'; c.razon = 'La serie son 3 sesiones, cada 3 a 4 semanas: con tu visita cabe completa.'; }
+        else { c.e = 'a'; c.lbl = 'Cabe en parte'; c.et = 'En tu visita'; c.b = D >= 21 ? 'Caben 1 o 2 sesiones' : 'Cabe 1 sesión';
+          c.razon = 'La serie son 3 sesiones, cada 3 a 4 semanas; las que falten van en tu próxima visita. Lo define la médica en tu valoración.'; }
+      } else if (t.id === 'bio') {
+        x = D >= 3 ? ultimo(3) : null;
+        if (x) { c.e = 'v'; c.et = 'Aplicación'; c.b = 'a más tardar el ' + largo(x);
+          c.razon = 'Se aplican aquí y el cambio se ve ya de vuelta: se empieza a notar hacia la semana 6 a 8. Puede quedar enrojecimiento o sensibilidad de 1 a 3 días. Si son varias sesiones, lo define la médica.'; }
+        else { c.e = 'a'; c.b = 'Según tu visita'; c.razon = 'Puede quedar enrojecimiento o sensibilidad de 1 a 3 días. Con una visita tan corta, lo define la médica en tu valoración.'; }
+      } else if (t.id === 'peeling') {
+        c.e = 'a'; c.lbl = 'Depende del sol'; c.b = 'Según tu viaje';
+        c.razon = 'Depende de si en tu visita hay playa o sol fuerte: la piel queda más sensible y la descamación va de ninguna a una semana. Mira <a href="blog/peeling-antes-de-un-viaje-a-la-playa">peeling antes de un viaje a la playa</a>. La intensidad la define la médica.';
+      } else {
+        c.e = 'v'; c.b = 'Cuando quieras'; c.razon = 'Cabe siempre: son 60 minutos y vuelves a tu día. Puede quedar un rubor leve por unas horas.';
+      }
+      return c;
+    });
+  }
+
+  // Pestaña 3 · ¿Cuándo me toca repetir? (U = última aplicación)
+  var REPETIR = {
+    lineas: { n: 'Bótox · líneas de expresión', msj: 'bótox', sub: 'Por lo general, de 4 a 6 meses después', ini: function (U) { return masMeses(U, 4); }, fin: function (U) { return masMeses(U, 6); },
+      razon: 'Por lo general se repiten cada 4 a 6 meses. Cuánto te dura depende de tu musculatura, la zona y tus hábitos. Preferimos no adelantarlo.' },
+    ah: { n: 'Ácido hialurónico', msj: 'ácido hialurónico', sub: 'Labios, ojeras o contorno: de 9 a 18 meses, según la zona', ini: function (U) { return masMeses(U, 9); }, fin: function (U) { return masMeses(U, 18); },
+      razon: 'Dura de 9 a 18 meses, según la zona, el producto y cómo lo procesa tu cuerpo. En los labios suele durar menos.' },
+    skin: { n: 'Skinbooster', msj: 'skinbooster', sub: 'Mantenimiento a los 6 meses', ini: function (U) { return masMeses(U, 6); }, fin: null,
+      razon: 'Después de la serie de 3 sesiones, un mantenimiento cada 6 meses ayuda a sostener el resultado. Si estás en la serie inicial, la siguiente sesión va a las 3 o 4 semanas.' },
+    bio: { n: 'Bioestimuladores', msj: 'bioestimuladores', sub: 'De 12 a 24 meses', ini: function (U) { return masMeses(U, 12); }, fin: function (U) { return masMeses(U, 24); },
+      razon: 'Duran de 12 a 24 meses, según el producto, tu piel y tus hábitos. Si estás en el plan inicial, la siguiente sesión va a las 4 a 8 semanas.' },
+    limpieza: { n: 'Limpieza facial médica', msj: 'limpieza facial médica', sub: 'Cada 4 a 6 semanas', ini: function (U) { return U + 28; }, fin: function (U) { return U + 42; },
+      razon: 'Como mantenimiento, cada 4 a 6 semanas. Si tu piel es grasa o tiene tendencia al acné, puede ser más seguido; te lo decimos según tu piel.' }
+  };
+
+  // ---------- estado
+  var $ = function (s) { return document.querySelector(s); };
+  var E = { pestana: 'repetir', fecha: null, llego: null, voy: null, trat: null, ultima: null };
+  var INTERES = {};
+  var res = $('#resultado'), resTarjetas = $('#res-tarjetas'), resumen = $('#resumen'), aviso = $('#aviso');
+  var inFecha = $('#in-fecha'), inLlego = $('#in-llego'), inVoy = $('#in-voy'), inUltima = $('#in-ultima');
+  var campoFecha = $('#campo-fecha'), btnOtra = document.querySelector('.rapida[data-otra]');
+  var rapidas = [].slice.call(document.querySelectorAll('.rapida[data-fecha]'));
+
+  inFecha.min = aISO(HOY + 1); inFecha.max = aISO(HOY + 730);
+  inLlego.min = aISO(HOY); inLlego.max = aISO(HOY + 730);
+  inVoy.min = aISO(HOY + 1); inVoy.max = aISO(HOY + 1095);
+  inUltima.max = aISO(HOY); inUltima.min = aISO(HOY - 1825);
+
+  // los botones rápidos cuyas fechas ya pasaron desaparecen solos
+  rapidas = rapidas.filter(function (b) {
+    if (deISO(b.dataset.fecha) > HOY) return true;
+    b.parentNode.removeChild(b); return false;
+  });
+  if (!rapidas.length) { campoFecha.hidden = false; btnOtra.setAttribute('aria-pressed', 'true'); btnOtra.setAttribute('aria-expanded', 'true'); }
+
+  function avisar(txt) { aviso.textContent = txt || ''; aviso.hidden = !txt; }
+
+  // ---------- WhatsApp
+  function mensaje() {
+    var base = 'Hola, vengo de la calculadora.', marcados = TRAT.filter(function (t) { return INTERES[t.id]; }).map(function (t) { return t.msj; });
+    if (E.pestana === 'fecha' && E.fecha) {
+      return base + ' Mi fecha es el ' + corto(E.fecha) + (marcados.length ? ' y me interesa: ' + lista(marcados) : '') + '. ¿Qué me recomiendan y cuándo me pueden valorar?';
+    }
+    if (E.pestana === 'visita' && E.llego && E.voy) {
+      return base + ' Llego a Pereira el ' + corto(E.llego) + ' y me voy el ' + corto(E.voy) + '.' + (marcados.length ? ' Me interesa: ' + lista(marcados) + '.' : '') + ' ¿Qué me recomiendan y cuándo me pueden valorar?';
+    }
+    if (E.pestana === 'repetir' && E.trat && E.ultima) {
+      var r = REPETIR[E.trat];
+      return base + (E.trat === 'limpieza' ? ' Mi última limpieza facial médica fue el ' : ' Mi última aplicación de ' + r.msj + ' fue el ') + corto(E.ultima) + '. ¿Cuándo me toca y cuándo me pueden valorar?';
+    }
+    return 'Hola, vengo de la calculadora y quiero agendar mi valoración en The Skin Haus.';
+  }
+  function ponerWhatsApp() {
+    var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(mensaje());
+    document.querySelectorAll('a[data-wa]').forEach(function (a) { a.href = url; });
+    var marc = document.getElementById('cta-marcaste');
+    if (marc) {
+      var m = TRAT.filter(function (t) { return INTERES[t.id]; }).map(function (t) { return t.msj; });
+      marc.textContent = E.pestana === 'repetir' ? 'Te respondemos por WhatsApp y buscamos tu cita.'
+        : m.length ? 'Marcaste ' + lista(m) + '. Te respondemos por WhatsApp con tus fechas.' : 'Marca lo que te interesa y te respondemos por WhatsApp con tus fechas.';
+    }
+  }
+
+  // ---------- medición (Google Analytics + Clarity)
+  var ultimoEvento = '', reloj = null;
+  function medir(pestana, dias) {
+    clearTimeout(reloj);
+    reloj = setTimeout(function () {
+      var k = pestana + ':' + dias;
+      if (k === ultimoEvento) return;
+      ultimoEvento = k;
+      if (window.gtag) gtag('event', 'calculadora_usada', { pestana: pestana, dias: dias });
+      if (window.clarity) { clarity('event', 'calculadora_usada'); clarity('set', 'calculadora', pestana); }
+    }, 900);
+  }
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
+    if (!a) return;
+    if (window.gtag) gtag('event', 'clic_whatsapp', { origen: 'calculadora', pagina: location.pathname, pestana: E.pestana });
+    if (window.clarity) clarity('event', 'clic_whatsapp');
+  }, true);
+
+  // ---------- pintar
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function tarjeta(c, conInteres) {
+    var etiqueta = c.lbl || ETIQ[E.pestana][c.e], id = c.t.id;
+    return '<article class="tarjeta ' + c.e + (conInteres && INTERES[id] ? ' marcada' : '') + '" data-t="' + id + '">' +
+      '<span class="sema ' + c.e + '"><i></i>' + esc(etiqueta) + '</span>' +
+      '<h3>' + esc(c.t.n) + '</h3><p class="sub">' + esc(c.sub || c.t.sub) + '</p>' +
+      '<div class="limite"><span class="et">' + esc(c.et) + '</span><b>' + esc(c.b) + '</b>' + (c.otra ? '<span class="otra">' + esc(c.otra) + '</span>' : '') + '</div>' +
+      '<p class="razon">' + c.razon + '</p>' +
+      (conInteres ? '<label class="interes"><input type="checkbox" data-interes="' + id + '"' + (INTERES[id] ? ' checked' : '') + '><span class="marca" aria-hidden="true"></span>Me interesa</label>' : '') +
+      '</article>';
+  }
+  function tarjetaCta() {
+    return '<div class="tarjeta cta"><div class="cta-foto" aria-hidden="true"><img src="assets/fotos/consulta.webp" alt="" width="776" height="768" loading="lazy"></div>' +
+      '<div class="cta-txt"><p class="ceja">¿Te sirve?</p><h3>Escríbenos <span class="it">tu fecha.</span></h3><p id="cta-marcaste"></p>' +
+      '<a class="btn" href="#" target="_blank" rel="noopener" data-wa>' + WA_SVG + '<span>Escríbenos tu fecha</span></a></div></div>';
+  }
+  function leyenda(claves) {
+    $('#res-leyenda').innerHTML = claves.map(function (k) { return '<li class="sema ' + k + '"><i></i>' + esc(ETIQ[E.pestana][k]) + '</li>'; }).join('');
+  }
+  function contar(cs) { var n = { v: 0, a: 0, g: 0 }; cs.forEach(function (c) { n[c.e]++; }); return n; }
+  function resumenHTML(fuerte, n, etiquetas) {
+    var partesTxt = [];
+    if (n.v) partesTxt.push('<i class="v"></i>' + n.v + ' ' + etiquetas.v);
+    if (n.a) partesTxt.push('<i class="a"></i>' + n.a + ' ' + etiquetas.a);
+    if (n.g) partesTxt.push('<i class="g"></i>' + n.g + ' ' + etiquetas.g);
+    return '<a href="#resultado"><span><b>' + fuerte + '</b><span class="puntos">' + partesTxt.join(' &nbsp; ') + '</span></span><span class="bajar" aria-hidden="true">&#8595;</span></a>';
+  }
+
+  var visto = false;
+  function mostrar(html, clase) {
+    resTarjetas.className = 'tarjetas' + (clase ? ' ' + clase : '');
+    resTarjetas.innerHTML = html;
+    if (res.hidden) { res.hidden = false; res.classList.add('aparece'); }
+    ponerWhatsApp();
+  }
+  function ocultar(texto) {
+    res.hidden = true;
+    resumen.textContent = texto;
+    ponerWhatsApp();
+  }
+
+  function calcular(porUsuario) {
+    avisar('');
+    if (E.pestana === 'fecha') {
+      if (!E.fecha) return ocultar('Elige tu fecha y te mostramos el momento ideal para cada tratamiento.');
+      var N = E.fecha - HOY;
+      if (N < 1) { avisar('Esa fecha ya pasó o es hoy. Elige una que venga.'); return ocultar('Elige tu fecha y te mostramos el momento ideal para cada tratamiento.'); }
+      var cs = pestanaFecha(E.fecha), n = contar(cs);
+      $('#res-ceja').textContent = 'Tu fecha · ' + largo(E.fecha);
+      $('#res-titulo').innerHTML = (N === 1 ? 'Falta 1 día.' : 'Faltan ' + N + ' días.') + ' <span class="gris">Así se ve tu calendario.</span>';
+      leyenda(['v', 'a', 'g']);
+      $('#res-nota').textContent = 'Orientativo: el plan y las fechas los define la médica en tu valoración. Si una fecha límite cae en fin de semana o festivo, te mostramos el día hábil anterior.';
+      mostrar(cs.map(function (c) { return tarjeta(c, true); }).join('') + tarjetaCta());
+      resumen.innerHTML = resumenHTML(N === 1 ? 'Falta 1 día para tu fecha.' : 'Faltan ' + N + ' días para tu fecha.', n, { v: 'con calma', a: 'justo', g: 'mejor después' });
+      if (porUsuario) medir('fecha', N);
+      return true;
+    }
+    if (E.pestana === 'visita') {
+      if (!E.llego || !E.voy) return ocultar('Pon cuándo llegas y cuándo te vas, y te mostramos qué cabe.');
+      if (E.llego < HOY) { avisar('Esa fecha de llegada ya pasó.'); return ocultar('Pon cuándo llegas y cuándo te vas, y te mostramos qué cabe.'); }
+      if (E.voy <= E.llego) { avisar('La fecha en que te vas tiene que ser después de la llegada.'); return ocultar('Pon cuándo llegas y cuándo te vas, y te mostramos qué cabe.'); }
+      var D = E.voy - E.llego, cv = pestanaVisita(E.llego, E.voy), nv = contar(cv);
+      $('#res-ceja').textContent = 'Tu visita · del ' + corto(E.llego) + ' al ' + corto(E.voy);
+      $('#res-titulo').innerHTML = 'Son ' + plural(D, 'día', 'días') + ' en Pereira. <span class="gris">Esto es lo que cabe.</span>';
+      leyenda(['v', 'a']);
+      $('#res-nota').textContent = 'Orientativo: el plan y las fechas los define la médica en tu valoración. Si quieres el día exacto de tu viaje, escríbenos antes de llegar y lo dejamos agendado.';
+      mostrar(cv.map(function (c) { return tarjeta(c, true); }).join('') + tarjetaCta());
+      resumen.innerHTML = resumenHTML('Tu visita: ' + plural(D, 'día', 'días') + '.', nv, { v: 'caben', a: 'se definen en la valoración', g: '' });
+      if (porUsuario) medir('visita', E.llego - HOY);
+      return true;
+    }
+    // repetir
+    if (!E.trat || !E.ultima) return ocultar(E.trat ? 'Pon la fecha de tu última aplicación.' : 'Elige qué te hiciste y cuándo fue la última vez.');
+    if (E.ultima > HOY) { avisar('Esa fecha todavía no ha pasado.'); return ocultar('Pon la fecha de tu última aplicación.'); }
+    var r = REPETIR[E.trat], ini = r.ini(E.ultima), fin = r.fin ? r.fin(E.ultima) : null, c = { t: { id: E.trat, n: r.n, sub: r.sub }, et: 'Te toca', razon: r.razon };
+    c.b = fin ? 'Entre el ' + corto(ini) + ' y el ' + corto(fin) : 'Desde el ' + corto(ini);
+    if (HOY < ini) { c.e = 'g'; c.otra = 'Faltan ' + plural(ini - HOY, 'día', 'días') + ' para que empiece tu momento.'; }
+    else if (!fin || HOY <= fin) { c.e = 'v'; c.otra = 'Estás dentro de la referencia: escríbenos y agendamos.'; }
+    else { c.e = 'a'; c.otra = 'Pasó más tiempo del habitual: empezamos con una valoración.'; }
+    $('#res-ceja').textContent = (E.trat === 'limpieza' ? 'Tu última limpieza · ' : 'Tu última aplicación · ') + corto(E.ultima);
+    $('#res-titulo').innerHTML = ETIQ.repetir[c.e] + '. <span class="gris">' + (c.e === 'g' ? 'Tu momento empieza el ' + corto(ini) + '.' : c.e === 'v' ? 'Escríbenos y agendamos.' : 'Empezamos con una valoración.') + '</span>';
+    $('#res-leyenda').innerHTML = '';
+    $('#res-nota').innerHTML = 'Orientativo: cuándo repetir lo define la médica en tu valoración, viendo cómo está tu piel o tu gesto.';
+    mostrar(tarjeta(c, false) + tarjetaCta(), 'una');
+    var otra = document.createElement('p');
+    otra.className = 'otra-pestana';
+    otra.innerHTML = '¿Tienes un evento? <button type="button" data-ir="fecha">Mira con cuánta anticipación aplicártelo</button>';
+    $('#res-nota').appendChild(otra);
+    resumen.innerHTML = resumenHTML(c.b + '.', { v: 0, a: 0, g: 0 }, {});
+    resumen.querySelector('.puntos').innerHTML = '<i class="' + c.e + '"></i>' + esc(ETIQ.repetir[c.e]);
+    if (porUsuario) medir('repetir', ini - HOY);
+    return true;
+  }
+
+  function irAResultado() {
+    if (res.hidden) return;
+    var top = res.getBoundingClientRect().top;
+    if (top > window.innerHeight * 0.75 || top < 0) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ---------- pestañas
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+  function activar(p, enfocar) {
+    E.pestana = p;
+    tabs.forEach(function (b) {
+      var on = b.dataset.p === p;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+      if (on && enfocar) b.focus();
+    });
+    calcular(false);
+  }
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { activar(b.dataset.p); });
+    b.addEventListener('keydown', function (ev) {
+      var d = ev.key === 'ArrowRight' ? 1 : ev.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { ev.preventDefault(); activar(tabs[(i + d + tabs.length) % tabs.length].dataset.p, true); }
+    });
+  });
+
+  // ---------- pestaña 1
+  function marcarRapida(btn) {
+    rapidas.concat([btnOtra]).forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    btnOtra.setAttribute('aria-expanded', btn === btnOtra ? 'true' : 'false');
+  }
+  rapidas.forEach(function (b) {
+    b.addEventListener('click', function () {
+      marcarRapida(b);
+      campoFecha.hidden = true;
+      E.fecha = deISO(b.dataset.fecha); inFecha.value = b.dataset.fecha;
+      if (calcular(true)) setTimeout(irAResultado, 120);
+    });
+  });
+  btnOtra.addEventListener('click', function () {
+    marcarRapida(btnOtra);
+    campoFecha.hidden = false;
+    try { inFecha.focus(); if (inFecha.showPicker) inFecha.showPicker(); } catch (e) {}
+  });
+  // mientras se escribe el año a mano (0002, 0020…) no se calcula nada
+  function alCambiarFecha() { var x = deISO(inFecha.value); if (x && partes(x).y < ANIO) return; E.fecha = x; calcular(true); }
+  inFecha.addEventListener('change', alCambiarFecha);
+  inFecha.addEventListener('input', alCambiarFecha);
+
+  // ---------- pestaña 2
+  function alCambiarVisita() {
+    var l = deISO(inLlego.value), v = deISO(inVoy.value);
+    if ((l && partes(l).y < ANIO) || (v && partes(v).y < ANIO)) return;
+    E.llego = l; E.voy = v;
+    if (l) inVoy.min = aISO(Math.max(l + 1, HOY + 1));
+    calcular(true);
+  }
+  [inLlego, inVoy].forEach(function (i) { i.addEventListener('change', alCambiarVisita); i.addEventListener('input', alCambiarVisita); });
+
+  // ---------- pestaña 3
+  var chips = [].slice.call(document.querySelectorAll('[data-r]'));
+  chips.forEach(function (b) {
+    b.addEventListener('click', function () {
+      chips.forEach(function (o) { o.setAttribute('aria-checked', o === b ? 'true' : 'false'); });
+      E.trat = b.dataset.r;
+      $('#et-ultima').textContent = E.trat === 'limpieza' ? 'Mi última limpieza fue el' : 'Mi última aplicación fue el';
+      calcular(true);
+    });
+  });
+  function alCambiarUltima() { var x = deISO(inUltima.value); if (x && partes(x).y < ANIO - 6) return; E.ultima = x; calcular(true); }
+  inUltima.addEventListener('change', alCambiarUltima);
+  inUltima.addEventListener('input', alCambiarUltima);
+
+  // ---------- "Me interesa" y enlaces internos
+  resTarjetas.addEventListener('change', function (ev) {
+    var i = ev.target;
+    if (!i.matches || !i.matches('input[data-interes]')) return;
+    INTERES[i.dataset.interes] = i.checked;
+    var t = i.closest('.tarjeta'); if (t) t.classList.toggle('marcada', i.checked);
+    ponerWhatsApp();
+  });
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('[data-ir]');
+    if (!b) return;
+    activar(b.dataset.ir);
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // ---------- enlaces de campaña: ?fecha=2026-12-24 · ?pestana=visita|repetir|fecha · o #visita / #repetir
+  try {
+    var q = new URLSearchParams(location.search), qp = q.get('pestana') || (location.hash || '').replace('#', ''), qf = deISO(q.get('fecha'));
+    if (qf) {
+      E.fecha = qf; inFecha.value = aISO(qf);
+      var igual = rapidas.filter(function (b) { return deISO(b.dataset.fecha) === qf; })[0];
+      if (igual) marcarRapida(igual); else { marcarRapida(btnOtra); campoFecha.hidden = false; }
+    }
+    if (qp === 'evento' || (qf && !qp)) qp = 'fecha';
+    if (qp === 'visita' || qp === 'fecha') activar(qp); else calcular(false);
+  } catch (e) { calcular(false); }
+  ponerWhatsApp();
+
+  // ---------- apariciones al bajar y barra fija en celular
+  var revs = document.querySelectorAll('.rev');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('ve'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    revs.forEach(function (r) { io.observe(r); });
+    var barra = document.querySelector('.barra-fija'), vidrio = document.querySelector('.vidrio');
+    new IntersectionObserver(function (es) {
+      var fuera = !es[0].isIntersecting && es[0].boundingClientRect.top < 0;
+      barra.classList.toggle('ve', fuera); barra.setAttribute('aria-hidden', fuera ? 'false' : 'true');
+      barra.querySelector('a').tabIndex = fuera ? 0 : -1;
+    }).observe(vidrio);
+  } else { revs.forEach(function (r) { r.classList.add('ve'); }); }
+})();
+</script>
+<!--
+RESPALDO DE LAS REGLAS DE LA CALCULADORA · 4-nov-2026 · regla → de dónde sale
+(hechos.md = _agencia/hechos.md · datos.py = lo que publica la web · "Antes de diciembre" = blog/tratamientos-esteticos-antes-de-diciembre)
+
+Reglas generales
+- Si la fecha límite cae en sábado, domingo o festivo, se muestra el día hábil anterior → hechos.md línea 23 ("No hay horario confirmado"): es la opción más prudente. Festivos: calendario de Colombia (Ley 51 de 1983); el 8-dic es festivo.
+- El estado de cada tarjeta usa esas fechas ya corridas: si el día hábil límite ya pasó, la tarjeta baja de color (más prudente que contar solo días).
+- Letra pequeña obligatoria del plan (Hoy 1) en el cierre; "lo define la médica en tu valoración" en la nota del resultado y en cada tarjeta sin respaldo completo.
+
+Pestaña 1 · Tengo una fecha (umbrales exactos de la tabla del plan)
+- Líneas de expresión · amarillo desde 14 días → hechos.md línea 27-29: "empieza a notarse entre el día 3 y el 7, completo hacia las 2 semanas (control)"; datos.py ESTETICA[0] faq "se ve completo alrededor de las dos semanas, cuando hacemos control".
+- Líneas de expresión · verde desde 21 días → la misma línea (lo que se completa en el control tarda de 3 a 7 días en notarse: 14 + 7) + "Antes de diciembre", faq 1: "al menos esas 2 semanas, y mejor un poco más para tener margen de ajuste" + /lineas-de-expresion, paso 4: "si algo se quedó corto, lo completamos".
+- Líneas de expresión · gris con menos de 14 → mismas líneas: no alcanza a verse completo ni a hacerse el control.
+- Labios · amarillo desde 14 / gris con menos de 14 → datos.py BUSQUEDAS relleno-de-labios, "Antes de un evento": "Los labios se pueden inflamar durante 24 a 72 horas ... agenda con por lo menos dos semanas de margen"; hechos.md línea 30-32 (inflamación leve 24-72 h).
+- Labios · verde desde 21 → la misma sección: "Y si es tu primera vez, mejor todavía con más tiempo" + "Antes de diciembre": "Si es tu primera vez o son los labios, cuanto más tiempo, mejor".
+- Ojeras y contorno · 14 / 21 → datos.py SEO acido-hialuronico, "Antes de un evento": "inflamación leve o algún morado durante 24 a 72 horas ... margen de por lo menos dos semanas"; tratamiento-de-ojeras como=("30–45 minutos", "Una sesión", "Inflamación leve 24–72 horas"); hechos.md línea 187 (labios y zona bajo los ojos más propensos a hinchazón; a quien empieza le conviene más tiempo).
+- Skinbooster · verde desde 56 → hechos.md línea 36-37 ("3 sesiones cada 3–4 semanas, mantenimiento semestral"); datos.py SEO skinboosters, "Si es para un evento, empieza con tiempo": "unos dos meses en total ... lo ideal es empezar con ese margen".
+- Skinbooster · amarillo de 21 a 55 ("alcanzas 1 o 2 sesiones") → mismas líneas (sesiones cada 3 a 4 semanas) + "Antes de diciembre", faq 3: "Si te faltan menos semanas, no alcanza la serie completa y en la valoración se mira qué sí tiene sentido".
+- Skinbooster · gris con menos de 21 → MÁS PRUDENTE: la web no dice que una sola sesión no sirva; la tarjeta dice "antes de tu fecha no alcanza [la serie] ... lo define la médica en tu valoración" (misma faq 3).
+- Bioestimuladores · 56 / 42 / menos de 42 → hechos.md línea 33-35 ("cambios desde la semana 6–8 y siguen mejorando por meses"); datos.py ESTETICA bioestimuladores faq "hacia la semana 6–8"; "Antes de diciembre": "Para un evento de principios de diciembre, ya no es el tratamiento ... de enero en adelante".
+- Peeling médico · amarillo de 8 a 13, gris con menos de 8 → hechos.md línea 38-39 ("de ninguna a una semana de descamación según la profundidad"); "Antes de diciembre": "Esa semana no debería caer sobre tu evento"; datos.py SEO peelings: "Si tienes una semana ocupada, hay opciones que casi no se notan".
+- Peeling médico · verde desde 14 → MÁS PRUDENTE: la semana extra de margen la valida la Dra. (plan); la web no da días (blog/peeling-antes-de-un-viaje-a-la-playa: "no vas a encontrar un número mágico de días"). Las 3 tarjetas de peeling dicen que la intensidad la define la médica en la valoración.
+- Limpieza facial médica · cualquier fecha (hasta la víspera) → hechos.md línea 44-45 (60 min, vuelves a tu día); datos.py ESTETICA limpieza faq "Puede quedar un rubor leve por unas horas".
+
+Pestaña 2 · Vengo de visita
+- Líneas de expresión caben con control con 16 días o más y aplicación al comienzo; si no, "lo definimos en la valoración: el control es parte de cómo trabajamos" → hechos.md línea 27-29 (control hacia las 2 semanas) + plan Hoy 1.
+- Labios, ojeras y contorno al comienzo de la visita → hechos.md línea 30-32 (24-72 h) + datos.py "por lo menos dos semanas de margen"; con menos de 14 días de visita: MÁS PRUDENTE, "lo define la médica en tu valoración".
+- Skinbooster: cabe 1 sesión (1 o 2 desde 21 días; la serie completa desde 56) → hechos.md línea 36-37 + plan Hoy 1.
+- Bioestimuladores se aplican aquí y el cambio se ve ya de vuelta; aplicación a más tardar 3 días antes de irte → hechos.md línea 33-35 ("enrojecimiento o sensibilidad 1–3 días", "cambios desde la semana 6–8").
+- Peeling: depende de playa o sol fuerte → blog/peeling-antes-de-un-viaje-a-la-playa (4-nov) + hechos.md línea 207; datos.py SEO peelings ("En temporadas de mucho sol preferimos opciones más suaves").
+- Limpieza cabe siempre → hechos.md línea 44-45.
+
+Pestaña 3 · ¿Cuándo me toca repetir?
+- Líneas de expresión: de 4 a 6 meses; "preferimos no adelantarlo" → hechos.md línea 27-29 ("se repite cada 4–6 meses") y línea 205; /lineas-de-expresion faq "¿Cuánto dura?".
+- Ácido hialurónico: de 9 a 18 meses según la zona; en los labios suele durar menos → hechos.md línea 30-32; datos.py SEO acido-hialuronico faq "Entre 9 y 18 meses ... como los labios, suele durar menos"; hechos.md línea 177 (no dar otra cifra para labios).
+- Skinbooster: mantenimiento a los 6 meses; en la serie, siguiente sesión a las 3-4 semanas → hechos.md línea 36-37; datos.py SEO skinboosters.
+- Bioestimuladores: de 12 a 24 meses; en el plan inicial, siguiente sesión a las 4-8 semanas → hechos.md línea 33-35.
+- Limpieza: cada 4 a 6 semanas → hechos.md línea 44-45; datos.py SEO limpieza faq.
+-->
+</body>
+</html>

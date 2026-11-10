@@ -93,3 +93,4 @@ Pregunta el nombre del producto y búscalo en la consulta de registros sanitario
 - [Nosotros](https://theskinhaus.com.co/nosotros)
 - [Agenda tu valoración](https://theskinhaus.com.co/valoracion)
 - [Preguntas frecuentes](https://theskinhaus.com.co/preguntas-frecuentes)
+- [Calculadora: ¿cuándo me toca repetir mi bótox o mi relleno?](https://theskinhaus.com.co/cuando-repetir)

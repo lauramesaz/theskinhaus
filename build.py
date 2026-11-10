@@ -6,6 +6,7 @@ from urllib.parse import quote
 from datos import *
 from ampliacion import NOSOTROS_TEXTO, VALORACION_TEXTO   # 27-oct-2026: páginas más completas
 import blog
+import calculadora   # /cuando-repetir (9-nov-2026): calculadora permanente, armada desde tu-fecha.html
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 V = int(time.time())
@@ -391,6 +392,15 @@ def secciones(lista, ceja="En detalle", medio=""):
     return tramo(lista[:mitad], True) + "\n" + medio + "\n" + tramo(lista[mitad:], False)
 
 
+def enlace_calculadora(texto="¿Ya te lo aplicaste? Calcula cuándo te toca repetir", estilo="margin-top:26px"):
+    """9-nov-2026 (ventas, ronda 2): enlace a /cuando-repetir, con evento propio para saber desde dónde se abre."""
+    return '<p class="rev centro" style="%s"><a class="enlace" href="%s" data-ev="clic_calculadora" data-destino="%s">%s %s</a></p>' % (
+        estilo, calculadora.SLUG, calculadora.SLUG, texto, CIRC)
+
+
+CON_CALCULADORA = ("toxina-botulinica", "acido-hialuronico", "relleno-de-labios")
+
+
 def banda_cita(msg):
     """9-nov-2026: botón intermedio de las páginas de tratamiento (antes no había ninguno entre la primera pantalla y el cierre)."""
     return '''<section class="bloque banda" style="padding-top:0"><div class="isla lino"><div class="centro">
@@ -455,6 +465,7 @@ def inicio():
   <div class="panel" id="p-est">%s%s</div>
   <div class="panel" id="p-vas" hidden>%s</div>
   <p class="nota-lista centro">Todo empieza con una valoración médica.</p>
+  %s
 </div></section>
 
 <section class="bloque"><div class="caja organico">
@@ -476,7 +487,8 @@ def inicio():
 
 %s
 
-%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR), foto("consulta"),
+%s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR),
+         enlace_calculadora("¿Ya te aplicaste bótox o relleno? Calcula cuándo te toca repetir", "margin-top:22px"), foto("consulta"),
          camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre(msg=MSG_INICIO))
     pagina("index", "The Skin Haus · Medicina estética en Pereira, Oval Médica",
            "Clínica de medicina estética en Pereira: bótox, ácido hialurónico, bioestimuladores, manchas y calidad de piel, con criterio médico. También medicina vascular.",
@@ -584,7 +596,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
   <p class="ceja rev centro">Qué es</p>
   <p class="rev centro" style="font-family:var(--serif-texto);font-size:clamp(22px,2.4vw,32px);line-height:1.45;margin-top:26px">%s</p>
   <div class="burbujas rev"><div class="burbuja"><p class="ceja">Duración</p><p>%s</p></div><div class="burbuja"><p class="ceja">Sesiones</p><p>%s</p></div><div class="burbuja"><p class="ceja">Recuperación</p><p>%s</p></div></div>
-  <p class="aviso rev centro">Los tiempos son orientativos. En tu valoración te decimos qué aplica a tu caso.</p>
+  <p class="aviso rev centro">Los tiempos son orientativos. En tu valoración te decimos qué aplica a tu caso.</p>%s
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja centro">
   <p class="ceja rev">Para quién</p><h2 class="rev" style="margin-top:22px">¿Es <em>para ti?</em></h2>
@@ -601,7 +613,8 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
 <section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">
   <div class="centro"><p class="ceja rev">También te puede interesar</p></div>%s
 </div></div></section>
-%s''' % (t["intro"], dur, ses, rec, "".join('<span class="chip">%s</span>' % x for x in t["para"]),
+%s''' % (t["intro"], dur, ses, rec, "\n  " + enlace_calculadora() if t["slug"] in CON_CALCULADORA else "",
+         "".join('<span class="chip">%s</span>' % x for x in t["para"]),
          ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
              MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
          secciones(seo.get("secciones", []), medio=banda_cita(msg_cita)), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
@@ -673,7 +686,8 @@ def valoracion():
     # 9-nov-2026: nombres de las páginas desde las que se llega (?desde=...), para decirlo en el mensaje de WhatsApp.
     # Solo se aceptan las de esta lista: lo que venga en la dirección nunca se copia tal cual al mensaje.
     origenes = {"inicio": "Inicio", "medicina-estetica": "Medicina estética", "medicina-vascular": "Medicina vascular", "nosotros": "Nosotros",
-                "preguntas-frecuentes": "Preguntas frecuentes", "blog/": "Blog", MEDICA_ESTETICA["slug"]: MEDICA_ESTETICA["nombre"]}
+                "preguntas-frecuentes": "Preguntas frecuentes", "blog/": "Blog", MEDICA_ESTETICA["slug"]: MEDICA_ESTETICA["nombre"],
+                calculadora.SLUG: "Calculadora ¿cuándo me toca repetir?"}
     origenes.update((t["slug"], t["nombre"]) for t in ESTETICA + BUSQUEDAS + VASCULAR)
     origenes.update(("blog/" + a["slug"], "Blog · " + a["title"]) for a in blog.cargar())
     msg = "Hola, vengo de la página de valoración de la web y quiero agendar mi cita."
@@ -952,7 +966,7 @@ def archivo_de(url):
 
 
 def extras():
-    fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion", MEDICA_ESTETICA["slug"], "preguntas-frecuentes"] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
+    fijas = ["", "medicina-estetica", "medicina-vascular", "nosotros", "valoracion", MEDICA_ESTETICA["slug"], "preguntas-frecuentes", calculadora.SLUG] + [t["slug"] for t in ESTETICA + BUSQUEDAS + VASCULAR]
     filas = [(u, ACTUALIZADO) for u in fijas] + blog.para_sitemap()
     try:   # la fecha que ya tenía cada URL: respaldo si no hay git o el clon no tiene historial
         previas = dict(re.findall(r"<loc>%s/(.*?)</loc><lastmod>([\d-]+)</lastmod>" % re.escape(DOMINIO),
@@ -995,7 +1009,8 @@ def extras():
         lin += ["### %s" % q, plano(a), ""]
     lin += ["## Blog"] + ["- [%s](%s/blog/%s): %s" % (a["title"], DOMINIO, a["slug"], a["descripcion"]) for a in blog.cargar()]
     lin += ["", "## La clínica", "- [Nosotros](%s/nosotros)" % DOMINIO, "- [Agenda tu valoración](%s/valoracion)" % DOMINIO,
-            "- [Preguntas frecuentes](%s/preguntas-frecuentes)" % DOMINIO]
+            "- [Preguntas frecuentes](%s/preguntas-frecuentes)" % DOMINIO,
+            "- [Calculadora: ¿cuándo me toca repetir mi bótox o mi relleno?](%s/%s)" % (DOMINIO, calculadora.SLUG)]
     with open(os.path.join(AQUI, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(lin) + "\n")
     with open(os.path.join(AQUI, "assets", "favicon.svg"), "w") as f:
@@ -1021,6 +1036,7 @@ if __name__ == "__main__":
     resena()
     recomendada()
     n_blog = blog.generar()
+    calculadora.generar(globals())
     extras()
     import guia_whatsapp  # página interna /equipo (guía de ventas por WhatsApp, clave 111, noindex)
     guia_whatsapp.generar()

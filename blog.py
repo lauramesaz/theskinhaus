@@ -130,6 +130,14 @@ def articulo(a, todos):
 <div class="acciones">%s%s</div></aside>''' % (
         B["boton_wa"]("Hola, leí «%s» y quiero saber si aplica para mí." % a["title"], "blog-medio", "Pregúntanos por WhatsApp"),
         B["por_formulario"]("blog-medio"))
+    # 9-nov-2026 (ronda 2): los artículos de duración (cuánto dura, cuánto rinde, cuándo volver) enlazan la calculadora
+    # permanente /cuando-repetir. Va en la plantilla, al final del texto: el cuerpo del artículo no se toca.
+    calc = ""
+    if re.search(r"cuanto-dura|cuanto-rinde|cuando-volver", a["slug"]) and set(a["tratamientos"]) & set(B["CON_CALCULADORA"]):
+        calc = '''\n<aside class="nota-cita"><p class="ceja">Calculadora</p>
+<p>¿Ya te lo aplicaste? Pon la fecha de tu última aplicación y mira cuándo te toca repetir. Sirve también si tienes un evento.</p>
+<div class="acciones"><a class="enlace" href="%s" data-ev="clic_calculadora" data-destino="%s">Calcular mi fecha %s</a></div></aside>''' % (
+            B["calculadora"].SLUG, B["calculadora"].SLUG, B["CIRC"])
     h2s = [m.start() for m in re.finditer(r"<h2[\s>]", a["cuerpo"])]
     texto = a["cuerpo"][:h2s[2]] + nota + "\n" + a["cuerpo"][h2s[2]:] if len(h2s) >= 3 else a["cuerpo"] + "\n" + nota
     interes = next((s for s in a["tratamientos"] if s in B["NOMBRE_DE"]), None)
@@ -142,14 +150,14 @@ def articulo(a, todos):
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja"><div class="art-foto rev"><img src="%s" alt="%s" fetchpriority="high"></div></div></section>
 <section class="bloque" style="padding-top:0"><div class="caja"><article class="lectura">
-%s
+%s%s
 <p class="aviso">Este contenido es informativo y no reemplaza una valoración médica. Los resultados varían en cada persona.</p>
 </article></div></section>
 %s
 %s
 %s
 %s''' % (a.get("ceja", "Blog"), a.get("ceja", "Blog"), a.get("h1", a["title"]), a.get("intro", ""), fecha(a["actualizado"]), minutos,
-         B["foto"](foto_de(a)), a["title"], texto, faq_html,
+         B["foto"](foto_de(a)), a["title"], texto, calc, faq_html,
          B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_blog, wa_primero=True), rel_html, otros_html)
     imagen = "%s/%s" % (B["DOMINIO"], B["foto_jpg"](foto_de(a)))
     ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["descripcion"],
