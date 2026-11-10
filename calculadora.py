@@ -32,19 +32,19 @@ ARTICULOS = ["cuanto-dura-el-botox", "cuando-volver-a-ponerse-botox", "cuanto-du
 
 CSS = (".logo{cursor:pointer}"
        ".pregs{display:grid;gap:10px;margin-top:34px;max-width:860px}"
-       ".pregs details{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:26px;padding:18px 24px}"
-       ".pregs summary{cursor:pointer;font:400 19px/1.3 var(--serif-t);list-style:none;display:flex;justify-content:space-between;gap:16px}"
+       ".pregs details{background:var(--marfil) url(assets/textura-marfil.jpg) repeat 0 0/560px;border-radius:26px}"
+       ".pregs summary{cursor:pointer;font:400 19px/1.3 var(--serif-t);list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 24px}"
        ".pregs summary::-webkit-details-marker{display:none}"
        ".pregs summary::after{content:'+';font:400 22px/1 var(--serif);flex:none}"
        ".pregs details[open] summary::after{content:'\\2212'}"
-       ".pregs p{margin-top:10px;font-size:16px;line-height:1.6;color:#2a2622;max-width:46em}"
+       ".pregs p{margin:-8px 24px 18px;font-size:16px;line-height:1.6;color:#2a2622;max-width:46em}"
        ".sigue{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}"
        ".sigue a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(17,17,17,.14);"
        "background:rgba(255,255,255,.74);font-size:14.5px;line-height:1.3;text-decoration:none}"
        ".sigue a:hover{border-color:rgba(17,17,17,.4)}"
        ".sigue-t{margin-top:44px;font:700 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--taupe-t)}"
-       ".pie nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14.5px;margin:4px 0 6px}"
-       ".pie nav a{text-underline-offset:3px;padding:6px 0}")
+       ".pie nav{display:flex;flex-wrap:wrap;gap:0 22px;font-size:14.5px;margin:0 0 2px}"
+       ".pie nav a{text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}")
 
 
 def generar(ctx):

@@ -556,3 +556,16 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
   .medica-b.sin-foto .garantias{margin-top:6px}
 }
 @media (max-width:560px){.garantias{grid-template-columns:1fr;gap:16px}.donde .acciones .btn{width:100%;justify-content:center}}
+
+/* 9-nov-2026 · ronda 3 (revisión en celular). Nada cambia a la vista; solo el área de toque y un botón que partía mal.
+   · "o agenda por formulario", "Cómo llegar" de /valoracion y las migas medían 12–21 px de alto: su zona de toque
+     ahora llega a 44 px con un área invisible alrededor (el texto y el subrayado quedan donde estaban).
+   · "Pregúntanos por WhatsApp" (nota dentro del artículo) se partía en dos líneas pegadas y a la izquierda. */
+.formu,.info-contacto .enlace,.migas a{position:relative}
+.formu::after,.migas a::after{content:"";position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%)}
+.info-contacto .enlace:not(:has(.circ))::after{content:"";position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%)}
+.migas a::after{left:-5px;right:-5px}
+@media (max-width:560px){
+  .nota-cita .btn{justify-content:center;text-align:center;line-height:1.45;letter-spacing:.14em;padding:17px 22px}
+  .nota-cita .acciones{gap:14px 30px}
+}

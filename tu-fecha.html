@@ -168,7 +168,7 @@ h3{font-family:var(--serif-t);font-weight:400;font-size:21px;line-height:1.25}
 .tarjetas:not(.una) .cta .btn{width:auto}
 .nota{margin-top:22px;font-size:14px;line-height:1.55;color:var(--taupe-t);max-width:52em}
 .otra-pestana{margin-top:14px;font-size:15px}
-.otra-pestana button{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-weight:700;padding:6px 0}
+.otra-pestana button{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-weight:700;padding:6px 0;min-height:44px}
 .aparece{animation:aparece .7s var(--curva) both}
 @keyframes aparece{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
@@ -810,11 +810,28 @@ h3{font-family:var(--serif-t);font-weight:400;font-size:21px;line-height:1.25}
     }, { rootMargin: '0px 0px -6% 0px' });
     revs.forEach(function (r) { io.observe(r); });
     var barra = document.querySelector('.barra-fija'), vidrio = document.querySelector('.vidrio');
+    // 9-nov-2026 (ronda 3): la barra fija no repite un botón de WhatsApp que ya está en pantalla (el de la tarjeta
+    // "¿Te sirve?" del resultado o el del cierre): aparece al pasar el formulario y se esconde mientras se ve otro igual.
+    var pasado = false, pedido = false;
+    function barraVer() {
+      pedido = false;
+      var vh = window.innerHeight, repetido = false;
+      document.querySelectorAll('main a[data-wa], section a[data-wa]').forEach(function (a) {
+        if (a.closest('.barra-fija') || a.closest('.cab')) return;
+        var r = a.getBoundingClientRect();
+        if (r.height && r.bottom > 0 && r.top < vh) repetido = true;
+      });
+      var ve = pasado && !repetido;
+      barra.classList.toggle('ve', ve); barra.setAttribute('aria-hidden', ve ? 'false' : 'true');
+      barra.querySelector('a').tabIndex = ve ? 0 : -1;
+    }
+    function pedirBarra() { if (!pedido) { pedido = true; requestAnimationFrame(barraVer); } }
     new IntersectionObserver(function (es) {
-      var fuera = !es[0].isIntersecting && es[0].boundingClientRect.top < 0;
-      barra.classList.toggle('ve', fuera); barra.setAttribute('aria-hidden', fuera ? 'false' : 'true');
-      barra.querySelector('a').tabIndex = fuera ? 0 : -1;
+      pasado = !es[0].isIntersecting && es[0].boundingClientRect.top < 0;
+      barraVer();
     }).observe(vidrio);
+    window.addEventListener('scroll', pedirBarra, { passive: true });
+    window.addEventListener('resize', pedirBarra);
   } else { revs.forEach(function (r) { r.classList.add('ve'); }); }
 })();
 </script>

@@ -148,8 +148,19 @@
 
 
 /* La píldora flotante de WhatsApp no repite el botón de la primera pantalla: aparece al bajar. */
+/* 9-nov-2026 (ronda 3): y se esconde mientras se ve en pantalla otro botón que hace lo mismo (el de WhatsApp de la
+   banda, del cierre, de "Dónde estamos", de la nota del artículo o el de enviar del formulario), para no mostrar
+   dos veces lo mismo ni montarse sobre el bloque. */
 (function(){
   var p=document.querySelector('.wa.pildora'); if(!p) return;
-  function ver(){ p.classList.toggle('arriba', window.scrollY < window.innerHeight*0.6); }
+  var enPantalla=0;
+  function ver(){ p.classList.toggle('arriba', window.scrollY < window.innerHeight*0.6 || enPantalla>0); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ var antes=e.target._ve||false; e.target._ve=e.isIntersecting; enPantalla+=(e.isIntersecting?1:0)-(antes?1:0); });
+      ver();
+    });
+    document.querySelectorAll('main a.btn[href*="wa.me"], main .acciones a[href*="wa.me"], #form-valoracion button[type="submit"]').forEach(function(b){ io.observe(b); });
+  }
   ver(); window.addEventListener('scroll', ver, {passive:true});
 })();

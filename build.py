@@ -54,6 +54,11 @@ def logo(clase="compacto", descriptor=False):
     return '<span class="logo %s" aria-label="The Skin Haus"><span class="nombre"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span>%s</span>' % (clase, d)
 
 
+# "Cómo llegar" (pie, /valoracion, "Dónde estamos" y /ig): una sola dirección, la búsqueda en Google Maps de la
+# DIRECCION de datos.py. Las COORDENADAS de datos.py quedan para los datos estructurados (geo, hasMap).
+MAPS_URL = "https://www.google.com/maps/search/?api=1&amp;query=" + quote(DIRECCION.replace(" · ", ", "))
+
+
 # ---------------------------------------------------------------- piezas
 def cabecera(activo):
     items = [("medicina-estetica", "Estética"), ("medicina-vascular", "Vascular"), ("blog/", "Blog"), ("nosotros", "Nosotros")]
@@ -77,11 +82,11 @@ def pie(msg=None):
   <div><h4>También tratamos</h4><ul>%s</ul>
     <h4 class="pie-sig">La clínica</h4><ul><li><a href="nosotros">Nosotros</a></li><li><a href="%s">%s</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
   <div><h4>Medicina vascular</h4><ul>%s</ul>
-    <h4 class="pie-sig">Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
+    <h4 class="pie-sig">Visítanos</h4><ul><li>%s</li><li><a href="%s" target="_blank" rel="noopener">WhatsApp %s</a></li><li><a href="%s" target="_blank" rel="noopener" data-ev="clic_como_llegar" data-destino="google-maps">Cómo llegar</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · %s · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
 </div></footer>''' % (logo("completo", True), li(ESTETICA), li(BUSQUEDAS), MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"], li(VASCULAR),
-                     DIRECCION, wa(msg) if msg else wa(), TELEFONO_VISIBLE, CIUDAD)
+                     DIRECCION, wa(msg) if msg else wa(), TELEFONO_VISIBLE, MAPS_URL, CIUDAD)
 
 
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
@@ -327,8 +332,8 @@ CLINICA_LD = {
     "description": "Clínica de medicina estética en Pereira: toxina botulínica (bótox), ácido hialurónico, bioestimuladores, skinboosters, peelings, microagujas y manejo de manchas. También medicina vascular.",
     "url": DOMINIO, "telephone": TELEFONO_VISIBLE, "image": DOMINIO + "/" + foto_jpg("recepcion"),
     "address": {"@type": "PostalAddress", "streetAddress": "Av. Juan B. Gutiérrez #18-60, Edificio Oval Médica, consultorio 904", "addressLocality": "Pereira", "addressRegion": "Risaralda", "addressCountry": "CO"},
-    "geo": {"@type": "GeoCoordinates", "latitude": 4.8027788, "longitude": -75.6857281},  # edificio Oval Médica (Google Maps, 3-nov-2026)
-    "hasMap": "https://www.google.com/maps?q=4.8027788,-75.6857281",
+    "geo": {"@type": "GeoCoordinates", "latitude": COORDENADAS[0], "longitude": COORDENADAS[1]},
+    "hasMap": "https://www.google.com/maps?q=%s,%s" % COORDENADAS,
     "areaServed": [{"@type": "City", "name": c} for c in AREA],
     # 7-nov-2026: fuera "Dermatology" (aquí no hay dermatólogos). schema.org no tiene un valor para medicina estética;
     # el de la medicina vascular ("Cardiovascular") va en el bloque del Dr. Puerta. Las dos áreas van en texto.
@@ -422,7 +427,6 @@ def tarjeta_medica(vascular=False, mixta=False):
 
 # 9-nov-2026 (ventas, ronda 2): "Dónde estamos" para el inicio y /valoracion. Sin mapa incrustado (pesa) y sin horario
 # (pendiente en datos.py). "Cómo llegar" abre Google Maps buscando la dirección de datos.py.
-MAPS_URL = "https://www.google.com/maps/search/?api=1&amp;query=" + quote(DIRECCION.replace(" · ", ", "))
 
 
 def donde_estamos(msg, origen="donde"):
@@ -778,7 +782,7 @@ def valoracion():
     <p class="sub rev">Cuéntanos qué te interesa y te respondemos por WhatsApp para encontrar tu espacio. Sin compromiso y sin presión.</p>
     <div class="info-contacto rev">
       <div><p class="ceja">WhatsApp</p><p><a class="enlace" style="letter-spacing:.08em" href="%s" target="_blank" rel="noopener">%s %s</a></p></div>
-      <div><p class="ceja">Dónde estamos</p><p>%s</p><p><a class="enlace" href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></p></div>
+      <div><p class="ceja">Dónde estamos</p><p>%s</p><p><a class="enlace" href="%s" target="_blank" rel="noopener" data-ev="clic_como_llegar" data-destino="google-maps">Cómo llegar</a></p></div>
     </div>
   </div>
   <form class="form isla rev" id="form-valoracion" data-wa="%s" data-clarity-mask="true" style="margin:0">
@@ -804,7 +808,7 @@ def valoracion():
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar.</em></h2></div>
   %s
   <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
-</div></section>''' % (wa(msg), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, json.dumps(origenes, ensure_ascii=False).replace("</", "<\\/"), donde_estamos(msg),
+</div></section>''' % (wa(msg), TELEFONO_VISIBLE, CIRC, DIRECCION, MAPS_URL, WHATSAPP, opciones, FL, json.dumps(origenes, ensure_ascii=False).replace("</", "<\\/"), donde_estamos(msg),
          "".join('<div class="paso rev"><p class="num">%d</p><p class="ceja">%s</p><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(VALORACION_PASOS, 1)),
          "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), secciones(VALORACION_TEXTO, "Antes de tu cita"), faq(VALORACION_FAQ), CIRC)
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",

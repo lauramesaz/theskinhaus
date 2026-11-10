@@ -7,6 +7,7 @@ DOMINIO = "https://theskinhaus.com.co"          # comprado en GoDaddy 28-sep-202
 WHATSAPP = "573174412203"
 TELEFONO_VISIBLE = "+57 317 441 2203"
 DIRECCION = "Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira"
+COORDENADAS = (4.8027788, -75.6857281)       # edificio Oval Médica (Google Maps, 3-nov-2026); antes estaban sueltas en build.py
 HORARIO = [("Lunes a viernes", "8:00 a. m. – 6:00 p. m."), ("Sábados", "9:00 a. m. – 1:00 p. m.")]  # PENDIENTE
 INSTAGRAM = "https://www.instagram.com/"         # PENDIENTE: usuario real
 CORREO = "hola@theskinhaus.com.co"                 # PENDIENTE
