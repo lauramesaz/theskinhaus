@@ -420,6 +420,23 @@ def tarjeta_medica(vascular=False, mixta=False):
         ("Con control", "Planes por etapas, dosis precisas y controles.")]), m["slug"], CIRC)
 
 
+# 9-nov-2026 (ventas, ronda 2): "Dónde estamos" para el inicio y /valoracion. Sin mapa incrustado (pesa) y sin horario
+# (pendiente en datos.py). "Cómo llegar" abre Google Maps buscando la dirección de datos.py.
+MAPS_URL = "https://www.google.com/maps/search/?api=1&amp;query=" + quote(DIRECCION.replace(" · ", ", "))
+
+
+def donde_estamos(msg, origen="donde"):
+    edificio, calle, ciudad = DIRECCION.split(" · ")
+    nombre, consultorio = edificio.split(", ")
+    return '''<section class="bloque banda donde" style="padding-top:0" id="donde-estamos"><div class="isla"><div class="centro">
+  <p class="ceja">Dónde estamos</p>
+  <h2>%s, <em>%s.</em></h2>
+  <p class="sub">%s · %s</p>
+  <div class="acciones"><a class="btn lleno" href="%s" target="_blank" rel="noopener" data-ev="clic_como_llegar" data-destino="google-maps">Cómo llegar</a>
+  <a class="enlace" href="%s" target="_blank" rel="noopener" data-origen="%s">WhatsApp %s %s</a></div>
+</div></div></section>''' % (nombre, consultorio, calle, ciudad, MAPS_URL, wa(msg), origen, TELEFONO_VISIBLE, CIRC)
+
+
 def migas_ld(pasos):
     """pasos = [(nombre, ruta), ...] desde el inicio."""
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -546,9 +563,12 @@ def inicio():
 
 %s
 
+%s
+
 %s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR),
          enlace_calculadora("¿Ya te aplicaste bótox o relleno? Calcula cuándo te toca repetir", "margin-top:22px"), foto("consulta"),
-         tarjeta_medica(), camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre(msg=MSG_INICIO))
+         tarjeta_medica(), camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."),
+         donde_estamos(MSG_INICIO), cierre(msg=MSG_INICIO))
     pagina("index", "The Skin Haus · Medicina estética en Pereira, Oval Médica",
            "Clínica de medicina estética en Pereira: bótox, ácido hialurónico, bioestimuladores, manchas y calidad de piel, con criterio médico. También medicina vascular.",
            cuerpo, jsonld=[CLINICA_LD, {"@context": "https://schema.org", "@type": "WebSite", "name": MARCA, "url": DOMINIO + "/"}],
@@ -770,6 +790,7 @@ def valoracion():
   </form>
   <script type="application/json" id="origenes">%s</script>
 </div></section>
+%s
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Tu primera cita</p><h2 class="rev" style="margin-top:22px">Qué pasa en <em>tu valoración.</em></h2></div>
   <div class="camino"><svg class="curva" aria-hidden="true"><path d=""/></svg><div class="pasos">%s</div></div>
@@ -783,7 +804,7 @@ def valoracion():
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar.</em></h2></div>
   %s
   <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
-</div></section>''' % (wa(msg), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, json.dumps(origenes, ensure_ascii=False).replace("</", "<\\/"),
+</div></section>''' % (wa(msg), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, json.dumps(origenes, ensure_ascii=False).replace("</", "<\\/"), donde_estamos(msg),
          "".join('<div class="paso rev"><p class="num">%d</p><p class="ceja">%s</p><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(VALORACION_PASOS, 1)),
          "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), secciones(VALORACION_TEXTO, "Antes de tu cita"), faq(VALORACION_FAQ), CIRC)
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",
