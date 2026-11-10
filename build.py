@@ -17,6 +17,20 @@ def wa(msg="Hola, quiero agendar una valoración en The Skin Haus."):
     return "https://wa.me/%s?text=%s" % (WHATSAPP, quote(msg))
 
 
+# 9-nov-2026 (ventas, tanda 1): cada página manda a WhatsApp un mensaje con su nombre, y los enlaces a /valoracion
+# llevan ?interes=<slug del tratamiento>&desde=<página> (app.js preselecciona el tratamiento y lo dice en el mensaje).
+def msg_pag(nombre):
+    return "Hola, vengo de la página de %s y quiero agendar mi valoración." % nombre
+
+
+def boton_wa(msg, origen, texto="Agenda por WhatsApp"):
+    return '<a class="btn lleno" href="%s" target="_blank" rel="noopener" data-origen="%s">%s</a>' % (wa(msg), origen, texto)
+
+
+def por_formulario(origen):
+    return '<a class="subrayado formu" href="valoracion" data-origen="%s">o agenda por formulario</a>' % origen
+
+
 def foto(n):
     if n.startswith("assets/"):               # ruta completa sin extensión (p. ej. assets/equipo/valeria-enciso)
         return n + ".webp"
@@ -150,7 +164,9 @@ def estilo_en_linea():
     return _CSS
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None, pie_msg=None):
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None, pie_msg=None, desde=None, interes=None, etiqueta_wa=True):
+    """desde: de qué página viene quien hace clic en "Agenda tu valoración" (por defecto, esta misma; False = no marcar).
+    interes: slug del tratamiento que debe quedar elegido en el formulario. etiqueta_wa: píldora con texto en celular."""
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
     ld = '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False) if jsonld else ""
     ld = HEAD_MEDICION + ld
@@ -179,13 +195,19 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 %s
 </main>
 %s
-<a class="wa" href="%s" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">%s</a>
+<a class="wa%s" href="%s" target="_blank" rel="noopener" aria-label="%s">%s%s</a>
 <script src="assets/app.js?v=%d" defer></script>
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
               '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", FUENTES_GOOGLE, FUENTES_GOOGLE,
               FUENTES_CSS, estilo_en_linea(), ld,
-              cabecera(activo), cuerpo, pie(pie_msg), wa(wa_msg) if wa_msg else wa(), WA_SVG, V)
+              cabecera(activo), cuerpo, pie(pie_msg or wa_msg), " pildora" if etiqueta_wa else "", wa(wa_msg) if wa_msg else wa(),
+              "Agenda por WhatsApp" if etiqueta_wa else "Escríbenos por WhatsApp", WA_SVG,
+              "<span>Agenda por WhatsApp</span>" if etiqueta_wa else "", V)
+    if desde is not False:
+        ruta = "inicio" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo
+        consulta = ("interes=%s&amp;" % interes if interes else "") + "desde=" + (desde or ruta)
+        html = html.replace('href="valoracion"', 'href="valoracion?%s"' % consulta)
     os.makedirs(os.path.dirname(os.path.join(AQUI, archivo)), exist_ok=True)
     with open(os.path.join(AQUI, archivo + ".html"), "w", encoding="utf-8") as f:
         f.write(html)
@@ -263,15 +285,21 @@ def faq(pares):
         '<details class="rev"><summary>%s<span class="circ">+</span></summary><p>%s</p></details>' % p for p in pares)
 
 
-def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica", msg=None):
+def cierre(titulo="Hablemos de tu piel.", ceja="Valoración médica", msg=None, wa_primero=False):
+    """wa_primero=True (blog): el botón grande abre WhatsApp y el formulario queda de enlace discreto."""
+    if wa_primero:
+        botones = boton_wa(msg or "Hola, quiero agendar una valoración en The Skin Haus.", "cierre") + por_formulario("cierre")
+    else:
+        botones = '<a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a>' % (
+            wa(msg) if msg else wa(), CIRC)
     return '''<section class="bloque"><div class="isla lino cierre" style="position:relative">
 <div class="aura a1" style="opacity:.8"></div><div class="aura a2"></div>
 <div class="flota f1" data-vel="-0.05"><div class="circulo"><img src="assets/fotos/cabina-espejo.webp" alt="" loading="lazy"></div></div>
 <div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.webp" alt="" loading="lazy"></div></div>
 <div class="sobre"><p class="ceja rev">%s</p><h2 class="rev">%s</h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
-<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Escríbenos por WhatsApp %s</a></div></div>
-</div></section>''' % (ceja, titulo, wa(msg) if msg else wa(), CIRC)
+<div class="acciones rev">%s</div></div>
+</div></section>''' % (ceja, titulo, botones)
 
 
 def manifiesto(texto, ceja="Lo que nos mueve"):
@@ -345,14 +373,32 @@ def faq_ld(pares):
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", a)}} for q, a in pares]}
 
 
-def secciones(lista, ceja="En detalle"):
-    """Bloque de lectura larga (h2 + párrafos) para las páginas de tratamiento."""
+def secciones(lista, ceja="En detalle", medio=""):
+    """Bloque de lectura larga (h2 + párrafos) para las páginas de tratamiento.
+    medio: html que va a mitad de la lectura (la banda de cita); sin lectura, va solo."""
     if not lista:
-        return ""
-    cuerpo = "".join('<h2 class="rev">%s</h2><div class="rev">%s</div>' % (h, html) for h, html in lista)
-    return '''<section class="bloque" style="padding-top:0"><div class="caja"><div class="lectura">
-  <p class="ceja rev">%s</p>%s
-</div></div></section>''' % (ceja, cuerpo)
+        return medio
+    def tramo(parte, con_ceja):
+        cuerpo = "".join('<h2 class="rev">%s</h2><div class="rev">%s</div>' % (h, html) for h, html in parte)
+        return '''<section class="bloque" style="padding-top:0"><div class="caja"><div class="lectura%s">
+  %s%s
+</div></div></section>''' % ("" if con_ceja else " sigue", '<p class="ceja rev">%s</p>' % ceja if con_ceja else "", cuerpo)
+    if not medio:
+        return tramo(lista, True)
+    if len(lista) < 2:
+        return tramo(lista, True) + "\n" + medio
+    mitad = (len(lista) + 1) // 2
+    return tramo(lista[:mitad], True) + "\n" + medio + "\n" + tramo(lista[mitad:], False)
+
+
+def banda_cita(msg):
+    """9-nov-2026: botón intermedio de las páginas de tratamiento (antes no había ninguno entre la primera pantalla y el cierre)."""
+    return '''<section class="bloque banda" style="padding-top:0"><div class="isla lino"><div class="centro">
+  <p class="ceja rev">Valoración médica</p>
+  <p class="frase-marca rev">¿Quieres saber qué aplica a tu caso?</p>
+  <p class="sub rev">Primero te escuchamos. Luego recomendamos.</p>
+  <div class="acciones rev">%s%s</div>
+</div></div></section>''' % (boton_wa(msg, "banda"), por_formulario("banda"))
 
 FRASES = ["Belleza que se acompaña", "Tu piel también tiene planes", "Primero te escuchamos", "Resultados sutiles y armónicos", "El cuidado continúa después de tu cita"]
 
@@ -451,6 +497,7 @@ def tarjetas(lista, etiqueta=""):
 
 
 def especialidad(archivo, ceja, titulo, sub, img, img2, lista, etiqueta, intro_h, intro_p, titulo_seo, desc_seo, extra="", ld_extra=()):
+    msg = msg_pag("medicina estética" if etiqueta == "Estética" else "medicina vascular")
     cuerpo = hero(ceja, titulo, sub, img, img2, '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a></div>', corto=True, h1_ceja=True) + '''
 <section class="bloque" style="padding-top:clamp(40px,5vw,70px)"><div class="isla" style="padding:clamp(80px,10vw,140px) 0"><div class="caja">
   <div class="centro"><p class="ceja rev">Tratamientos</p><h2 class="rev" style="margin-top:22px">%s</h2><p class="sub rev" style="margin-top:24px">%s</p></div>
@@ -458,8 +505,8 @@ def especialidad(archivo, ceja, titulo, sub, img, img2, lista, etiqueta, intro_h
 </div></div></section>
 %s
 %s
-%s''' % (intro_h, intro_p, tarjetas(lista, etiqueta), extra, camino(), cierre())
-    pagina(archivo, titulo_seo, desc_seo, cuerpo, activo=archivo, jsonld=[CLINICA_LD, migas_ld([("Inicio", ""), (etiqueta == "Estética" and "Medicina estética" or "Medicina vascular", archivo)])] + list(ld_extra), imagen=img)
+%s''' % (intro_h, intro_p, tarjetas(lista, etiqueta), extra, camino(), cierre(msg=msg))
+    pagina(archivo, titulo_seo, desc_seo, cuerpo, activo=archivo, wa_msg=msg, jsonld=[CLINICA_LD, migas_ld([("Inicio", ""), (etiqueta == "Estética" and "Medicina estética" or "Medicina vascular", archivo)])] + list(ld_extra), imagen=img)
 
 
 def paginas_especialidad():
@@ -497,8 +544,8 @@ def paginas_especialidad():
 <section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja centro">
   <p class="ceja rev">Tu especialista</p><h2 class="rev" style="margin-top:22px">%s</h2>
   <p class="sub rev" style="margin-top:20px">%s. Atiende medicina vascular en The Skin Haus, en Pereira, y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, en Medellín</a>.</p>
-  <p class="rev" style="margin-top:30px"><a class="enlace" href="%s" target="_blank" rel="noopener">Ver su perfil completo %s</a></p>
-</div></div></section>''' % ("".join('<span class="chip">%s</span>' % s for s in senales), MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], MEDICO_VASCULAR["perfil"], CIRC),
+  <p class="rev" style="margin-top:30px"><a class="enlace" href="nosotros">Conoce al equipo médico %s</a></p>
+</div></div></section>''' % ("".join('<span class="chip">%s</span>' % s for s in senales), MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], CIRC),
                  ld_extra=[vascular_ld()])
 
 
@@ -527,9 +574,9 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
         circ_foto = t["foto"]           # con foto propia, el círculo muestra la foto genérica de antes
     else:
         circ_foto = {"facial": "piel", "retrato": "manos", "piel": "facial-detalle", "vascular": "vascular-detalle", "manos": "piel"}.get(t["foto"], "manos")
-    acciones = '<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="%s" target="_blank" rel="noopener">Pregúntanos %s</a></div>' % (
-        wa("Hola, quiero información sobre %s en The Skin Haus." % t["nombre"].lower()), CIRC)
-    msg_cita = "Hola, vengo de la página de %s en la web y quiero agendar mi valoración en The Skin Haus." % t["nombre"].lower()
+    # 9-nov-2026: el botón principal abre WhatsApp con el nombre del tratamiento; el formulario queda de enlace discreto
+    msg_cita = msg_pag(t["nombre"].lower())
+    acciones = '<div class="acciones rev">%s%s</div>' % (boton_wa(msg_cita, "hero"), por_formulario("hero"))
     preguntas = list(t["faq"]) + list(seo.get("faq", []) if seo is not t else [])
     alt = "%s en Pereira: %s" % (t["nombre"], t["linea"][0].lower() + t["linea"][1:].rstrip("."))
     cuerpo = hero(ceja, seo.get("h1", t["nombre"]), t["linea"], principal, circ_foto, acciones, corto=True, alt=alt) + '''
@@ -557,7 +604,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
 %s''' % (t["intro"], dur, ses, rec, "".join('<span class="chip">%s</span>' % x for x in t["para"]),
          ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
              MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
-         secciones(seo.get("secciones", [])), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
+         secciones(seo.get("secciones", []), medio=banda_cita(msg_cita)), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
          cierre("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_cita))
     url = DOMINIO + "/" + t["slug"]
     ld = [CLINICA_LD,
@@ -567,7 +614,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
           faq_ld(preguntas), migas_ld(migas)]
     titulo = seo.get("titulo", "%s en Pereira · The Skin Haus" % t["nombre"])
     desc = seo.get("desc", "%s %s" % (t["linea"], t["intro"][:110].rsplit(" ", 1)[0] + "…"))
-    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=principal, wa_msg=msg_cita)
+    pagina(t["slug"], titulo, desc, cuerpo, activo=esp_slug, jsonld=ld, imagen=principal, wa_msg=msg_cita, interes=t["slug"])
 
 
 # ---------------------------------------------------------------- nosotros
@@ -615,14 +662,21 @@ def nosotros():
          "".join('<span class="chip" style="text-decoration:line-through">%s</span>' % v for v in evitamos),
          MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"], CIRC,
          MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], CIRC,
-         foto("recepcion"), foto("manos"), foto("cabina"), secciones(NOSOTROS_TEXTO, "Más sobre nosotros"), cierre())
+         foto("recepcion"), foto("manos"), foto("cabina"), secciones(NOSOTROS_TEXTO, "Más sobre nosotros"), cierre(msg=msg_pag("Nosotros")))
     pagina("nosotros", "Nosotros · The Skin Haus Pereira", "The Skin Haus: medicina estética y vascular en Pereira con criterio médico, acompañamiento cercano y resultados armónicos.",
-           cuerpo, activo="nosotros", jsonld=[CLINICA_LD, medica_ld(), vascular_ld()], imagen="recepcion")
+           cuerpo, activo="nosotros", jsonld=[CLINICA_LD, medica_ld(), vascular_ld()], imagen="recepcion", wa_msg=msg_pag("Nosotros"))
 
 
 # ---------------------------------------------------------------- valoración
 def valoracion():
-    opciones = "".join("<option>%s</option>" % t["nombre"] for t in ESTETICA + BUSQUEDAS + VASCULAR)
+    opciones = "".join('<option data-slug="%s">%s</option>' % (t["slug"], t["nombre"]) for t in ESTETICA + BUSQUEDAS + VASCULAR)
+    # 9-nov-2026: nombres de las páginas desde las que se llega (?desde=...), para decirlo en el mensaje de WhatsApp.
+    # Solo se aceptan las de esta lista: lo que venga en la dirección nunca se copia tal cual al mensaje.
+    origenes = {"inicio": "Inicio", "medicina-estetica": "Medicina estética", "medicina-vascular": "Medicina vascular", "nosotros": "Nosotros",
+                "preguntas-frecuentes": "Preguntas frecuentes", "blog/": "Blog", MEDICA_ESTETICA["slug"]: MEDICA_ESTETICA["nombre"]}
+    origenes.update((t["slug"], t["nombre"]) for t in ESTETICA + BUSQUEDAS + VASCULAR)
+    origenes.update(("blog/" + a["slug"], "Blog · " + a["title"]) for a in blog.cargar())
+    msg = "Hola, vengo de la página de valoración de la web y quiero agendar mi cita."
     cuerpo = '''
 <section class="bloque" style="padding-top:clamp(150px,16vw,210px);overflow:hidden"><div class="aura a1"></div><div class="caja contacto sobre">
   <div>
@@ -640,6 +694,7 @@ def valoracion():
     <button class="btn lleno" type="submit">Enviar por WhatsApp %s</button>
     <p class="aviso" style="margin-top:0">Tus datos solo se usan para responderte. Se abrirá WhatsApp con tu mensaje listo.</p>
   </form>
+  <script type="application/json" id="origenes">%s</script>
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Tu primera cita</p><h2 class="rev" style="margin-top:22px">Qué pasa en <em>tu valoración.</em></h2></div>
@@ -654,11 +709,11 @@ def valoracion():
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Antes de <em>agendar.</em></h2></div>
   %s
   <p class="centro rev" style="margin-top:28px"><a class="enlace" href="preguntas-frecuentes">Más preguntas frecuentes %s</a></p>
-</div></section>''' % (wa(), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL,
+</div></section>''' % (wa(msg), TELEFONO_VISIBLE, CIRC, DIRECCION, WHATSAPP, opciones, FL, json.dumps(origenes, ensure_ascii=False).replace("</", "<\\/"),
          "".join('<div class="paso rev"><p class="num">%d</p><p class="ceja">%s</p><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(VALORACION_PASOS, 1)),
          "".join('<span class="chip">%s</span>' % x for x in VALORACION_TRAER), secciones(VALORACION_TEXTO, "Antes de tu cita"), faq(VALORACION_FAQ), CIRC)
     pagina("valoracion", "Agenda tu valoración · The Skin Haus Pereira", "Agenda tu valoración médica en The Skin Haus, en la Torre Médica Oval de Pereira. Te respondemos por WhatsApp para encontrar tu espacio, sin compromiso.",
-           cuerpo, activo="valoracion", jsonld=[CLINICA_LD, faq_ld(VALORACION_FAQ), migas_ld([("Inicio", ""), ("Agenda tu valoración", "valoracion")])], imagen="cabina", precarga=False)
+           cuerpo, activo="valoracion", jsonld=[CLINICA_LD, faq_ld(VALORACION_FAQ), migas_ld([("Inicio", ""), ("Agenda tu valoración", "valoracion")])], imagen="cabina", precarga=False, wa_msg=msg, desde=False)
 
 # ---------------------------------------------------------------- página de la médica estética (27-oct-2026)
 def medica():
@@ -751,10 +806,10 @@ def preguntas_frecuentes():
               + '<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">'
               + '<div class="centro"><p class="ceja rev">Seguridad</p><h2 class="rev" style="margin-top:22px">Cómo decidir <em>con tranquilidad.</em></h2></div>'
               + faq(PREGUNTAS_SEGURIDAD) + '</div></div></section>\n'
-              + bloques + cierre())
+              + bloques + cierre(msg=msg_pag("preguntas frecuentes")))
     pagina("preguntas-frecuentes", "Preguntas frecuentes de medicina estética en Pereira",
            "Respuestas sobre bótox, ácido hialurónico, relleno de labios, bioestimuladores, manchas y la valoración en The Skin Haus, Torre Médica Oval de Pereira.",
-           cuerpo, activo="medicina-estetica", imagen="consulta",
+           cuerpo, activo="medicina-estetica", imagen="consulta", wa_msg=msg_pag("preguntas frecuentes"),
            jsonld=[CLINICA_LD, faq_ld(generales + PREGUNTAS_SEGURIDAD), migas_ld([("Inicio", ""), ("Preguntas frecuentes", "preguntas-frecuentes")])])
 
 
@@ -769,7 +824,7 @@ def pagina_404():
               + tarjetas(ESTETICA[:3] + BUSQUEDAS[:3]) + busquedas_enlaces() + '</div></section>\n'
               + cierre())
     pagina("404", "Página no encontrada · The Skin Haus", "La página que buscas no existe. Mira los tratamientos de medicina estética de The Skin Haus en Pereira.",
-           cuerpo, robots="noindex", imagen="piel", precarga=False)
+           cuerpo, robots="noindex", imagen="piel", precarga=False, desde=False)
 
 
 def resena():
@@ -784,7 +839,7 @@ def resena():
                   "Tu opinión ayuda a otras personas de Pereira a decidir con tranquilidad. Te toma un minuto.",
                   "manos", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Manos cuidadas")
     pagina("resena", "Cuéntanos cómo te fue · The Skin Haus", "Deja tu reseña de The Skin Haus, medicina estética en Pereira.",
-           cuerpo, robots="noindex", imagen="manos", precarga=False, extra_head=refresco)
+           cuerpo, robots="noindex", imagen="manos", precarga=False, extra_head=refresco, desde=False, etiqueta_wa=False)
 
 
 
@@ -822,7 +877,7 @@ def recomendada():
                   "Una persona que nos conoce te recomendó The Skin Haus. " + resto,
                   "consulta", "piel", '<div class="acciones rev">%s</div>' % boton, corto=True, alt="Valoración en The Skin Haus") + aliado
     pagina("recomendada", "Te recomendaron The Skin Haus · Pereira", "Agenda tu valoración en The Skin Haus, medicina estética en Pereira.",
-           cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj)
+           cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj, pie_msg="Hola, quiero agendar una valoración en The Skin Haus.", desde=False, etiqueta_wa=False)
 
 
 # ---------------------------------------------------------------- fecha real de cada página (7-nov-2026)

@@ -192,6 +192,26 @@ main{overflow-x:clip}
 .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--negro);display:grid;place-items:center;transition:transform .4s var(--suave)}
 .wa:hover{transform:scale(1.08) rotate(-8deg)}
 .wa svg{width:26px;height:26px;fill:var(--blanco)}
+.wa span{display:none}
+@media (max-width:700px){
+.wa.pildora{width:auto;height:48px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:0 18px 0 14px;border-radius:999px;display:flex;align-items:center;gap:9px;box-shadow:0 14px 30px -18px rgba(17,17,17,.55)}
+.wa.pildora:hover{transform:none}
+.wa.pildora svg{width:21px;height:21px;flex:none}
+.wa.pildora span{display:block;font:700 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blanco);white-space:nowrap}
+.abierto .wa.pildora{display:none}
+.pie-web:has(~.wa.pildora){padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+.formu{font-size:14.5px;line-height:1.4;opacity:.85}
+.banda .isla{padding:clamp(56px,7vw,96px) var(--lado)}
+.banda .frase-marca{margin-top:20px;font-size:clamp(24px,2.6vw,34px)}
+.banda .sub{margin-top:14px}
+.banda .acciones{justify-content:center;margin-top:32px}
+.lectura.sigue>h2:first-child{margin-top:0}
+.nota-cita{background:var(--marfil) var(--tex-marfil) 0 0/640px;border-radius:32px;padding:30px 30px 32px;margin-top:clamp(40px,5vw,56px)}
+.nota-cita p+p{margin-top:12px}
+.nota-cita .acciones{margin-top:22px}
+.lectura a.btn{border-bottom-color:var(--negro)}
+@media (max-width:560px){.nota-cita{padding:26px 22px 28px;border-radius:28px}}
 .rev{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--suave),transform 1.2s var(--suave)}
 .rev.ve{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}.hero .compo .arco img,.aura,.gota,.sello,.cinta .pista{animation:none}html{scroll-behavior:auto}}
@@ -486,6 +506,6 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <div class="pie-final"><span>The Skin Haus · Pereira · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
 </div></footer>
 <a class="wa" href="https://wa.me/573174412203?text=Hola%2C%20me%20recomendaron%20The%20Skin%20Haus%20y%20quiero%20agendar%20mi%20valoraci%C3%B3n.%20Me%20recomend%C3%B3%3A%20" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
-<script src="assets/app.js?v=1794234088" defer></script>
+<script src="assets/app.js?v=1794279256" defer></script>
 </body>
 </html>

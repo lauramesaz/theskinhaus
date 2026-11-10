@@ -123,6 +123,16 @@ def articulo(a, todos):
   <div class="centro"><p class="ceja rev">Sigue leyendo</p></div>%s
 </div></section>''' % rejilla(otros)
     msg_blog = "Hola, leí «%s» en el blog de la web y quiero agendar una valoración en The Skin Haus." % a["title"]
+    # 9-nov-2026 (ventas, tanda 1): bloque de valoración después del segundo H2 (antes del tercero), con WhatsApp
+    # que nombra el artículo. Así todos los artículos tienen una invitación dentro del texto.
+    nota = '''<aside class="nota-cita"><p class="ceja">Valoración médica</p>
+<p>¿Quieres saber si esto aplica para ti? Escríbenos y lo revisamos en tu valoración.</p>
+<div class="acciones">%s%s</div></aside>''' % (
+        B["boton_wa"]("Hola, leí «%s» y quiero saber si aplica para mí." % a["title"], "blog-medio", "Pregúntanos por WhatsApp"),
+        B["por_formulario"]("blog-medio"))
+    h2s = [m.start() for m in re.finditer(r"<h2[\s>]", a["cuerpo"])]
+    texto = a["cuerpo"][:h2s[2]] + nota + "\n" + a["cuerpo"][h2s[2]:] if len(h2s) >= 3 else a["cuerpo"] + "\n" + nota
+    interes = next((s for s in a["tratamientos"] if s in B["NOMBRE_DE"]), None)
     cuerpo = '''<section class="bloque art-cab"><div class="aura a1"></div><div class="caja sobre">
   <nav class="migas rev" aria-label="Migas"><a href="">Inicio</a><span>/</span><a href="blog/">Blog</a><span>/</span><span>%s</span></nav>
   <p class="ceja rev">%s</p>
@@ -139,8 +149,8 @@ def articulo(a, todos):
 %s
 %s
 %s''' % (a.get("ceja", "Blog"), a.get("ceja", "Blog"), a.get("h1", a["title"]), a.get("intro", ""), fecha(a["actualizado"]), minutos,
-         B["foto"](foto_de(a)), a["title"], a["cuerpo"], faq_html, rel_html, otros_html,
-         B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_blog))
+         B["foto"](foto_de(a)), a["title"], texto, faq_html,
+         B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_blog, wa_primero=True), rel_html, otros_html)
     imagen = "%s/%s" % (B["DOMINIO"], B["foto_jpg"](foto_de(a)))
     ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["descripcion"],
            "datePublished": a["publicado"], "dateModified": a["actualizado"], "inLanguage": "es-CO",
@@ -153,10 +163,11 @@ def articulo(a, todos):
         ld.append(B["faq_ld"](a["faq"]))
     t = a["title"]
     titulo = t + " · The Skin Haus" if len(t) + 16 <= 62 else t
-    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), tipo="article", wa_msg=msg_blog)
+    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), tipo="article", wa_msg=msg_blog, interes=interes)
 
 
 def indice(arts):
+    msg = "Hola, vengo del blog de la web y quiero agendar mi valoración."
     cuerpo = '''<section class="bloque art-cab"><div class="aura a1"></div><div class="caja sobre centro">
   <h1 class="ceja rev">Blog de medicina estética en Pereira</h1>
   <p class="titular-vivo h1v" style="margin:26px 0 24px">%s</p>
@@ -164,7 +175,7 @@ def indice(arts):
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja">%s</div></section>
 %s''' % (B["palabras"]("Lo que conviene saber <em>antes de tu cita.</em>"),
-         rejilla(arts) if arts else '<p class="centro sub">Muy pronto, los primeros artículos.</p>', B["cierre"]())
+         rejilla(arts) if arts else '<p class="centro sub">Muy pronto, los primeros artículos.</p>', B["cierre"](msg=msg))
     ld = [B["CLINICA_LD"], {"@context": "https://schema.org", "@type": "Blog", "name": "Blog de The Skin Haus",
                             "url": B["DOMINIO"] + "/blog/", "inLanguage": "es-CO",
                             "blogPost": [{"@type": "BlogPosting", "headline": a["title"], "url": "%s/blog/%s" % (B["DOMINIO"], a["slug"]),
@@ -172,7 +183,7 @@ def indice(arts):
           B["migas_ld"]([("Inicio", ""), ("Blog", "blog/")])]
     B["pagina"]("blog/index", "Blog de medicina estética en Pereira · The Skin Haus",
                 "Respuestas claras sobre bótox, ácido hialurónico, manchas y cuidado de la piel, escritas por el equipo médico de The Skin Haus en Pereira.",
-                cuerpo, activo="blog/", jsonld=ld, imagen="piel")
+                cuerpo, activo="blog/", jsonld=ld, imagen="piel", wa_msg=msg)
 
 
 def generar():

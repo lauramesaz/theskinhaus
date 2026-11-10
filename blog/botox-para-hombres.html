@@ -192,6 +192,26 @@ main{overflow-x:clip}
 .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--negro);display:grid;place-items:center;transition:transform .4s var(--suave)}
 .wa:hover{transform:scale(1.08) rotate(-8deg)}
 .wa svg{width:26px;height:26px;fill:var(--blanco)}
+.wa span{display:none}
+@media (max-width:700px){
+.wa.pildora{width:auto;height:48px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:0 18px 0 14px;border-radius:999px;display:flex;align-items:center;gap:9px;box-shadow:0 14px 30px -18px rgba(17,17,17,.55)}
+.wa.pildora:hover{transform:none}
+.wa.pildora svg{width:21px;height:21px;flex:none}
+.wa.pildora span{display:block;font:700 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blanco);white-space:nowrap}
+.abierto .wa.pildora{display:none}
+.pie-web:has(~.wa.pildora){padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+.formu{font-size:14.5px;line-height:1.4;opacity:.85}
+.banda .isla{padding:clamp(56px,7vw,96px) var(--lado)}
+.banda .frase-marca{margin-top:20px;font-size:clamp(24px,2.6vw,34px)}
+.banda .sub{margin-top:14px}
+.banda .acciones{justify-content:center;margin-top:32px}
+.lectura.sigue>h2:first-child{margin-top:0}
+.nota-cita{background:var(--marfil) var(--tex-marfil) 0 0/640px;border-radius:32px;padding:30px 30px 32px;margin-top:clamp(40px,5vw,56px)}
+.nota-cita p+p{margin-top:12px}
+.nota-cita .acciones{margin-top:22px}
+.lectura a.btn{border-bottom-color:var(--negro)}
+@media (max-width:560px){.nota-cita{padding:26px 22px 28px;border-radius:28px}}
 .rev{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--suave),transform 1.2s var(--suave)}
 .rev.ve{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}.hero .compo .arco img,.aura,.gota,.sello,.cinta .pista{animation:none}html{scroll-behavior:auto}}
@@ -442,7 +462,7 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <body>
 <header class="cab"><div class="cab-in">
 <a href="./" aria-label="Inicio"><span class="logo compacto" aria-label="The Skin Haus"><span class="nombre"><span class="the">THE</span><span class="sh">SKIN</span><span class="sh">HAUS</span></span></span></a>
-<nav class="menu" aria-label="Principal"><a href="medicina-estetica">Estética</a><a href="medicina-vascular">Vascular</a><a href="blog/" class="activo">Blog</a><a href="nosotros">Nosotros</a><a class="btn lleno" href="valoracion">Agenda tu valoración</a></nav>
+<nav class="menu" aria-label="Principal"><a href="medicina-estetica">Estética</a><a href="medicina-vascular">Vascular</a><a href="blog/" class="activo">Blog</a><a href="nosotros">Nosotros</a><a class="btn lleno" href="valoracion?interes=toxina-botulinica&amp;desde=blog/botox-para-hombres">Agenda tu valoración</a></nav>
 <button class="hamb" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
 </div></header>
 <main>
@@ -475,6 +495,9 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <p>Menos, mejor puesto.</p>
 <p>Preferimos quedarnos cortos y completar en el control a las dos semanas, cuando el efecto ya se ve completo. Así decides con el resultado a la vista y no a ojo.</p>
 
+<aside class="nota-cita"><p class="ceja">Valoración médica</p>
+<p>¿Quieres saber si esto aplica para ti? Escríbenos y lo revisamos en tu valoración.</p>
+<div class="acciones"><a class="btn lleno" href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20y%20quiero%20saber%20si%20aplica%20para%20m%C3%AD." target="_blank" rel="noopener" data-origen="blog-medio">Pregúntanos por WhatsApp</a><a class="subrayado formu" href="valoracion?interes=toxina-botulinica&amp;desde=blog/botox-para-hombres" data-origen="blog-medio">o agenda por formulario</a></div></aside>
 <h2>Cómo cabe en la semana de trabajo en Pereira</h2>
 <p>La cita es corta y no hay incapacidad. Vuelves a tu día de inmediato, así que puede ir entre una reunión y otra o al salir de la oficina.</p>
 <p>Aun así, las primeras horas piden un poco de cuidado: no frotar ni masajear la zona, y dejar el ejercicio intenso para otro día. Si entrenas por la tarde, mueve ese entrenamiento. Todo está en <a href="blog/que-no-hacer-despues-del-botox">qué no hacer después del bótox</a>.</p>
@@ -492,18 +515,12 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 
 <h2>Qué hacer esta semana</h2>
 <p>Mírate en el espejo hablando y riendo, no con la cara quieta. Fíjate qué línea te molesta de verdad: ¿la frente, el entrecejo, los ojos? Anótalo y también lo que no quieres que cambie.</p>
-<p>Llévalo a la valoración, que es presencial y no te obliga a hacerte nada. Ahí nuestra médica estética, la <a href="dra-valeria-enciso">Dra. Valeria Enciso</a>, mira tu gesto y te explica qué conviene. <a href="valoracion">Agenda tu valoración</a> en la Torre Médica Oval. Atendemos pacientes de Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago.</p>
+<p>Llévalo a la valoración, que es presencial y no te obliga a hacerte nada. Ahí nuestra médica estética, la <a href="dra-valeria-enciso">Dra. Valeria Enciso</a>, mira tu gesto y te explica qué conviene. <a href="valoracion?interes=toxina-botulinica&amp;desde=blog/botox-para-hombres">Agenda tu valoración</a> en la Torre Médica Oval. Atendemos pacientes de Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago.</p>
 <p class="aviso">Este contenido es informativo y no reemplaza una valoración médica. Los resultados varían en cada persona.</p>
 </article></div></section>
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Lo que también <em>se pregunta.</em></h2></div>
   <div class="faq"><details class="rev"><summary>¿El bótox para hombres se nota?<span class="circ">+</span></summary><p>Depende de cómo se dose. El objetivo es suavizar la línea sin borrar la expresión: una frente brillante y sin movimiento es justo lo que se quiere evitar.</p></details><details class="rev"><summary>¿Cuánto bótox necesita un hombre?<span class="circ">+</span></summary><p>No hay una cifra única. Varias fuentes dicen que los músculos de la frente y el entrecejo suelen ser más fuertes en los hombres, pero la cantidad se decide en la valoración, mirando tu gesto.</p></details><details class="rev"><summary>¿Dónde se pone el bótox en hombres?<span class="circ">+</span></summary><p>Las zonas habituales son la frente, el entrecejo y las patas de gallo. Cuáles tratar, y cuáles dejar, se decide después de ver cómo te mueves.</p></details><details class="rev"><summary>¿Cuánto dura el bótox en hombres?<span class="circ">+</span></summary><p>Nosotros lo repetimos cada 4 a 6 meses. Cuándo te toca a ti se ve en el control y en cómo vuelven tus gestos.</p></details><details class="rev"><summary>¿Puedo volver a trabajar después del bótox?<span class="circ">+</span></summary><p>Sí. La cita dura de 20 a 30 minutos, vuelves a tu día de inmediato y no hay incapacidad. Las primeras horas piden algo de cuidado, como no hacer ejercicio intenso.</p></details><details class="rev"><summary>¿Me van a cambiar la cara?<span class="circ">+</span></summary><p>No es el objetivo. Preferimos quedarnos cortos y completar en el control a las dos semanas, antes que pasarnos y que se note.</p></details></div>
-</div></section>
-<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">
-  <div class="centro"><p class="ceja rev">Tratamientos relacionados</p></div><div class="rejilla-trat"><a class="ttrat rev" href="toxina-botulinica"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M8.5 10.5c1-.8 2-.8 3 0M12.5 10.5c1-.8 2-.8 3 0M9 15c1.8 1.3 4.2 1.3 6 0"/><path d="M9 3.5h6"/></svg></span><span class="que">Líneas de expresión</span><h3>Toxina botulínica</h3><p>Relaja las líneas de expresión sin quitarte la expresión.</p><span class="datos-mini"><span>20–30 min</span><span>Sin incapacidad</span></span><span class="ver">Ver tratamiento &#8594;</span></a></div>
-</div></div></section>
-<section class="bloque" style="padding-top:0"><div class="caja">
-  <div class="centro"><p class="ceja rev">Sigue leyendo</p></div><div class="rejilla-blog"><a class="tblog rev" href="blog/manchas-que-deja-el-acne"><div class="tblog-foto"><img src="assets/fotos/retrato.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Manchas de acné</span><h3>Manchas que deja el acné: cuánto tardan y cuándo tratarlas</h3><p>Cuánto plazo da la AAD, cómo distinguir una mancha de una cicatriz con la yema de los dedos y en qué momento se deja de esperar y se pide valoración.</p><span class="ver">Leer &#8594;</span></div></a><a class="tblog rev" href="blog/botox-preventivo-a-que-edad-empezar"><div class="tblog-foto"><img src="assets/fotos/retrato.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Bótox</span><h3>Bótox preventivo: a qué edad empezar, según tu gesto</h3><p>Antes que los años cuenta tu gesto: si la línea sale solo al fruncir, si ya se queda en reposo y qué tan firme es lo que se sabe sobre prevenir.</p><span class="ver">Leer &#8594;</span></div></a><a class="tblog rev" href="blog/dermapen-o-peeling-cual-elegir"><div class="tblog-foto"><img src="assets/fotos/piel.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Microagujas y peelings</span><h3>Dermapen o peeling: cuál elegir según tu piel</h3><p>Qué dice la Academia Americana de Dermatología, cuál se nota menos en tu semana y en qué casos ninguno de los dos es el primer paso.</p><span class="ver">Leer &#8594;</span></div></a></div>
 </div></section>
 <section class="bloque"><div class="isla lino cierre" style="position:relative">
 <div class="aura a1" style="opacity:.8"></div><div class="aura a2"></div>
@@ -511,7 +528,13 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
 <div class="flota f2" data-vel="0.05"><div class="arco"><img src="assets/fotos/manos.webp" alt="" loading="lazy"></div></div>
 <div class="sobre"><p class="ceja rev">Valoración médica</p><h2 class="rev">Conversemos sobre lo que <em>quieres cuidar.</em></h2>
 <p class="sub rev" style="margin:26px auto 0">Primero te escuchamos. Luego recomendamos.</p>
-<div class="acciones rev"><a class="btn lleno" href="valoracion">Agenda tu valoración</a><a class="enlace" href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20en%20el%20blog%20de%20la%20web%20y%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="circ">&#8594;</span></a></div></div>
+<div class="acciones rev"><a class="btn lleno" href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20en%20el%20blog%20de%20la%20web%20y%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" data-origen="cierre">Agenda por WhatsApp</a><a class="subrayado formu" href="valoracion?interes=toxina-botulinica&amp;desde=blog/botox-para-hombres" data-origen="cierre">o agenda por formulario</a></div></div>
+</div></section>
+<section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Tratamientos relacionados</p></div><div class="rejilla-trat"><a class="ttrat rev" href="toxina-botulinica"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M8.5 10.5c1-.8 2-.8 3 0M12.5 10.5c1-.8 2-.8 3 0M9 15c1.8 1.3 4.2 1.3 6 0"/><path d="M9 3.5h6"/></svg></span><span class="que">Líneas de expresión</span><h3>Toxina botulínica</h3><p>Relaja las líneas de expresión sin quitarte la expresión.</p><span class="datos-mini"><span>20–30 min</span><span>Sin incapacidad</span></span><span class="ver">Ver tratamiento &#8594;</span></a></div>
+</div></div></section>
+<section class="bloque" style="padding-top:0"><div class="caja">
+  <div class="centro"><p class="ceja rev">Sigue leyendo</p></div><div class="rejilla-blog"><a class="tblog rev" href="blog/manchas-que-deja-el-acne"><div class="tblog-foto"><img src="assets/fotos/retrato.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Manchas de acné</span><h3>Manchas que deja el acné: cuánto tardan y cuándo tratarlas</h3><p>Cuánto plazo da la AAD, cómo distinguir una mancha de una cicatriz con la yema de los dedos y en qué momento se deja de esperar y se pide valoración.</p><span class="ver">Leer &#8594;</span></div></a><a class="tblog rev" href="blog/botox-preventivo-a-que-edad-empezar"><div class="tblog-foto"><img src="assets/fotos/retrato.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Bótox</span><h3>Bótox preventivo: a qué edad empezar, según tu gesto</h3><p>Antes que los años cuenta tu gesto: si la línea sale solo al fruncir, si ya se queda en reposo y qué tan firme es lo que se sabe sobre prevenir.</p><span class="ver">Leer &#8594;</span></div></a><a class="tblog rev" href="blog/dermapen-o-peeling-cual-elegir"><div class="tblog-foto"><img src="assets/fotos/piel.webp" alt="" loading="lazy"></div><div class="tblog-txt"><span class="que">Microagujas y peelings</span><h3>Dermapen o peeling: cuál elegir según tu piel</h3><p>Qué dice la Academia Americana de Dermatología, cuál se nota menos en tu semana y en qué casos ninguno de los dos es el primer paso.</p><span class="ver">Leer &#8594;</span></div></a></div>
 </div></section>
 </main>
 <footer class="pie-web"><div class="caja">
@@ -521,11 +544,11 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
   <div><h4>También tratamos</h4><ul><li><a href="relleno-de-labios">Relleno de labios</a></li><li><a href="tratamiento-de-ojeras">Tratamiento de ojeras</a></li><li><a href="armonizacion-facial">Armonización facial</a></li><li><a href="hiperhidrosis">Hiperhidrosis</a></li><li><a href="cicatrices-de-acne">Cicatrices de acné</a></li></ul>
     <h4 class="pie-sig">La clínica</h4><ul><li><a href="nosotros">Nosotros</a></li><li><a href="dra-valeria-enciso">Dra. Valeria Enciso</a></li><li><a href="preguntas-frecuentes">Preguntas frecuentes</a></li><li><a href="blog/">Blog</a></li></ul></div>
   <div><h4>Medicina vascular</h4><ul><li><a href="aranitas-vasculares">Arañitas vasculares</a></li><li><a href="varices">Várices</a></li><li><a href="eco-doppler-venoso">Eco-doppler venoso</a></li><li><a href="cuperosis-y-rojeces">Cuperosis y rojeces</a></li></ul>
-    <h4 class="pie-sig">Visítanos</h4><ul><li>Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira</li><li><a href="https://wa.me/573174412203?text=Hola%2C%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">WhatsApp +57 317 441 2203</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
+    <h4 class="pie-sig">Visítanos</h4><ul><li>Torre Médica Oval, consultorio 904 · Av. Juan B. Gutiérrez #18-60, Pinares · Pereira</li><li><a href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20en%20el%20blog%20de%20la%20web%20y%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener">WhatsApp +57 317 441 2203</a></li><li><a href="https://www.google.com/maps?q=4.8027788,-75.6857281" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div>
 </div>
 <div class="pie-final"><span>The Skin Haus · Pereira · Colombia</span><span>Los resultados varían en cada persona. Toda indicación requiere valoración médica.</span><span>Web y SEO: <a href="https://posicion-seo.com/">Visibla</a></span></div>
 </div></footer>
-<a class="wa" href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20en%20el%20blog%20de%20la%20web%20y%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
-<script src="assets/app.js?v=1794234088" defer></script>
+<a class="wa pildora" href="https://wa.me/573174412203?text=Hola%2C%20le%C3%AD%20%C2%ABB%C3%B3tox%20para%20hombres%3A%20d%C3%B3nde%20se%20pone%20y%20c%C3%B3mo%20no%20se%20nota%C2%BB%20en%20el%20blog%20de%20la%20web%20y%20quiero%20agendar%20una%20valoraci%C3%B3n%20en%20The%20Skin%20Haus." target="_blank" rel="noopener" aria-label="Agenda por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Agenda por WhatsApp</span></a>
+<script src="assets/app.js?v=1794279256" defer></script>
 </body>
 </html>

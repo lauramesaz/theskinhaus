@@ -96,7 +96,23 @@
   }
   document.addEventListener('click', function (ev) {
     var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
-    if (a) contarWhatsApp(a.classList.contains('wa') ? 'boton-flotante' : 'enlace');
+    if (a) contarWhatsApp(a.classList.contains('wa') ? 'boton-flotante' : (a.dataset.origen || 'enlace'));
+  }, true);
+
+  // 9-nov-2026: también se cuenta el clic en lo que lleva al formulario de /valoracion (mismo patrón, con página y origen)
+  function zona(a) {
+    if (a.dataset.origen) return a.dataset.origen;
+    if (a.closest('.cab')) return 'menu';
+    if (a.closest('.hero')) return 'hero';
+    if (a.closest('.cierre')) return 'cierre';
+    if (a.closest('.pie-web')) return 'pie';
+    return 'texto';
+  }
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href]');
+    if (!a || !/(^|\/)valoracion([?#]|$)/.test(a.getAttribute('href'))) return;
+    if (window.gtag) gtag('event', 'clic_valoracion', { pagina: location.pathname, origen: zona(a) });
+    if (window.clarity) clarity('event', 'clic_valoracion');
   }, true);
 
   // 4-nov-2026: clics en los accesos redondos y la franja de diciembre de la portada (data-ev = nombre del evento)
@@ -108,13 +124,24 @@
   }, true);
 
   var form = document.querySelector('#form-valoracion');
+  // 9-nov-2026: /valoracion?interes=<slug>&desde=<página> deja elegido el tratamiento y recuerda de dónde vino la persona.
+  // "desde" solo vale si está en la lista de páginas del sitio (nunca se copia texto de la dirección al mensaje).
+  var vieneDe = '';
+  if (form) try {
+    var q = new URLSearchParams(location.search), interes = q.get('interes'), desde = q.get('desde');
+    var sel = form.querySelector('select[name="interes"]');
+    if (interes && sel) [].forEach.call(sel.options, function (o) { if (o.dataset.slug === interes) sel.value = o.value; });
+    var lista = JSON.parse((document.getElementById('origenes') || {}).textContent || '{}');
+    if (desde && Object.prototype.hasOwnProperty.call(lista, desde)) vieneDe = lista[desde];
+  } catch (e) {}
   if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     contarWhatsApp('formulario');
     var d = new FormData(form);
     var txt = 'Hola, soy ' + d.get('nombre') + '. Quiero agendar una valoración en The Skin Haus.' +
       (d.get('interes') ? '\nMe interesa: ' + d.get('interes') : '') +
-      (d.get('mensaje') ? '\n' + d.get('mensaje') : '');
+      (d.get('mensaje') ? '\n' + d.get('mensaje') : '') +
+      (vieneDe ? '\nVengo de la página: ' + vieneDe : '');
     window.open('https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(txt), '_blank', 'noopener');
   });
 })();
