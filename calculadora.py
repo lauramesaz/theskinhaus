@@ -82,6 +82,20 @@ def generar(ctx):
     cambia_re(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="%s">' % OG_DESC, "og:description")
     cambia(dominio + "/tu-fecha", url, 2, "canonical y og:url")
     cambia("</style>", CSS + "</style>", que="</style>")
+    # 9-nov-2026 (ronda 3, velocidad): en la landing la hoja de Google Fonts frena el primer pintado (Lighthouse móvil:
+    # ~0,9 s). Aquí se carga como en el resto de la web: sin frenar, y con los respaldos medidos de build.py para que
+    # el texto ocupe lo mismo antes y después de llegar la fuente (nada salta).
+    fuentes = ctx["FUENTES_GOOGLE"].replace("&", "&amp;") if "&amp;" in html.split("fonts.googleapis.com/css2", 1)[1][:300] else ctx["FUENTES_GOOGLE"]
+    cambia_re(r'<link href="https://fonts\.googleapis\.com/css2[^"]*" rel="stylesheet">',
+              '<link href="%s" rel="stylesheet" media="print" onload="this.media=\'all\'">\n<noscript><link href="%s" rel="stylesheet"></noscript>' % (fuentes, fuentes),
+              "hoja de Google Fonts")
+    cambia('--serif:"Libre Caslon Display","Big Caslon",Georgia,serif;',
+           '--serif:"Libre Caslon Display","SH Caslon Big","SH Caslon Times","SH Caslon Georgia","SH Caslon Noto","Big Caslon",Georgia,serif;', que="--serif")
+    cambia('--serif-t:"Libre Caslon Text","Big Caslon",Georgia,serif;',
+           '--serif-t:"Libre Caslon Text","SH Texto Big","SH Texto Times","SH Texto Georgia","SH Texto Noto","Big Caslon",Georgia,serif;', que="--serif-t")
+    cambia('--cursiva:"Cormorant Garamond","Libre Caslon Text",Georgia,serif;',
+           '--cursiva:"Cormorant Garamond","SH Cormorant Times","SH Cormorant Georgia","SH Cormorant Noto",Georgia,serif;', que="--cursiva")
+    cambia("<style>", "<style>" + ctx["FUENTES_CSS"], que="<style>")
     cambia("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(ld, ensure_ascii=False), que="</head>")
 
     # ---- el logo lleva al inicio (en la landing de diciembre no es enlace)

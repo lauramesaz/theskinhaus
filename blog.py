@@ -148,7 +148,7 @@ def articulo(a, todos):
   <p class="sub rev">%s</p>
   <p class="art-meta rev">Equipo médico The Skin Haus · Actualizado el %s · %d min de lectura</p>
 </div></section>
-<section class="bloque" style="padding-top:0"><div class="caja"><div class="art-foto rev"><img src="%s" alt="%s" fetchpriority="high"></div></div></section>
+<section class="bloque" style="padding-top:0"><div class="caja"><div class="art-foto rev">%s</div></div></section>
 <section class="bloque" style="padding-top:0"><div class="caja"><article class="lectura">
 %s%s
 <p class="aviso">Este contenido es informativo y no reemplaza una valoración médica. Los resultados varían en cada persona.</p>
@@ -157,7 +157,7 @@ def articulo(a, todos):
 %s
 %s
 %s''' % (a.get("ceja", "Blog"), a.get("ceja", "Blog"), a.get("h1", a["title"]), a.get("intro", ""), fecha(a["actualizado"]), minutos,
-         B["foto"](foto_de(a)), a["title"], texto, calc, faq_html,
+         B["img"](foto_de(a), a["title"], B["SIZES_ART"], ' fetchpriority="high"'), texto, calc, faq_html,
          B["cierre"]("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_blog, wa_primero=True), rel_html, otros_html)
     imagen = "%s/%s" % (B["DOMINIO"], B["foto_jpg"](foto_de(a)))
     ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["descripcion"],
@@ -171,7 +171,7 @@ def articulo(a, todos):
         ld.append(B["faq_ld"](a["faq"]))
     t = a["title"]
     titulo = t + " · The Skin Haus" if len(t) + 16 <= 62 else t
-    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), tipo="article", wa_msg=msg_blog, interes=interes)
+    B["pagina"]("blog/" + a["slug"], titulo, a["descripcion"], cuerpo, activo="blog/", jsonld=ld, imagen=foto_de(a), precarga_sizes=B["SIZES_ART"], tipo="article", wa_msg=msg_blog, interes=interes)
 
 
 def indice(arts):

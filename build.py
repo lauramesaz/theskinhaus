@@ -44,6 +44,58 @@ def foto_jpg(n):
     return "assets/fotos/%s.jpg" % n           # para redes sociales y datos estructurados
 
 
+# 9-nov-2026 (ronda 3, velocidad en celular): las fotos grandes (1050–1400 px de ancho) tienen una copia de 720 px
+# (assets/fotos/<nombre>-720.webp, hecha con _fotos_720.py). La foto principal de cada página la ofrece con srcset:
+# un celular de pantalla normal baja la de 720 (la mitad de peso) y uno de pantalla muy densa o un computador, la
+# grande de siempre. Se ve igual. Si una foto no tiene copia (p. ej. una nueva), sale como antes, sin srcset.
+# De paso cada <img> lleva su ancho y alto reales (el recorte lo sigue haciendo el CSS con object-fit).
+SIZES_ARCO = "(max-width:860px) 83vw, 540px"       # arco de la primera pantalla (ancho pintado, contando el recorte)
+SIZES_CIRC = "(max-width:860px) 73vw, 460px"       # círculo de la primera pantalla
+SIZES_ART = "(max-width:860px) 92vw, 1040px"       # foto del artículo del blog
+_MEDIDAS = {}
+
+
+def medidas(src):
+    """(ancho, alto) de un .webp, leído de la cabecera del archivo (sin librerías)."""
+    if src not in _MEDIDAS:
+        with open(os.path.join(AQUI, src), "rb") as f:
+            b = f.read(32)
+        if b[12:16] == b"VP8 ":
+            m = (int.from_bytes(b[26:28], "little") & 0x3FFF, int.from_bytes(b[28:30], "little") & 0x3FFF)
+        elif b[12:16] == b"VP8L":
+            v = int.from_bytes(b[21:25], "little")
+            m = ((v & 0x3FFF) + 1, ((v >> 14) & 0x3FFF) + 1)
+        elif b[12:16] == b"VP8X":
+            m = (int.from_bytes(b[24:27], "little") + 1, int.from_bytes(b[27:30], "little") + 1)
+        else:
+            raise SystemExit("build.py: no pude leer las medidas de " + src)
+        _MEDIDAS[src] = m
+    return _MEDIDAS[src]
+
+
+def srcset(src, sizes):
+    """(srcset, sizes) si la foto tiene copia de 720 px; si no, None."""
+    chica = src[:-5] + "-720.webp"
+    if sizes and src.endswith(".webp") and medidas(src)[0] > 720 and os.path.exists(os.path.join(AQUI, chica)):
+        return "%s 720w, %s %dw" % (chica, src, medidas(src)[0]), sizes
+    return None
+
+
+def img(n, alt="", sizes=None, extra=""):
+    src = foto(n)
+    ss = srcset(src, sizes)
+    return '<img src="%s"%s alt="%s" width="%d" height="%d"%s>' % (
+        src, ' srcset="%s" sizes="%s"' % ss if ss else "", alt, medidas(src)[0], medidas(src)[1], extra)
+
+
+def precarga_img(n, sizes):
+    """Precarga de la foto principal, con las mismas opciones que su <img> (si no coinciden, se baja dos veces)."""
+    ss = srcset(foto(n), sizes)
+    if ss:   # sin href: un navegador que no entienda imagesrcset no precarga nada, en vez de bajar la grande de más
+        return '<link rel="preload" as="image" imagesrcset="%s" imagesizes="%s" fetchpriority="high">\n' % ss
+    return '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(n)
+
+
 def foto_trat(t):
     """27-oct-2026: foto propia por tratamiento (Higgsfield, assets/fotos/<slug>.webp) si existe; si no, la genérica."""
     return t["slug"] if os.path.exists(os.path.join(AQUI, "assets", "fotos", t["slug"] + ".webp")) else t["foto"]
@@ -170,7 +222,7 @@ def estilo_en_linea():
     return _CSS
 
 
-def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, extra_head="", wa_msg=None, pie_msg=None, desde=None, interes=None, etiqueta_wa=True):
+def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen="retrato", tipo="website", precarga=True, robots=None, precarga_sizes=SIZES_ARCO, extra_head="", wa_msg=None, pie_msg=None, desde=None, interes=None, etiqueta_wa=True):
     """desde: de qué página viene quien hace clic en "Agenda tu valoración" (por defecto, esta misma; False = no marcar).
     interes: slug del tratamiento que debe quedar elegido en el formulario. etiqueta_wa: píldora con texto en celular."""
     url = DOMINIO + "/" + ("" if archivo == "index" else archivo[:-5] if archivo.endswith("/index") else archivo)
@@ -205,7 +257,7 @@ def pagina(archivo, titulo, descripcion, cuerpo, activo="", jsonld=None, imagen=
 <script src="assets/app.js?v=%d" defer></script>
 </body>
 </html>''' % (titulo, descripcion, url, ('\n<meta name="robots" content="%s">' % robots if robots else "") + extra_head, tipo, titulo, descripcion, url, DOMINIO, foto_jpg(imagen),
-              '<link rel="preload" as="image" href="%s" fetchpriority="high">\n' % foto(imagen) if precarga else "", FUENTES_GOOGLE, FUENTES_GOOGLE,
+              precarga_img(imagen, precarga_sizes) if precarga else "", FUENTES_GOOGLE, FUENTES_GOOGLE,
               FUENTES_CSS, estilo_en_linea(), ld,
               cabecera(activo), cuerpo, pie(pie_msg or wa_msg), " pildora" if etiqueta_wa else "", wa(wa_msg) if wa_msg else wa(),
               "Agenda por WhatsApp" if etiqueta_wa else "Escríbenos por WhatsApp", WA_SVG,
@@ -277,8 +329,8 @@ def hero(ceja, titulo, sub, foto_arco, foto_circ, acciones="", corto=False, alt=
     return '''<section class="hero%s">
   <div class="aura a1"></div>
   <div class="texto">%s<p class="sub rev">%s</p>%s</div>
-  <div class="compo">%s<div class="arco"><img src="%s" alt="%s" fetchpriority="high"></div><div class="circulo rev" data-vel="-0.08"><img src="%s" alt=""></div></div>
-</section>''' % (" corto" if corto else "", cab, sub, acciones, SELLO, foto(foto_arco), alt, foto(foto_circ))
+  <div class="compo">%s<div class="arco">%s</div><div class="circulo rev" data-vel="-0.08">%s</div></div>
+</section>''' % (" corto" if corto else "", cab, sub, acciones, SELLO, img(foto_arco, alt, SIZES_ARCO, ' fetchpriority="high"'), img(foto_circ, "", SIZES_CIRC))
 
 
 def cinta(frases):
@@ -992,7 +1044,9 @@ def huella(html):
     m = re.search(r"<main>(.*)</main>", html, re.S)
     if m:
         partes += [l for l in m.group(1).split("\n") if 'class="rejilla-blog"' not in l]
-    return "\n".join(partes)
+    # 9-nov-2026 (ronda 3): tampoco cuentan los datos técnicos de las fotos (srcset, sizes, ancho y alto): no cambian
+    # lo que la página dice ni lo que se ve.
+    return re.sub(r'(?<=<img )([^>]*)', lambda g: re.sub(r' (?:srcset|sizes|width|height)="[^"]*"', "", g.group(1)), "\n".join(partes))
 
 
 def fechas_reales(archivos):
