@@ -145,3 +145,11 @@
     window.open('https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(txt), '_blank', 'noopener');
   });
 })();
+
+
+/* La píldora flotante de WhatsApp no repite el botón de la primera pantalla: aparece al bajar. */
+(function(){
+  var p=document.querySelector('.wa.pildora'); if(!p) return;
+  function ver(){ p.classList.toggle('arriba', window.scrollY < window.innerHeight*0.6); }
+  ver(); window.addEventListener('scroll', ver, {passive:true});
+})();

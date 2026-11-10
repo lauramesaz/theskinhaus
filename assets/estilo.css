@@ -233,6 +233,8 @@ main{overflow-x:clip}
   .wa.pildora svg{width:21px;height:21px;flex:none}
   .wa.pildora span{display:block;font:700 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blanco);white-space:nowrap}
   .abierto .wa.pildora{display:none}
+  .wa.pildora{transition:opacity .25s, transform .25s}
+  .wa.pildora.arriba{opacity:0;pointer-events:none;transform:translateY(10px)}
   .pie-web:has(~.wa.pildora){padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 
