@@ -533,3 +533,24 @@ h1.ceja{font:700 12px/1.45 var(--sans);letter-spacing:.2em;text-transform:upperc
   .pie-grid>div:last-child>ul:nth-of-type(2){grid-area:2/2}
   .pie-grid>div:last-child>ul{align-self:start}
 }
+
+/* 9-nov-2026 · ventas ronda 2: tarjeta "Quién te atiende" con garantías (sin movimiento) */
+.medica-b{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(30px,5vw,84px);align-items:center;padding:clamp(44px,6vw,84px) clamp(22px,6vw,90px)}
+.medica-b.sin-foto{grid-template-columns:1fr 1fr}
+.medica-b .arco{aspect-ratio:4/5}
+.medica-b h2{font-size:clamp(30px,3.4vw,46px);margin-top:18px}
+.medica-b .cargo{margin-top:14px;font:700 11.5px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#8a6f58}
+.medica-b .sub{margin-top:18px;max-width:34em}
+.garantias{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:20px 30px;margin-top:30px;padding:0}
+.medica-b.sin-foto .garantias{grid-template-columns:1fr;margin-top:0}
+.garantias li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.5}
+.garantias .m{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--blanco) var(--tex-blanca) 0 0/640px;margin-top:1px}
+.garantias svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.garantias strong{display:block;font-weight:700}
+.garantias div>span{opacity:.82}
+@media (max-width:860px){
+  .medica-b,.medica-b.sin-foto{grid-template-columns:1fr}
+  .medica-b .arco{max-width:230px}
+  .medica-b.sin-foto .garantias{margin-top:6px}
+}
+@media (max-width:560px){.garantias{grid-template-columns:1fr;gap:16px}}

@@ -363,6 +363,63 @@ def tu_medica():
 </div></section>''' % (MEDICA_ESTETICA["foto"], MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"], MEDICA_ESTETICA["slug"], CIRC)
 
 
+# 9-nov-2026 (ventas, ronda 2): tarjeta corta de quién atiende + garantías, para el inicio y las páginas de tratamiento.
+# Las cuatro garantías son las de /tu-fecha (médica, producto con registro INVIMA, lugar de salud, control). Nada nuevo:
+# el nombre y el cargo salen de datos.py y las frases, de lo que ya dicen /dra-valeria-enciso y /medicina-estetica.
+# En las páginas de vascular quien atiende es el Dr. Puerta (así lo dice /medicina-vascular): ahí no va la Dra. Enciso
+# ni la garantía del producto, y la de "control" cambia por el eco-doppler, que es lo que esa página ya afirma.
+RETHUS_URL = "https://web.sispro.gov.co/THS/Cliente/ConsultasPublicas/ConsultaPublicaDeTHxIdentificacion.aspx"
+INVIMA_URL = "https://www.invima.gov.co/consulta-registros-sanitarios"
+CHULO = '<span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg></span>'
+
+
+def garantias(lista):
+    return '<ul class="garantias">%s</ul>' % "".join(
+        '<li>%s<div><strong>%s</strong><span>%s</span></div></li>' % (CHULO, a, b) for a, b in lista)
+
+
+def tarjeta_medica(vascular=False, mixta=False):
+    """mixta=True (cuperosis y rojeces): la ficha dice que ahí se unen las dos especialidades y no nombra a un solo
+    médico, así que se presenta al equipo, sin atribuirle el procedimiento a ninguno ni prometer eco-doppler."""
+    lugar = ("En un lugar de salud", "Torre Médica Oval, consultorio 904, Pereira.")
+    rethus = 'Puedes verificar su registro en el <a class="subrayado" href="%s" target="_blank" rel="noopener">RETHUS</a>, la consulta pública del Ministerio de Salud.' % RETHUS_URL
+    if mixta:
+        return '''<section class="bloque" style="padding-top:0"><div class="isla medica-b sin-foto">
+  <div><p class="ceja">Quién te atiende</p><h2>Nuestras dos <em>especialidades.</em></h2>
+  <p class="sub">%s, %s, y %s, %s.</p>
+  <p style="margin-top:22px"><a class="enlace" href="nosotros#equipo">Conoce al equipo médico %s</a></p></div>
+  %s
+</div></section>''' % (MEDICA_ESTETICA["nombre"], MEDICA_ESTETICA["titulo"].lower(), MEDICO_VASCULAR["nombre"],
+                       MEDICO_VASCULAR["titulo"].lower().replace(" · ", ", "), CIRC, garantias([
+            ("Te valora un médico", 'Puedes verificar el registro de cualquier médico en el <a class="subrayado" href="%s" target="_blank" rel="noopener">RETHUS</a>, la consulta pública del Ministerio de Salud.' % RETHUS_URL),
+            lugar]))
+    if vascular:
+        m = MEDICO_VASCULAR
+        return '''<section class="bloque" style="padding-top:0"><div class="isla medica-b sin-foto">
+  <div><p class="ceja">Quién te atiende</p><h2>%s</h2>
+  <p class="cargo">%s</p>
+  <p class="sub">Atiende medicina vascular en The Skin Haus, en Pereira.</p>
+  <p style="margin-top:22px"><a class="enlace" href="nosotros#equipo">Conoce al equipo médico %s</a></p></div>
+  %s
+</div></section>''' % (m["nombre"], m["titulo"], CIRC, garantias([
+            ("Te valora un médico", rethus),
+            ("Primero, el diagnóstico", "Empezamos con un eco-doppler, para tratar la causa y no solo lo que se ve."),
+            lugar]))
+    m = MEDICA_ESTETICA
+    return '''<section class="bloque" style="padding-top:0"><div class="isla medica-b">
+  <div class="arco"><img src="%s.webp" alt="%s, médica estética de The Skin Haus en Pereira" width="800" height="1000" loading="lazy"></div>
+  <div><p class="ceja">Quién te atiende</p><h2>Dra. Valeria <em>Enciso.</em></h2>
+  <p class="cargo">%s · The Skin Haus</p>
+  <p class="sub">Te valora en persona y te acompaña en tus tratamientos de medicina estética. Primero te escucha; luego recomienda.</p>
+  %s
+  <p style="margin-top:30px"><a class="enlace" href="%s">Conoce a la Dra. Enciso %s</a></p></div>
+</div></section>''' % (m["foto"], m["nombre"], m["titulo"], garantias([
+        ("Te valora una médica", rethus),
+        ("Producto con registro INVIMA", 'En la valoración te decimos cuál usamos y por qué, y lo puedes consultar en el <a class="subrayado" href="%s" target="_blank" rel="noopener">INVIMA</a>.' % INVIMA_URL),
+        lugar,
+        ("Con control", "Planes por etapas, dosis precisas y controles.")]), m["slug"], CIRC)
+
+
 def migas_ld(pasos):
     """pasos = [(nombre, ruta), ...] desde el inicio."""
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -487,9 +544,11 @@ def inicio():
 
 %s
 
+%s
+
 %s''' % (foto("facial"), CIRC, foto("vascular"), CIRC, tarjetas(ESTETICA), busquedas_enlaces(), tarjetas(VASCULAR),
          enlace_calculadora("¿Ya te aplicaste bótox o relleno? Calcula cuándo te toca repetir", "margin-top:22px"), foto("consulta"),
-         camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre(msg=MSG_INICIO))
+         tarjeta_medica(), camino(en_isla=False), blog.del_blog(), manifiesto("Cuidamos la piel con ciencia, sensibilidad y una mirada profundamente personal. Belleza que se acompaña, no que se impone."), cierre(msg=MSG_INICIO))
     pagina("index", "The Skin Haus · Medicina estética en Pereira, Oval Médica",
            "Clínica de medicina estética en Pereira: bótox, ácido hialurónico, bioestimuladores, manchas y calidad de piel, con criterio médico. También medicina vascular.",
            cuerpo, jsonld=[CLINICA_LD, {"@context": "https://schema.org", "@type": "WebSite", "name": MARCA, "url": DOMINIO + "/"}],
@@ -604,6 +663,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
   <p class="frase-marca rev" style="margin-top:44px">Evaluamos antes de recomendar.</p>%s
 </div></section>
 %s
+%s
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Preguntas frecuentes</p><h2 class="rev" style="margin-top:22px">Lo que suelen <em>preguntarnos.</em></h2></div>
   %s
@@ -617,7 +677,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
          "".join('<span class="chip">%s</span>' % x for x in t["para"]),
          ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
              MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
-         secciones(seo.get("secciones", []), medio=banda_cita(msg_cita)), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
+         secciones(seo.get("secciones", []), medio=banda_cita(msg_cita)), tarjeta_medica(vascular=esp_slug == "medicina-vascular", mixta=t["slug"] == "cuperosis-y-rojeces"), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
          cierre("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_cita))
     url = DOMINIO + "/" + t["slug"]
     ld = [CLINICA_LD,
@@ -656,7 +716,7 @@ def nosotros():
 </div></section>
 <section class="bloque" style="padding-top:0"><div class="caja">
   <div class="centro"><p class="ceja rev">Quién te atiende</p><h2 class="rev" style="margin-top:22px">Médicos que <em>te explican.</em></h2></div>
-  <div class="equipo">
+  <div class="equipo" id="equipo">
     <article class="medico rev" id="valeria-enciso"><div class="arco"><img src="%s.webp" alt="%s, médica estética de The Skin Haus" loading="lazy"></div>
       <p class="ceja">Medicina estética</p><h3>%s</h3><p>%s. Valora y acompaña tus tratamientos de medicina estética: bótox, ácido hialurónico, bioestimuladores y calidad de piel.</p>
       <a class="enlace" href="dra-valeria-enciso">Conoce a la Dra. Enciso %s</a></article>
