@@ -102,6 +102,9 @@ VASCULAR = [
               ("¿Qué pasa si no las trato?", "Depende del caso. En la valoración te decimos con claridad si es urgente o si puede esperar.")]),
     dict(slug="eco-doppler-venoso", nombre="Eco-doppler venoso", foto="vascular",
          h1="Eco-doppler venoso <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
+         # 9-nov-2026 (Search Console: 58 apariciones, puesto 8, 0 clics): título y descripción propios, con lo que la ficha ya afirma
+         titulo="Eco-doppler venoso en Pereira: examen de 30 a 40 minutos",
+         desc="Eco-doppler venoso en Pereira: ecografía de las venas de las piernas, sin ayunas, en 30 a 40 minutos. Sales con el mapa venoso y la explicación del médico.",
          linea="Ver cómo circula tu sangre antes de decidir nada.",
          intro="Una ecografía que muestra en tiempo real cómo funcionan las venas de tus piernas: si las válvulas cierran bien, dónde hay reflujo y cuál es el origen de las várices o arañitas. Es el mapa para un tratamiento acertado.",
          para=["Antes de tratar arañitas o várices", "Pesadez, hinchazón o dolor en piernas", "Seguimiento después de un tratamiento vascular"],
@@ -312,9 +315,9 @@ BUSQUEDAS = [
               ("¿Cuánto dura el relleno de labios?", "Varios meses. En los labios suele durar menos que en otras zonas porque es una zona con mucho movimiento. Te damos una referencia según el producto y tu caso."),
               ("¿Se puede revertir?", "Sí. El ácido hialurónico se puede disolver con una enzima (hialuronidasa) si alguna vez fuera necesario."),
               ("¿Se va a notar que me hice algo?", "La idea es que se note que te ves bien, no qué te hiciste. Empezamos con poca cantidad y, si hace falta, completamos después.")],
-         titulo="Relleno de labios en Pereira: natural y reversible",
+         titulo="Relleno de labios en Pereira: natural, reversible, 30–45 min",
          h1="Relleno de labios <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
-         desc="Relleno de labios en Pereira con ácido hialurónico: definir, hidratar o dar volumen sutil en 30–45 minutos, en proporción con tu rostro. Te valora la Dra. Enciso.",
+         desc="Relleno de labios en Pereira con ácido hialurónico: una sesión de 30 a 45 minutos, inflamación leve 24 a 72 h y es reversible. Te valora la Dra. Enciso.",
          secciones=[
              ("Relleno de labios natural en Pereira",
               "<p>Si lo que te frena es el miedo a que se note, empecemos por ahí. Un relleno de labios no tiene que ser “más boca”. Puede ser solo perfilar el borde, corregir una asimetría leve o devolver hidratación a unos labios que se ven secos.</p>"
