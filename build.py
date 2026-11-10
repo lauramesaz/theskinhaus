@@ -1031,6 +1031,84 @@ def recomendada():
            cuerpo, robots="noindex", imagen="consulta", precarga=False, wa_msg=msj, pie_msg="Hola, quiero agendar una valoración en The Skin Haus.", desde=False, etiqueta_wa=False)
 
 
+# ---------------------------------------------------------------- /ig: la página del enlace de la biografía de Instagram
+# 9-nov-2026 (ventas, ronda 3). Pensada para celular: logo, quiénes somos y 5 botones grandes. Sin menú, sin pie y
+# sin fotos (abre al instante dentro de Instagram). noindex y fuera del sitemap. No carga app.js (no hay menú): lleva
+# su propia medición, con el mismo evento clic_whatsapp de toda la web y origen "ig".
+MSG_IG = "Hola, vengo de Instagram y quiero agendar mi valoración"
+IG_CSS = (".ig{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;"
+          "padding:clamp(26px,6vh,80px) 20px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;position:relative;overflow:hidden}"
+          ".ig .logo.completo{font-size:clamp(32px,10vw,44px);text-align:left}"
+          ".ig h1{margin-top:clamp(24px,4.5vh,38px)}"
+          ".ig .frase-marca{margin-top:10px;font-size:clamp(23px,6.6vw,28px)}"
+          ".ig nav{width:100%;max-width:420px;display:grid;gap:10px;margin-top:clamp(22px,4vh,36px)}"
+          ".ig nav .btn{justify-content:center;width:100%;min-height:58px;padding:12px 22px;font-size:12.5px;line-height:1.35;letter-spacing:.16em;"
+          "text-align:center;background:rgba(255,255,255,.55)}"
+          ".ig nav .btn.lleno{background:var(--negro)}"
+          ".ig nav .btn.lleno:hover{background:var(--negro);color:var(--blanco)}"
+          ".ig nav .btn svg{width:20px;height:20px;fill:currentColor;flex:none}"
+          ".ig .donde-ig{margin-top:clamp(24px,4vh,34px);font-size:14.5px;line-height:1.6;max-width:24em}"
+          ".ig .legal-ig{margin-top:14px;font-size:12.5px;line-height:1.5;color:#5d554c;max-width:26em}"
+          ".ig > :not(.aura){position:relative;z-index:1}")
+IG_JS = ("document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href]');if(!a)return;"
+         "if(a.href.indexOf('wa.me')>-1){if(window.gtag)gtag('event','clic_whatsapp',{pagina:location.pathname,origen:'ig'});"
+         "if(window.clarity)clarity('event','clic_whatsapp');}"
+         "else if(a.dataset.ev){if(window.gtag)gtag('event',a.dataset.ev,{destino:a.dataset.destino||a.getAttribute('href'),pagina:location.pathname,origen:'ig'});"
+         "if(window.clarity)clarity('event',a.dataset.ev);}},true);")
+
+
+def ig():
+    titulo = "The Skin Haus · Medicina estética y vascular en %s" % CIUDAD
+    desc = "Agenda tu valoración por WhatsApp, calcula cuándo te toca repetir y conoce los tratamientos de The Skin Haus, en %s." % CIUDAD
+    edificio, calle, ciudad = DIRECCION.split(" · ")
+    botones = [
+        '<a class="btn lleno" href="%s" target="_blank" rel="noopener" data-origen="ig">%s<span>Agenda por WhatsApp</span></a>' % (wa(MSG_IG), WA_SVG),
+        '<a class="btn" href="%s" data-ev="clic_ig" data-destino="%s">¿Cuándo me toca repetir?</a>' % (calculadora.SLUG, calculadora.SLUG),
+        '<a class="btn" href="medicina-estetica" data-ev="clic_ig" data-destino="medicina-estetica">Tratamientos</a>',
+        '<a class="btn" href="%s" data-ev="clic_ig" data-destino="%s">Conoce a la Dra. Valeria</a>' % (MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["slug"]),
+        '<a class="btn" href="%s" target="_blank" rel="noopener" data-ev="clic_como_llegar" data-destino="google-maps">Cómo llegar</a>' % MAPS_URL,
+    ]
+    html = """<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<base href="/">
+<title>%s</title>
+<meta name="description" content="%s">
+<link rel="canonical" href="%s/ig">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website"><meta property="og:title" content="%s"><meta property="og:description" content="%s">
+<meta property="og:url" content="%s/ig"><meta property="og:image" content="%s/%s"><meta property="og:locale" content="es_CO">
+<meta name="theme-color" content="#FAF8F3">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="%s" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="%s" rel="stylesheet"></noscript>
+<style>%s%s%s</style>
+%s</head>
+<body>
+<main class="ig">
+  <div class="aura a1"></div>
+  <a href="./" aria-label="The Skin Haus, inicio" data-ev="clic_ig" data-destino="inicio">%s</a>
+  <h1 class="ceja">Medicina estética y vascular en %s</h1>
+  <p class="frase-marca">Tu piel también tiene planes.</p>
+  <nav aria-label="Enlaces de The Skin Haus">
+    %s
+  </nav>
+  <p class="donde-ig">%s<br>%s · %s</p>
+  <p class="legal-ig">Los resultados varían en cada persona. Toda indicación requiere valoración médica.</p>
+</main>
+<script>%s</script>
+</body>
+</html>
+""" % (titulo, desc, DOMINIO, titulo, desc, DOMINIO, DOMINIO, foto_jpg("retrato"), FUENTES_GOOGLE, FUENTES_GOOGLE,
+       FUENTES_CSS, estilo_en_linea(), IG_CSS, HEAD_MEDICION, logo("completo", True), CIUDAD, "\n    ".join(botones),
+       edificio, calle, ciudad, IG_JS)
+    with open(os.path.join(AQUI, "ig.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 # ---------------------------------------------------------------- fecha real de cada página (7-nov-2026)
 # Antes el sitemap ponía la misma fecha (ACTUALIZADO) a todas las páginas fijas. Ahora cada URL lleva el día del
 # último cambio real de su archivo, sacado del historial de git. Qué cuenta como cambio: el título, la descripción,
@@ -1174,6 +1252,7 @@ if __name__ == "__main__":
     pagina_404()
     resena()
     recomendada()
+    ig()
     n_blog = blog.generar()
     calculadora.generar(globals())
     extras()
