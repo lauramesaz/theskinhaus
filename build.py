@@ -635,7 +635,7 @@ def paginas_especialidad():
 <section class="bloque" style="padding-top:0"><div class="isla" style="padding:clamp(70px,9vw,120px) 0"><div class="caja centro">
   <p class="ceja rev">Tu especialista</p><h2 class="rev" style="margin-top:22px">%s</h2>
   <p class="sub rev" style="margin-top:20px">%s. Atiende medicina vascular en The Skin Haus, en Pereira, y también en <a class="subrayado" href="%s" target="_blank" rel="noopener">Seravena, en Medellín</a>.</p>
-  <p class="rev" style="margin-top:30px"><a class="enlace" href="nosotros">Conoce al equipo médico %s</a></p>
+  <p class="rev" style="margin-top:30px"><a class="enlace" href="nosotros#equipo">Conoce al equipo médico %s</a></p>
 </div></div></section>''' % ("".join('<span class="chip">%s</span>' % s for s in senales), MEDICO_VASCULAR["nombre"], MEDICO_VASCULAR["titulo"], MEDICO_VASCULAR["perfil"], CIRC),
                  ld_extra=[vascular_ld()])
 
@@ -834,7 +834,7 @@ def medica():
     ]
     preguntas = [
         ("¿Dónde atiende la Dra. Valeria Enciso?", "En The Skin Haus, en la Torre Médica Oval de Pereira. Atiende pacientes de Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
-        ("¿Cómo agendo una valoración con ella?", "Escríbenos por WhatsApp al %s o deja tus datos en la página de valoración y te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),
+        ("¿Cómo agendo una valoración con ella?", "Escríbenos por WhatsApp al %s o deja tus datos en la <a class=\"subrayado\" href=\"valoracion\">página de valoración</a> y te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),
         ("¿La valoración es presencial?", "Sí. Por WhatsApp agendamos y resolvemos dudas generales, pero el diagnóstico y el plan se hacen en persona."),
         ("¿Puedo hacerme el tratamiento el mismo día de la valoración?", "En muchos casos sí, si la médica lo considera adecuado y tú te sientes lista o listo para decidir."),
         ("¿Cómo verifico que un médico está autorizado para ejercer?", "En el RETHUS, el registro del Ministerio de Salud. Se consulta con el número de documento o con el nombre y el primer apellido del profesional, y muestra su profesión y su estado de autorización."),
@@ -861,7 +861,7 @@ def medica():
 # ---------------------------------------------------------------- preguntas frecuentes (27-oct-2026)
 PREGUNTAS_LOCALES = [
     ("¿Dónde queda The Skin Haus?", "En la Torre Médica Oval de Pereira. Atendemos pacientes de toda el área: Pereira, Dosquebradas, Santa Rosa de Cabal, La Virginia y Cartago."),
-    ("¿Cómo agendo una cita?", "Por WhatsApp al %s o dejando tus datos en la página de valoración. Te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),
+    ("¿Cómo agendo una cita?", "Por WhatsApp al %s o dejando tus datos en la <a class=\"subrayado\" href=\"valoracion\">página de valoración</a>. Te respondemos para encontrar tu espacio." % TELEFONO_VISIBLE),   # 9-nov-2026: con enlace (barrido de fugas)
     ("¿Cuánto cuestan los tratamientos?", "Depende de la zona, del producto y de la cantidad que necesites. Te damos el valor exacto en la valoración, antes de empezar, para que decidas con toda la información."),
 ]
 PREGUNTAS_SEGURIDAD = [
