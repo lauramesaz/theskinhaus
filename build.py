@@ -698,7 +698,7 @@ def tratamiento(t, hermanos, esp_slug, esp_nombre, etiqueta, padre=None):
          ('\n  <p class="rev" style="margin-top:18px">Te valora la <a class="subrayado" href="%s">%s</a>, médica estética de The Skin Haus.</p>' % (
              MEDICA_ESTETICA["slug"], MEDICA_ESTETICA["nombre"]) if esp_slug == "medicina-estetica" else ""),
          secciones(seo.get("secciones", []), medio=banda_cita(msg_cita)), tarjeta_medica(vascular=esp_slug == "medicina-vascular", mixta=t["slug"] == "cuperosis-y-rojeces"), faq(preguntas), CIRC, blog.lecturas(t["slug"]), tarjetas(rel, etiqueta),
-         cierre("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_cita))
+         cierre("Conversemos sobre lo que <em>quieres cuidar.</em>", msg=msg_cita, wa_primero=True))   # 9-nov-2026: igual que arriba, WhatsApp primero
     url = DOMINIO + "/" + t["slug"]
     ld = [CLINICA_LD,
           {"@context": "https://schema.org", "@type": "MedicalProcedure", "name": t["nombre"], "url": url,
