@@ -9,6 +9,62 @@ Aquí se copian los datos cada lunes (la nube no puede abrir Search Console):
 página · impresiones · clics · posición · consultas principales (solo medicina estética).
 Todavía sin datos: la web es nueva y Google tarda unos días en mostrar impresiones.
 
+## Plan orgánico 13-nov-2026 (sesión de trabajo de Claude)
+
+Con la foto del 9-nov (8 clics, 476 apariciones, puesto 12,9) y Google mirado desde Pereira el 13-nov (`hl=es&gl=co`,
+navegador de la app; a la búsqueda 11 Google bloqueó y no se insistió). **No tocar antes del 4-dic-2026** ninguna de
+las páginas de la tabla "Hecho hoy".
+
+**Quién sale arriba en Pereira (13-nov) y qué tiene que nosotros no:**
+
+| Búsqueda | Primeros puestos | Qué tienen | Qué nos falta de verdad |
+|---|---|---|---|
+| botox pereira | yilmarcaviedes.com/servicios/botox-pereira, mapa (Salud Morena 176 reseñas, Dra. Juanita Giraldo 301, Dra. María Paula González 65), Doctoralia, drgarciapalacio.com/faciales/botox-en-pereira, TopDoctors | Páginas de ~1.000 palabras con "Pereira" 10 a 14 veces (también en los subtítulos), 4 preguntas, dirección, años de experiencia, valor de la valoración publicado (uno) | En contenido, nada: la nuestra tiene 1.470 palabras, 11 "Pereira" y 10 preguntas. Falta ficha de Google con reseñas (el mapa va encima) y antigüedad del dominio. Pregunta que ellos contestan y nosotros no: bruxismo (decisión de la Dra.) |
+| armonización facial pereira | Instagram de una médica, drcarlospereira.com/pages/armonizacion-facial, mapa, TopDoctors, esteticaenpereira.com, drcristiansanchez.com.co/acido-hialuronico, clinimedcol.com/estetica | Reseñas con nombre en la página, pregunta "¿cuánto dura el efecto?", lista de procedimientos | La pregunta "¿Cuánto dura el efecto de una armonización facial?" (Google la muestra). Queda lista para el 24-nov |
+| relleno de labios pereira | AgendaPro (con rango de precios), victorhenryreyes.com, clinicasesteticas.com.co, angelapava.com/acido-hialuronico, TopDoctors, UDL | Directorios con precios "desde" | Nada de contenido; precios no publicamos por regla. Artículo "precio del relleno de labios en Pereira" a la cola |
+| ácido hialurónico pereira | Respuesta de IA de Google (cita a Víctor Reyes, Bonilla, Doctoralia, El Cielo), mapa, TopDoctors, Doctoralia, victorhenryreyes.com | Precio "desde" y duración en una frase que la IA puede citar | Artículo de valor por ml en Pereira a la cola |
+| limpieza facial pereira | Mapa de spas (CorpoFacial 231 reseñas, Amara 382), esteticaamara.com.co con precio, Revital Spa con precio, AgendaPro, Doctoralia | Precio publicado y reseñas | Es búsqueda de spa con precio: nuestra página es médica y sin precio. Artículo "cuánto vale una limpieza facial en Pereira: qué incluye" a la cola |
+| medicina estética pereira | Respuesta de IA (Giraldo, Salud Morena, Clinimed, González, Skinalia), Doctoralia, mapa, TopDoctors, clinimedcol.com, mariapaulagonzalez.com | Nombre del médico en el título, ficha de Google con 65 a 300 reseñas | Ficha de Google y reseñas. Título del inicio con la búsqueda adelante: listo para el 24-nov |
+| bioestimuladores pereira | Respuesta de IA (Skinalia, Dra. Duarte, Palma, Sánchez), udl.com.co, skinalia.co/radiesse-sculptra | Título con algo concreto, página por producto | Hecho hoy: título concreto, sección "en Pereira", preguntas de valor y de dónde |
+| peeling químico pereira | Respuesta de IA con precios de Doctoralia, udl.com.co, Doctoralia, bonillacirugiaplastica.com | Precio por sesión | Hecho hoy: sección "en Pereira" y preguntas de valor y de dónde (sin cifras) |
+| eco doppler venoso pereira | Mapa (3 centros de ecografía), inscardiovascular.com, megacentropinares.com, TopDoctors, vyracardiologia.com | Dirección, para qué sirve, qué detecta | Hecho hoy: 2 secciones y 4 preguntas (para qué sirve, cuánto dura, dónde, valor) |
+| cuánto dura el bótox (todo el país) | Respuesta de IA, videos de Instagram, clinicafernandez.com, drjaimearoca.com, clinicadianadussan.com, barraquer.com | Contestan "qué pasa cuando se acaba", "cuántas veces al año", factores | Hecho hoy: sección "Qué pasa cuando se acaba el efecto" y 1 pregunta. Tabla por zona NO: no hay dato propio por zona en hechos.md |
+
+**Hecho hoy (publicado el 13-nov; no tocar antes del 4-dic-2026):**
+
+| Página | Antes | Después |
+|---|---|---|
+| /bioestimuladores · título | Bioestimuladores de colágeno en Pereira · The Skin Haus | Bioestimuladores de colágeno en Pereira: 1 a 3 sesiones |
+| /bioestimuladores · texto | 3 secciones, 5 preguntas, "Pereira" 3 veces | + sección "Bioestimuladores en Pereira: cómo es la cita" + preguntas "¿Cuánto valen…en Pereira?" y "¿Dónde ponerse…en Pereira?" |
+| /peelings-medicos · texto | 4 secciones, 6 preguntas, "Pereira" 3 veces | + sección "Tu peeling químico en Pereira, paso a paso" + preguntas de valor y de dónde |
+| /microagujas · preguntas | 6 | + "¿Cuánto vale una sesión de dermapen en Pereira?" y "¿Dónde hacerme microagujas en Pereira?" |
+| /skinboosters · preguntas | 6 | + "¿Cuánto vale un skinbooster en Pereira?" |
+| /manchas-y-melasma · preguntas | 5 | + "¿Cuánto cuesta un tratamiento de manchas en la cara en Pereira?" + enlace a blog/manchas-que-deja-el-acne |
+| /tratamiento-de-ojeras · preguntas | 6 | + "¿Cuánto cuesta el tratamiento de ojeras en Pereira?" |
+| /eco-doppler-venoso · texto (título y descripción del 9-nov sin tocar) | 370 palabras, 3 preguntas | + 2 secciones (cuándo conviene; cómo es el examen en Pereira) + 4 preguntas |
+| /blog/cuanto-dura-el-botox · texto (título y descripción del 9-nov sin tocar) | 5 preguntas | + sección "Qué pasa cuando se acaba el efecto" + 1 pregunta + enlaces a cuando-volver-a-ponerse-botox, cuanto-dura-el-botox-en-las-axilas y botox-para-hombres (que solo tenía 1 enlace) |
+
+Único título cambiado hoy: /bioestimuladores (1 de 8 permitidos). Todas las preguntas nuevas salen también en los
+datos estructurados (FAQPage) porque los genera `build.py`.
+
+**No se tocó hoy por la regla de las 3 semanas (título o descripción cambiados hace poco). Qué hacer y cuándo:**
+
+| Página | Último cambio | Libre desde | Qué hacer ese día |
+|---|---|---|---|
+| /toxina-botulinica | título 3-nov | 2026-11-24 | Mirar primero el puesto de "botox pereira". Si sigue en 11 a 15: subtítulo de preguntas con "bótox en Pereira" y, si la Dra. lo hace, pregunta de bruxismo. Título no (ya dice "Bótox en Pereira") |
+| /armonizacion-facial | título 3-nov | 2026-11-24 | Sumar la pregunta "¿Cuánto dura el efecto de una armonización facial?" con los tiempos de datos.py (bótox 4–6 meses, ácido hialurónico 9–18, bioestimuladores 12–24) |
+| / (inicio) | título 3-nov | 2026-11-24 | Título con la búsqueda adelante: "Medicina estética en Pereira · The Skin Haus, Oval Médica" (hoy empieza por la marca) |
+| /blog/precio-del-botox-en-pereira | título 3-nov | 2026-11-24 | 21 apariciones, puesto 6,3, 0 clics: descripción que diga qué va a encontrar (qué define el valor, qué incluye, alertas). Lo hace la rutina (mejoras.md) |
+| /relleno-de-labios | título y descripción 9-nov | 2026-11-30 | Nada hasta medir el título del 9-nov. Si sigue sin clics: probar descripción con "sin cambiar tu forma" |
+| /blog/cuanto-rinde-1-ml-de-acido-hialuronico | título y descripción 9-nov | 2026-11-30 | Medir primero. Tiene 110 apariciones: es la que más puede dar |
+| /blog/morados-e-inflamacion-despues-del-acido-hialuronico | título y descripción 9-nov | 2026-11-30 | Medir primero |
+| /eco-doppler-venoso · título | 9-nov | 2026-11-30 | Medir primero (el texto sí se amplió hoy) |
+
+**Indexación:** /blog/botox-para-hombres pasó de 1 a 2 enlaces dentro de textos (más el índice del blog);
+/blog/manchas-que-deja-el-acne recibe 1 enlace nuevo desde /manchas-y-melasma. Las dos siguen en "Pedir indexación" de mejoras.md.
+
+**Cola de temas:** reordenada el 13-nov en `temas.md` (primero Pereira con intención de compra: valor, dónde, comparación).
+
 ## Foto del 9-nov-2026 (últimos 28 días: 11-oct a 7-nov)
 
 Totales: **8 clics · 476 apariciones · CTR 1,7 % · posición media 12,9**.

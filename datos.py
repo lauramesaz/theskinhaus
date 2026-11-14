@@ -209,7 +209,7 @@ SEO = {
              ("¿Cuánto cobran por inyectar ácido hialurónico en Pereira?", "Depende de las zonas y de la cantidad de producto que necesites. Te damos el valor exacto en la valoración, después de ver tu rostro y antes de empezar.")]),
 
     "bioestimuladores": dict(
-        titulo="Bioestimuladores de colágeno en Pereira · The Skin Haus",
+        titulo="Bioestimuladores de colágeno en Pereira: 1 a 3 sesiones",   # 13-nov-2026: antes "… · The Skin Haus"; no tocar antes del 4-dic-2026
         h1="Bioestimuladores de colágeno <em>en Pereira</em>",   # 7-nov-2026: Pereira también en el título visible
         desc="Bioestimuladores de colágeno en Pereira (ácido poliláctico e hidroxiapatita de calcio) para flacidez y firmeza. Un cambio progresivo que dura de 12 a 24 meses.",
         secciones=[
@@ -285,7 +285,7 @@ SEO = {
              "<p>Las manchas se tratan en medicina estética y en dermatología. Si en la valoración vemos una lesión que debe revisar un dermatólogo, por ejemplo un lunar que cambió de forma o de color, te lo decimos y te orientamos.</p>"),
         ],
         faq=[("¿Qué especialista quita las manchas de la cara?", "Un médico con formación en piel: medicina estética o dermatología. Lo importante es que primero diagnostique qué tipo de mancha tienes."),
-             ("¿Por qué me salen manchas en la cara?", "Por el sol, por cambios hormonales, por inflamación (como el acné) o por la edad. Muchas veces se suman varias causas.")]),
+             ("¿Por qué me salen manchas en la cara?", "Por el sol, por cambios hormonales, por inflamación (<a href=\"blog/manchas-que-deja-el-acne\">como el acné</a>) o por la edad. Muchas veces se suman varias causas.")]),
 
     "limpieza-facial-medica": dict(
         titulo="Limpieza facial profunda en Pereira · The Skin Haus",
@@ -477,6 +477,68 @@ SEO["microagujas"]["secciones"] += [
 ]
 SEO["microagujas"]["faq"] += [
     ("¿Cuántas sesiones de dermapen necesito?", "Normalmente de 3 a 5 sesiones, separadas 4 semanas. Depende de lo que queremos mejorar: no es lo mismo afinar poros que suavizar cicatrices profundas."),
+]
+
+# ---------------------------------------------------------------- plan orgánico (13-nov-2026)
+# Qué muestra Google en Pereira el 13-nov-2026 ("Más preguntas": cuánto vale / cuánto cobran) y qué contestan las
+# páginas que salen arriba: el valor y el "dónde". Aquí se contesta sin cifras (qué define el valor) y con la
+# dirección que ya publica la web. Todo sale de este archivo y de _agencia/hechos.md §A y §B. Detalle y fechas en
+# _agencia/search-console.md ("Plan orgánico 13-nov-2026"). No tocar estas páginas antes del 4-dic-2026.
+_DRA = '<a href="dra-valeria-enciso">Dra. Valeria Enciso</a>'
+
+SEO["bioestimuladores"]["secciones"] += [
+    ("Bioestimuladores en Pereira: cómo es la cita",
+     "<p>Empieza con una valoración presencial en la Torre Médica Oval, en Pinares. Miramos tu piel, dónde notas la flacidez y qué esperas ver. Con eso definimos qué producto conviene y cuántas sesiones tendría tu plan, que suelen ser de 1 a 3.</p>"
+     "<p>La aplicación toma entre 40 y 60 minutos. Puedes salir con enrojecimiento o sensibilidad por 1 a 3 días, así que mejor no la dejes para la víspera de una fecha importante. Si vienes desde Dosquebradas o Santa Rosa de Cabal, pregunta de una vez cuántas citas son y organizas los viajes.</p>"),
+]
+SEO["bioestimuladores"]["faq"] += [
+    ("¿Cuánto valen los bioestimuladores de colágeno en Pereira?", "Depende del producto, de la zona y de cuántas sesiones necesite tu piel, que suelen ser de 1 a 3. El valor exacto te lo damos en la valoración, antes de empezar. Pregunta por el plan completo y no solo por la primera sesión."),
+    ("¿Dónde ponerse bioestimuladores en Pereira?", "Con un médico que te valore en persona y con un producto con registro INVIMA que puedas verificar. En The Skin Haus te valora la " + _DRA + ", médica estética, en la Torre Médica Oval (consultorio 904), en Pinares."),
+]
+
+SEO["peelings-medicos"]["secciones"] += [
+    ("Tu peeling químico en Pereira, paso a paso",
+     "<p>Primero hay una valoración presencial en la Torre Médica Oval. Miramos tu tipo de piel, tu tono y qué quieres mejorar, y con eso elegimos el ácido y la intensidad. Cada sesión dura unos 30 minutos y lo habitual es una serie de 3 a 6, cada 2 a 4 semanas.</p>"
+     "<p>El cielo nublado de Pereira engaña: el protector solar va todos los días, haya sol o no. Y si trabajas de cara al público y no puedes pelarte, dilo en la cita. Hay opciones que casi no se notan.</p>"),
+]
+SEO["peelings-medicos"]["faq"] += [
+    ("¿Cuánto cuesta una sesión de peeling en Pereira?", "Depende del tipo de peeling y de cuántas sesiones tenga tu serie. Como se elige según tu piel, el valor se da en la valoración, antes de la primera sesión."),
+    ("¿Dónde hacerme un peeling químico en Pereira?", "En un consultorio médico donde valoren tu piel antes de aplicar cualquier ácido. Nosotros estamos en la Torre Médica Oval, consultorio 904, en Pinares, y atendemos también a pacientes de Dosquebradas y Santa Rosa de Cabal."),
+]
+
+SEO["microagujas"]["faq"] += [
+    ("¿Cuánto vale una sesión de dermapen en Pereira?", "Depende de la zona, de si se combina con activos y de cuántas sesiones necesites; lo habitual son de 3 a 5. Te damos el valor en la valoración, cuando ya sabemos qué queremos mejorar."),
+    ("¿Dónde hacerme microagujas en Pereira?", "En The Skin Haus se hacen en consultorio y con material estéril, en la Torre Médica Oval de Pinares. La primera cita es una valoración presencial; si hay acné activo, primero tratamos eso."),
+]
+
+SEO["skinboosters"]["faq"] += [
+    ("¿Cuánto vale un skinbooster en Pereira?", "El valor depende de la zona y del número de sesiones; el plan habitual son 3, cada 3 a 4 semanas. Lo sabes en la valoración, antes de la primera aplicación."),
+]
+
+SEO["manchas-y-melasma"]["faq"] += [
+    ("¿Cuánto cuesta un tratamiento de manchas en la cara en Pereira?", "No hay un valor único porque no hay un solo tratamiento: el plan va por etapas y cambia según el tipo de mancha. En la valoración te decimos qué etapas tendría el tuyo y su valor, antes de empezar."),
+]
+
+next(b for b in BUSQUEDAS if b["slug"] == "tratamiento-de-ojeras")["faq"] += [
+    ("¿Cuánto cuesta el tratamiento de ojeras en Pereira?", "Depende del tipo de ojera y de cuánto producto haga falta, y en ojeras preferimos poca cantidad. El valor exacto se da en la valoración, después de mirar tu ojera y antes de empezar."),
+]
+
+# Eco-doppler venoso (vascular): Search Console 11-oct a 7-nov, 58 apariciones, puesto 8,4, 0 clics. Título y
+# descripción quedan como el 9-nov (se están midiendo); aquí solo se suma lectura y preguntas con lo que la ficha ya dice.
+_ECO = next(t for t in VASCULAR if t["slug"] == "eco-doppler-venoso")
+_ECO["secciones"] = [
+    ("Cuándo conviene un eco-doppler venoso",
+     "<p>Antes de tratar <a href=\"aranitas-vasculares\">arañitas</a> o <a href=\"varices\">várices</a>, para saber de dónde vienen. También si sientes pesadez, hinchazón o dolor en las piernas, o como seguimiento después de un tratamiento vascular.</p>"
+     "<p>El examen muestra en tiempo real si las válvulas de las venas cierran bien y dónde hay reflujo. Con ese mapa se decide qué tratar y qué no.</p>"),
+    ("Cómo es el examen en Pereira",
+     "<p>Es una ecografía con gel sobre las piernas. Solo sientes la presión suave del transductor. Dura entre 30 y 40 minutos y no pide ayuno ni preparación: ven con ropa cómoda que permita descubrir las piernas.</p>"
+     "<p>Se hace en The Skin Haus, en la Torre Médica Oval (consultorio 904), en Pinares. En la misma cita sales con el mapa venoso y la explicación del médico, y sigues con tu día.</p>"),
+]
+_ECO["faq"] += [
+    ("¿Para qué sirve el eco-doppler venoso?", "Para ver cómo funcionan las venas de tus piernas: si las válvulas cierran bien, dónde hay reflujo y cuál es el origen de las várices o las arañitas. Es el mapa con el que se decide el tratamiento."),
+    ("¿Cuánto dura un eco-doppler venoso?", "Entre 30 y 40 minutos. No necesita preparación ni recuperación."),
+    ("¿Dónde hacerme un eco-doppler venoso en Pereira?", "En The Skin Haus, en la Torre Médica Oval (consultorio 904), en Pinares. La medicina vascular está a cargo del Dr. José David Puerta Rojas, médico internista con subespecialidad en medicina vascular."),
+    ("¿Cuánto cuesta un eco-doppler venoso particular en Pereira?", "El valor te lo confirmamos por WhatsApp al agendar. Incluye el mapa venoso y la explicación del médico en la misma cita."),
 ]
 
 # página de valoración

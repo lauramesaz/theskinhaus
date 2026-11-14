@@ -12,9 +12,9 @@ Revisión del 9-nov-2026 con Search Console del 11-oct al 7-nov (la siguiente la
 
 ## Para mejorar (en orden)
 
-1. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 43 apariciones, 0 clics, puesto 10,4 · libre desde 2026-11-20
-2. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 110 apariciones, 0 clics, puesto 9,1 · libre desde 2026-11-24 (title y descripción cambiados el 3-nov; su descripción tiene 172 caracteres y SH-14 la baja a 155)
-3. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 41 apariciones, 1 clic, puesto 7,7 · libre desde 2026-11-24 (title cambiado el 3-nov)
+1. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 43 apariciones, 0 clics, puesto 10,4 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov, commit 36736ae; antes decía 20-nov)
+2. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 110 apariciones, 0 clics, puesto 9,1 · libre desde 2026-11-30 (title y descripción cambiados otra vez el 9-nov, commit 36736ae; la descripción ya quedó en 155)
+3. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 41 apariciones, 1 clic, puesto 7,7 · libre desde 2026-11-30 (title y descripción cambiados otra vez el 9-nov, commit 36736ae)
 4. [pendiente] /blog/precio-del-botox-en-pereira · blog · 21 apariciones, 0 clics, puesto 6,3 · libre desde 2026-11-24 (title cambiado el 3-nov)
 5. [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 20 apariciones, 0 clics, puesto 13,2 · libre desde 2026-11-24 (title cambiado el 3-nov)
 
@@ -23,6 +23,13 @@ Esta semana ninguna está libre: los días de mejora del 10, 12 y 14-nov son dí
 Salen sin clics pero cambiaron hace poco (no tocar antes de la fecha): /armonizacion-facial (19 apar., puesto 9,2),
 /blog/botox-o-toxina-botulinica-es-lo-mismo (14; 13,1) y /toxina-botulinica (12; 16,4): libres desde 2026-11-24.
 Mejoraron y ya no están en la lista: /microagujas (11 apar., 1 clic).
+
+## Plan orgánico del 13-nov-2026 (sesión de Claude; detalle en search-console.md)
+
+No tocar antes del 2026-12-04: /bioestimuladores (título nuevo), /peelings-medicos, /microagujas, /skinboosters,
+/manchas-y-melasma, /tratamiento-de-ojeras, /eco-doppler-venoso y /blog/cuanto-dura-el-botox (texto y preguntas nuevas).
+Pendiente para Claude desde el 2026-11-24: /armonizacion-facial (pregunta "¿cuánto dura el efecto?"), inicio (título con
+"Medicina estética en Pereira" adelante) y /toxina-botulinica (solo si "botox pereira" sigue en el puesto 11 a 15).
 
 ## Si ninguna está libre: día de enlaces
 
@@ -57,6 +64,9 @@ tocaste: `[enlaces AAAA-MM-DD] /blog/<slug> → servicio1, servicio2`.
 - ninguna por ahora ("cuántas jeringas de ácido hialurónico necesito", puesto 19,3, la cubre /blog/cuanto-rinde-1-ml-de-acido-hialuronico)
 
 ## Hecho (últimas 4 semanas)
+
+- [mejorada 2026-11-13 · sesión de Claude: sección nueva + 1 pregunta + 3 enlaces a hermanos; title y descripción sin tocar] /blog/cuanto-dura-el-botox · libre desde 2026-12-04
+- [mejorada 2026-11-13 · sesión de Claude: título de /bioestimuladores; secciones "en Pereira" en bioestimuladores y peelings; preguntas de valor y de dónde en 6 servicios; eco-doppler ampliado] · libres desde 2026-12-04
 
 - [enlaces 2026-11-10] /blog/duele-el-botox → hiperhidrosis; /blog/botox-para-hombres → tratamiento-de-ojeras; /blog/dermapen-cuantas-sesiones-cicatrices-de-acne → microagujas (solo enlaces sobre palabras ya existentes)
 - [enlaces 2026-11-12] /blog/peeling-en-piel-morena, /blog/peeling-antes-de-un-viaje-a-la-playa → manchas-y-melasma (solo enlaces sobre palabras ya existentes; ninguna página libre hasta 2026-11-20)

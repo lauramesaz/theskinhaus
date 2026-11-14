@@ -38,7 +38,15 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 35 | peeling en piel morena | el ácido y la preparación correctos, por qué se valora antes y qué pasa con el sol | peelings-medicos | publicado 2026-11-11 |
 | 40 | poros abiertos: qué sirve | limpieza, peeling y microagujas; qué mejora y qué no | microagujas | en pausa (Verificador bloqueó 2 rondas por datos de anatomía y de limpieza sin respaldo; borrador en articulos/poros-abiertos-que-sirve.html con los 2 retoques ya aplicados, falta una 3ª verificación) |
 | 47 | cuánto dura el bótox en las axilas | bótox para el sudor de las axilas: cuánto dura y cuándo ponértelo para que te cubra la temporada que te preocupa (diciembre, viajes, calor); qué se siente cuando el efecto empieza a irse. Duración solo con datos.py ("varios meses") o una fuente oficial que entre a hechos.md; nada de cifras de clínicas. Búsqueda real: "bótox para el sudor" en estrategia.md §2 y preguntas de duración vistas el 7-nov. La página dueña conserva "bótox para el sudor en Pereira" | hiperhidrosis | publicado 2026-11-13 |
+| 49 | precio del relleno de labios en Pereira | qué define el valor (cantidad, producto que puedas verificar, quién lo aplica, control), qué debería incluir y alertas de lo muy barato; sin cifras, el valor exacto se da en la valoración. Búsqueda real 13-nov: "¿Cuánto cobran por relleno de labios?" (hechos.md 2026-11-13). No repite cuanto-dura-el-relleno-de-labios | relleno-de-labios | pendiente |
+| 50 | cuánto vale una limpieza facial en Pereira | por qué una limpieza médica no vale lo mismo que una de spa: qué incluye (revisión de la piel, extracción, activos, 60 minutos, supervisión médica) y qué preguntar antes de pagar; sin cifras. Búsquedas reales 13-nov: "Limpieza facial Pereira precios", "¿Qué incluye una limpieza facial profunda?" (hechos.md 2026-11-13). Enlaza a limpieza-facial-medica-o-de-spa sin repetirlo | limpieza-facial-medica | pendiente |
+| 51 | cuánto cuesta una armonización facial en Pereira | por qué no hay un valor único: es un plan por etapas (qué zonas, qué tratamientos, cuánto producto), cómo pedir el valor por etapas y qué comparar entre dos cotizaciones; sin cifras. Búsqueda real 13-nov: "¿Cuánto cobran por una armonización facial?" (hechos.md 2026-11-13). El title lleva "cuánto cuesta" o "precio": nunca solo "armonización facial en Pereira" | armonizacion-facial | pendiente |
 | 48 | cada cuánto hacerse una limpieza facial | según el tipo de piel (datos.py: cada 4 a 6 semanas; con piel grasa o tendencia al acné puede ser más seguido), señales de que ya toca y qué no hacer en casa entre una y otra; sin cifras de otras páginas (hechos.md, investigación del 27-oct). Distinto de la fila 13 (médica o de spa). Pregunta real anotada en hechos.md el 27-oct y vista otra vez el 7-nov | limpieza-facial-medica | pendiente |
+| 52 | precio del peeling químico en Pereira | qué define el valor de una serie (tipo de peeling, número de sesiones 3 a 6, preparación en casa) y por qué desconfiar del peeling profundo barato; sin cifras. Google muestra precios de directorios para "peeling químico pereira" (13-nov): aquí se explica qué hay detrás | peelings-medicos | pendiente |
+| 46 | radiesse en Pereira: qué es y a quién le sirve | búsqueda "radiesse" ya aparece en Search Console (pos. 140); explicar la hidroxiapatita de calcio sin afirmar que la clínica usa la marca | bioestimuladores | pendiente |
+| 53 | cuánto valen los bioestimuladores en Pereira | producto, zona y sesiones (1 a 3) como lo que define el valor; pedir el plan completo y no la primera sesión; el resultado se ve desde la semana 6 a 8; sin cifras. Búsqueda real 13-nov: "SCULPTRA en Pereira" en "También se buscó" (no afirmar marca) | bioestimuladores | pendiente |
+| 44 | cuántos ml de ácido hialurónico para labios | por qué no hay una cifra única, qué dice la revisión de 16 estudios (solo como dato de aumento) y cómo se decide la cantidad en la valoración; sin precios | relleno-de-labios | pendiente |
+| 54 | cuánto vale 1 ml de ácido hialurónico en Pereira | por qué no conviene comparar solo por ml: producto con registro INVIMA, quién lo aplica, control y posibilidad de revertir; sin cifras. Búsqueda real 13-nov: "¿Cuánto vale 1 ml de ácido hialurónico en Colombia?". OJO: enlaza en el primer párrafo a cuanto-rinde-1-ml-de-acido-hialuronico y NO repite para qué alcanza (esa búsqueda es de ese artículo) | acido-hialuronico | pendiente |
 | 33 | cada cuánto repetir los tratamientos estéticos | qué se repite en el año y cada cuánto, para planear 12 meses sin sorpresas; el valor exacto se da en la valoración | armonizacion-facial | pendiente |
 | 29 | relleno de mentón y mandíbula | perfilar el tercio inferior, qué se puede lograr, qué no y cómo se ve de perfil | acido-hialuronico | pendiente |
 | 36 | relleno de pómulos y sienes | soporte y no volumen, cómo se elige la cantidad y por qué se puede revertir | acido-hialuronico | pendiente |
@@ -50,10 +58,27 @@ debe enlazar en el primer tercio (y al que NO le puede robar la keyword).
 | 31 | skinbooster o hidratación facial de cabina | qué cambia entre una hidratación de superficie y una microinyección, y para quién es cada una | skinboosters | pendiente |
 | 39 | skinbooster en cuello y escote | líneas finas y piel opaca en cuello y escote, hidratación y cuidado del sol | skinboosters | pendiente |
 | 43 | cara de Ozempic | pérdida de volumen al bajar de peso, qué ayuda y qué no se puede prometer | bioestimuladores | pendiente |
-| 44 | cuántos ml de ácido hialurónico para labios | por qué no hay una cifra única, qué dice la revisión de 16 estudios (solo como dato de aumento) y cómo se decide la cantidad en la valoración; sin precios | relleno-de-labios | pendiente |
-| 46 | radiesse en Pereira: qué es y a quién le sirve | búsqueda "radiesse" ya aparece en Search Console (pos. 140); explicar la hidroxiapatita de calcio sin afirmar que la clínica usa la marca | bioestimuladores | pendiente |
 | 42 | ¿qué pasa si dejo de ponerme bótox? | el efecto es temporal: qué ocurre con el paso de los meses, sin mitos de dependencia | toxina-botulinica | pendiente |
 | 34 | retoque de bótox | el control a las dos semanas: cuándo se completa y cuándo no hace falta | toxina-botulinica | en pausa (se une a cuando-volver-a-ponerse-botox según SH-14; no se escribe aparte) |
+
+## Orden de prioridad del 13-nov-2026 (plan orgánico)
+
+- **Regla de orden desde hoy:** primero los temas de Pereira y el Eje Cafetero con intención de compra (valor o
+  "cuánto vale", "dónde", "mejor", comparaciones entre dos opciones); después los de decisión (cuándo, cada cuánto,
+  a qué edad) y al final los de curiosidad. Cuando entre un tema nuevo, se ubica con esta regla, no al final.
+- **Por qué:** en tres semanas, el artículo de valor ("precio del bótox en Pereira") llegó al puesto 6 en Google y
+  es la única búsqueda de compra del blog que ya sale en primera página. El 13-nov Google mostró en Pereira, para
+  labios, limpieza, armonización, ácido hialurónico y peeling, preguntas de "cuánto cobran" y directorios con precios
+  arriba; ninguna clínica de Pereira explica qué hay detrás del valor.
+- **Temas nuevos (49 a 54):** todos salen de búsquedas reales vistas en Google el 13-nov (anotadas en `hechos.md`,
+  entrada 2026-11-13). Ninguno lleva cifras: el ángulo es "qué define el valor" y el monto se da en la valoración
+  (regla 2). Ninguno le quita la búsqueda a su página dueña: el title siempre lleva "precio", "cuánto vale" o
+  "cuánto cuesta".
+- **Qué subió:** 49, 50 y 51 (valor de labios, limpieza y armonización) van primero; 46 (radiesse en Pereira) y 44
+  (ml para labios) suben porque ya tienen búsquedas. La 48 se queda arriba.
+- **Lo que no cambia:** máximo 1 artículo de bótox cada 2 semanas (bótox en pausa hasta el 19-dic aprox.), la cadena
+  completa de agentes y la regla de no inventar temas.
+
 
 ## Reorden del 7-nov-2026 (plan de 90 días, SH-15)
 
