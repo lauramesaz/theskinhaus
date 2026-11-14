@@ -70,3 +70,4 @@ tocaste: `[enlaces AAAA-MM-DD] /blog/<slug> → servicio1, servicio2`.
 
 - [enlaces 2026-11-10] /blog/duele-el-botox → hiperhidrosis; /blog/botox-para-hombres → tratamiento-de-ojeras; /blog/dermapen-cuantas-sesiones-cicatrices-de-acne → microagujas (solo enlaces sobre palabras ya existentes)
 - [enlaces 2026-11-12] /blog/peeling-en-piel-morena, /blog/peeling-antes-de-un-viaje-a-la-playa → manchas-y-melasma (solo enlaces sobre palabras ya existentes; ninguna página libre hasta 2026-11-20)
+- [enlaces 2026-11-14] /blog/tratamientos-esteticos-antes-de-diciembre → limpieza-facial-medica; /blog/como-comparar-cotizaciones-de-tratamientos-esteticos → tratamiento-de-ojeras (solo enlaces sobre palabras ya existentes; ninguna página libre hasta 2026-11-24)
