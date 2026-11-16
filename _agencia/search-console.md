@@ -9,6 +9,49 @@ Aquí se copian los datos cada lunes (la nube no puede abrir Search Console):
 página · impresiones · clics · posición · consultas principales (solo medicina estética).
 Todavía sin datos: la web es nueva y Google tarda unos días en mostrar impresiones.
 
+## Foto del 16-nov-2026 (últimos 28 días: 18-oct a 14-nov)
+
+Totales: **15 clics · 887 apariciones · CTR 1,7 % · posición media 12,1**.
+Sin marca: **14 clics · 874 apariciones**. Con marca: **1 clic · 13 apariciones**.
+
+**Top 10 búsquedas sin marca:**
+| Consulta | Clics | Apar. | Puesto |
+|---|---|---|---|
+| 1 ml de acido hialuronico | 0 | 14 | 9,6 |
+| 1 ml de ácido hialurónico para que alcanza | 0 | 14 | 8,1 |
+| armonizacion facial pereira | 0 | 10 | 10,9 |
+| botox pereira | 0 | 6 | 13,8 |
+| cuanto dura el botox | 0 | 6 | 81,0 |
+| hidratación de labios sin pinchar | 0 | 6 | 78,8 |
+| 1ml de ácido hialurônico | 0 | 5 | 10,8 |
+| cuanto dura el botox en la cara | 0 | 4 | 86,2 |
+| botox en la cara cuanto tiempo dura | 0 | 3 | 89,0 |
+| cuándo empieza a hacer efecto el botox | 0 | 3 | 78,3 |
+
+**Top 10 páginas:**
+| Página | Clics | Apar. | Puesto |
+|---|---|---|---|
+| / | 3 | 25 | 5,9 |
+| /microagujas | 3 | 22 | 7,5 |
+| /limpieza-facial-medica | 2 | 26 | 14,4 |
+| /tratamiento-de-ojeras | 2 | 8 | 5,1 |
+| /blog/cuanto-rinde-1-ml-de-acido-hialuronico | 1 | 174 | 8,4 |
+| /relleno-de-labios | 1 | 52 | 7,3 |
+| /nosotros | 1 | 12 | 5,2 |
+| /cicatrices-de-acne | 1 | 6 | 8,7 |
+| /peelings-medicos | 1 | 3 | 7,3 |
+| /blog/botox-y-acido-hialuronico-el-mismo-dia | 0 | 115 | 7,6 |
+
+**Las 15 búsquedas fijas en Colombia (por la API):** en primera página: **0 de 15** (2 con datos: "botox pereira", 6 apariciones, puesto 13,8, /toxina-botulinica; "armonización facial pereira", 10 apariciones, puesto 10,9, /armonizacion-facial). Las otras 13: sin datos (Google no las mostró o las esconde por pocas búsquedas).
+
+Búsquedas con 2 o más páginas propias: ninguna.
+
+**Indexación:** 56 de 58 páginas del sitemap están en Google. Faltan 2: /blog/precio-del-relleno-de-labios-en-pereira (Google no reconoce la URL, publicada hoy) y /blog/botox-para-hombres (descubierta, sin indexar).
+
+**Aparte (vascular):** /eco-doppler-venoso 74 apariciones, 0 clics, puesto 8,3; /aranitas-vasculares 8; /varices 4 (puesto 45,2); /cuperosis-y-rojeces 1; /medicina-vascular 1.
+
+**Lectura:** frente a la foto del 9-nov, los clics sin marca pasaron de 8 a 14 y las apariciones de 468 a 874; las páginas en Google de 52 a 56 (de 54 a 58 en el sitemap). Las fijas en primera página siguen en 0 de 15 (mismas 2 con datos). Búsqueda nueva de medicina estética: "hidratación de labios sin pinchar" (6 apariciones, puesto 78,8; la cubre /blog/como-hidratar-los-labios-sin-agrandarlos) y "cuántas jeringas de ácido hialurónico necesito" (puesto 19,3). Sigue sin clics lo que más aparece: /blog/cuanto-rinde-1-ml-de-acido-hialuronico (174 apariciones, 1 clic).
+
 ## Plan orgánico 13-nov-2026 (sesión de trabajo de Claude)
 
 Con la foto del 9-nov (8 clics, 476 apariciones, puesto 12,9) y Google mirado desde Pereira el 13-nov (`hl=es&gl=co`,
