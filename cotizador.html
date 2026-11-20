@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Cotizador de celulitis · The Skin Haus</title>
+<title>Cotizador · The Skin Haus</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <!--
-  The Skin Haus · página INTERNA "Cotizador de celulitis (HAUSFORM)" (código 111, no indexada, sin enlace desde la web).
-  Copia del cotizador de Seravena (9-nov-2026), solo con los paquetes de celulitis y con la marca de The Skin Haus.
+  The Skin Haus · página INTERNA "Cotizador" (código 111, no indexada, sin enlace desde la web).
+  Copia del cotizador de Seravena con la marca de The Skin Haus: lipedema, obesidad, venas, celulitis (HAUSFORM) y medicina estética (20-nov-2026).
   Para cambiar precios, renglones o costos: editar el bloque PROGRAMAS de abajo.
   "u" = costo por unidad (solo lo ves tú, nunca sale en el PDF) · "q" = cantidad · interno:true = costo que no sale en el PDF.
 -->
@@ -23,7 +23,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;overflow-x:clip}
-body{overflow-x:clip;background:var(--marfil);color:var(--texto);font:15px/1.55 Arial,"Helvetica Neue",Helvetica,sans-serif;min-height:100vh;position:relative}
+body{overflow-x:clip;background:var(--marfil);color:var(--texto);font:17px/1.55 Arial,"Helvetica Neue",Helvetica,sans-serif;min-height:100vh;position:relative}
 /* textura de grano suave */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .37 0 0 0 0 .33 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -38,10 +38,10 @@ button,input,select{font:inherit;color:inherit}
 #candado{position:fixed;inset:0;background:var(--marfil);display:grid;place-items:center;z-index:90;padding:16px}
 #candado form{background:var(--blanco);border:1px solid var(--linea);border-radius:32px;padding:44px 34px;width:100%;max-width:350px;text-align:center;box-shadow:0 30px 60px -30px rgba(17,17,17,.25)}
 #candado img{height:28px;margin:0 auto 24px}
-#candado p{color:var(--tenue);font-size:14px;margin-bottom:18px}
+#candado p{color:var(--tenue);font-size:16px;margin-bottom:18px}
 #candado input{width:100%;text-align:center;font-size:24px;letter-spacing:.4em;padding:12px;border:1px solid var(--linea);border-radius:999px;outline:none;background:#fff}
 #candado input:focus{border-color:var(--camel)}
-#candado .mal{color:var(--error);font-size:13px;margin-top:10px;min-height:20px}
+#candado .mal{color:var(--error);font-size:15px;margin-top:10px;min-height:20px}
 
 .envoltura{position:relative;z-index:1}
 header{display:flex;justify-content:center;padding:26px 16px 0}
@@ -53,19 +53,19 @@ header .logo-sh{font-size:22px}
 #candado .logo-sh{font-size:24px;margin:0 auto 24px}
 
 .intro{text-align:center;max-width:680px;margin:0 auto;padding:44px 20px 34px}
-.ojo{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--camel-osc);font-weight:600;margin-bottom:14px}
+.ojo{font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--camel-osc);font-weight:600;margin-bottom:14px}
 .intro h1{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:clamp(34px,5vw,52px);line-height:1.05;color:var(--choco);letter-spacing:-.01em}
-.intro p{color:var(--tenue);margin-top:14px;font-size:16px}
+.intro p{color:var(--tenue);margin-top:14px;font-size:18.5px}
 
 /* tarjetas de programa */
-.programas{max-width:1120px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.programas{max-width:1120px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
 .prog-card{position:relative;border:0;background:var(--blanco);border-radius:28px;padding:8px 8px 16px;cursor:pointer;text-align:left;
   box-shadow:0 0 0 1px var(--linea);transition:transform .5s var(--ease),box-shadow .3s}
 .prog-card:hover{transform:translateY(-3px)}
 .prog-card .foto{height:150px;border-radius:22px;background-size:cover;background-position:center;filter:saturate(.85);transition:filter .3s}
 aside .total{margin-top:14px}
 .prog-card b{display:block;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:20px;line-height:1.1;color:var(--choco);margin:14px 10px 4px}
-.prog-card small{display:block;margin:0 10px;font-size:12.5px;color:var(--tenue)}
+.prog-card small{display:block;margin:0 10px;font-size:14.5px;color:var(--tenue)}
 .prog-card::after{content:"";position:absolute;top:18px;right:18px;width:22px;height:22px;border-radius:50%;background:rgba(255,253,249,.9);box-shadow:inset 0 0 0 1.5px var(--linea-2);transition:.3s}
 .prog-card.activa{box-shadow:0 0 0 2px var(--choco),0 24px 40px -24px rgba(17,17,17,.45)}
 .prog-card.activa::after{background:var(--choco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat center;box-shadow:none}
@@ -76,9 +76,9 @@ main{max-width:1120px;margin:0 auto;padding:44px 28px 120px;display:grid;grid-te
 .bloque{background:var(--blanco);border-radius:32px;padding:32px;box-shadow:0 0 0 1px var(--linea);margin-bottom:20px}
 .bloque-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px;flex-wrap:wrap}
 .bloque h2{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.025em;font-size:26px;line-height:1;color:var(--choco)}
-.bloque .ayuda{color:var(--tenue);font-size:14px;margin-top:6px}
-.link-sutil{border:0;background:none;color:var(--camel-osc);font-size:13px;font-weight:600;cursor:pointer;padding:6px 0;border-bottom:1px solid currentColor}
-.pendiente{background:var(--marfil);border-radius:18px;padding:14px 18px;font-size:14px;color:var(--choco);margin-bottom:16px}
+.bloque .ayuda{color:var(--tenue);font-size:16px;margin-top:6px}
+.link-sutil{border:0;background:none;color:var(--camel-osc);font-size:15px;font-weight:600;cursor:pointer;padding:6px 0;border-bottom:1px solid currentColor}
+.pendiente{background:var(--marfil);border-radius:18px;padding:14px 18px;font-size:16px;color:var(--choco);margin-bottom:16px}
 
 /* servicios: lista tipo cotizador */
 #items{border-top:1px solid var(--linea)}
@@ -90,22 +90,22 @@ main{max-width:1120px;margin:0 auto;padding:44px 28px 120px;display:grid;grid-te
 .emoji{width:46px;height:46px;border-radius:14px;background:var(--marfil);display:grid;place-items:center;font-size:22px;transition:.25s}
 .item:not(.apagado) .emoji{background:var(--marfil-2)}
 .item.apagado .emoji{filter:grayscale(1)}
-.it-cab .titulo{font-weight:600;font-size:15px;line-height:1.3;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.it-cab .desc{display:block;font-size:13px;color:var(--tenue);margin-top:2px;line-height:1.4}
-.leyenda{display:none;margin-top:6px;font-size:12px;font-weight:600;color:#9a3412;background:#FFF1E6;border-radius:999px;padding:3px 10px;width:max-content;max-width:100%}
+.it-cab .titulo{font-weight:600;font-size:17px;line-height:1.3;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.it-cab .desc{display:block;font-size:15px;color:var(--tenue);margin-top:2px;line-height:1.4}
+.leyenda{display:none;margin-top:6px;font-size:14px;font-weight:600;color:#9a3412;background:#FFF1E6;border-radius:999px;padding:3px 10px;width:max-content;max-width:100%}
 .item.bloqueado .leyenda{display:inline-block}
 body:not(.comercial) .leyenda{display:none!important}
-.candado{border:1px solid transparent;background:transparent;border-radius:999px;height:32px;padding:0 10px;min-width:104px;font-size:14px;cursor:pointer;filter:grayscale(1);opacity:.35;transition:.2s;white-space:nowrap}
+.candado{border:1px solid transparent;background:transparent;border-radius:999px;height:32px;padding:0 10px;min-width:104px;font-size:16px;cursor:pointer;filter:grayscale(1);opacity:.35;transition:.2s;white-space:nowrap}
 .candado:hover{opacity:.9;border-color:var(--linea);background:#fff}
 .item.bloqueado .candado{filter:none;opacity:1;background:#FFF1E6;border-color:#F5C9A8}
 body.comercial .candado,body.paciente .candado{display:none}
-body.comercial .item.bloqueado .titulo::after{content:"🔒";font-size:14px}
+body.comercial .item.bloqueado .titulo::after{content:"🔒";font-size:16px}
 .paso-q{display:flex;align-items:center;gap:2px;background:var(--marfil);border-radius:999px;padding:3px;cursor:default}
-.paso-q button{border:0;background:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:15px;color:var(--choco);box-shadow:0 1px 2px rgba(17,17,17,.12);transition:.2s}
+.paso-q button{border:0;background:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:17px;color:var(--choco);box-shadow:0 1px 2px rgba(17,17,17,.12);transition:.2s}
 .paso-q button:hover{background:var(--choco);color:#fff}
-.item .paso-q input[type=text]{border:0;background:transparent;text-align:center;width:78px;padding:0;border-radius:0;font-weight:700;font-size:14px;outline:none}
+.item .paso-q input[type=text]{border:0;background:transparent;text-align:center;width:78px;padding:0;border-radius:0;font-weight:700;font-size:16px;outline:none}
 .marca{display:none}
-.agregar{display:none;border:1px dashed var(--linea-2);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--camel-osc);white-space:nowrap}
+.agregar{display:none;border:1px dashed var(--linea-2);border-radius:999px;padding:7px 16px;font-size:15px;font-weight:600;color:var(--camel-osc);white-space:nowrap}
 .item.apagado .agregar{display:inline-block}
 .item.apagado .paso-q{display:none}
 .item.apagado:hover .agregar{border-style:solid;border-color:var(--camel);background:#fff}
@@ -116,16 +116,16 @@ body.comercial .item.bloqueado .titulo::after{content:"🔒";font-size:14px}
 
 /* lista compacta: todo el plan en una sola vista */
 .item{grid-template-columns:34px minmax(0,1fr) auto auto;gap:12px;padding:6px 4px}
-.emoji{width:34px;height:34px;border-radius:10px;font-size:17px}
-.it-cab .titulo{font-size:13.5px;line-height:1.25}
-.it-cab .desc{font-size:11.5px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.emoji{width:34px;height:34px;border-radius:10px;font-size:19.5px}
+.it-cab .titulo{font-size:15.5px;line-height:1.25}
+.it-cab .desc{font-size:13px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .it-cab{min-width:0}
 .paso-q{padding:2px}
-.paso-q button{width:24px;height:24px;font-size:13px}
-.item .paso-q input[type=text]{width:70px;font-size:13px}
-.candado{height:26px;min-width:88px;font-size:12px}
-.agregar{padding:4px 12px;font-size:12px}
-.leyenda{margin-top:3px;font-size:11px;padding:2px 8px}
+.paso-q button{width:24px;height:24px;font-size:15px}
+.item .paso-q input[type=text]{width:70px;font-size:15px}
+.candado{height:26px;min-width:88px;font-size:14px}
+.agregar{padding:4px 12px;font-size:14px}
+.leyenda{margin-top:3px;font-size:12.5px;padding:2px 8px}
 
 /* ---- vectores ---- */
 .ico{width:20px;height:20px;flex:none;display:block}
@@ -162,8 +162,8 @@ body.comercial .item.bloqueado .titulo .ico-lock{display:block}
 .grupo summary{list-style:none;display:flex;align-items:center;gap:14px;padding:14px 18px;cursor:pointer;background:var(--blanco)}
 .grupo summary::-webkit-details-marker{display:none}
 .grupo summary .ico{color:var(--choco);width:22px;height:22px}
-.grupo summary b{display:block;font-size:15px;font-weight:600}
-.grupo summary small{display:block;font-size:12px;color:var(--tenue)}
+.grupo summary b{display:block;font-size:17px;font-weight:600}
+.grupo summary small{display:block;font-size:14px;color:var(--tenue)}
 .grupo summary .ico.flecha-g{margin-left:auto;width:18px;height:18px;color:var(--tenue);transition:transform .3s}
 .grupo[open] summary .ico.flecha-g{transform:rotate(180deg)}
 .grupo .lista{border-top:1px solid var(--linea);padding:2px 14px}
@@ -171,8 +171,8 @@ body.comercial .item.bloqueado .titulo .ico-lock{display:block}
 #items{border-top:0}
 /* pasos */
 .pasos{display:flex;align-items:center;justify-content:center;gap:14px;margin:-6px auto 30px;padding:0 16px;flex-wrap:wrap}
-.pasos button{display:flex;align-items:center;gap:9px;border:0;background:none;cursor:pointer;font-size:13.5px;color:var(--tenue);font-weight:500;padding:4px}
-.pasos button span{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--linea-2);display:grid;place-items:center;font-size:12.5px;font-weight:700;transition:.25s}
+.pasos button{display:flex;align-items:center;gap:9px;border:0;background:none;cursor:pointer;font-size:15.5px;color:var(--tenue);font-weight:500;padding:4px}
+.pasos button span{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--linea-2);display:grid;place-items:center;font-size:14.5px;font-weight:700;transition:.25s}
 .pasos button.activo{color:var(--texto);font-weight:600}
 .pasos button.activo span{background:var(--choco);border-color:var(--choco);color:#fff}
 .pasos button.hecho span{background:var(--marfil-2);border-color:var(--marfil-2);color:var(--choco)}
@@ -182,20 +182,20 @@ body.paciente .pasos{display:none}
 .pasos em{font-style:normal}
 .ico-txt .ico{display:inline-block;width:14px;height:14px;vertical-align:-2px;color:var(--choco)}
 .total b span{display:inline;font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
-.total b small{display:inline;font-size:15px;font-weight:600;color:#C6A88F;margin-left:8px;letter-spacing:.04em}
+.total b small{display:inline;font-size:17px;font-weight:600;color:#C6A88F;margin-left:8px;letter-spacing:.04em}
 .caja-inicial{margin-top:14px;background:rgba(243,238,229,.09);border-radius:16px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
-.caja-inicial span{font-size:12.5px;color:#cfc4b6}
+.caja-inicial span{font-size:14.5px;color:#cfc4b6}
 .caja-inicial b{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.02em}
 .r-incluye{margin:4px 0 6px;border-top:1px solid rgba(243,238,229,.14);padding-top:12px}
-.r-tit{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-bottom:4px}
+.r-tit{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-bottom:4px}
 #resumen{max-height:none!important;overflow:visible!important}
-#resumen .linea-r{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;padding:4px 0;font-size:12.5px;border-bottom:0}
+#resumen .linea-r{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;padding:4px 0;font-size:14.5px;border-bottom:0}
 #resumen .linea-r .ico{width:16px;height:16px;color:#C6A88F}
 #resumen .linea-r span:last-child{font-weight:600;color:#fff}
 .r-filas{margin-top:16px;border-top:1px solid rgba(243,238,229,.14)}
-.r-fila{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(243,238,229,.1);font-size:13.5px;color:#E4DBCF}
+.r-fila{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(243,238,229,.1);font-size:15.5px;color:#E4DBCF}
 .r-fila .ico{color:#C6A88F;width:19px;height:19px}
-.r-fila b{margin-left:auto;font-weight:500;color:#cfc4b6;font-size:13px}
+.r-fila b{margin-left:auto;font-weight:500;color:#cfc4b6;font-size:15px}
 .r-lista{border-top:0!important}
 .chip-osc{display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .chip-osc .ico{width:17px;height:17px;color:#C6A88F}
@@ -208,7 +208,7 @@ body.paciente .pasos{display:none}
 
 /* notas del medicamento */
 .item{row-gap:0}
-.it-nota{grid-column:3/-1;grid-row:3;width:100%;margin:8px 0 4px;border:1px solid var(--linea);border-radius:14px;padding:10px 14px;font:inherit;font-size:13px;line-height:1.45;color:var(--texto);background:var(--marfil);resize:none;outline:none;min-height:44px;cursor:text}
+.it-nota{grid-column:3/-1;grid-row:3;width:100%;margin:8px 0 4px;border:1px solid var(--linea);border-radius:14px;padding:10px 14px;font:inherit;font-size:15px;line-height:1.45;color:var(--texto);background:var(--marfil);resize:none;outline:none;min-height:44px;cursor:text}
 .it-nota:focus{border-color:var(--camel);background:#fff}
 .item.apagado .it-nota{display:none}
 body.paciente .it-nota{border:0;background:transparent;padding:0 0 0 2px;color:var(--tenue);pointer-events:none;min-height:0}
@@ -218,25 +218,25 @@ body.paciente .it-nota.vacia{display:none}
 /* precio manual */
 .chip-osc.ancho{grid-column:1/-1}
 #manual-caja input[type=text]{color:var(--choco);background:rgba(255,255,255,.95);font-weight:600}
-#manual-caja textarea{width:100%;border:0;border-radius:16px;padding:12px 16px;font:inherit;font-size:13.5px;color:var(--choco);background:rgba(255,255,255,.95);resize:vertical;outline:none;min-height:60px}
-#manual-caja .link-claro{margin:10px 0 0;font-size:12.5px}
-.r-manual{margin-top:8px;background:rgba(225,6,0,.12);border:1px solid rgba(255,140,120,.35);border-radius:14px;padding:10px 14px;font-size:12.5px;color:#ffd9d2;line-height:1.45}
+#manual-caja textarea{width:100%;border:0;border-radius:16px;padding:12px 16px;font:inherit;font-size:15.5px;color:var(--choco);background:rgba(255,255,255,.95);resize:vertical;outline:none;min-height:60px}
+#manual-caja .link-claro{margin:10px 0 0;font-size:14.5px}
+.r-manual{margin-top:8px;background:rgba(225,6,0,.12);border:1px solid rgba(255,140,120,.35);border-radius:14px;padding:10px 14px;font-size:14.5px;color:#ffd9d2;line-height:1.45}
 .r-manual b{color:#fff}
 body.paciente #abrir-manual,body.paciente .r-manual{display:none!important}
 body.doctor.desc-libre-on .acciones-sec{grid-template-columns:1fr 1fr}
 
 /* venas */
 .item.incluido .paso-q{display:none}
-.item.incluido::after{content:"Incluidas";grid-column:4;grid-row:1;font-size:12px;font-weight:600;color:var(--camel-osc);background:var(--marfil);border-radius:999px;padding:5px 12px}
+.item.incluido::after{content:attr(data-incl);grid-column:4;grid-row:1;font-size:14px;font-weight:600;color:var(--camel-osc);background:var(--marfil);border-radius:999px;padding:5px 12px}
 .item.incluido.apagado::after{content:none}
 .dinero.mini{margin-top:6px;max-width:200px}
-.dinero.mini input[type=text]{padding:7px 12px 7px 26px;font-size:13px}
+.dinero.mini input[type=text]{padding:7px 12px 7px 26px;font-size:15px}
 .dinero.mini::before{left:12px}
 .item.apagado .dinero.mini{display:none}
 body.paciente .dinero.mini{display:none}
 .desc-libre{display:none;align-items:center;gap:10px}
 .desc-libre .porcentaje{width:140px}
-.desc-libre small{color:#cfc4b6;font-size:12px}
+.desc-libre small{color:#cfc4b6;font-size:14px}
 body.desc-libre-on .desc-libre{display:flex}
 body.desc-libre-on .desc-rapidos{display:none}
 body.doctor.desc-libre-on #abrir-desc,body.doctor.desc-libre-on #desc-caja{display:none!important}
@@ -247,76 +247,76 @@ body.doctor.desc-libre-on .acciones-sec{grid-template-columns:1fr}
 .variantes button{border:1.5px solid var(--linea);background:#fff;border-radius:20px;padding:16px;text-align:left;cursor:pointer;transition:.25s}
 .variantes button:hover{border-color:var(--camel)}
 .variantes button.activa{border-color:var(--choco);background:var(--choco);color:#fff}
-.variantes b{display:block;font-size:16px;font-weight:700;letter-spacing:-.01em}
-.variantes small{display:block;font-size:12px;opacity:.7;margin-top:2px}
-.variantes span{display:block;font-size:15px;font-weight:600;margin-top:10px;font-variant-numeric:tabular-nums}
+.variantes b{display:block;font-size:18.5px;font-weight:700;letter-spacing:-.01em}
+.variantes small{display:block;font-size:14px;opacity:.7;margin-top:2px}
+.variantes span{display:block;font-size:17px;font-weight:600;margin-top:10px;font-variant-numeric:tabular-nums}
 body.paciente .variantes button:not(.activa){display:none}
 body.paciente .variantes{grid-template-columns:1fr}
-@media (max-width:640px){.variantes{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr))}.variantes button{padding:12px 10px;border-radius:16px}.variantes b{font-size:14px}.variantes small{font-size:11px}.variantes span{font-size:13px}}
+@media (max-width:640px){.variantes{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr))}.variantes button{padding:12px 10px;border-radius:16px}.variantes b{font-size:16px}.variantes small{font-size:12.5px}.variantes span{font-size:15px}}
 
 /* duración protagonista */
 .duracion-wow{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;background:var(--choco);color:var(--marfil);border-radius:26px;padding:26px 30px;margin-bottom:26px;position:relative;overflow:hidden}
 .duracion-wow::after{content:"";position:absolute;width:300px;height:300px;right:-120px;top:-150px;border-radius:50%;background:radial-gradient(circle,rgba(198,168,143,.35),transparent 65%)}
 .duracion-wow .grande{font-size:clamp(54px,8vw,84px);font-weight:700;letter-spacing:-.05em;line-height:.9;color:#fff}
-.duracion-wow .grande small{display:inline-block;margin-left:14px;vertical-align:middle;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-top:10px}
+.duracion-wow .grande small{display:inline-block;margin-left:14px;vertical-align:middle;font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:#C6A88F;font-weight:600;margin-top:10px}
 .duracion-wow .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;position:relative;z-index:1}
 .duracion-wow .stat{border-left:1px solid rgba(243,238,229,.2);padding-left:16px}
 .duracion-wow .stat b{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em;color:#fff;line-height:1.1}
-.duracion-wow .stat span{font-size:12.5px;color:#cfc4b6;line-height:1.3;display:block;margin-top:2px}
+.duracion-wow .stat span{font-size:14.5px;color:#cfc4b6;line-height:1.3;display:block;margin-top:2px}
 
 /* simulador de cuotas */
-.btn-cuotas{width:100%;margin-top:10px;background:transparent;border:1px solid #C6A88F;color:#fff;border-radius:999px;padding:13px;cursor:pointer;font-size:14px;font-weight:600}
+.btn-cuotas{width:100%;margin-top:10px;background:transparent;border:1px solid #C6A88F;color:#fff;border-radius:999px;padding:13px;cursor:pointer;font-size:16px;font-weight:600}
 .btn-cuotas:hover{background:rgba(198,168,143,.15)}
-.plan-pago{margin-top:12px;font-size:13px;color:#cfc4b6;background:rgba(243,238,229,.08);border-radius:14px;padding:10px 14px}
+.plan-pago{margin-top:12px;font-size:15px;color:#cfc4b6;background:rgba(243,238,229,.08);border-radius:14px;padding:10px 14px}
 .plan-pago b{color:#fff}
 #modal,#modal-manual,#modal-ingreso{position:fixed;inset:0;z-index:92;background:rgba(17,17,17,.45);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
 #modal.ver,#modal-manual.ver,#modal-ingreso.ver{opacity:1;pointer-events:auto}
 .caja-modal{background:var(--blanco);border-radius:32px;width:100%;max-width:520px;padding:32px;box-shadow:0 40px 80px -30px rgba(17,17,17,.5);transform:translateY(16px) scale(.98);transition:transform .45s var(--ease);max-height:calc(100vh - 32px);overflow:auto}
 #modal.ver .caja-modal,#modal-manual.ver .caja-modal,#modal-ingreso.ver .caja-modal{transform:none}
-#mi-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:14px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:60px}
+#mi-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:16px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:60px}
 .campo-fecha{width:100%;padding:12px 18px;border:1px solid var(--linea);border-radius:999px;background:#fff;font:inherit;color:var(--texto);outline:none}
 .campo-fecha:focus,#mi-nota:focus{border-color:var(--camel)}
 .btn-ingreso{background:#3E6B4A!important;color:#fff!important}
 .btn-ingreso:hover{background:#335a3d!important}
 .btn-ingreso .ico{color:#fff}
 body:not(.comercial) #abrir-ingreso{display:none!important}
-#mm-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:14px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:80px}
+#mm-nota{width:100%;border:1px solid var(--linea);border-radius:18px;padding:12px 16px;font:inherit;font-size:16px;color:var(--texto);background:#fff;resize:vertical;outline:none;min-height:80px}
 #mm-nota:focus{border-color:var(--camel)}
-.mm-error{color:var(--error);font-size:13px;margin-top:10px}
+.mm-error{color:var(--error);font-size:15px;margin-top:10px}
 #mm-dif b.baja{color:#9a3412}
 .caja-modal h3{font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--choco)}
-.caja-modal .ayuda{color:var(--tenue);font-size:14px;margin:4px 0 22px}
-.cerrar{float:right;border:0;background:var(--marfil);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--choco)}
+.caja-modal .ayuda{color:var(--tenue);font-size:16px;margin:4px 0 22px}
+.cerrar{float:right;border:0;background:var(--marfil);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20.5px;color:var(--choco)}
 .m-anticipo{display:flex;justify-content:space-between;align-items:center;background:var(--choco);color:#fff;border-radius:20px;padding:18px 22px}
-.m-anticipo span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#C6A88F;font-weight:600}
+.m-anticipo span{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#C6A88F;font-weight:600}
 .m-anticipo b{font-size:28px;font-weight:700;letter-spacing:-.03em}
-.m-resta{display:flex;justify-content:space-between;align-items:center;background:var(--marfil);border-radius:16px;padding:14px 18px;margin-top:10px;font-size:14px;color:var(--tenue)}
-.m-resta b{color:var(--choco);font-size:18px}
+.m-resta{display:flex;justify-content:space-between;align-items:center;background:var(--marfil);border-radius:16px;padding:14px 18px;margin-top:10px;font-size:16px;color:var(--tenue)}
+.m-resta b{color:var(--choco);font-size:20.5px}
 .m-paso{display:flex;align-items:center;justify-content:space-between;background:var(--marfil);border-radius:999px;padding:6px;max-width:220px}
 .m-paso button{border:0;background:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:22px;color:var(--choco);box-shadow:0 1px 3px rgba(17,17,17,.15)}
 .m-paso button:hover{background:var(--choco);color:#fff}
 .m-paso b{font-size:28px;font-weight:700;color:var(--choco)}
-.m-label{font-size:13px;font-weight:600;color:var(--tenue);margin:22px 0 10px}
+.m-label{font-size:15px;font-weight:600;color:var(--tenue);margin:22px 0 10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips button{border:1px solid var(--linea);background:#fff;border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:600;font-size:14px;color:var(--tenue)}
+.chips button{border:1px solid var(--linea);background:#fff;border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:600;font-size:16px;color:var(--tenue)}
 .chips button.activa{background:var(--choco);border-color:var(--choco);color:#fff}
 .m-cuota{text-align:center;margin:24px 0 8px}
-.m-cuota span{display:block;font-size:13px;color:var(--tenue)}
-.m-cuota small{display:block;font-size:12.5px;color:var(--camel-osc);margin-top:4px}
-.calendario div small{color:var(--tenue);font-size:12px}
+.m-cuota span{display:block;font-size:15px;color:var(--tenue)}
+.m-cuota small{display:block;font-size:14.5px;color:var(--camel-osc);margin-top:4px}
+.calendario div small{color:var(--tenue);font-size:14px}
 .calendario div.pagada span:last-child{color:var(--tenue);font-weight:500}
 .m-cuota b{display:block;font-size:46px;font-weight:700;letter-spacing:-.04em;color:var(--choco);line-height:1.1}
 .calendario{border-top:1px solid var(--linea);margin-top:14px}
-.calendario div{display:flex;justify-content:space-between;padding:9px 2px;border-bottom:1px solid var(--linea);font-size:14px}
+.calendario div{display:flex;justify-content:space-between;padding:9px 2px;border-bottom:1px solid var(--linea);font-size:16px}
 .calendario div span:last-child{font-weight:600;font-variant-numeric:tabular-nums}
 .m-botones{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.m-botones button{border-radius:999px;padding:14px;font-weight:700;cursor:pointer;font-size:14px}
+.m-botones button{border-radius:999px;padding:14px;font-weight:700;cursor:pointer;font-size:16px}
 .m-botones .si{background:var(--choco);color:#fff;border:0}
 .m-botones .no{background:#fff;border:1px solid var(--linea);color:var(--choco)}
 
 /* datos */
 .fila{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
-label{display:block;font-size:12px;font-weight:600;margin:0 0 7px 4px;color:var(--tenue);letter-spacing:.02em}
+label{display:block;font-size:14px;font-weight:600;margin:0 0 7px 4px;color:var(--tenue);letter-spacing:.02em}
 label small{font-weight:400}
 input[type=text],select{width:100%;padding:13px 18px;border:1px solid var(--linea);border-radius:999px;background:#fff;outline:none;transition:border-color .2s}
 select{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237A6E5A' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 18px center;padding-right:40px}
@@ -327,8 +327,8 @@ input:focus,select:focus{border-color:var(--camel)}
 .dinero::before{content:"$";position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--tenue)}
 .especialista{display:flex;align-items:center;gap:14px;background:var(--marfil);border-radius:999px;padding:8px 22px 8px 8px;margin-bottom:22px}
 .especialista .ini{width:44px;height:44px;border-radius:50%;background:var(--choco);color:var(--marfil);display:grid;place-items:center;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:20px;flex:none}
-.especialista b{display:block;font-size:14px}
-.especialista span{font-size:12.5px;color:var(--tenue)}
+.especialista b{display:block;font-size:16px}
+.especialista span{font-size:14.5px;color:var(--tenue)}
 .especialista button{margin-left:auto}
 .esp-editar{margin-bottom:22px}
 
@@ -338,16 +338,16 @@ aside::before{content:"";position:absolute;width:360px;height:360px;right:-160px
 aside > *{position:relative}
 aside .ojo{color:#C6A88F;margin-bottom:8px}
 aside .prog{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:30px;line-height:1.05;color:#fff;margin-bottom:22px}
-.r-meta{font-size:13px;color:#cfc4b6;margin:-14px 0 14px}
+.r-meta{font-size:15px;color:#cfc4b6;margin:-14px 0 14px}
 .r-lista{border-top:1px solid rgba(243,238,229,.16);border-bottom:1px solid rgba(243,238,229,.16)}
-.r-lista summary{list-style:none;cursor:pointer;padding:12px 0;font-size:13.5px;font-weight:600;color:#e3d7c8;display:flex;justify-content:space-between}
+.r-lista summary{list-style:none;cursor:pointer;padding:12px 0;font-size:15.5px;font-weight:600;color:#e3d7c8;display:flex;justify-content:space-between}
 .r-lista summary::-webkit-details-marker{display:none}
-.r-lista summary::after{content:"+";font-size:18px;line-height:1;transition:transform .3s}
+.r-lista summary::after{content:"+";font-size:20.5px;line-height:1;transition:transform .3s}
 .r-lista[open] summary::after{transform:rotate(45deg)}
 #resumen{max-height:280px;overflow:auto;padding-bottom:6px}
 #resumen .linea-r:last-child{border-bottom:0}
 .acciones-sec{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
-.chip-osc{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:11px 8px;cursor:pointer;font-size:13px;font-weight:600;transition:.2s}
+.chip-osc{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:11px 8px;cursor:pointer;font-size:15px;font-weight:600;transition:.2s}
 .chip-osc:hover,.chip-osc.activa{background:rgba(243,238,229,.18);border-color:#C6A88F}
 .desc-caja{margin-top:12px}
 .desc-fila{display:grid;grid-template-columns:1fr;gap:8px;align-items:center}
@@ -355,30 +355,30 @@ aside .prog{font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;f
 .porcentaje input[type=text]{width:100%;text-align:center;padding-right:30px;font-weight:700;background:rgba(255,255,255,.95);color:var(--choco)}
 .porcentaje::after{content:"%";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--tenue);font-weight:700}
 .desc-rapidos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.desc-rapidos button{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:10px 0;cursor:pointer;font-size:13px;font-weight:600}
+.desc-rapidos button{background:rgba(243,238,229,.08);border:1px solid rgba(243,238,229,.22);color:#fff;border-radius:999px;padding:10px 0;cursor:pointer;font-size:15px;font-weight:600}
 .desc-rapidos button:hover,.desc-rapidos button.activa{background:#E4DBCF;color:var(--choco);border-color:#E4DBCF}
 .desc-caja label{color:#C6A88F;margin-left:6px}
 .desc-caja input[type=text]{background:rgba(255,255,255,.95)}
-.link-claro{display:block;margin:16px auto 0;background:none;border:0;color:#C6A88F;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.link-claro{display:block;margin:16px auto 0;background:none;border:0;color:#C6A88F;font-size:15px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .link-claro:hover{color:#fff}
-.linea-r{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(243,238,229,.1)}
+.linea-r{display:flex;justify-content:space-between;gap:12px;font-size:15.5px;padding:9px 0;border-bottom:1px solid rgba(243,238,229,.1)}
 .linea-r span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;color:#cfc4b6}
 .linea-r.vacio{color:#C6A88F;border:0}
 .total{margin-top:22px}
-.total span{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#C6A88F;font-weight:600}
+.total span{display:block;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#C6A88F;font-weight:600}
 .total b{display:block;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.035em;font-size:44px;line-height:1.05;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.01em;transition:color .3s}
 .total b.cambia{color:#e3d7c8}
-.sub-total{display:flex;justify-content:space-between;font-size:13px;color:#cfc4b6;margin-top:6px}
-.btn{width:100%;margin-top:20px;background:var(--marfil);color:var(--choco);border:0;border-radius:999px;padding:16px;font-weight:700;cursor:pointer;font-size:15px;transition:transform .3s var(--ease),background .2s}
+.sub-total{display:flex;justify-content:space-between;font-size:15px;color:#cfc4b6;margin-top:6px}
+.btn{width:100%;margin-top:20px;background:var(--marfil);color:var(--choco);border:0;border-radius:999px;padding:16px;font-weight:700;cursor:pointer;font-size:17px;transition:transform .3s var(--ease),background .2s}
 .btn:hover{background:#fff;transform:translateY(-1px)}
 .btn:disabled{opacity:.6;cursor:wait}
-.btn-sec{width:100%;margin-top:10px;background:transparent;border:1px solid rgba(243,238,229,.25);color:var(--marfil);border-radius:999px;padding:12px;cursor:pointer;font-size:13.5px}
+.btn-sec{width:100%;margin-top:10px;background:transparent;border:1px solid rgba(243,238,229,.25);color:var(--marfil);border-radius:999px;padding:12px;cursor:pointer;font-size:15.5px}
 .btn-sec:hover{border-color:rgba(243,238,229,.6)}
 
 /* modos: comercial y paciente */
-.franja{position:relative;z-index:2;max-width:760px;margin:24px auto 0;background:var(--blanco);box-shadow:0 0 0 1px var(--linea);border-radius:999px;padding:16px 30px;font-size:17px;color:var(--choco);text-align:center}
+.franja{position:relative;z-index:2;max-width:760px;margin:24px auto 0;background:var(--blanco);box-shadow:0 0 0 1px var(--linea);border-radius:999px;padding:16px 30px;font-size:19.5px;color:var(--choco);text-align:center}
 .franja .rojo{color:#E10600;font-weight:800}
-@media (max-width:640px){.franja{margin:18px 16px 0;border-radius:22px;font-size:15px;padding:14px 18px}}
+@media (max-width:640px){.franja{margin:18px 16px 0;border-radius:22px;font-size:17px;padding:14px 18px}}
 .franja b{font-weight:700}
 body.paciente .programas,body.paciente #restaurar,body.paciente #datos,body.paciente .item.apagado,
 body.comercial #enviar-correo,body.paciente #enviar-correo,body.paciente .r-lista,body.paciente #enviar,body.paciente #nueva,body.paciente .acciones-sec,body.paciente #desc-caja,body.paciente .agregar,body.paciente .candado,body.paciente .barra button{display:none!important}
@@ -386,7 +386,7 @@ body.paciente .item{cursor:default}
 body.paciente .item .marca{display:none}
 body.paciente .paso-q{background:transparent!important;width:auto;padding:0}
 body.paciente .paso-q button{display:none}
-body.paciente .paso-q::before{content:"×";font-size:13px;color:var(--tenue);margin:0 2px 0 10px}
+body.paciente .paso-q::before{content:"×";font-size:15px;color:var(--tenue);margin:0 2px 0 10px}
 body.paciente .item .paso-q input[type=text]{text-align:left;width:84px;padding:0;color:var(--choco);font-weight:700;pointer-events:none}
 body.paciente #descargar{background:var(--marfil);color:var(--choco);border:0;font-weight:700;padding:16px;margin-top:24px}
 #compartir-pdf{display:none}
@@ -396,7 +396,7 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
 /* barra fija en celular */
 .barra{display:none}
 
-#aviso{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--choco);color:#fff;padding:12px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:95;max-width:calc(100% - 32px)}
+#aviso{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--choco);color:#fff;padding:12px 20px;border-radius:999px;font-size:16px;opacity:0;transition:.25s;z-index:95;max-width:calc(100% - 32px)}
 #aviso.ver{opacity:1;transform:translateX(-50%)}
 #aviso.mal{background:var(--error)}
 
@@ -409,8 +409,8 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
   .programas{padding:0 16px;gap:10px}
   .prog-card{border-radius:22px}
   .prog-card .foto{height:96px;border-radius:16px}
-  .prog-card b{font-size:17px;margin:10px 8px 2px}
-  .prog-card small{margin:0 8px;font-size:11.5px}
+  .prog-card b{font-size:19.5px;margin:10px 8px 2px}
+  .prog-card small{margin:0 8px;font-size:13px}
   .intro{padding:30px 16px 24px}
   main{padding:24px 16px 120px;gap:20px}
   .bloque{padding:22px 16px;border-radius:24px}
@@ -424,10 +424,10 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
   .pasos button em{display:none}
   .pasos button.activo em{display:inline}
   .pasos i{width:18px}
-  .emoji{width:32px;height:32px;font-size:16px;border-radius:9px}
+  .emoji{width:32px;height:32px;font-size:18.5px;border-radius:9px}
   .candado{min-width:0;width:30px;padding:0;height:26px}
   .candado .on{display:none!important}
-  .item .paso-q input[type=text]{width:68px;font-size:12px}
+  .item .paso-q input[type=text]{width:68px;font-size:14px}
   .item.apagado .paso-q{display:none}
   .duracion-wow{grid-template-columns:1fr;gap:18px;padding:22px}
   .duracion-wow .grande small{display:block;margin:10px 0 0}
@@ -438,12 +438,19 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
   .barra{transition:transform .4s var(--ease),opacity .3s}
   .barra.esconder{transform:translateY(120%);opacity:0;pointer-events:none}
   .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:80;background:var(--choco);color:#fff;border-radius:999px;padding:10px 10px 10px 22px;align-items:center;justify-content:space-between;box-shadow:0 20px 40px -16px rgba(17,17,17,.6)}
-  .barra span{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F}
+  .barra span{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#C6A88F}
   .barra b{font-size:22px!important;font-family:"Libre Caslon Display",Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.02em;font-size:26px;line-height:1}
-  .barra button{border:0;background:var(--marfil);color:var(--choco);border-radius:999px;padding:12px 18px;font-weight:700;font-size:13.5px}
+  .barra button{border:0;background:var(--marfil);color:var(--choco);border-radius:999px;padding:12px 18px;font-weight:700;font-size:15.5px}
 }
 
 /* ---------- PDF: 1 hoja carta exacta (816 × 1056 px) ---------- */
+@media (max-width:640px){ /* 20-nov: letra más grande, pero en celular los renglones necesitan aire */
+  .item .titulo{font-size:15.5px;line-height:1.25}
+  .item .desc{font-size:13px}
+  .agregar{padding:4px 10px;font-size:13px}
+  .paso-q button{width:26px;height:26px}
+  .item .paso-q input[type=text]{width:30px}
+}
 #pdf-caja{position:absolute;left:-10000px;top:0}
 #pdf{width:816px;background:#fff;color:#111111;font:12px/1.45 Arial,"Helvetica Neue",Helvetica,sans-serif}
 #pdf .hoja{width:816px;height:1056px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
@@ -523,7 +530,7 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
 <section class="intro">
   <p class="ojo" id="intro-ojo">Tu plan a la medida</p>
   <h1 id="intro-h1">Arma tu tratamiento</h1>
-  <p id="intro-p">Elige el tratamiento de celulitis, ajusta lo que necesitas y mira tu inversión al instante.</p>
+  <p id="intro-p">Elige el programa, ajusta lo que necesitas y mira tu inversión al instante.</p>
 </section>
 
 <nav class="pasos" id="pasos">
@@ -532,7 +539,7 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
   <button type="button" data-ir="resumen-caja"><span>3</span><em>Revisar y compartir</em></button>
 </nav>
 
-<div class="programas oculto" id="programas"></div>
+<div class="programas" id="programas"></div>
 
 <main>
   <div>
@@ -672,12 +679,13 @@ body.comercial #enviar,body.paciente #enviar{background:var(--marfil);color:var(
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 /* ============ CONFIGURACIÓN (aquí se cambian precios y renglones) ============ */
-/* The Skin Haus · cotizador SOLO de celulitis (HAUSFORM). Copia del de Seravena (www.clinicaseravena.com/cotizador), 9-nov-2026. */
+/* The Skin Haus · copia del cotizador de Seravena (www.clinicaseravena.com/cotizador) con la marca The Skin Haus. 9-nov-2026 solo celulitis; 20-nov-2026 TODOS los programas (lipedema, obesidad, venas, celulitis, medicina estética). */
 const CODIGO = "111";
 const VIGENCIA_DIAS = 30;
 const ESPECIALISTA = "Valeria Enciso";
 const ESPECIALIDAD = "Médica estética";
 const ESTETICA = { nombre: ESPECIALISTA, especialidad: ESPECIALIDAD };
+const VASCULAR = { nombre: "Jose David Puerta", especialidad: "Médico Internista – Subespecialista en Medicina Vascular" }; // lipedema, obesidad y venas
 const COMERCIAL = { nombre: "Federico", whatsapp: "573006397083" }; // a quien le llega "Enviar al comercial" (el mismo de Seravena; cambiar aquí si en Skin Haus es otra persona)
 const SITIO = "https://theskinhaus.com.co/cotizador";
 const ENVIO_INGRESO = "https://seravena-cotizador-correo.vercel.app/api/skinhaus-ingreso"; // solo correo de aviso (no toca la hoja de Seravena)
@@ -689,6 +697,25 @@ const COSTO_APARATOLOGIA = 39000;
 
 /* Todos los servicios que se pueden incluir. u = costo por unidad (solo lo ves tú). interno = no sale en el PDF. */
 const CATALOGO = [
+  { id: "ecografia",     n: "Ecografía", u: 30000, e: "🩻", t: "Ecografía", d: "", interno: true },
+  { id: "psicologia",    n: "Cita de psicología", u: 150000, e: "🧠", t: "Psicología", d: "Acompañamiento emocional durante el proceso" },
+  { id: "nutriologa",    n: "Nutrióloga", u: 200000, e: "🥗", t: "Nutrióloga", d: "Plan de alimentación médico" },
+  { id: "nutricionista", n: "Acompañamiento nutricionista", u: 80000, e: "🍎", t: "Nutricionista", d: "Seguimiento a tu alimentación" },
+  { id: "deportologia",  n: "Deportología", u: 200000, e: "🏃‍♀️", t: "Deportología", d: "Ejercicio seguro y a tu medida" },
+  { id: "interna",       n: "Medicina interna (vascular)", u: 200000, e: "🩺", t: "Medicina interna", d: "Valoración con el especialista vascular" },
+  { id: "general",       n: "Medicina general / seguimiento semanal", u: 25000, e: "📋", t: "Seguimiento semanal", d: "Medicina general, semana a semana" },
+  { id: "tirzepatida",   n: "Medicamento: Tirzepatida 2,5 mg semanal", u: 400000, e: "💉", t: "Medicamento", d: "Tirzepatida 2,5 mg, una vez por semana" },
+  { id: "enfermeria",    n: "Acompañamiento de enfermería", u: 50000, e: "👩‍⚕️", t: "Enfermería", d: "Acompañamiento cuando lo necesites" },
+  { id: "medias",        n: "Medias de compresión", u: 370000, e: "🧦", t: "Medias de compresión", d: "Para el día a día" },
+  { id: "aparatologia",  n: "Aparatología: Dermatens, onda de choque y presoterapia (según recomendación médica semana a semana)", u: COSTO_APARATOLOGIA, e: "⚡", t: "Aparatología", d: "Dermatens, onda de choque y presoterapia" },
+  { id: "drenaje",       n: "Drenaje linfático con fisioterapia", u: 70000, e: "💆‍♀️", t: "Drenaje linfático", d: "Con fisioterapia" },
+  /* VENAS — precios de venta que dio Laura (15-oct); aquí "u" es el precio, no el costo */
+  { id: "escleroterapia", n: "Sesiones de escleroterapia", u: 300000, t: "Sesiones de escleroterapia", d: "Dale + para sumar sesiones" },
+  { id: "espuma_trib",    n: "Espuma de tributarias (por pierna)", u: 1500000, t: "Espuma de tributarias", d: "Inyección del medicamento · por pierna", max: 2, unidad: "pierna" },
+  { id: "espuma_safena",  n: "Espuma de safena (por pierna)", u: 3000000, t: "Espuma de safena", d: "Por pierna", max: 2, unidad: "pierna" },
+  { id: "endolaser",      n: "Endoláser (por pierna)", u: 6500000, t: "Endoláser", d: "Por pierna", max: 2, unidad: "pierna", tabla: { 1: 6500000, 2: 10000000 } },
+  { id: "medias_v",       n: "Medias de compresión", u: 0, t: "Medias de compresión", d: "Incluidas en el tratamiento", incluido: true },
+  { id: "rivaroxaban",    n: "Rivaroxabán 10 mg", u: 60000, t: "Rivaroxabán 10 mg", d: "Medicamento" },
   /* HAUSFORM (celulitis) — costos que dio Laura el 28-oct (Sculptra: 2 ampollas = 2.334.000) */
   { id: "sculptra",   n: "Sculptra (bioestimulador de colágeno)", u: 1167000, t: "Sculptra", d: "Bioestimulador de colágeno · por ampolla" },
   { id: "sveltia",    n: "Sveltia (hidroxiapatita de calcio)", u: 600000, t: "Sveltia", d: "Bioestimulador de colágeno · por ampolla" },
@@ -701,33 +728,81 @@ const CATALOGO = [
   { id: "insumos",    n: "Anestesia local y materiales", u: 105000, t: "Anestesia local y materiales", d: "Lidocaína, cánulas y material estéril" },
   { id: "indirectos", n: "Consultorio e indirectos", u: 180000, interno: true },
   { id: "aparatologia_hf", n: "Aparatología para celulitis", u: COSTO_APARATOLOGIA, t: "Aparatología", d: "Dermatens, onda de choque y presoterapia · por sesión" },
+  /* MEDICINA ESTÉTICA (Dra. Valeria Enciso) — precios de venta que decidió Laura el 20-nov-2026; aquí "u" es el PRECIO, no el costo */
+  { id: "me_toxina",    n: "Toxina botulínica (Dysport)", u: 1200000, t: "Toxina botulínica", d: "$1.200.000 · Suaviza las líneas de expresión de frente, entrecejo y patas de gallo" },
+  { id: "me_labios",    n: "Labios con ácido hialurónico", u: 1400000, t: "Labios con ácido hialurónico", d: "$1.400.000 · 1 jeringa · volumen, forma e hidratación con resultado natural" },
+  { id: "me_mandibula", n: "Perfilamiento mandibular", u: 2000000, t: "Perfilamiento mandibular", d: "$2.000.000 · 2 jeringas de ácido hialurónico · define el contorno de tu rostro" },
+  { id: "me_lyft",      n: "Puntos de sustentación (Restylane Lyft)", u: 1350000, t: "Puntos de sustentación", d: "$1.350.000 · Restylane Lyft, 1 jeringa · devuelve soporte y firmeza al rostro" },
+  { id: "me_sculptra",  n: "Sculptra facial (1 vial)", u: 2500000, t: "Sculptra", d: "$2.500.000 · Bioestimulador de colágeno, 1 vial · tu piel recupera firmeza poco a poco" },
+  { id: "me_radiesse",  n: "Radiesse (1 jeringa)", u: 1900000, t: "Radiesse", d: "$1.900.000 · Bioestimulador con hidroxiapatita de calcio, 1 jeringa · firmeza y contorno" },
+  { id: "me_nanopore",  n: "Protocolo Nanopore", u: 750000, t: "Protocolo Nanopore", d: "$750.000 · Microagujas con activos que renuevan la textura y el brillo de tu piel" },
+  { id: "me_adn",       n: "ADN de salmón (PDRN)", u: 800000, t: "ADN de salmón", d: "$800.000 · Regenera la piel desde adentro: más luminosa, hidratada y uniforme" },
+  /* lo que trae cada tratamiento de estética (sin costo para la paciente) */
+  { id: "me_diseno",    n: "Diseño personalizado de tu tratamiento", u: 0, t: "Diseño personalizado de tu tratamiento", d: "La doctora analiza tu rostro y define contigo las zonas y la dosis justa", incluido: true },
+  { id: "me_fotos",     n: "Registro fotográfico de tu antes y después", u: 0, t: "Registro fotográfico antes y después", d: "Para que veas con tus propios ojos cómo cambia tu piel", incluido: true },
+  { id: "me_revision",  n: "Cita de revisión de tu resultado", u: 0, t: "Cita de revisión de tu resultado", d: "Volvemos a verte para revisar cómo evoluciona tu tratamiento", incluido: true },
+  { id: "me_whatsapp",  n: "Acompañamiento médico por WhatsApp", u: 0, t: "Acompañamiento médico por WhatsApp", d: "Resolvemos tus dudas en los días después del procedimiento", incluido: true },
+  { id: "me_cuidados",  n: "Guía de cuidados para casa", u: 0, t: "Guía de cuidados para casa", d: "Indicaciones claras para que tu resultado dure y se vea mejor", incluido: true },
 ];
 
 /* Cada plan: qué trae (id: cantidad, o [cantidad, costo distinto]) y su precio de lista.
    ganancia: el precio es lo que cuesta + 30% (igual que en Seravena, 28-oct) */
 const PROGRAMAS = {
+  lipedema: {
+    foto: "assets/fotos/vascular-720.webp", frase: "Manejo integral · 3 meses",
+    esp: VASCULAR, nombre: "Lipedema", titulo: "Programa de manejo de lipedema", precio: 8952381, duracion: "3 meses",
+    plan: { ecografia: 1, psicologia: 2, nutriologa: 2, deportologia: 2, nutricionista: 2, interna: 2, general: 12,
+            tirzepatida: [5, 370000], enfermeria: ["A demanda", 60000], medias: 1, aparatologia: 20, drenaje: 6 },
+  },
+  obesidad: {
+    foto: "assets/fotos/consulta.webp", frase: "Manejo médico del peso · 3 meses",
+    esp: VASCULAR, nombre: "Obesidad", titulo: "Paquete de manejo de obesidad", precio: 7883333, duracion: "3 meses",
+    plan: { ecografia: 1, psicologia: 2, nutriologa: 2, nutricionista: 2, deportologia: 2, interna: 2, general: 12,
+            tirzepatida: 6, enfermeria: 1 },
+  },
+  venas: {
+    foto: "assets/fotos/vascular-detalle.webp", frase: "Escleroterapia, espuma o endoláser", familia: "venas", solo: "vn", esp: VASCULAR, sinCostos: true, descuentoLibre: true,
+    nombre: "Escleroterapia", corto: "Escleroterapia", resumen: "Elige cuántas sesiones", etiqueta: "", titulo: "Venas · Escleroterapia", precio: 0, duracion: "", pagos: null,
+    plan: { escleroterapia: 1 }, muestra: ["escleroterapia", "rivaroxaban"],
+  },
+  venas_espuma: {
+    oculto: true, familia: "venas", solo: "vn", esp: VASCULAR, sinCostos: true, descuentoLibre: true,
+    nombre: "Espuma", corto: "Espuma", resumen: "Tributarias o safena · con medias", etiqueta: "", titulo: "Venas · Espuma", precio: 0, duracion: "", pagos: null,
+    plan: { espuma_trib: 1, medias_v: "Incluidas" }, // en espuma se ven todos los tratamientos de venas
+  },
+  venas_endolaser: {
+    oculto: true, familia: "venas", solo: "vn", esp: VASCULAR, sinCostos: true, descuentoLibre: true,
+    nombre: "Endoláser", corto: "Endoláser", resumen: "1 o 2 piernas · con medias", etiqueta: "", titulo: "Venas · Endoláser", precio: 0, duracion: "", pagos: null,
+    plan: { endolaser: 1, medias_v: "Incluidas" }, muestra: ["endolaser", "medias_v", "rivaroxaban"],
+  },
   celulitis: {
-    familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
+    foto: "assets/fotos/manos-720.webp", frase: "Tratamiento HAUSFORM", familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
     nombre: "HAUSFORM Sculptra", corto: "Sculptra", resumen: "Ampollas de Sculptra · glúteos", titulo: "Celulitis · HAUSFORM con Sculptra", duracion: "", pagos: null,
     plan: { sculptra: 2, proc_gluteos: 1 }, muestra: ["sculptra", "proc_gluteos", "aparatologia_hf"],
   },
   celulitis_sveltia: {
-    familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
+    oculto: true, familia: "celulitis", solo: "hf", esp: ESTETICA, ganancia: 0.30,
     nombre: "HAUSFORM Sveltia", corto: "Sveltia", resumen: "Ampollas de Sveltia · glúteos", titulo: "Celulitis · HAUSFORM con Sveltia", duracion: "", pagos: null,
     plan: { sveltia: 2, proc_gluteos: 1 }, muestra: ["sveltia", "proc_gluteos", "aparatologia_hf"],
   },
   celulitis_advance: {
-    familia: "celulitis", solo: "hf", esp: ESTETICA,
+    oculto: true, familia: "celulitis", solo: "hf", esp: ESTETICA,
     nombre: "HAUSFORM Advance", corto: "Advance", resumen: "Venufill + PRP", titulo: "Celulitis · HAUSFORM Advance", precio: 3500000, duracion: "", pagos: null,
     plan: { venufill: 1, prp: 1, medico: 1, insumos: [1, 95000], indirectos: [1, 180000] },
     muestra: ["sculptra", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"],
   },
   celulitis_prestige: {
-    familia: "celulitis", solo: "hf", esp: ESTETICA,
+    oculto: true, familia: "celulitis", solo: "hf", esp: ESTETICA,
     nombre: "HAUSFORM Prestige", corto: "Prestige", resumen: "Sculptra + Venufill", titulo: "Celulitis · HAUSFORM Prestige", precio: 5800000, duracion: "", pagos: null,
     plan: { sculptra: 2, venufill: 1, medico: 1, insumos: [1, 115000], indirectos: [1, 210000] },
     muestra: ["sculptra", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"],
   },
+};
+/* MEDICINA ESTÉTICA: una sola tarjeta; la doctora marca uno o varios tratamientos y el total es la suma de sus precios */
+PROGRAMAS.estetica = {
+  foto: "assets/fotos/bioestimuladores-720.webp", frase: "Toxina, rellenos y bioestimuladores", solo: ["me", "mi"], sinCostos: true, esp: ESTETICA,
+  nombre: "Medicina estética", titulo: "Medicina estética", precio: 0, duracion: "", pagos: null,
+  plan: { me_diseno: "Incluido", me_fotos: "Incluido", me_revision: "Incluida", me_whatsapp: "Incluido", me_cuidados: "Incluida" },
 };
 const FACTOR_SIN_PLANTILLA = 1 / 0.6; // si no hay precio de lista: el costo es el 60% del precio
 /* medios de pago de The Skin Haus (Laura, 9-nov: la cuenta está a nombre de MS Clinic y no importa que no diga Skin Haus) */
@@ -755,6 +830,19 @@ Object.values(PROGRAMAS).forEach(p => {
 
 /* ---- íconos de línea (estilo Lucide, trazo 1,6) ---- */
 const ICO = {
+  me_toxina: '<path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>',
+  me_labios: '<path d="M2 12c3-4 6-5 8-3 1 1 3 1 4 0 2-2 5-1 8 3-3 4-6.5 6-10 6S5 16 2 12Z"/><path d="M2 12h20"/>',
+  me_mandibula: '<path d="M6 3v7a6 6 0 0 0 12 0V3"/><path d="M6 10c0 6 3 11 6 11s6-5 6-11"/>',
+  me_lyft: '<path d="m17 11-5-5-5 5M17 18l-5-5-5 5"/>',
+  me_sculptra: '<path d="M14.5 2v17.5a2.5 2.5 0 0 1-5 0V2"/><path d="M8.5 2h7M14.5 9h-5M14.5 15h-5"/>',
+  me_radiesse: '<path d="M14.5 2v17.5a2.5 2.5 0 0 1-5 0V2"/><path d="M8.5 2h7M14.5 9h-5M14.5 15h-5"/>',
+  me_nanopore: '<circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/>',
+  me_adn: '<path d="M7 2c0 6 10 8 10 14v6M17 2c0 6-10 8-10 14v6M8 6h8M7.5 18h9M9 10h6"/>',
+  me_diseno: '<path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>',
+  me_fotos: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z"/><circle cx="12" cy="13" r="3"/>',
+  me_revision: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/>',
+  me_whatsapp: '<path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5Z"/>',
+  me_cuidados: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7Z"/>',
   psicologia: '<path d="M12 3a7 7 0 0 0-7 7c0 2.1.9 3.6 2 4.8V21h7v-3h2a2 2 0 0 0 2-2v-2.4l1.6-.6-1.6-3.2A7 7 0 0 0 12 3Z"/><path d="M10 9.5a2 2 0 0 1 3.5-1.3 1.8 1.8 0 0 1 .5 2.8"/>',
   nutriologa: '<path d="M12 20.9c1.5 0 2.8 1.1 4 1.1 3 0 6-8 6-12.2A4.9 4.9 0 0 0 17 5c-2.2 0-4 1.4-5 2-1-.6-2.8-2-5-2a4.9 4.9 0 0 0-5 4.8C2 14 5 22 8 22c1.2 0 2.5-1.1 4-1.1Z"/><path d="M10 2c1 .5 2 2 2 5"/>',
   nutricionista: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/>',
@@ -802,7 +890,12 @@ document.querySelectorAll("[data-ico]").forEach(el => el.insertAdjacentHTML("aft
 
 /* ---- grupos de servicios ---- */
 const GRUPOS = [
+  { id: "esp", t: "Consultas con especialistas", i: "personas", ids: ["psicologia", "nutriologa", "nutricionista", "deportologia", "interna"] },
+  { id: "tto", t: "Tratamiento y seguimiento", i: "general", ids: ["general", "tirzepatida", "enfermeria", "medias", "aparatologia", "drenaje", "ecografia"] },
+  { id: "vn", t: "Tratamiento de venas", i: "drenaje", ids: ["escleroterapia", "espuma_trib", "espuma_safena", "endolaser", "medias_v", "rivaroxaban"] },
   { id: "hf", t: "Tratamiento HAUSFORM para celulitis", i: "brillo", ids: ["sculptra", "sveltia", "proc_gluteos", "venufill", "prp", "medico", "insumos", "indirectos", "aparatologia_hf"] },
+  { id: "me", t: "Tratamientos de medicina estética", i: "brillo", ids: ["me_toxina", "me_labios", "me_mandibula", "me_lyft", "me_sculptra", "me_radiesse", "me_nanopore", "me_adn"] },
+  { id: "mi", t: "Viene incluido en tu tratamiento", i: "corazon", ids: ["me_diseno", "me_fotos", "me_revision", "me_whatsapp", "me_cuidados"] },
 ];
 
 /* ---- candado ---- */
@@ -911,7 +1004,13 @@ let PROG = "celulitis";
 const P = () => PROGRAMAS[PROG];
 $("#programas").innerHTML = Object.entries(PROGRAMAS).filter(([, p]) => !p.oculto).map(([id, p]) =>
   `<button type="button" class="prog-card" data-prog="${id}"><div class="foto" style="background-image:url('${p.foto}')"></div><b>${p.familia ? p.familia[0].toUpperCase() + p.familia.slice(1) : p.nombre}</b><small>${p.frase}</small></button>`).join("");
-document.querySelectorAll("#programas button").forEach(b => b.onclick = () => ponerPrograma(b.dataset.prog));
+/* cambiar de programa borra lo armado: la paciente no puede, tocar el mismo no hace nada y Fede confirma */
+function cambiarPrograma(id){
+  if (MODO === "paciente" || id === PROG) return;
+  if (MODO === "comercial" && !confirm("Si cambias de programa se pierde lo que armó el doctor. ¿Cambiar?")) return;
+  ponerPrograma(id);
+}
+document.querySelectorAll("#programas button").forEach(b => b.onclick = () => { const f = PROGRAMAS[b.dataset.prog].familia; if (f && f === P().familia) return; cambiarPrograma(b.dataset.prog); }); // tarjeta grande de la familia ya elegida: no reinicia
 
 function ponerPrograma(id){
   PROG = id;
@@ -923,7 +1022,7 @@ function ponerPrograma(id){
   const vars = fam ? Object.entries(PROGRAMAS).filter(([, p]) => p.familia === fam) : [];
   $("#variantes").innerHTML = vars.map(([k, p]) => `<button type="button" data-v="${k}" class="${k === id ? "activa" : ""}"><b>${p.corto}</b><small>${p.resumen}</small>${p.etiqueta === "" ? "" : `<span>${p.etiqueta || fmt(p.precio)}</span>`}</button>`).join("");
   $("#variantes").classList.toggle("oculto", !vars.length);
-  $("#variantes").querySelectorAll("button").forEach(b => b.onclick = () => ponerPrograma(b.dataset.v));
+  $("#variantes").querySelectorAll("button").forEach(b => b.onclick = () => cambiarPrograma(b.dataset.v));
   $("#pendiente").textContent = P().pendiente || "";
   $("#pendiente").classList.toggle("oculto", !P().pendiente);
   $("#ayuda-precio").textContent = P().precio
@@ -932,7 +1031,7 @@ function ponerPrograma(id){
   cargarPlantilla();
 }
 function cargarPlantilla(){
-  const grupos = GRUPOS.filter(g => P().solo ? g.id === P().solo : !["hf", "vn"].includes(g.id));
+  const grupos = GRUPOS.filter(g => P().solo ? [].concat(P().solo).includes(g.id) : !["hf", "vn", "me", "mi"].includes(g.id));
   $("#items").innerHTML = grupos.map(g => `<details class="grupo" open data-g="${g.id}"><summary>${ico(g.i)}<div><b>${g.t}</b><small class="g-cuenta"></small></div>${ico("abajo", "flecha-g")}</summary><div class="lista"></div></details>`).join("");
   const permitidos = P().muestra || grupos.flatMap(g => g.ids);
   CATALOGO.filter(c => permitidos.includes(c.id)).forEach(c => {
@@ -961,7 +1060,7 @@ function agregarItem(it = {}){
     ${it.id === "tirzepatida" ? `<textarea class="it-nota" rows="2" placeholder="Notas del medicamento: dosis, cambios de dosis, indicaciones…"></textarea>` : ""}
     <button type="button" class="candado" title="Marcar como recomendado: el comercial verá que no se debería quitar">${ico("candado")}<span class="on">No quitar</span></button>`;
   if (it.lock) d.classList.add("bloqueado");
-  if (it.incluido) d.classList.add("incluido");
+  if (it.incluido){ d.classList.add("incluido"); d.dataset.incl = /^\d/.test(it.q) ? "Incluidas" : it.q; }
   if (it.max) d.dataset.max = it.max;
   if (it.precioLibre){
     d.classList.add("precio-libre");
@@ -1065,7 +1164,7 @@ function textoPlan(total, corto){
 function pintarPlanPago(s){
   const pp = $("#plan-pago");
   if (!CUOTAS || !s.precio){ pp.classList.add("oculto"); return; }
-  pp.innerHTML = `Plan de pago en ${CUOTAS} ${CUOTAS === 1 ? "cuota" : "cuotas"} de <b>${fmt(s.precio / CUOTAS)}</b>: ${textoPlan(s.precio)}`;
+  pp.innerHTML = `Plan de pago en ${CUOTAS} ${CUOTAS === 1 ? "cuota" : "cuotas"} de <b>${fmt(s.precio / CUOTAS)}</b>${anticipoDe(s.precio) ? ": " + textoPlan(s.precio) : ""}`; // sin abono no repite "3 cuotas de…"
   pp.classList.remove("oculto");
 }
 function pintarModal(){
@@ -1101,7 +1200,7 @@ $("#m-quitar").onclick = () => { CUOTAS = 0; INICIAL = null; calcular(); cerrarM
 let totalVisto = null;
 function animarTotal(v){
   const t = $("#total"), m = $("#total-m");
-  if (totalVisto === null || totalVisto === v){ totalVisto = v; t.textContent = m.textContent = fmt(v); return; }
+  if (totalVisto === null || totalVisto === v){ cancelAnimationFrame(animarTotal.f); t.classList.remove("cambia"); totalVisto = v; t.textContent = m.textContent = fmt(v); return; }
   const de = totalVisto, ini = performance.now(); totalVisto = v;
   t.classList.add("cambia");
   cancelAnimationFrame(animarTotal.f);
@@ -1162,6 +1261,8 @@ const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto"
 const fecha = d => d.getDate() + " de " + MESES[d.getMonth()] + " de " + d.getFullYear();
 const dos = n => String(n).padStart(2, "0");
 
+/* en el PDF el ícono va con tamaño y color fijos: html2canvas no pinta "currentColor" ni el tamaño por CSS */
+const icoPDF = k => ico(k).replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" ').replace(/currentColor/g, "#4B412D");
 function armarPDF(s, numero, hoy, vence){
   const filas = s.items.filter(x => !x.interno && x.n);
   const pagos = P().pagos || PAGOS_BASE;
@@ -1190,7 +1291,7 @@ function armarPDF(s, numero, hoy, vence){
       <div class="cols">
         <div class="lista">
           <p class="sec">Lo que incluye tu plan</p>
-          ${filas.map(f => { const c = catDe(f); return `<div class="fila"><span class="ic">${ico(c.id)}</span><div><b>${esc(c.t || f.n)}</b>${c.d ? `<small>${esc(c.d)}</small>` : ""}${f.nota ? `<div class="nota">Nota: ${esc(f.nota)}</div>` : ""}</div><span class="q">${esc(cant(f.q))}</span></div>`; }).join("")}
+          ${filas.map(f => { const c = catDe(f); return `<div class="fila"><span class="ic">${icoPDF(c.id)}</span><div><b>${esc(c.t || f.n)}</b>${c.d ? `<small>${esc(c.d)}</small>` : ""}${f.nota ? `<div class="nota">Nota: ${esc(f.nota)}</div>` : ""}</div><span class="q">${esc(cant(f.q))}</span></div>`; }).join("")}
         </div>
         <div>
           <p class="sec">Tu inversión</p>
@@ -1205,7 +1306,7 @@ function armarPDF(s, numero, hoy, vence){
       </div>
       <p class="frase">${esc(FRASE)}</p>
     </div>
-    <div class="pie"><span><b>The Skin Haus</b> · Medicina estética · Torre Médica Oval, consultorio 904 · Pereira</span><span>theskinhaus.com.co</span></div>
+    <div class="pie"><span><b>The Skin Haus</b> · Medicina estética y vascular · Torre Médica Oval, consultorio 904 · Pereira</span><span>theskinhaus.com.co</span></div>
   </section>`;
   // si el contenido no cabe en la hoja, se compacta
   const h = $("#pdf .hoja"), c = h.querySelector(".cuerpo");
@@ -1344,7 +1445,7 @@ $("#enviar").onclick = () => {
     if (num.length < 11){ $("#contacto").closest(".campo").classList.add("error"); aviso("Falta el celular de la paciente", true); $("#datos").scrollIntoView({ behavior: "smooth" }); return; }
     const link = SITIO + "#p=" + empacar();
     abrirWhatsApp(num,
-      `Hola ${s.nombre.split(" ")[0]} 🤍 Te comparto tu plan de ${P().nombre} en The Skin Haus.\n\n` +
+      `Hola ${s.nombre.split(" ")[0]}, te comparto tu plan de ${P().nombre} en The Skin Haus.\n\n` +
       `Inversión: ${fmt(s.precio)} (valor inicial: ${fmt(anticipoDe(s.precio))})` +
       (CUOTAS ? `\nPlan de pago: ${textoPlan(s.precio)}` : "") + `\n\nAquí puedes ver todo lo que incluye y descargar tu cotización:\n${link}\n\n` +
       `Cualquier duda, aquí estoy.`);
