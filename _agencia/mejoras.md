@@ -8,20 +8,20 @@ Estados: `[pendiente]` → `[mejorada AAAA-MM-DD · qué cambió]` o `[saltada A
 Tipo: **blog** (se edita `_agencia/articulos/<slug>.html`) o **servicio** (en `datos.py` solo `titulo=` y `desc=` de
 esa página; nada más).
 
-Revisión del 16-nov-2026 con Search Console del 18-oct al 14-nov (la siguiente la reemplaza).
+Revisión del 23-nov-2026 con Search Console del 25-oct al 21-nov (la siguiente la reemplaza).
 
 ## Para mejorar (en orden)
 
-1. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 174 apariciones, 1 clic, puesto 8,4 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
-2. [pendiente] /blog/botox-y-acido-hialuronico-el-mismo-dia · blog · 115 apariciones, 0 clics, puesto 7,6 · libre desde 2026-11-28 (último cambio de texto 7-nov)
-3. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 91 apariciones, 0 clics, puesto 9,6 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
-4. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 52 apariciones, 1 clic, puesto 7,3 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
-5. [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 42 apariciones, 0 clics, puesto 9,5 · libre desde 2026-11-24 (title cambiado el 3-nov; el 10-nov solo se le puso un enlace, no cuenta)
+1. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 160 apariciones, 1 clic, puesto 8,3 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov; el 17-nov solo un enlace)
+2. [pendiente] /blog/botox-y-acido-hialuronico-el-mismo-dia · blog · 176 apariciones, 0 clics, puesto 9,7 · libre desde 2026-11-28 (último cambio de texto 7-nov)
+3. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 125 apariciones, 0 clics, puesto 9,1 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
+4. [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 50 apariciones, 0 clics, puesto 8,9 · libre desde 2026-11-24 (title cambiado el 3-nov; los enlaces del 10, 19 y 21-nov no cuentan)
+5. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 46 apariciones, 0 clics, puesto 7,3 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
 
-Hoy ninguna está libre: la primera libre es la 5 (24-nov). Hasta entonces, día de enlaces (sección siguiente).
+Hoy ninguna está libre: la primera libre es la 4 (24-nov). Hasta entonces, día de enlaces (sección siguiente).
 
-Salen sin clics pero ya cambiaron hace poco: /blog/precio-del-botox-en-pereira (27 apar., puesto 6,4) libre desde 2026-11-24;
-/armonizacion-facial (23; 9,4), /blog/botox-o-toxina-botulinica-es-lo-mismo (18; 12,9) y /toxina-botulinica (17; 14,3): libres desde 2026-11-24.
+Salen sin clics pero ya cambiaron hace poco: /blog/precio-del-botox-en-pereira (22 apar., puesto 6,8), /armonizacion-facial (25; 9,0), /blog/botox-o-toxina-botulinica-es-lo-mismo (19; 12,4)
+y /toxina-botulinica (17; 14,3): libres desde 2026-11-24.
 
 ## Plan orgánico del 13-nov-2026 (sesión de Claude; detalle en search-console.md)
 
@@ -42,25 +42,25 @@ tocaste: `[enlaces AAAA-MM-DD] /blog/<slug> → servicio1, servicio2`.
 
 ## Pedir indexación (máximo 10; la tarea del navegador las pide y las marca)
 
-- [pendiente] /blog/precio-del-relleno-de-labios-en-pereira (Google no reconoce esta URL; publicada el 16-nov)
-- [pendiente] /blog/botox-para-hombres (Descubierta: actualmente sin indexar; sigue igual el 16-nov)
-- [pendiente] /blog/ (índice del blog, cambió el 16-nov)
-- [pendiente] /valoracion (cambió el 16-nov)
-- [pendiente] /bioestimuladores (título y texto nuevos, 13-nov)
-- [pendiente] /peelings-medicos (texto nuevo, 13-nov)
-- [pendiente] /blog/cuanto-dura-el-botox (texto nuevo, 13-nov)
-- [pendiente] /tratamiento-de-ojeras (preguntas nuevas, 13-nov)
-- [pendiente] /manchas-y-melasma (preguntas y enlace nuevos, 13-nov)
-- [pendiente] /preguntas-frecuentes (cambió el 13-nov)
+- [pendiente] /blog/cada-cuanto-hacerse-una-limpieza-facial (Google no reconoce esta URL; publicada el 23-nov)
+- [pendiente] /blog/botox-para-hombres (Descubierta: actualmente sin indexar; sigue igual el 23-nov)
+- [pendiente] /valoracion (cambió el 23-nov)
+- [pendiente] /blog/ (índice del blog, cambió el 23-nov)
+- [pendiente] /blog/cuanto-cuesta-una-armonizacion-facial-en-pereira (artículo nuevo, 20-nov)
+- [pendiente] /blog/cuanto-vale-una-limpieza-facial-en-pereira (artículo nuevo, 18-nov)
+- [pendiente] /blog/medicina-estetica-en-dosquebradas-y-santa-rosa-de-cabal (cambió el 17-nov)
+- [pendiente] /blog/cuanto-se-pela-la-piel-despues-de-un-peeling (cambió el 19-nov)
+- [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne (cambió el 21-nov)
+- [pendiente] /blog/cuanto-dura-el-botox (cambió el 21-nov)
 
 ## Aparte: lo vascular (la agencia no lo toca; queda anotado para Claude y Laura)
 
-- /eco-doppler-venoso · 74 apariciones, 0 clics, puesto 8,3 (texto ampliado el 13-nov; aún no se ve el efecto)
-- /aranitas-vasculares · 8 apariciones, puesto 7,9 · /varices · 4, puesto 45,2 · /cuperosis-y-rojeces · 1 · /medicina-vascular · 1
+- /eco-doppler-venoso · 74 apariciones, 0 clics, puesto 8,1 (texto ampliado el 13-nov; aún no se ve el efecto)
+- /aranitas-vasculares · 7 apariciones, puesto 7,6 · /varices · 3, puesto 48,7 · /medicina-vascular · 1, puesto 47,0
 
 ## Búsquedas sin dueña (solo se anotan; las decide Claude en una sesión de trabajo)
 
-- ninguna por ahora. Ojo: "hidratación de labios sin pinchar" (6 apariciones, puesto 78,8) la cubre /blog/como-hidratar-los-labios-sin-agrandarlos pero sale muy atrás; "cuántas jeringas de ácido hialurónico necesito" (puesto 19,3) la cubre /blog/cuanto-rinde-1-ml-de-acido-hialuronico.
+- ninguna por ahora. Ojo: "hidratación de labios sin pinchar" (8 apariciones, puesto 68,9) la cubre /blog/como-hidratar-los-labios-sin-agrandarlos pero sale muy atrás; "cuánto dura el aumento de labios" (puesto 36,4) la cubre /blog/cuanto-dura-el-relleno-de-labios; "cuántas jeringas de ácido hialurónico necesito" (puesto 15,8) la cubre /blog/cuanto-rinde-1-ml-de-acido-hialuronico.
 
 ## Hecho (últimas 4 semanas)
 

@@ -35,6 +35,7 @@ A Laura le llegan solo 3 cifras: **clics sin marca**, **búsquedas de Pereira en
 
 | Lunes | Clics sin marca | Clics de marca | Apariciones | Fijas en 1.ª página (API) | Reseñas | Páginas en Google | Nota |
 |---|---|---|---|---|---|---|---|
+| 23-nov | 13 | 1 | 1.046 | 0 de 15 (2 con datos) | 0 (último dato) | 59 de 61 | Apariciones suben (887 a 1.046); clics sin marca casi igual (14 a 13) |
 | 16-nov | 14 | 1 | 887 | 0 de 15 (2 con datos) | 0 (último dato) | 56 de 58 | Las apariciones casi se duplicaron (476 a 887) |
 | 9-nov | 8 | 0 | 476 | 0 de 15 (2 con datos) | 0 (último dato) | 52 de 54 | Línea base 9-nov |
 | 7-nov (lectura previa, Claude) | 7 | 0 | 402 | 0 de 15 (2 con datos) | 0 | 50 de 53 | Lectura de prueba del lector nuevo; la base oficial es la del 9-nov |

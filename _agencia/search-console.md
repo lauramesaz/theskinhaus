@@ -9,6 +9,54 @@ Aquí se copian los datos cada lunes (la nube no puede abrir Search Console):
 página · impresiones · clics · posición · consultas principales (solo medicina estética).
 Todavía sin datos: la web es nueva y Google tarda unos días en mostrar impresiones.
 
+## Foto del 23-nov-2026 (últimos 28 días: 25-oct a 21-nov)
+
+Totales: **14 clics · 1.046 apariciones · CTR 1,3 % · posición media 12,3**.
+Sin marca: **13 clics · 1.034 apariciones**. Con marca: **1 clic · 12 apariciones**.
+
+**Top 10 búsquedas sin marca:**
+| Consulta | Clics | Apar. | Puesto |
+|---|---|---|---|
+| 1 ml de ácido hialurónico para que alcanza | 0 | 12 | 7,8 |
+| 1 ml de acido hialuronico | 0 | 11 | 9,5 |
+| armonizacion facial pereira | 0 | 10 | 10,9 |
+| botox y acido hialuronico | 0 | 9 | 53,0 |
+| acido hialuronico y botox | 0 | 8 | 13,8 |
+| hidratación de labios sin pinchar | 0 | 8 | 68,9 |
+| acido hialuronico botox | 0 | 6 | 15,5 |
+| botox pereira | 0 | 6 | 13,8 |
+| cuanto dura el botox | 0 | 6 | 81,0 |
+| 1ml de ácido hialurônico | 0 | 5 | 10,8 |
+
+**Top 10 páginas:**
+| Página | Clics | Apar. | Puesto |
+|---|---|---|---|
+| / | 3 | 25 | 5,7 |
+| /microagujas | 3 | 23 | 7,6 |
+| /limpieza-facial-medica | 2 | 28 | 17,1 |
+| /tratamiento-de-ojeras | 2 | 5 | 5,0 |
+| /blog/cuanto-rinde-1-ml-de-acido-hialuronico | 1 | 160 | 8,3 |
+| /nosotros | 1 | 12 | 5,2 |
+| /cicatrices-de-acne | 1 | 5 | 9,6 |
+| /peelings-medicos | 1 | 3 | 7,3 |
+| /blog/botox-y-acido-hialuronico-el-mismo-dia | 0 | 176 | 9,7 |
+| /blog/morados-e-inflamacion-despues-del-acido-hialuronico | 0 | 125 | 9,1 |
+
+**Las 15 búsquedas fijas en Colombia (por la API):** en primera página: **0 de 15** (2 con datos).
+| Búsqueda | Apar. | Clics | Puesto | Página |
+|---|---|---|---|---|
+| botox pereira | 6 | 0 | 13,8 | /toxina-botulinica |
+| armonización facial pereira | 10 | 0 | 10,9 | /armonizacion-facial |
+| las otras 13 (medicina estética, bótox en, toxina botulínica, ácido hialurónico, relleno de labios, ojeras, bioestimuladores, skinbooster, peeling químico, dermapen, manchas, clínica estética, médico estético, todas con "pereira") | 0 | 0 | sin datos | — |
+
+Búsquedas con 2 o más páginas propias: ninguna.
+
+**Indexación:** 59 de 61 páginas del sitemap están en Google. Faltan 2: /blog/cada-cuanto-hacerse-una-limpieza-facial (Google no reconoce la URL, publicada hoy) y /blog/botox-para-hombres (descubierta, sin indexar; sigue igual desde el 16-nov). /blog/precio-del-relleno-de-labios-en-pereira ya está en Google.
+
+**Aparte (vascular):** /eco-doppler-venoso 74 apariciones, 0 clics, puesto 8,1; /aranitas-vasculares 7 (puesto 7,6); /varices 3 (puesto 48,7); /medicina-vascular 1 (puesto 47,0).
+
+**Lectura:** frente a la foto del 16-nov, los clics sin marca pasaron de 14 a 13 y las apariciones de 874 a 1.034 sin marca; las páginas en Google de 56 a 59 (de 58 a 61 en el sitemap). Las fijas en primera página siguen en 0 de 15 (las mismas 2 con datos, sin cambio de puesto). Búsqueda nueva de medicina estética: "cuánto dura el aumento de labios" y "cuánto dura relleno ácido hialurónico labios" (5 apariciones cada una, puestos 36,4 y 16,0; las cubre /blog/cuanto-dura-el-relleno-de-labios) y "cuántas jeringas ácido hialurónico necesito" (puesto 15,8, la cubre /blog/cuanto-rinde-1-ml-de-acido-hialuronico). Sigue sin clics lo que más aparece: los dos artículos de ácido hialurónico y bótox (176 y 160 apariciones).
+
 ## Foto del 16-nov-2026 (últimos 28 días: 18-oct a 14-nov)
 
 Totales: **15 clics · 887 apariciones · CTR 1,7 % · posición media 12,1**.
