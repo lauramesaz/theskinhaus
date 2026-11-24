@@ -15,7 +15,7 @@ Revisión del 23-nov-2026 con Search Console del 25-oct al 21-nov (la siguiente 
 1. [pendiente] /blog/cuanto-rinde-1-ml-de-acido-hialuronico · blog · 160 apariciones, 1 clic, puesto 8,3 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov; el 17-nov solo un enlace)
 2. [pendiente] /blog/botox-y-acido-hialuronico-el-mismo-dia · blog · 176 apariciones, 0 clics, puesto 9,7 · libre desde 2026-11-28 (último cambio de texto 7-nov)
 3. [pendiente] /blog/morados-e-inflamacion-despues-del-acido-hialuronico · blog · 125 apariciones, 0 clics, puesto 9,1 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
-4. [pendiente] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 50 apariciones, 0 clics, puesto 8,9 · libre desde 2026-11-24 (title cambiado el 3-nov; los enlaces del 10, 19 y 21-nov no cuentan)
+4. [mejorada 2026-11-24 · title nuevo con 'en Pereira', descripción con el dato 3 a 5 sesiones cada 4 semanas y una frase de folleto cambiada] /blog/dermapen-cuantas-sesiones-cicatrices-de-acne · blog · 50 apariciones, 0 clics, puesto 8,9 · libre desde 2026-11-24 (title cambiado el 3-nov; los enlaces del 10, 19 y 21-nov no cuentan)
 5. [pendiente] /relleno-de-labios · servicio (BUSQUEDAS en `datos.py`) · 46 apariciones, 0 clics, puesto 7,3 · libre desde 2026-11-30 (title y descripción cambiados el 9-nov)
 
 Hoy ninguna está libre: la primera libre es la 4 (24-nov). Hasta entonces, día de enlaces (sección siguiente).
